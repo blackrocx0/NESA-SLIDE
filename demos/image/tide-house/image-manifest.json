@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "deck_id": "tide-house",
+  "title": "潮汐旅宿｜海岸慢旅品牌概念",
+  "language": "zh-Hant-TW",
+  "renderer": "image2",
+  "generator": "built-in image_gen",
+  "generator_policy": "one formal call per slide, sequential, inspected after generation",
+  "theme": "warm-editorial-portfolio",
+  "art_direction": "art-direction.yaml",
+  "aspect_ratio": "16:9",
+  "normalized_canvas_px": [1920, 1080],
+  "logo_policy": "no-logo",
+  "fictional_content": true,
+  "external_assets": false,
+  "non_editable": true,
+  "outputs": {
+    "pptx": "tide-house-image-deck.pptx",
+    "contact_sheet": "contact-sheet.png",
+    "prompts_dir": "prompts/",
+    "slides_dir": "slides/"
+  },
+  "render_validation": {
+    "powerpoint_native": {
+      "slides": 10,
+      "rendered": 10,
+      "failures": 0,
+      "status": "passed"
+    }
+  },
+  "slides": [
+    {"id":"01","prompt":"prompts/01.assembled.yaml","prompt_sha256":"cd7c0b5693b5a179ae338a390c5227c6ffdf770da11a21636bd83326199576a9","png":"slides/01.png","layout":"cover-photo-frame","sha256":"b1d13a6c29d64463ddb132f999ab300f33c5f85ccc0b54501a5e838055940153","qa":"pass"},
+    {"id":"02","prompt":"prompts/02.assembled.yaml","prompt_sha256":"286933ea9227097cb4fbeb17e302ac8c89d9fff83e676df5d2adf3ec5945ef74","png":"slides/02.png","layout":"title-center","sha256":"b704e68d4fb8e27789601c25cd0c92ec5ff4fbaefafa0b92931c764476cb0dc5","qa":"pass"},
+    {"id":"03","prompt":"prompts/03.assembled.yaml","prompt_sha256":"270ef1a5e2dd415a9f6dc7f00244d9107602ca42453a4d39ddba81b7a3b980d1","png":"slides/03.png","layout":"timeline-milestones","sha256":"745f45bb24bbe1ffc6d56bfd8334e767a0e3ff6866d1d29c427de8212331ef5c","qa":"pass"},
+    {"id":"04","prompt":"prompts/04.assembled.yaml","prompt_sha256":"65d5222a28d0ded78453f1015b9339a26bb1a89b415240eb05ebe6f33de22ef2","png":"slides/04.png","layout":"cards-1-plus-3","sha256":"614afff77ba8cba6e908b5d067f960f01c2865636802b0713b535d03fb3bbbb8","qa":"pass"},
+    {"id":"05","prompt":"prompts/05.assembled.yaml","prompt_sha256":"8e853284e662cafdae03cb6aef0159bc89d307c70de49e0309b07a3922f389e1","png":"slides/05.png","layout":"process-flow","sha256":"1690d23bf9c656c2ec9a2b21b5ed19d15e5b2c3ffb6a6060c6ddc590966ad277","qa":"pass"},
+    {"id":"06","prompt":"prompts/06.assembled.yaml","prompt_sha256":"a6cdc0a3002ed3d5fb60323a4737c05107bcbb8514bd486fdc5c70465ad38884","png":"slides/06.png","layout":"timeline-milestones","sha256":"6fdb56eb417ce8a8310124e07da8d1ec110e373e669aff4e8a5ca54e21fe1182","qa":"pass"},
+    {"id":"07","prompt":"prompts/07.assembled.yaml","prompt_sha256":"277ea4a54cba8440197bac4f85c81defd1c0134036f4a4d28634ce04af9a38bb","png":"slides/07.png","layout":"photo-left-overlay-title-right","sha256":"3f5173dbea7bb421518935444a2907e78a4b0b4208ff9371841f83153d2f52e2","qa":"pass"},
+    {"id":"08","prompt":"prompts/08.assembled.yaml","prompt_sha256":"9a177303c84b2be284fe6cd2cec6be7a5021c7d1613da4462ed88adf569225e5","png":"slides/08.png","layout":"quote-focus","sha256":"de9d4e65de4c170ac6546631f2f5d70888e7c6c6b91d28cf6d8e6570c31c5a8f","qa":"pass"},
+    {"id":"09","prompt":"prompts/09.assembled.yaml","prompt_sha256":"20f82fa02e7cce88ee868bce4382bdba91e580085eebd95c4f4d8386e107b2b7","png":"slides/09.png","layout":"cards-1-plus-3","sha256":"e0128b73b947031d54e7197e5ffc47b1b7ae083935d7bcfa009e304b2306227f","qa":"pass"},
+    {"id":"10","prompt":"prompts/10.assembled.yaml","prompt_sha256":"92c7a81b95f6f5bfdc65ea9f5aa1fdfb2f25168c4ab1f98dafad55c800777d1f","png":"slides/10.png","layout":"closing-photo-overlay-contact","sha256":"93c0fd8771fb8e6998ad91cc77838ae5a481ceb2b4199eaec7437dc88fce7524","qa":"pass"}
+  ],
+  "deck_sha256": "99ac80cc70ccaa34acc2fb912f7f22b367176b29a97457acc4f6ed653bdd2ef8",
+  "contact_sheet_sha256": "629bdb33a250e636dc337f0fc5e4d673987cc49aabcbf0f7a34b3198ee822452"
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "PPT Builder"
+  short_description: "Build editable PPTX with masters and renderer QA"
+  default_prompt: "Use $ppt-builder to build and validate an editable PowerPoint from this project's renderer sources."

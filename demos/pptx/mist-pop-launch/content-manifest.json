@@ -1,0 +1,34 @@
+{
+  "deck_id": "mist-pop-launch",
+  "title": "MIST POP｜無酒精氣泡飲 90 天上市計畫",
+  "language": "zh-TW",
+  "audience": "品牌與通路決策團隊",
+  "purpose": "在 90 天內以小批量上市、兩個核心通路與可量測的回購訊號，驗證 MIST POP 的第一波市場牽引力。",
+  "fictional_demo": true,
+  "logo_policy": "no-logo",
+  "theme_id": "product-strategy-signal",
+  "active_layout_ids": [
+    "cover-mid-right-column-meta-upper-left",
+    "strategic-priorities",
+    "process-flow",
+    "comparison-table",
+    "kpi-scorecards",
+    "gantt-roadmap",
+    "data-annotation",
+    "matrix-4quadrant",
+    "highlight-callout",
+    "title-center"
+  ],
+  "slides": [
+    {"slide_id":"s01","scene_role":"hero","layout_id":"cover-mid-right-column-meta-upper-left","title":"讓晚餐的第一口，先有氣氛再有酒精","subtitle":"MIST POP｜無酒精氣泡飲 90 天上市計畫","meta":"NESA Slide · demo case"},
+    {"slide_id":"s02","scene_role":"index-or-map","layout_id":"strategic-priorities","title":"先把第一波牽引力做出來，再擴大聲量","subtitle":"90 天只追三個可驗證的優先順序","modules":["被看見","被試喝","被帶回家"]},
+    {"slide_id":"s03","scene_role":"evidence","layout_id":"comparison-table","title":"我們切入的不是戒酒，而是更好的晚餐選擇","subtitle":"虛構示範洞察：把情境從限制改寫成選擇","rows":["想要有儀式感","希望隔天保持清醒","需要一款能分享的飲品"]},
+    {"slide_id":"s04","scene_role":"relationship","layout_id":"process-flow","title":"產品先解決一個瞬間：舉杯時不必解釋","subtitle":"從味覺到語氣，形成一條可被記住的體驗鏈","steps":["清爽入口","低負擔選擇","自然加入餐桌","願意再次購買"]},
+    {"slide_id":"s05","scene_role":"evidence","layout_id":"kpi-scorecards","title":"兩款口味，剛好覆蓋第一個週末","subtitle":"虛構首波產品組合與體驗訊號","metrics":["青檸薄荷","白桃烏龍","回購訊號"]},
+    {"slide_id":"s06","scene_role":"relationship","layout_id":"matrix-4quadrant","title":"先進入會發生對話的地方","subtitle":"通路以體驗密度與可追蹤性排序","quadrants":["餐酒館合作","選物店試飲","電商組合包","大型量販"]},
+    {"slide_id":"s07","scene_role":"evidence","layout_id":"data-annotation","title":"每一個觸點，都要留下下一次購買的理由","subtitle":"把試喝、內容與回購訊號串成可讀的漏斗","signals":["看見","試喝","帶走","再買"]},
+    {"slide_id":"s08","scene_role":"relationship","layout_id":"gantt-roadmap","title":"90 天不是一次發布，而是三段連續學習","subtitle":"每一段都有明確輸入、行動與判斷點","phases":["0–30 天：種子體驗","31–60 天：通路放大","61–90 天：回購驗證"]},
+    {"slide_id":"s09","scene_role":"pause-or-close","layout_id":"highlight-callout","title":"我們要的第一個答案很簡單：人們會不會主動再拿一罐？","subtitle":"如果會，第二階段才值得加大投資","callout":"先驗證回購，再放大曝光"},
+    {"slide_id":"s10","scene_role":"pause-or-close","layout_id":"title-center","title":"用 90 天，換一個可複製的上市公式","subtitle":"MIST POP｜從一杯好喝的選擇開始","actions":["鎖定兩款口味","啟動 12 個試飲點","每週回看回購訊號"]}
+  ]
+}

@@ -1,0 +1,22 @@
+page_type_and_mood:
+  prompt: "16:9 圖片式簡報結尾；暮色海面滿版照片，左側半透明暖褐紙面承接收束句，右側保留大面積海與天的餘韻。"
+visual_base_2a:
+  background: {style: "暮色海岸滿版，深霧藍海面、灰粉天空、遠處一盞小燈，無人無品牌", texture: "低密度底片顆粒與柔和暗角"}
+  typography: {heading: "繁體中文 Noto Serif TC，暖白大字", body: "繁體中文 Noto Sans TC，暖白小字"}
+  color_system: {primary: "#F5EEE7", secondary: "#D8C6B8", accent: "#C3A58D", support: "#2A2521"}
+corner_decoration_2b:
+  rule: "左側半透明暖褐紙面像潮線退去後留下的薄層，右側保持海面完整。"
+  top_left: {element: "10", treatment: "暖白頁碼"}
+  top_right: {element: "空白", treatment: "讓暮色延伸"}
+  bottom_left: {element: "NESA Slide demo", treatment: "小型暖白字"}
+  bottom_right: {element: "空白", treatment: "不放 Logo"}
+layout_description:
+  structure: "滿版暮色海岸；左側約 42% 半透明暖褐色塊，內含大標『潮來時，留一盞燈。』、副標『下一次，讓時間帶你回到海邊。』、小字『潮汐旅宿｜海岸慢旅品牌概念』與『NESA Slide demo · fictional case』。"
+content:
+  title: "潮來時，留一盞燈。"
+  subtitle: "下一次，讓時間帶你回到海邊。"
+  body: "潮汐旅宿｜海岸慢旅品牌概念\nNESA Slide demo · fictional case"
+safe_zone_constraints:
+  hard_constraint: "左側文字必須完整、繁體字正確、在半透明紙面內清楚可讀；右側海面不要生成任何文字或 Logo；不放聯絡方式與真實網址。"
+closing_design_intent:
+  prompt: "最後不是喊口號，而是留下一盞遠處的燈，讓回訪的想像自己發生。"

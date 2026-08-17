@@ -1,0 +1,78 @@
+id: cycle-hub-6
+display_name: 圖表 環形輻射 1+6
+media_requirement: no-image
+family: 模組陣列
+
+safe_area: [4, 6, 96, 94]
+
+slots:
+  - id: hub_title
+    region: [36, 42, 28, 16]
+    weight: hero
+    note: >
+      中心輪轂唯一文字；字級大，水平與垂直都置中於輪心。
+      只放循環本身的名字，最多兩行、每行 ≤6 個中文字；
+      不放說明句、不放副標，補充說明一律交給六個 item。
+
+  - id: item-1
+    region: [4, 14, 25, 24]
+    weight: primary
+    note: "左欄第一列（對應環上 10–12 o'clock 範圍的圖示）；含標題 + 說明"
+
+  - id: item-2
+    region: [4, 40, 25, 24]
+    weight: primary
+    note: "左欄第二列（對應環上 9 o'clock 範圍的圖示）"
+
+  - id: item-3
+    region: [4, 66, 25, 24]
+    weight: primary
+    note: "左欄第三列（對應環上 7–8 o'clock 範圍的圖示）"
+
+  - id: item-4
+    region: [71, 14, 25, 24]
+    weight: primary
+    note: "右欄第一列（對應環上 12–2 o'clock 範圍的圖示）"
+
+  - id: item-5
+    region: [71, 40, 25, 24]
+    weight: primary
+    note: "右欄第二列（對應環上 3 o'clock 範圍的圖示）"
+
+  - id: item-6
+    region: [71, 66, 25, 24]
+    weight: primary
+    note: "右欄第三列（對應環上 4–6 o'clock 範圍的圖示）"
+
+ring_layout:
+  center: [50, 50]
+  radius_pct: 37
+  icon_count: 6
+  spacing: "60° 均等分布（12 / 2 / 4 / 6 / 8 / 10 o'clock）"
+  icon_style: "圓形色塊，壓在環線上；圖示在色塊內（icon 種類由 2A / 2B 決定）"
+  ring_style: "細描邊圓環，無填色；顏色與圖示色塊同色系"
+  hub_style: >
+    輪心不放底色面板：無填色、無描邊、無陰影，環線本身是唯一容器。
+    hub_title 直接壓在頁面底色上，環線在文字後方保持完整不被卡片切斷。
+  text_layout: >
+    左欄三項（item-1/2/3）對應環的左半側圖示；
+    右欄三項（item-4/5/6）對應環的右半側圖示。
+    圖示與對應文字之間可加細連接線作為視覺引導。
+
+alignment_rules:
+  - "hub 圓心在投影片水平 + 垂直中央（50%, 50%）"
+  - "hub_title 以圓心為中心對稱，不因少一行而偏上或偏下"
+  - "item text 左欄右緣 ≤ 28%，右欄左緣 ≥ 72%（不與環及圖示重疊）"
+  - "item-1/2/3 在左欄三等分垂直排列；item-4/5/6 在右欄三等分垂直排列"
+  - "左欄文字右對齊（向圓心靠攏）；右欄文字左對齊（向圓心靠攏）"
+
+visual_balance:
+  method: radial-hub-spoke
+  description: >
+    A visible circle ring dominates the center zone. Six icon-bearing circles
+    are evenly placed on the ring at 60° intervals. The hub center carries only
+    a short topic title on the page ground; it never becomes a filled card, so
+    the ring stays unbroken behind it. Three text items are stacked in the left
+    zone and three in the right zone, each aligned with its corresponding icon
+    on the ring. Optional light connector lines link text to icons for added
+    clarity.

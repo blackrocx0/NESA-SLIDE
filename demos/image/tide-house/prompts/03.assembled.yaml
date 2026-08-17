@@ -1,0 +1,23 @@
+page_type_and_mood:
+  prompt: "16:9 圖片式簡報旅程地圖；編輯雜誌式時間軸，把一天拆成四個潮汐時刻，安靜但有方向。"
+visual_base_2a:
+  background: {style: "暖白紙面，底部一段霧藍到沙色的低對比水平帶", texture: "紙張顆粒、淡淡潮痕"}
+  typography: {heading: "繁體中文 Noto Serif TC，清楚主標", body: "繁體中文 Noto Sans TC，時間標籤與短句"}
+  color_system: {primary: "#2A2521", secondary: "#8E7A6A", accent: "#A7B9B5", support: "#D8C6B8"}
+corner_decoration_2b:
+  rule: "一條水平潮線由左至右連接四個節點，節點是小圓點與短豎線，不做圓角卡片。"
+  top_left: {element: "03", treatment: "小型頁碼"}
+  top_right: {element: "一日潮汐", treatment: "細字標籤"}
+  bottom_left: {element: "空白", treatment: "保留紙面"}
+  bottom_right: {element: "潮汐旅宿", treatment: "細字"}
+layout_description:
+  structure: "上方主標『一座旅宿，沿著潮汐安排一天』；中段四個水平節點：『06:20 迎光』、『10:40 漫走』、『16:30 聽潮』、『21:10 留燈』，每個節點下方一行短句；底部一句『替一天留出四個被感受的節點。』"
+content:
+  title: "一座旅宿，沿著潮汐安排一天"
+  subtitle: "四個時刻，讓抵達、停留與離開都有自己的呼吸。"
+  milestones: ["06:20｜迎光", "10:40｜漫走", "16:30｜聽潮", "21:10｜留燈"]
+  takeaway: "旅宿不是把時間填滿，而是替一天留出四個被感受的節點。"
+safe_zone_constraints:
+  hard_constraint: "四個時間與繁體中文標籤清楚可讀；水平閱讀方向不可被裝飾打斷；不使用真實數據語氣，不放 Logo。"
+closing_design_intent:
+  prompt: "讓觀眾一眼看懂一天的方向，又感到每個節點之間有足夠空白可以停留。"

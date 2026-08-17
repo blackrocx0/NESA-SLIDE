@@ -1,0 +1,4031 @@
+{
+  "schema_version": 1,
+  "product": "NESA Slide",
+  "version": "0.1.0-demo.1",
+  "snapshot_started_at": "2026-08-17T17:56:28.0849712Z",
+  "source_git": {
+    "head": "94bbc7232ea43fe631b845511834a1c2433bd340",
+    "branch": "codex/layout-design-diversity",
+    "working_tree_dirty": true,
+    "dirty_allowlist_paths": [
+      "artifacts/html-test/edit-mode.js",
+      "scripts/html_edit_framework.py",
+      "scripts/html_motion_runtime.py",
+      "scripts/html_production_renderer.py",
+      "scripts/qa_html_save_export.cjs",
+      "src/html-editor/edit-mode.js"
+    ]
+  },
+  "source_file_count": 668,
+  "source_aggregate_sha256": "727012efa14dbfb65ed227d283ddca109470208982ccfc02316765a5bf78bdf8",
+  "files": [
+    {
+      "path": ".agents/skills/design-presentations/agents/openai.yaml",
+      "sha256": "41bea1797120f3d83c37ff4929ee38efe6a5e0e040249d23c6ca0add0822b9b9",
+      "source_mtime_utc": "2026-08-01T14:09:00.7322865Z",
+      "bytes": 271
+    },
+    {
+      "path": ".agents/skills/design-presentations/SKILL.md",
+      "sha256": "bf3a574c085f545f05c32c1cb84f07ce560327cd344e828106f7abc8c4abbbea",
+      "source_mtime_utc": "2026-08-01T16:41:24.7746501Z",
+      "bytes": 9477
+    },
+    {
+      "path": ".agents/skills/generate-presentation-yaml/agents/openai.yaml",
+      "sha256": "ed0e89916e253e8e7f472e4fa4cb8f58bf0b492665bd55f4c054f2048a7ff87b",
+      "source_mtime_utc": "2026-06-12T18:35:56.0000000Z",
+      "bytes": 335
+    },
+    {
+      "path": ".agents/skills/generate-presentation-yaml/references/project-format-guide.md",
+      "sha256": "525f0e5b86f859603bfd4c3cc87ab3ea705136e69999c6c36c5255bfd2eb6ba2",
+      "source_mtime_utc": "2026-07-26T05:29:02.4424330Z",
+      "bytes": 2528
+    },
+    {
+      "path": ".agents/skills/generate-presentation-yaml/SKILL.md",
+      "sha256": "9f858f0ebbb02a6b9082b810cd0363608b9fb627eaa1fbdc6005d932be317887",
+      "source_mtime_utc": "2026-08-01T11:46:44.1461463Z",
+      "bytes": 14619
+    },
+    {
+      "path": ".agents/skills/ppt-builder/agents/openai.yaml",
+      "sha256": "8347c0804a667c15d6a2723229339437564ed5aceeecdb19ae2a16fac82535ee",
+      "source_mtime_utc": "2026-08-01T11:43:55.6921133Z",
+      "bytes": 237
+    },
+    {
+      "path": ".agents/skills/ppt-builder/SKILL.md",
+      "sha256": "32c9ffea2cf4634ec55249e27b50abd48aa62188cfd56426aa18daff8c4a6e7b",
+      "source_mtime_utc": "2026-08-01T15:23:53.5120251Z",
+      "bytes": 3679
+    },
+    {
+      "path": ".agents/skills/render-html-slide/agents/openai.yaml",
+      "sha256": "e55c17fbee7f43fab4197e1abd3c62d2c5d2eea8ea1e3cfc68fe6b3ed1aa6298",
+      "source_mtime_utc": "2026-07-16T14:12:02.0000000Z",
+      "bytes": 217
+    },
+    {
+      "path": ".agents/skills/render-html-slide/SKILL.md",
+      "sha256": "76b122ebc05054afe0acf4126472a12458d93dd3355a4418a917d45b0cc2a736",
+      "source_mtime_utc": "2026-08-12T10:56:57.8256312Z",
+      "bytes": 28224
+    },
+    {
+      "path": ".agents/skills/slide-outline-planner/agents/openai.yaml",
+      "sha256": "8628223f22cda5f2d93d390c84f18a7fe93028f578e4796d29495c8e39e9e47f",
+      "source_mtime_utc": "2026-08-09T08:00:21.9326867Z",
+      "bytes": 290
+    },
+    {
+      "path": ".agents/skills/slide-outline-planner/references/outline-output-contract.md",
+      "sha256": "879bfdf722db36d8437ce8579a9887f00d3c61b898280d68b65121bd3cc3e2bb",
+      "source_mtime_utc": "2026-08-09T14:24:48.8085318Z",
+      "bytes": 5588
+    },
+    {
+      "path": ".agents/skills/slide-outline-planner/references/presentation-types.md",
+      "sha256": "a647cbdc4648bf223f6c51161bbb88da250c3b140becf56d0fa73e22012ff22a",
+      "source_mtime_utc": "2026-08-09T07:59:23.1818671Z",
+      "bytes": 2214
+    },
+    {
+      "path": ".agents/skills/slide-outline-planner/SKILL.md",
+      "sha256": "fe2bb95ffd4983c127be285757a78768c2d5768bb89a19048e926d62744d22e7",
+      "source_mtime_utc": "2026-08-09T14:24:48.8085318Z",
+      "bytes": 8018
+    },
+    {
+      "path": "artifacts/html-test/dev_server.py",
+      "sha256": "8029d7a88c61bacc8fd1e82726681e23d968354e7c1c42f587b3725a763006bf",
+      "source_mtime_utc": "2026-07-27T23:09:30.9076561Z",
+      "bytes": 12084
+    },
+    {
+      "path": "artifacts/html-test/edit-mode.js",
+      "sha256": "dfe2663aea4e9335aa14c82416639a1785996bdb1e45fdaa40d367a402183e8d",
+      "source_mtime_utc": "2026-08-17T14:20:25.2322164Z",
+      "bytes": 472354
+    },
+    {
+      "path": "artifacts/html-test/pptx-browser-export.js",
+      "sha256": "21b4e2a98622f2879e3876340bef5d7fbc59276874fce42e1e66d5ab738530ab",
+      "source_mtime_utc": "2026-08-07T19:47:08.3666704Z",
+      "bytes": 15665
+    },
+    {
+      "path": "artifacts/html-test/pptxgen.bundle.js",
+      "sha256": "4fb9eac5cfefb213e2d8743c2b7151025f31bfb3f834c73c12062916daa0f3f8",
+      "source_mtime_utc": "2026-07-27T21:48:55.0000000Z",
+      "bytes": 460889
+    },
+    {
+      "path": "artifacts/renderer-matrix/matrix.json",
+      "sha256": "ceea539e1b8bf160b9439e1d7575926ed5b19e73299fda28b6b8daa346dbac05",
+      "source_mtime_utc": "2026-08-11T16:53:48.8595449Z",
+      "bytes": 362859
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "df29026793e58ffc98c98af49db4007c5bfa8a645e93a6facc373491fe9abd47",
+      "source_mtime_utc": "2026-07-22T14:20:56.9322776Z",
+      "bytes": 1060
+    },
+    {
+      "path": "prompt_system/AGENTS.md",
+      "sha256": "d5839a40f9fab27b2bfc8234633bc4945d891152e1376928d167eb0057f49c27",
+      "source_mtime_utc": "2026-08-01T11:43:55.6941177Z",
+      "bytes": 1943
+    },
+    {
+      "path": "prompt_system/art_direction/examples/midnight-field-notes.yaml",
+      "sha256": "d974fffac728ab19cfb4bb29daf4fe499ccd89f18e27e8527c9835203e6c4b81",
+      "source_mtime_utc": "2026-07-26T05:33:25.2105614Z",
+      "bytes": 5760
+    },
+    {
+      "path": "prompt_system/art_direction/README.md",
+      "sha256": "9d7cb28ea49af75b7458fe313b25ef19101744076c2b60c1c4f066140552d3c9",
+      "source_mtime_utc": "2026-07-26T05:23:23.4145805Z",
+      "bytes": 1709
+    },
+    {
+      "path": "prompt_system/art_direction/schema.yaml",
+      "sha256": "f3bf56620179115176f635719665811fe2619cfa26ba9dd7fe052bebf75d36db",
+      "source_mtime_utc": "2026-07-26T05:23:23.4105703Z",
+      "bytes": 4291
+    },
+    {
+      "path": "prompt_system/art_direction/template.yaml",
+      "sha256": "ab633442e3e8593422b9625c88f6c367a437b7a0923cedd2ec10a8d11b53841f",
+      "source_mtime_utc": "2026-07-26T05:23:23.4115736Z",
+      "bytes": 4026
+    },
+    {
+      "path": "prompt_system/assembly_template.txt",
+      "sha256": "bf54ca3a9b53dfd03fd67cdc9fd851f870195d9a0432e5267c2667189589f928",
+      "source_mtime_utc": "2026-06-11T14:32:26.0000000Z",
+      "bytes": 4353
+    },
+    {
+      "path": "prompt_system/demos/before-after-density-stress-demo.json",
+      "sha256": "49e7c60ee2331f3df90fa87f117c4c0b2440171a6fa68d96d316dd2271c66ccf",
+      "source_mtime_utc": "2026-07-11T20:02:01.0000000Z",
+      "bytes": 2774
+    },
+    {
+      "path": "prompt_system/demos/brand-editorial-layout-demo.json",
+      "sha256": "e5e7444b6640e8864eda7b4e5fcd064417c3fbfd1b58e8e05ba28bc75dd84c20",
+      "source_mtime_utc": "2026-07-11T18:19:52.0000000Z",
+      "bytes": 8188
+    },
+    {
+      "path": "prompt_system/demos/brand-editorial-triple-route-acceptance.json",
+      "sha256": "54439ee67269a691d54a32c140e309ccb1c9f78194b96fb7096dbe778c182a74",
+      "source_mtime_utc": "2026-07-14T08:13:56.0000000Z",
+      "bytes": 4939
+    },
+    {
+      "path": "prompt_system/demos/html-theme-lab-extensions.json",
+      "sha256": "e6652ead834385431f84d252d2b7466c81691a872cb8dc8962f8b849c8313f75",
+      "source_mtime_utc": "2026-08-05T16:22:37.3705863Z",
+      "bytes": 77024
+    },
+    {
+      "path": "prompt_system/demos/html-theme-lab.json",
+      "sha256": "8ce7334cc52a276a96b5a31852db6e57ec07d28c393797ea6f40939748aba493",
+      "source_mtime_utc": "2026-07-30T18:44:58.7312177Z",
+      "bytes": 26720
+    },
+    {
+      "path": "prompt_system/demos/product-signal-loop-engineering-demo.json",
+      "sha256": "3bdec3a04258feac627df2631385d7c08c036267d15bccb1491951cb496fc15f",
+      "source_mtime_utc": "2026-07-12T02:34:36.0000000Z",
+      "bytes": 8622
+    },
+    {
+      "path": "prompt_system/demos/renderer-case-catalog.json",
+      "sha256": "26320831203c712cc0282cf07de057d9ffd43a348b6c8097496919b951de7956",
+      "source_mtime_utc": "2026-07-13T23:37:08.0000000Z",
+      "bytes": 6436
+    },
+    {
+      "path": "prompt_system/design_elements/observed_elements.catalog.yaml",
+      "sha256": "d97b521e24e36cfe7553f2bbed1a597b5f2e4702a370a2b1ac93cfc33425b495",
+      "source_mtime_utc": "2026-08-07T19:44:03.8700343Z",
+      "bytes": 35149
+    },
+    {
+      "path": "prompt_system/design_elements/README.md",
+      "sha256": "89ad6bf7a5f3dbd501b651ae83134ed072552907245482a09f33efd6cdfc9902",
+      "source_mtime_utc": "2026-06-12T01:53:02.0000000Z",
+      "bytes": 1256
+    },
+    {
+      "path": "prompt_system/HANDOFF.md",
+      "sha256": "7128145f803a202ea9e3c3c0a399f2731b30e95ff6f65b6c0d163ec9f476c098",
+      "source_mtime_utc": "2026-08-05T14:02:05.9470504Z",
+      "bytes": 16694
+    },
+    {
+      "path": "prompt_system/layouts/before-after.yaml",
+      "sha256": "df5f385bf4e314a8442338875307e4ebd806845fc6d7b16bb06db21bc1ec2efe",
+      "source_mtime_utc": "2026-08-09T07:32:01.6915489Z",
+      "bytes": 1348
+    },
+    {
+      "path": "prompt_system/layouts/cards-1-plus-2.yaml",
+      "sha256": "7855d99bf99abfe564d932b8c0902551afd49cc65004c7090fd7b66e78b2d698",
+      "source_mtime_utc": "2026-08-09T07:32:01.6925492Z",
+      "bytes": 1235
+    },
+    {
+      "path": "prompt_system/layouts/cards-1-plus-3.yaml",
+      "sha256": "acdb43154cfe17f3275f1d61971b6fc5dd18c75e3c2b17b31c7455a24913877e",
+      "source_mtime_utc": "2026-08-09T07:32:01.6935496Z",
+      "bytes": 1178
+    },
+    {
+      "path": "prompt_system/layouts/cards-1-plus-4.yaml",
+      "sha256": "dcab3a6ca380ff0e2281b076474110a32d9da90763369e0849dd0e51dad859e0",
+      "source_mtime_utc": "2026-08-09T07:32:01.6945488Z",
+      "bytes": 1076
+    },
+    {
+      "path": "prompt_system/layouts/cards-1-plus-5.yaml",
+      "sha256": "f95950da4576800fda1879c2b7663c4b1dfbc7644a0449564b03c6d5a8fcc692",
+      "source_mtime_utc": "2026-08-09T07:32:01.6955487Z",
+      "bytes": 1152
+    },
+    {
+      "path": "prompt_system/layouts/cards-1-plus-6.yaml",
+      "sha256": "c503cc4862eedb7681f90a8213f8bfd993e26a8e43be47084e6b033c8343b49b",
+      "source_mtime_utc": "2026-08-09T07:32:01.6965489Z",
+      "bytes": 1110
+    },
+    {
+      "path": "prompt_system/layouts/cards-1-plus-8.yaml",
+      "sha256": "888f623ce8662b69f7db70e9eca8e48ef63f9d4afcea4b1bb0cfff9210e55a30",
+      "source_mtime_utc": "2026-08-09T07:32:01.6975488Z",
+      "bytes": 1305
+    },
+    {
+      "path": "prompt_system/layouts/chapter-fullbleed-overlay-title.yaml",
+      "sha256": "739ef495bfc0815e0d5be23bda541f5ad34f82f379acce247ec2891e966b1bd2",
+      "source_mtime_utc": "2026-08-09T07:32:01.6985491Z",
+      "bytes": 1719
+    },
+    {
+      "path": "prompt_system/layouts/chapter-number-bg-left-title-rule.yaml",
+      "sha256": "754b7c52b9d6131c019a138a0ca0a653a73ccec6a480ba9aac0d5bf3af7535cd",
+      "source_mtime_utc": "2026-08-09T07:32:01.6995487Z",
+      "bytes": 2480
+    },
+    {
+      "path": "prompt_system/layouts/chapter-opener.yaml",
+      "sha256": "ee6e9146520f7ced2afa96f38985a937eb0a93df84bde72b2d6e1775e6262975",
+      "source_mtime_utc": "2026-08-09T07:32:01.7005492Z",
+      "bytes": 1288
+    },
+    {
+      "path": "prompt_system/layouts/chapter-text-left-photo-brand.yaml",
+      "sha256": "085bd473b0d6fb6268bef62bf9be58b08389254019bebd81ce10f5ec3ffd73cd",
+      "source_mtime_utc": "2026-08-09T07:32:01.7015494Z",
+      "bytes": 1886
+    },
+    {
+      "path": "prompt_system/layouts/closing-photo-overlay-contact.yaml",
+      "sha256": "1250d5cfbe498397f0192d99abfb504325195680696999955ee44d156924499d",
+      "source_mtime_utc": "2026-08-09T07:32:01.7025489Z",
+      "bytes": 2121
+    },
+    {
+      "path": "prompt_system/layouts/comparison-table.yaml",
+      "sha256": "74daeac45bd3132725d897a5db80e32ef8d5ec4f53c62faa4faf27d40d6bd863",
+      "source_mtime_utc": "2026-08-09T07:32:01.7035497Z",
+      "bytes": 1128
+    },
+    {
+      "path": "prompt_system/layouts/cover-center-title-edge-decor.yaml",
+      "sha256": "b450fdcc516bc166a9f7b65b278a4381f41635b48d7328353285bf936a32e85a",
+      "source_mtime_utc": "2026-08-09T07:32:01.7045488Z",
+      "bytes": 2987
+    },
+    {
+      "path": "prompt_system/layouts/cover-lower-right-hero-left-rail.yaml",
+      "sha256": "af22e2d7cbf5a1871329868613bab2737e9d7d7d35014c3f2f3f53279c0da5d3",
+      "source_mtime_utc": "2026-08-09T07:32:01.7055495Z",
+      "bytes": 1684
+    },
+    {
+      "path": "prompt_system/layouts/cover-mid-right-column-meta-upper-left.yaml",
+      "sha256": "895fc40e09b0a377315355daea4d801f47935fa309118a1c127e9d7bf672b2fd",
+      "source_mtime_utc": "2026-08-09T07:32:01.7065498Z",
+      "bytes": 1718
+    },
+    {
+      "path": "prompt_system/layouts/cover-photo-frame-reverse.yaml",
+      "sha256": "f80fd8a8df1b46170f96bf17dc5d9b7cf64ab212b2a207dd9bbc1d23d7ff8841",
+      "source_mtime_utc": "2026-08-09T07:32:01.7075494Z",
+      "bytes": 3055
+    },
+    {
+      "path": "prompt_system/layouts/cover-photo-frame.yaml",
+      "sha256": "8086d31fa7090c778560855bcf33e066fe6e18514e3c2c6f4d8b5a3df5950f70",
+      "source_mtime_utc": "2026-08-09T07:32:01.7085491Z",
+      "bytes": 3049
+    },
+    {
+      "path": "prompt_system/layouts/cover-photo-overlay-block.yaml",
+      "sha256": "491f7167d1ddd8b41eac09bf5014c886837a81fb07290c4186940e2c7f4907aa",
+      "source_mtime_utc": "2026-08-09T07:32:01.7095490Z",
+      "bytes": 2651
+    },
+    {
+      "path": "prompt_system/layouts/cover-top-center-hero-bottom-center-support.yaml",
+      "sha256": "10c198dd03f1d72d51e4b65928c6aaee71580527583a0bc33e2f2c283a001089",
+      "source_mtime_utc": "2026-08-09T07:32:01.7105487Z",
+      "bytes": 1706
+    },
+    {
+      "path": "prompt_system/layouts/cover-upper-center-stack-meta-lower-right.yaml",
+      "sha256": "62fa3d8d0dd54fda0651e7506b3fd61c25a9fe4d940f40e66b1d55c9d9dcd47a",
+      "source_mtime_utc": "2026-08-09T07:32:01.7115493Z",
+      "bytes": 1683
+    },
+    {
+      "path": "prompt_system/layouts/cover-upper-right-hero-lower-left-support.yaml",
+      "sha256": "c78647380fa2095aa8230a98d84d5cfa05bbb948b0de273501283f9fdc67b6ef",
+      "source_mtime_utc": "2026-08-09T07:32:01.7125491Z",
+      "bytes": 1686
+    },
+    {
+      "path": "prompt_system/layouts/cycle-hub-6.yaml",
+      "sha256": "3dff3c8e338db82aacb9930359d88ac3eefa6ebe24f89051ea0f60f61c04a796",
+      "source_mtime_utc": "2026-08-16T14:36:11.7431708Z",
+      "bytes": 3113
+    },
+    {
+      "path": "prompt_system/layouts/dashboard-overview.yaml",
+      "sha256": "54c5ea65a900a21f1d025001c383b3e9b3a816e4c08f4e97b1b89651675c6353",
+      "source_mtime_utc": "2026-08-09T07:32:01.7145488Z",
+      "bytes": 1328
+    },
+    {
+      "path": "prompt_system/layouts/data-annotation.yaml",
+      "sha256": "6dbebcb29eb3bfdfb7c801bb3c6021178d6396ec05f485e9b6d1cbfba64654a2",
+      "source_mtime_utc": "2026-08-09T07:32:01.7155494Z",
+      "bytes": 1709
+    },
+    {
+      "path": "prompt_system/layouts/executive-bio.yaml",
+      "sha256": "4db77d79f044e587e97709e5d3fa9ef57ab7aa84dfe5099a5a19efa48ad50910",
+      "source_mtime_utc": "2026-08-09T07:32:01.7165493Z",
+      "bytes": 1557
+    },
+    {
+      "path": "prompt_system/layouts/flow-stages-3.yaml",
+      "sha256": "ffe33026f282b04928ec6393ed2e3a34e69b30783260e15ab083a7b6a7608fa6",
+      "source_mtime_utc": "2026-08-09T07:32:01.7185489Z",
+      "bytes": 1448
+    },
+    {
+      "path": "prompt_system/layouts/funnel-4.yaml",
+      "sha256": "8f75a3208ed96a7049decd349b45cd1f7e54028d35873cb19b16215b029b99e2",
+      "source_mtime_utc": "2026-08-09T07:32:01.7195490Z",
+      "bytes": 1686
+    },
+    {
+      "path": "prompt_system/layouts/gantt-roadmap.yaml",
+      "sha256": "0ab5df8f4ef61ffce825e050f56054b50b8deee5a15ac3bb0502e5b8bc742500",
+      "source_mtime_utc": "2026-08-09T07:32:01.7205492Z",
+      "bytes": 1166
+    },
+    {
+      "path": "prompt_system/layouts/heat-map.yaml",
+      "sha256": "456ce71f14fedee1fff7f2916071b5ee74d11e8b736679ba7b8a2cb23289b534",
+      "source_mtime_utc": "2026-08-09T07:32:01.7205492Z",
+      "bytes": 1590
+    },
+    {
+      "path": "prompt_system/layouts/hero-fullbleed-brand-footer.yaml",
+      "sha256": "b8331b34038a2fa86356a436024b19fb57d7574f86867ab1c3ca700c8f952c10",
+      "source_mtime_utc": "2026-08-09T07:32:01.7215491Z",
+      "bytes": 3182
+    },
+    {
+      "path": "prompt_system/layouts/hero-fullbleed.yaml",
+      "sha256": "47fa924f342c4f05cc20facdf64be5564a71512c26633bded9cbd499bae69630",
+      "source_mtime_utc": "2026-08-09T07:32:01.7225489Z",
+      "bytes": 2725
+    },
+    {
+      "path": "prompt_system/layouts/highlight-callout.yaml",
+      "sha256": "4c4280e590380290c5fc84f686798eff8884a28c7560aa95ab3f60e89653db77",
+      "source_mtime_utc": "2026-08-09T07:32:01.7235489Z",
+      "bytes": 1650
+    },
+    {
+      "path": "prompt_system/layouts/icon-grid-6.yaml",
+      "sha256": "f2c7e46f5e39d7a82d0030aeab81feb805519431325bc76f73b45944fa2602ac",
+      "source_mtime_utc": "2026-08-09T07:32:01.7255492Z",
+      "bytes": 1715
+    },
+    {
+      "path": "prompt_system/layouts/infographic-stage.yaml",
+      "sha256": "21c9254e44713d7cb61fa663bb6b758854aa2bb5a7430878e38f6379f3d396a2",
+      "source_mtime_utc": "2026-08-09T09:46:55.5865928Z",
+      "bytes": 2300
+    },
+    {
+      "path": "prompt_system/layouts/kpi-scorecards.yaml",
+      "sha256": "aea243130c66157bc9ab64a3d3a6aa22d4ed864e781465cd07dc55bc224f8097",
+      "source_mtime_utc": "2026-08-09T07:32:01.7255492Z",
+      "bytes": 1171
+    },
+    {
+      "path": "prompt_system/layouts/map-region.yaml",
+      "sha256": "ad60759cf9c7284ebb83bc2737d00b72a7883c0cc4cdfc07c24c63c1715deb7c",
+      "source_mtime_utc": "2026-08-09T07:32:01.7265484Z",
+      "bytes": 1575
+    },
+    {
+      "path": "prompt_system/layouts/map-spotlight.yaml",
+      "sha256": "f7f689df3f890a90efb4cb13f64e557e98b609fb2a96a85c2e21c651677476a1",
+      "source_mtime_utc": "2026-08-09T07:32:01.7275487Z",
+      "bytes": 1575
+    },
+    {
+      "path": "prompt_system/layouts/matrix-4quadrant.yaml",
+      "sha256": "3a7547374fc4c0b52d47a69afa9b95ba7b950993bbe655d936e566f76574c1cd",
+      "source_mtime_utc": "2026-08-09T07:32:01.7295494Z",
+      "bytes": 1750
+    },
+    {
+      "path": "prompt_system/layouts/multi-line-chart.yaml",
+      "sha256": "8b39468a48842c215e6149a419c05d43ca7efc68c99e598bad749b1a3d7f29b0",
+      "source_mtime_utc": "2026-08-09T07:32:01.7305490Z",
+      "bytes": 1644
+    },
+    {
+      "path": "prompt_system/layouts/org-chart.yaml",
+      "sha256": "762a51154edf7e38d54204faf87a8b8f68180eeade3bdde62d5f9b68d3242f98",
+      "source_mtime_utc": "2026-08-09T07:32:01.7315491Z",
+      "bytes": 1881
+    },
+    {
+      "path": "prompt_system/layouts/people-3.yaml",
+      "sha256": "d53f49019ae8171cdfa89b0ea4273a0eff612ba320f82697bfaf7ad110ab15dd",
+      "source_mtime_utc": "2026-08-09T07:32:01.7325494Z",
+      "bytes": 1613
+    },
+    {
+      "path": "prompt_system/layouts/photo-left-overlay-title-right.yaml",
+      "sha256": "faa3517b8b337a06cec2d4a5c510aa049ae17e5c680e42bf81bce87e41cc3e48",
+      "source_mtime_utc": "2026-08-09T07:32:01.7335496Z",
+      "bytes": 1820
+    },
+    {
+      "path": "prompt_system/layouts/pricing-3col.yaml",
+      "sha256": "f810a08f03f3360d443576c15ae09f926163c14e6622bcbb3e8745234810a32e",
+      "source_mtime_utc": "2026-08-09T07:32:01.7345494Z",
+      "bytes": 1636
+    },
+    {
+      "path": "prompt_system/layouts/process-flow.yaml",
+      "sha256": "aa4519b08a5b62f013e6db5179a4c1ddc852adb4ac067bd7fbed954932b57d0d",
+      "source_mtime_utc": "2026-08-09T07:32:01.7355488Z",
+      "bytes": 1467
+    },
+    {
+      "path": "prompt_system/layouts/pyramid.yaml",
+      "sha256": "6b3b1f53fe546268836fefda790584372845bd99ab554179cd989e2f44880cf7",
+      "source_mtime_utc": "2026-08-09T07:32:01.7365492Z",
+      "bytes": 4247
+    },
+    {
+      "path": "prompt_system/layouts/quote-attribution-3.yaml",
+      "sha256": "88fcaf3c8a3ccf873787c0c6c0e71221d3472a6dd7bb0c2f09cd8f4baa2d73dc",
+      "source_mtime_utc": "2026-08-09T07:32:01.7375494Z",
+      "bytes": 1516
+    },
+    {
+      "path": "prompt_system/layouts/quote-focus.yaml",
+      "sha256": "cbfa9da373263b8aacca7ad6973f63913b96b9b0a259c18e8d1cdf1373ad4215",
+      "source_mtime_utc": "2026-08-09T07:32:01.7385494Z",
+      "bytes": 952
+    },
+    {
+      "path": "prompt_system/layouts/radar-chart.yaml",
+      "sha256": "9ebc97387382d49ca4e03c84e96d08c90d0255a1d683cbcb09f4464976edc8a0",
+      "source_mtime_utc": "2026-08-09T07:32:01.7395493Z",
+      "bytes": 1573
+    },
+    {
+      "path": "prompt_system/layouts/README.md",
+      "sha256": "fc3309e33f33b1859c91713fc493e855c7e36f1aa6c9016c53249c417d51482f",
+      "source_mtime_utc": "2026-08-09T07:39:27.3996168Z",
+      "bytes": 13776
+    },
+    {
+      "path": "prompt_system/layouts/recommendation-stack.yaml",
+      "sha256": "7b5e0730a7328a4bf7415ba078c07d99e74f7a123f9680363565ae4aa5a119dc",
+      "source_mtime_utc": "2026-08-09T07:32:01.7405487Z",
+      "bytes": 1410
+    },
+    {
+      "path": "prompt_system/layouts/split-comparison.yaml",
+      "sha256": "9889ed6b4a87f8f352159541dfd6b968968d4978426b6ea39fdcd66be1049ecc",
+      "source_mtime_utc": "2026-08-09T07:32:01.7415495Z",
+      "bytes": 1211
+    },
+    {
+      "path": "prompt_system/layouts/stats-3-row.yaml",
+      "sha256": "565c492db35475f02fdfe2b17c811306166c2c5f3072fe6a0bbae77b3fb57b5b",
+      "source_mtime_utc": "2026-08-09T07:32:01.7425489Z",
+      "bytes": 1652
+    },
+    {
+      "path": "prompt_system/layouts/strategic-priorities.yaml",
+      "sha256": "4c74a650d69c9a0a73e0eba55add76510419d4db4d45ddcc4fd99048b1df8a81",
+      "source_mtime_utc": "2026-08-09T07:32:01.7435490Z",
+      "bytes": 1141
+    },
+    {
+      "path": "prompt_system/layouts/swot-quadrant.yaml",
+      "sha256": "842daad6c264f3e5e8fddba3d29e263cefba94033e4b557aa322f79c04ede685",
+      "source_mtime_utc": "2026-08-09T07:32:01.7445488Z",
+      "bytes": 1053
+    },
+    {
+      "path": "prompt_system/layouts/team-grid.yaml",
+      "sha256": "b114bb6f1a10a419cd9209c2816e33661ec3a29d1a8131c8392e9f5a89ac7d30",
+      "source_mtime_utc": "2026-08-09T07:32:01.7455486Z",
+      "bytes": 1936
+    },
+    {
+      "path": "prompt_system/layouts/testimonial-full.yaml",
+      "sha256": "302fe41c96bf3528d845f95df35355e7632df2d325f9d353d89e0502c123e4c1",
+      "source_mtime_utc": "2026-08-09T07:32:01.7475488Z",
+      "bytes": 1636
+    },
+    {
+      "path": "prompt_system/layouts/timeline-milestones.yaml",
+      "sha256": "bf8d51c6008d368048d95b5d0e7b314fd9e7347ff1b205fc649a5776dd2369ba",
+      "source_mtime_utc": "2026-08-09T07:32:01.7485495Z",
+      "bytes": 973
+    },
+    {
+      "path": "prompt_system/layouts/timeline-vertical.yaml",
+      "sha256": "2b7fabf02b2bbb4fff9f5377c642b3dc362c92c98fa1570db47bac0afadb2b24",
+      "source_mtime_utc": "2026-08-09T07:32:01.7495492Z",
+      "bytes": 1801
+    },
+    {
+      "path": "prompt_system/layouts/title-center.yaml",
+      "sha256": "de27ca4fafa0876cde37d09acc2de6b8f33285dd28cb45655b2df2594677e07f",
+      "source_mtime_utc": "2026-08-11T03:45:11.4565148Z",
+      "bytes": 839
+    },
+    {
+      "path": "prompt_system/layouts/toc-3-panel-left.yaml",
+      "sha256": "ecf038b24edd4ce264e4b1e23adefd80f05e458a4059417292541f044c8601b3",
+      "source_mtime_utc": "2026-08-09T07:32:01.7545493Z",
+      "bytes": 1387
+    },
+    {
+      "path": "prompt_system/layouts/toc-3-panel-rows.yaml",
+      "sha256": "8a10c76bdf74b99d5d472508e07d402c85022f0fd551cac2474beb1724f78322",
+      "source_mtime_utc": "2026-08-09T07:32:01.7575488Z",
+      "bytes": 1223
+    },
+    {
+      "path": "prompt_system/layouts/toc-3-vertical.yaml",
+      "sha256": "67d0ff58327c36f46478c5fabf936058c8159e7239810c1bb895ce1c4591563a",
+      "source_mtime_utc": "2026-08-09T07:32:01.7585489Z",
+      "bytes": 897
+    },
+    {
+      "path": "prompt_system/layouts/toc-3.yaml",
+      "sha256": "ae2dee71ef77f9ab2f90d82cf224075cb698f763b0c6dcc4addeac69266ccba6",
+      "source_mtime_utc": "2026-08-09T07:32:01.7595492Z",
+      "bytes": 1155
+    },
+    {
+      "path": "prompt_system/layouts/toc-4-image-left.yaml",
+      "sha256": "4b187c76aa3c0180e75b79f59d9a4629d0e8418e4a917d8489590b2ce7f19c33",
+      "source_mtime_utc": "2026-08-09T07:32:01.7605494Z",
+      "bytes": 1024
+    },
+    {
+      "path": "prompt_system/layouts/toc-4-panel-grid.yaml",
+      "sha256": "c54ab7865594758086fb977f41e3e0142aa9caf2741326b0bc7ab6f65374a20b",
+      "source_mtime_utc": "2026-08-09T07:32:01.7615495Z",
+      "bytes": 1308
+    },
+    {
+      "path": "prompt_system/layouts/toc-4-panel-rows.yaml",
+      "sha256": "857c290d68bfc539e0448dc7b34c64f124908c3e570ef74030c8dcf144d54960",
+      "source_mtime_utc": "2026-08-09T07:32:01.7635489Z",
+      "bytes": 1352
+    },
+    {
+      "path": "prompt_system/layouts/toc-4-vertical.yaml",
+      "sha256": "6d04694b1b3d01e51a10ddd96efa7e342f6db89d2010fcbc4aaa4b868c688d39",
+      "source_mtime_utc": "2026-08-09T07:32:01.7655489Z",
+      "bytes": 886
+    },
+    {
+      "path": "prompt_system/layouts/toc-4.yaml",
+      "sha256": "8edd5d05a5d1d9e3f4a4d49c43d9666faa3208db95886d1e581bca669256442a",
+      "source_mtime_utc": "2026-08-09T07:32:01.7665489Z",
+      "bytes": 866
+    },
+    {
+      "path": "prompt_system/layouts/toc-5-number-panel-left.yaml",
+      "sha256": "f9745597c59230122bf0c2f2cc06ee1786ee18ad1883f66848789a96f4e443c9",
+      "source_mtime_utc": "2026-08-09T07:32:01.7675493Z",
+      "bytes": 2505
+    },
+    {
+      "path": "prompt_system/layouts/toc-5-panel-grid.yaml",
+      "sha256": "240f54ad9ce7f450d86071dbaf086a2f7b1ec8c4ace9de86b7859895ae9dff79",
+      "source_mtime_utc": "2026-08-09T07:32:01.7685490Z",
+      "bytes": 1434
+    },
+    {
+      "path": "prompt_system/layouts/toc-5-panel-rows.yaml",
+      "sha256": "c3b1e30728a99d55886d9a23a5bb00f40f0b900c788583ace560fadf0c96b19a",
+      "source_mtime_utc": "2026-08-09T07:32:01.7695487Z",
+      "bytes": 1526
+    },
+    {
+      "path": "prompt_system/layouts/toc-5-vertical.yaml",
+      "sha256": "e4982d2081a8f3950322023c817ff047692212a64f853eff0fbe995e38e67bc3",
+      "source_mtime_utc": "2026-08-09T07:32:01.7695487Z",
+      "bytes": 971
+    },
+    {
+      "path": "prompt_system/layouts/toc-5.yaml",
+      "sha256": "26d3c6b75cd2bdfa27b0bb6e79484dd40515c46c83949e27d8b082e8ec8d4c39",
+      "source_mtime_utc": "2026-08-09T07:32:01.7705487Z",
+      "bytes": 983
+    },
+    {
+      "path": "prompt_system/layouts/toc-6-panel-rows.yaml",
+      "sha256": "ad7e08ed5ae2914667b0b197b502d7002fbe8d441fd8f691368ce03f023d4b12",
+      "source_mtime_utc": "2026-08-09T07:32:01.7715490Z",
+      "bytes": 1438
+    },
+    {
+      "path": "prompt_system/layouts/toc-6-vertical.yaml",
+      "sha256": "76f97c1545dc9cf3cfdeff8730e6ee0c5308d039a0988466e7b226ac46a488eb",
+      "source_mtime_utc": "2026-08-09T07:32:01.7725490Z",
+      "bytes": 1024
+    },
+    {
+      "path": "prompt_system/layouts/toc-6.yaml",
+      "sha256": "0e78a2ebfd5ef66284965d0c6fa7d2846409cc3eb33bd38060323397b2aa2792",
+      "source_mtime_utc": "2026-08-09T07:32:01.7735489Z",
+      "bytes": 953
+    },
+    {
+      "path": "prompt_system/layouts/toc-8.yaml",
+      "sha256": "68aa724d3d0dfb81bd51719aef1fca3d99bff5aaa98bf0c4cb42072048510ef6",
+      "source_mtime_utc": "2026-08-09T07:32:01.7745490Z",
+      "bytes": 1072
+    },
+    {
+      "path": "prompt_system/pptx_background_sets/brand-editorial-demo-content.json",
+      "sha256": "fe38836d1f97744721de804ff437a051574d14e287b35500c81539060f1e2b57",
+      "source_mtime_utc": "2026-07-12T20:24:46.0000000Z",
+      "bytes": 1267
+    },
+    {
+      "path": "prompt_system/pptx_background_sets/brand-editorial-formal-demo-content.json",
+      "sha256": "d13a4339be380c66add249bf04907896545b15f1a5b5786a361921186e5a6bd1",
+      "source_mtime_utc": "2026-07-15T14:00:17.0000000Z",
+      "bytes": 1926
+    },
+    {
+      "path": "prompt_system/pptx_background_sets/brand-editorial.yaml",
+      "sha256": "2bf7a52d8d7a8b13fe52be1fef1e6ec7290975da5bd0a8fb200af5ba1a1900e8",
+      "source_mtime_utc": "2026-07-15T14:13:56.0000000Z",
+      "bytes": 8254
+    },
+    {
+      "path": "prompt_system/pptx_background_sets/clean-tech-business-ai-adoption-content.json",
+      "sha256": "b1498953580d6bca8bc192c37afc7f546c20f4da2625abecca424e088a5c8a7a",
+      "source_mtime_utc": "2026-07-15T14:48:09.0000000Z",
+      "bytes": 1983
+    },
+    {
+      "path": "prompt_system/pptx_background_sets/clean-tech-business.yaml",
+      "sha256": "140e6bf61e6f4219bf15ace41d75f12cb2f0726166eabaca6c24921e86633650",
+      "source_mtime_utc": "2026-07-15T14:48:09.0000000Z",
+      "bytes": 8840
+    },
+    {
+      "path": "prompt_system/presets/catalog.yaml",
+      "sha256": "4449788a15dee788fad6e63c6f28ed06e1bf2e3a2eda0e21f78509934b99df8f",
+      "source_mtime_utc": "2026-08-12T17:32:06.9130715Z",
+      "bytes": 14039
+    },
+    {
+      "path": "prompt_system/README.md",
+      "sha256": "205f22d93f7921a7e73c4878a837ca77b7c8b8a81db52fb5c7cb223e0829613e",
+      "source_mtime_utc": "2026-08-09T07:51:58.0207607Z",
+      "bytes": 5078
+    },
+    {
+      "path": "prompt_system/reference_assets/geometric-education-slide-01.png",
+      "sha256": "075c2ef410a0af7fe07594eb28ec07479a0d9d1b533db0368cfa3862ba8472fb",
+      "source_mtime_utc": "2026-06-11T18:08:32.0000000Z",
+      "bytes": 30748
+    },
+    {
+      "path": "prompt_system/reference_assets/sepia-retail-case-slide-15.jpg",
+      "sha256": "05be54ba3b5d9487006dc780b86daed775efdd11a7766bc99f4a0b819d3c15fd",
+      "source_mtime_utc": "2026-06-10T16:34:34.0000000Z",
+      "bytes": 388962
+    },
+    {
+      "path": "prompt_system/renderers/html/assembly-catalog.yaml",
+      "sha256": "c7a26b0666c79de69c6802179ea5ffb7c155fcdfead322e350292b0d0732503d",
+      "source_mtime_utc": "2026-08-12T17:34:36.7163965Z",
+      "bytes": 23923
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/custom-svg/moonlit-herbarium-atlas/moonlit-greenhouse-observatory.svg",
+      "sha256": "68169650bae748a62f41973d3d59b914bfbaaa76e7a1758b42316884557017e3",
+      "source_mtime_utc": "2026-07-25T19:42:00.1170143Z",
+      "bytes": 3936
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/custom-svg/moonlit-herbarium-atlas/moonlit-herbarium-frame.svg",
+      "sha256": "6acf4a2baf55731225d5ffd214854832444e5f3b68bf3245103de67a00927564",
+      "source_mtime_utc": "2026-07-25T19:42:00.1180189Z",
+      "bytes": 1250
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/custom-svg/restoration-blueprint-ledger/README.md",
+      "sha256": "b30382a155ffe04f2142cc262557c97ed907bd197a7056584d9849d4cf0a8c30",
+      "source_mtime_utc": "2026-07-24T15:22:33.8547222Z",
+      "bytes": 641
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/custom-svg/restoration-blueprint-ledger/restoration-heritage-block.svg",
+      "sha256": "cc81de8c9b0007b4043da68b5c381a1d8cbbb6bb49b490dd1b7c4a5910774f5d",
+      "source_mtime_utc": "2026-07-24T15:21:07.3514766Z",
+      "bytes": 5203
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/custom-svg/restoration-blueprint-ledger/restoration-perimeter.svg",
+      "sha256": "842f90d1b2520a99ff57b41373a71d0303cf4526ee057a8a6b4ac3c6b08fad83",
+      "source_mtime_utc": "2026-07-24T15:21:07.3524928Z",
+      "bytes": 2777
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/custom-svg/restoration-blueprint-ledger/restoration-tools-study.svg",
+      "sha256": "a2faace68b36bcf6a15fcfa4d6ab7388a5272da214a26700a6fd1adc1e47e685",
+      "source_mtime_utc": "2026-07-24T15:21:07.3544964Z",
+      "bytes": 3282
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/external/moonlit-herbarium-atlas/matricaria-chamomilla-koehler-plate-64.jpg",
+      "sha256": "6a8141d3e3fd349b3c7fe8c9eda468361b646b6e473d0ab29797f4504960c6de",
+      "source_mtime_utc": "2026-07-25T20:39:43.2453391Z",
+      "bytes": 1366109
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/open-source-svg/illlustrations-co/building.svg",
+      "sha256": "aba433fcccf0c8c4715ed303baed8e7d0a372d72aa43734f671747cb38126a0a",
+      "source_mtime_utc": "2026-07-24T14:39:06.8532084Z",
+      "bytes": 31418
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/open-source-svg/illlustrations-co/LICENSE",
+      "sha256": "99f10e090caf56a75b4b183fa90ba95d11190a6c5a19ea29881699696d96e5b9",
+      "source_mtime_utc": "2026-07-24T14:44:58.1350656Z",
+      "bytes": 1063
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/open-source-svg/illlustrations-co/restoration-building.svg",
+      "sha256": "327afb8fefb38bd6e039a91561e298662bbc7bd8738bdc1c09ded7ea9166e203",
+      "source_mtime_utc": "2026-07-24T14:51:02.6477552Z",
+      "bytes": 31358
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/open-source-svg/illlustrations-co/restoration-toolbox.svg",
+      "sha256": "ef07426ae03c6f4cdf9e5a6039b4ca6c0e7f57961e9eb54699c11580a540d137",
+      "source_mtime_utc": "2026-07-24T14:51:02.6466841Z",
+      "bytes": 31855
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/open-source-svg/illlustrations-co/toolbox.svg",
+      "sha256": "349872cb701358d080fdf12d1444add1acf53c94626614145274c687f4fd8153",
+      "source_mtime_utc": "2026-07-24T14:39:08.0017261Z",
+      "bytes": 31925
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/open-source-svg/lukasz-adam/building.svg",
+      "sha256": "5c6b1486db7a5bb6f161c36a7a5bf073b697e60afe78c838721c7e6faca64e7c",
+      "source_mtime_utc": "2026-07-24T14:36:56.6790322Z",
+      "bytes": 17626
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/open-source-svg/lukasz-adam/city-landscape.svg",
+      "sha256": "1b392f7163b2ca5e6725fe77b9b88164c8979d1ebe699ec5f3b379869654e252",
+      "source_mtime_utc": "2026-07-24T14:36:57.6439103Z",
+      "bytes": 42493
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/open-source-svg/lukasz-adam/tools.svg",
+      "sha256": "ff71ca7bf74e4400ad53e84e1dfbf02825616109079586d0c08ca42a157e57e0",
+      "source_mtime_utc": "2026-07-24T14:36:57.0014473Z",
+      "bytes": 8521
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/open-source-svg/README.md",
+      "sha256": "98aff128cef218ee7dbdee415f28b3cc5e478c5a39f6e0dfc3ae1bceeb8d3e51",
+      "source_mtime_utc": "2026-07-25T10:52:05.9724869Z",
+      "bytes": 1404
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/open-source-svg/tabler-icons/building-community.svg",
+      "sha256": "bc0b74ab0d5f6ab82ffbbab5e1f751d23105606fd5bcac81ccf868130cc68c5f",
+      "source_mtime_utc": "2026-07-24T14:36:58.2110777Z",
+      "bytes": 595
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/open-source-svg/tabler-icons/clipboard-check.svg",
+      "sha256": "339eb6deb19f8933157abf194ab5d1915cc18d5eed463488f8a63c16117e3d23",
+      "source_mtime_utc": "2026-07-24T14:36:59.3948876Z",
+      "bytes": 561
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/open-source-svg/tabler-icons/hammer.svg",
+      "sha256": "1e92e9c7e705cdb02e87480b1223adc2e911c179ec657b5674ec63bd701a9c06",
+      "source_mtime_utc": "2026-07-24T14:36:59.0190085Z",
+      "bytes": 577
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/open-source-svg/tabler-icons/LICENSE",
+      "sha256": "b740a1d46122672da62833e97f7e7c8a13fa85cbc7445b584b297cc00dde93db",
+      "source_mtime_utc": "2026-07-24T14:36:59.9018651Z",
+      "bytes": 1073
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/open-source-svg/tabler-icons/ruler-measure.svg",
+      "sha256": "30cc2a46425acced8d57198435065ad020cc024a51d1d762ac6a0d249d74ebe7",
+      "source_mtime_utc": "2026-07-24T14:36:58.6983216Z",
+      "bytes": 710
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/open-source-svg/wikimedia-cc0/antique-corner-ornament.svg",
+      "sha256": "04d11daa778f9953179dc69b78d61f4589169e3f0553884e1b3a07f73c92dc14",
+      "source_mtime_utc": "2026-07-24T15:14:31.3767602Z",
+      "bytes": 6570
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/project-icons/asset.svg",
+      "sha256": "aa42c5245dae36babe45cb43e6256c870a389a057c24aea795785dbec3845db6",
+      "source_mtime_utc": "2026-08-12T10:25:02.7893409Z",
+      "bytes": 556
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/project-icons/export.svg",
+      "sha256": "33cbb2d655d3899a82e15fc96a554a8d7d36ab184e946d52cc11e6402402db70",
+      "source_mtime_utc": "2026-08-12T10:29:27.5723764Z",
+      "bytes": 510
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/project-icons/layout.svg",
+      "sha256": "7c3e3a4cce586522b49d8495a78d7df7dafc0f148df83f6ae8b376bdbc14346c",
+      "source_mtime_utc": "2026-08-12T10:25:02.5289343Z",
+      "bytes": 531
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/project-icons/manifest.yaml",
+      "sha256": "b870a20d1944d55c5570f1461e26a51bad8d4e2c2e9b64c05926e4f3e97bc47d",
+      "source_mtime_utc": "2026-08-12T10:29:37.6020955Z",
+      "bytes": 3005
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/project-icons/qa.svg",
+      "sha256": "ea99113243d23b6f799537d9c4364934ea3a0061d2ad2152183eec3fe6a67c01",
+      "source_mtime_utc": "2026-08-12T10:25:03.3290046Z",
+      "bytes": 533
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/project-icons/structure.svg",
+      "sha256": "c310a6734676e78e8b3dc2da50108981c96d350971de783d6ee0faa7f9a1b7c0",
+      "source_mtime_utc": "2026-08-12T10:25:02.0472949Z",
+      "bytes": 656
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/project-icons/theme.svg",
+      "sha256": "a84c39ae5aaf2532d67072a6df2a5b98901141d0e7cd17fdc76de36e835ffca1",
+      "source_mtime_utc": "2026-08-12T10:25:02.2928686Z",
+      "bytes": 720
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/ai-ops-core.svg",
+      "sha256": "a861be322007d41c80162f517a5e7e974353fb8184f1222b490781eec29b4fe7",
+      "source_mtime_utc": "2026-07-23T20:28:27.2755432Z",
+      "bytes": 3588
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/ai-ops-mesh.svg",
+      "sha256": "3064371460650f647ad4364c120a77e40bb347c7a471bed393ce2d7af8ecfe3d",
+      "source_mtime_utc": "2026-07-23T20:28:27.2766142Z",
+      "bytes": 3661
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/ai-ops-ribbon.svg",
+      "sha256": "088dd6eedb4307e8d83dbc7fd5b916e9e410cb116add26ae1465ead8d26cd5b1",
+      "source_mtime_utc": "2026-07-23T20:28:27.2766142Z",
+      "bytes": 2907
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/ai-signal-glow.svg",
+      "sha256": "1592ae0680a5a1193168ec85df87d7bc9af537e69dedb3264c9f5d112a3f6494",
+      "source_mtime_utc": "2026-07-23T18:58:09.1966120Z",
+      "bytes": 1506
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/brave-learning-landscape.svg",
+      "sha256": "86e181815f40660f99b005f81b58215d99d097ceb087ba9ccdad948477cb6c07",
+      "source_mtime_utc": "2026-07-23T20:29:44.5267443Z",
+      "bytes": 3595
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/brave-learning-path.svg",
+      "sha256": "f54de37dae7024125f9a01798d931215252eb1c61ae42e1dfb474bbf71cbd1b6",
+      "source_mtime_utc": "2026-07-23T18:58:09.1989510Z",
+      "bytes": 1235
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/brave-participation-path.svg",
+      "sha256": "826b7e99ed473b5e4b4b1a8c8acce85959f7459d099a7e54b272eb092bbd023a",
+      "source_mtime_utc": "2026-07-23T20:29:44.5267443Z",
+      "bytes": 3158
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/brave-reflection-garden.svg",
+      "sha256": "d8b995bfa61073bdb7ed734240e401cc3bc631bc2e966528e87efd159bb5b90e",
+      "source_mtime_utc": "2026-07-23T20:29:44.5279294Z",
+      "bytes": 3180
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/newsprint-fiber.svg",
+      "sha256": "a5b19ffdd1bccbba5b2f1d480fa5e8792f19fc41237cdf34c0c192b2dc9887e6",
+      "source_mtime_utc": "2026-07-23T18:58:09.1976156Z",
+      "bytes": 1207
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/newsroom-frontpage.svg",
+      "sha256": "9217fd018e06e2ced80fab8e0cf2bc9ba97d9aa10c4f20eadad90e143d091b23",
+      "source_mtime_utc": "2026-07-23T20:25:59.5656375Z",
+      "bytes": 3031
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/newsroom-halftone.svg",
+      "sha256": "5cc955d6f8fb0a1c268233faa4d9a95d219eb8cc1fbb0f2c4734c3b22844c17d",
+      "source_mtime_utc": "2026-07-23T20:25:59.5666337Z",
+      "bytes": 2404
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/newsroom-proofdesk.svg",
+      "sha256": "bc2a54e40fb38a2d9892d2e6e575a89a7429775b21bd155efd6ddd9b43b31a00",
+      "source_mtime_utc": "2026-07-23T20:25:59.5666337Z",
+      "bytes": 2796
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/restoration-facade.svg",
+      "sha256": "9573acaddad688482b1e47784bd58875052e400d62577ac9f8d9d43544486a0a",
+      "source_mtime_utc": "2026-07-23T20:27:09.8092330Z",
+      "bytes": 3343
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/restoration-frame-curves.svg",
+      "sha256": "97a0d5f029a839deaee9e37b07f67456b8f55f799b7ae68fe13aaacfc8c1156b",
+      "source_mtime_utc": "2026-07-25T18:18:47.8158091Z",
+      "bytes": 670
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/restoration-frame-lines.svg",
+      "sha256": "36c7d6865cb5b889151afa1078cac33c47aaeddef6919bdf0691ef8dc4261a0b",
+      "source_mtime_utc": "2026-07-25T18:18:47.8148066Z",
+      "bytes": 425
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/restoration-material.svg",
+      "sha256": "a4be18654ccf3dd2a13ab3ee01a73c728ca5001e0d2e142c70beb24f5db049b7",
+      "source_mtime_utc": "2026-07-23T20:27:09.8105211Z",
+      "bytes": 2973
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/restoration-plan.svg",
+      "sha256": "4ebb2a4f508af84220736867ad73c5b582c4a63b0b7795bc1a540053076b0cc8",
+      "source_mtime_utc": "2026-07-23T20:27:09.8105211Z",
+      "bytes": 2712
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/signal-atlas-hero.svg",
+      "sha256": "ac9da4936050c67c905bb321c1898962f8400200507ba9157b0c83eeb1b17557",
+      "source_mtime_utc": "2026-07-23T20:24:53.3384135Z",
+      "bytes": 4176
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/signal-atlas-junction.svg",
+      "sha256": "97909a06880e1fafb8adf5f90fad8272bfcb45fbe6b8c172e775f1fbac65186d",
+      "source_mtime_utc": "2026-07-23T20:24:53.3384135Z",
+      "bytes": 3227
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/signal-atlas-ribbon.svg",
+      "sha256": "72d4c00cffc00ccf36b11a7edf89d76af5974e70939afd5ecd9a85e0c9e3733b",
+      "source_mtime_utc": "2026-07-23T20:24:53.3398824Z",
+      "bytes": 2770
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/signal-route-margin-a.svg",
+      "sha256": "06dcc85c46a919bc04aea5002249befcf08d7e3c9fb08c637ff265ebc1516a93",
+      "source_mtime_utc": "2026-07-23T18:58:09.1989510Z",
+      "bytes": 1146
+    },
+    {
+      "path": "prompt_system/renderers/html/assets/theme-lab-decor/signal-route-margin-b.svg",
+      "sha256": "c1e3dcfd0ea12816b525521df2e2d9b4625fe73bd448f0271aad10a0bc6e342d",
+      "source_mtime_utc": "2026-07-23T18:58:09.1989510Z",
+      "bytes": 1154
+    },
+    {
+      "path": "prompt_system/renderers/html/design-dialects.yaml",
+      "sha256": "d70d21381c36e50c8a2b337b8cd98a86036f0e2cb4d76b9e6dece3daeca1ada3",
+      "source_mtime_utc": "2026-08-03T18:42:34.0665503Z",
+      "bytes": 2762
+    },
+    {
+      "path": "prompt_system/renderers/html/design-method.yaml",
+      "sha256": "813869778331e8fb4afa41b1ae2e34df80c2102cfbd02e1d2c1744897567d9ed",
+      "source_mtime_utc": "2026-08-15T15:29:36.7251884Z",
+      "bytes": 29594
+    },
+    {
+      "path": "prompt_system/renderers/html/layout-catalog.yaml",
+      "sha256": "989fafe1cbe9443124485e4943773be7dfd142a50f6efe2d033229392ac3b629",
+      "source_mtime_utc": "2026-08-11T16:53:37.7944308Z",
+      "bytes": 6620
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/before-after.yaml",
+      "sha256": "0bbd198eb97eef258e19fdeb43be1d52019528ff9ebe3d7d00740c89cd39c75d",
+      "source_mtime_utc": "2026-08-09T07:39:55.9114111Z",
+      "bytes": 2341
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/cards-1-plus-2.yaml",
+      "sha256": "8bec48efe68482783cabe1afe0a2f7a5f72c59345f01ac313227d467a2d5152c",
+      "source_mtime_utc": "2026-08-09T07:39:55.9124136Z",
+      "bytes": 2293
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/cards-1-plus-3.yaml",
+      "sha256": "e9858f4ebf265a13dbf76bbd352e7a131044548d31e93cfc3996905ab7c74baa",
+      "source_mtime_utc": "2026-08-09T07:39:55.9124136Z",
+      "bytes": 2670
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/cards-1-plus-4.yaml",
+      "sha256": "4f18c2517ec5032655656a0ed31250402e4741ddd20f44361f650646b6831e2c",
+      "source_mtime_utc": "2026-08-09T07:39:55.9134128Z",
+      "bytes": 3047
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/cards-1-plus-5.yaml",
+      "sha256": "5db909c94045d8ceced766dde7a1d7918e121a3e94bb407f34b2d4ed3d9b8381",
+      "source_mtime_utc": "2026-08-09T07:39:55.9134128Z",
+      "bytes": 3424
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/cards-1-plus-6.yaml",
+      "sha256": "99b704d1201bddc29f00c7a248c3cf697a4c2451df78c124020d863de85f5650",
+      "source_mtime_utc": "2026-08-09T07:39:55.9134128Z",
+      "bytes": 3801
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/cards-1-plus-8.yaml",
+      "sha256": "75e4f1a4798c65f4be5e03c7476ab0110d0943e5e40797dd1ceb08523d0be288",
+      "source_mtime_utc": "2026-08-09T07:39:55.9144128Z",
+      "bytes": 4555
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/chapter-fullbleed-overlay-title.yaml",
+      "sha256": "03c51e76f0b14758fb6a6ccf0583fd410dc7b1619086c4f2b325652f5348190d",
+      "source_mtime_utc": "2026-08-09T07:39:55.9144128Z",
+      "bytes": 1788
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/chapter-number-bg-left-title-rule.yaml",
+      "sha256": "4ec9e2c9e455d8106fae976ee73d0429c0caaf4e44535998b68bee64577fa79c",
+      "source_mtime_utc": "2026-08-09T07:39:55.9144128Z",
+      "bytes": 3424
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/chapter-opener.yaml",
+      "sha256": "b5209d9c463e6b0286432a9289d369e250f5a049a40f6ad6b90d97a51797b8a4",
+      "source_mtime_utc": "2026-08-09T07:39:55.9154131Z",
+      "bytes": 2264
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/chapter-text-left-photo-brand.yaml",
+      "sha256": "559d32c9931cf61b3fcab8c6ef4ba42c8192c087d954b564422075a7560ae6bc",
+      "source_mtime_utc": "2026-08-09T07:39:55.9154131Z",
+      "bytes": 2553
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/closing-photo-overlay-contact.yaml",
+      "sha256": "b328ed24a41c0ccb6d54dc9f4c9e0c51dccaa9f2187d4e20f4fc87cc02c6173c",
+      "source_mtime_utc": "2026-08-09T07:39:55.9154131Z",
+      "bytes": 2161
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/comparison-table.yaml",
+      "sha256": "2ca3586a23adfe56a28e7e7503b70c7678fb01a5c2daeb7010f70f274c147f8f",
+      "source_mtime_utc": "2026-08-09T07:39:55.9164132Z",
+      "bytes": 2340
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/cover-center-title-edge-decor.yaml",
+      "sha256": "99eae6d1bd30ee9e1e8cb26d537625db78b8f4311eb7d58a54cde4042283e17c",
+      "source_mtime_utc": "2026-08-09T07:39:55.9164132Z",
+      "bytes": 2917
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/cover-lower-right-hero-left-rail.yaml",
+      "sha256": "0fa7c268577ec80bd247721fd507cdfae480d34fedda338712d7dad7cba9b0bb",
+      "source_mtime_utc": "2026-08-09T07:39:55.9164132Z",
+      "bytes": 2174
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/cover-mid-right-column-meta-upper-left.yaml",
+      "sha256": "6e50ee594dbfe3db7fa6d3b1834732828701dd5ec7844ff4e6fd3107ea006f3d",
+      "source_mtime_utc": "2026-08-09T07:39:55.9174127Z",
+      "bytes": 2258
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/cover-photo-frame-reverse.yaml",
+      "sha256": "50e341e86bfd7e87c9535e4b749401a713a3c2928c2af218000cbd0f5f783813",
+      "source_mtime_utc": "2026-08-09T07:39:55.9174127Z",
+      "bytes": 3247
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/cover-photo-frame.yaml",
+      "sha256": "78d7f3ede5e7739c5bedb3c1f13e18fdbb4992ecf5c421969a9a9c1c999ee425",
+      "source_mtime_utc": "2026-08-09T07:39:55.9174127Z",
+      "bytes": 3087
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/cover-photo-overlay-block.yaml",
+      "sha256": "68460e6f604419b4495be1d723b17a529e3be73a6728b785110bb9f746bfa249",
+      "source_mtime_utc": "2026-08-09T07:39:55.9184128Z",
+      "bytes": 1656
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/cover-top-center-hero-bottom-center-support.yaml",
+      "sha256": "3ece2f66c87f36f01868f3262b81ed4ed321a1beebfba73bec44b7a3f030d909",
+      "source_mtime_utc": "2026-08-09T07:39:55.9184128Z",
+      "bytes": 2328
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/cover-upper-center-stack-meta-lower-right.yaml",
+      "sha256": "846dd902ade1d54e7217709af783a95d39ab031165f65edabed84eb941c10991",
+      "source_mtime_utc": "2026-08-09T07:39:55.9184128Z",
+      "bytes": 2300
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/cover-upper-right-hero-lower-left-support.yaml",
+      "sha256": "bae527c7f6c7ccb65d3fc9cda50bb058ba7fb72c1bff36c7a6a214af7ba98508",
+      "source_mtime_utc": "2026-08-09T07:39:55.9194131Z",
+      "bytes": 2300
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/cycle-hub-6.yaml",
+      "sha256": "731d152cfe1308b84e710196b89717943d494a880130533da89052f5f4887c78",
+      "source_mtime_utc": "2026-08-16T14:38:03.6313927Z",
+      "bytes": 3363
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/dashboard-overview.yaml",
+      "sha256": "48d131e7f3165ae17a09d3498387d64775b12382e2ab2066b3a4bc93be255253",
+      "source_mtime_utc": "2026-08-09T07:39:55.9194131Z",
+      "bytes": 3134
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/data-annotation.yaml",
+      "sha256": "3a4c35fa235d50c5c2931b80e1c81d4c2009cfaf3cd24ef952e6b73284d207f8",
+      "source_mtime_utc": "2026-08-09T07:39:55.9204128Z",
+      "bytes": 2714
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/executive-bio.yaml",
+      "sha256": "df07e35cc2654038d49b51389389a6f36d07b6c86cdaf867bf36463280f75d2c",
+      "source_mtime_utc": "2026-08-09T07:39:55.9204128Z",
+      "bytes": 2613
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/flow-stages-3.yaml",
+      "sha256": "803fc6c20e35408ac8a452630f73126c410035e784517b28397c4deda8ab0eb3",
+      "source_mtime_utc": "2026-08-09T07:39:55.9204128Z",
+      "bytes": 3448
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/funnel-4.yaml",
+      "sha256": "2f97f2af30b87bec8b10b7d4a46edd84cd45f8b207c6cfc75d32f1b3f98758dc",
+      "source_mtime_utc": "2026-08-09T07:39:55.9214128Z",
+      "bytes": 2582
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/gantt-roadmap.yaml",
+      "sha256": "3f0605895e5c3118e8affbf916b373b8a9fdd24efff7b3c4858bfcaaa763fee8",
+      "source_mtime_utc": "2026-08-09T07:39:55.9214128Z",
+      "bytes": 3023
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/heat-map.yaml",
+      "sha256": "fd48441d5fda4a6d414dde4eb02cc56b056acb58c4dbd16b79a9c28166b1c730",
+      "source_mtime_utc": "2026-08-09T07:39:55.9214128Z",
+      "bytes": 2189
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/hero-fullbleed-brand-footer.yaml",
+      "sha256": "4ff5780d4903826d1d7910a9927f00465dee8fca0db925186d901cbdad93bc5a",
+      "source_mtime_utc": "2026-08-09T07:39:55.9224130Z",
+      "bytes": 2881
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/hero-fullbleed.yaml",
+      "sha256": "d874f8ec7ac153925a368e45bc2b69580ae4eef80b1e3bc9903b011886ac2f17",
+      "source_mtime_utc": "2026-08-09T07:39:55.9224130Z",
+      "bytes": 2647
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/highlight-callout.yaml",
+      "sha256": "546476a9e82cf7332dc12c85e5db40fb4b1363150f4dbaee29776d76b9c6748f",
+      "source_mtime_utc": "2026-08-09T07:39:55.9234132Z",
+      "bytes": 2769
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/icon-grid-6.yaml",
+      "sha256": "1b0f1af166006b8654d20a9c8fc498d307ff7733d9d26e38bc0376cebf4802ce",
+      "source_mtime_utc": "2026-08-09T07:39:55.9234132Z",
+      "bytes": 3351
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/infographic-stage.yaml",
+      "sha256": "4856fe7d499fe5aa4ae64fb1f917396d15a329973c75271c19e5c3b085bcba7c",
+      "source_mtime_utc": "2026-08-09T09:54:54.8637376Z",
+      "bytes": 3014
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/kpi-scorecards.yaml",
+      "sha256": "018864877755fac599854a8c6b21b6e99eadc74eb1700e820d97beb591c4a93b",
+      "source_mtime_utc": "2026-08-09T07:39:55.9234132Z",
+      "bytes": 2299
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/map-region.yaml",
+      "sha256": "8acb6a846237b733617281978ac3dc9f290dbb9f49a19839e548fe1723d8057b",
+      "source_mtime_utc": "2026-08-09T07:39:55.9244131Z",
+      "bytes": 2637
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/map-spotlight.yaml",
+      "sha256": "73541df3ca03592ecf2faefb737c16feab050ccbc63275d4cc162f0846c628b3",
+      "source_mtime_utc": "2026-08-09T07:39:55.9244131Z",
+      "bytes": 2679
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/matrix-4quadrant.yaml",
+      "sha256": "71e5fc3ec2e623a2fe4bc647a4bf08268d453167f6f8dfca410bc7c3363e2c6c",
+      "source_mtime_utc": "2026-08-09T07:39:55.9244131Z",
+      "bytes": 4621
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/multi-line-chart.yaml",
+      "sha256": "f41a7c2a24fc0ab61f85404b38505dfef3bd6b4e021478a336d7a2f7a6c6b59b",
+      "source_mtime_utc": "2026-08-09T07:39:55.9244131Z",
+      "bytes": 2690
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/org-chart.yaml",
+      "sha256": "b551491db70227c267b6ca08be92f8e7072d4cd0143298702d926a01bc018448",
+      "source_mtime_utc": "2026-08-09T07:39:55.9254130Z",
+      "bytes": 2952
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/people-3.yaml",
+      "sha256": "b938e093b448cd7874cf31d9ea80b43bb3f0497f38a84ec3c4ba222efcd5394d",
+      "source_mtime_utc": "2026-08-09T07:39:55.9254130Z",
+      "bytes": 2229
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/photo-left-overlay-title-right.yaml",
+      "sha256": "adcfdbe336d4bdbe08ece5d5c80a30c14aed7736d46b58114c2b8a96ed8cfa3e",
+      "source_mtime_utc": "2026-08-09T07:39:55.9264133Z",
+      "bytes": 2161
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/pricing-3col.yaml",
+      "sha256": "20fc8ccddaf0ffb46a4731e851e2f3f6b5129cae33fbafc9aedef3786d25c53b",
+      "source_mtime_utc": "2026-08-09T07:39:55.9264133Z",
+      "bytes": 2277
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/process-flow.yaml",
+      "sha256": "6db3f99dfba7e8728b3357072eb17e0189b0d955d74c6fc6098b933d27694478",
+      "source_mtime_utc": "2026-08-09T07:39:55.9264133Z",
+      "bytes": 2644
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/pyramid.yaml",
+      "sha256": "95c4aa79e0d3ba11601920084a87f88f229a8ac4b94cf409e41d5d14939ff3ef",
+      "source_mtime_utc": "2026-08-09T07:39:55.9274131Z",
+      "bytes": 3387
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/quote-attribution-3.yaml",
+      "sha256": "d5550a547a164371b0f49d2f169076454c267d6c06af5a3f65d0375a188b1df4",
+      "source_mtime_utc": "2026-08-09T07:39:55.9274131Z",
+      "bytes": 2389
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/quote-focus.yaml",
+      "sha256": "f42c27fedaaf4d7e8da6433e49051f909fc5ef8a4e22d734cbbc68f6e74720e3",
+      "source_mtime_utc": "2026-08-09T07:39:55.9284129Z",
+      "bytes": 1948
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/radar-chart.yaml",
+      "sha256": "630296798028e738c009a5c40d8c8f4297980a4666c8d70d0e1b296a1c719c1f",
+      "source_mtime_utc": "2026-08-09T07:39:55.9284129Z",
+      "bytes": 1885
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/recommendation-stack.yaml",
+      "sha256": "7d6d76ac2c853764531f279cf6da28d32915a696ac2906fdde101e53826f81dc",
+      "source_mtime_utc": "2026-08-09T07:39:55.9294129Z",
+      "bytes": 2425
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/split-comparison.yaml",
+      "sha256": "310cb44b5c13a09a92c1372110d11cddd4345bad1203996581a147a5705ec2ee",
+      "source_mtime_utc": "2026-08-09T07:39:55.9294129Z",
+      "bytes": 2726
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/stats-3-row.yaml",
+      "sha256": "b56906d07fdfe9e06f99003d0dbedebd909eacd646d58314c153e97ddef85502",
+      "source_mtime_utc": "2026-08-09T07:39:55.9294129Z",
+      "bytes": 2636
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/strategic-priorities.yaml",
+      "sha256": "0cbf7b8205d5d3f0151602a8f33f4d1a97e6282571ad91d5d1c28a3bc53bde52",
+      "source_mtime_utc": "2026-08-09T07:39:55.9304127Z",
+      "bytes": 2390
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/swot-quadrant.yaml",
+      "sha256": "13bbe76dca24b55cfe3892c41741437996577f400f881b9053e21b74368385ac",
+      "source_mtime_utc": "2026-08-09T07:39:55.9304127Z",
+      "bytes": 3058
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/team-grid.yaml",
+      "sha256": "d0ac7b571e7480403b46d4abd9561347435b30b391cd6701ab1866914d8c0593",
+      "source_mtime_utc": "2026-08-09T07:39:55.9304127Z",
+      "bytes": 3345
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/testimonial-full.yaml",
+      "sha256": "db6c3c504b0aafc7ce8d8b5151d95756521d23004f131592ff1ebb502baff96a",
+      "source_mtime_utc": "2026-08-09T07:39:55.9314129Z",
+      "bytes": 3070
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/timeline-milestones.yaml",
+      "sha256": "d148837c77974c3cb8a520e04600dcd4f12134e7fda91be6aca0c0a48edd4012",
+      "source_mtime_utc": "2026-08-09T07:39:55.9314129Z",
+      "bytes": 2371
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/timeline-vertical.yaml",
+      "sha256": "dbad82e9f539e630a562491e1fc15ac41b22b75fdb356ea31dafcaed4cf62131",
+      "source_mtime_utc": "2026-08-09T07:39:55.9314129Z",
+      "bytes": 3117
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/title-center.yaml",
+      "sha256": "5117eece15592f6619c5cff31cda290a83d448af20c9b2dc7457ff5d49befc15",
+      "source_mtime_utc": "2026-08-11T03:45:58.5551109Z",
+      "bytes": 1606
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/toc-3-panel-left.yaml",
+      "sha256": "43465be1a57e06acbb3ed72b8e77f559afc4fe975a754577d9e5b4ffde13a41c",
+      "source_mtime_utc": "2026-08-09T07:39:55.9334127Z",
+      "bytes": 2394
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/toc-3-panel-rows.yaml",
+      "sha256": "eb41b27cab799bfc290f9c144054e3dccc8ce0509d7d705f4b3b683ae2786330",
+      "source_mtime_utc": "2026-08-09T07:39:55.9344128Z",
+      "bytes": 2394
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/toc-3-vertical.yaml",
+      "sha256": "396aeddfe5f2de0d7d8c78ab736faaae820b866f21606b44ee0e1985d780d2e0",
+      "source_mtime_utc": "2026-08-09T07:39:55.9344128Z",
+      "bytes": 2320
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/toc-3.yaml",
+      "sha256": "24192a96d28b593ed53ea68572693c4f75880fc5913680f4b357afb2ac2de833",
+      "source_mtime_utc": "2026-08-09T07:39:55.9344128Z",
+      "bytes": 2185
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/toc-4-image-left.yaml",
+      "sha256": "89e3bf04267666ae37ae1e3b6451fa7afd33f77220b575b36b7495c7e3938b94",
+      "source_mtime_utc": "2026-08-09T07:39:55.9354126Z",
+      "bytes": 3118
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/toc-4-panel-grid.yaml",
+      "sha256": "740e01d872e3b2445f1931ddeb8a9c68975ab55b542c099d5b1610e5aeaced61",
+      "source_mtime_utc": "2026-08-09T07:39:55.9354126Z",
+      "bytes": 2778
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/toc-4-panel-rows.yaml",
+      "sha256": "31f18c0e26e91faa6c7889efd126db6e1e3b99019b922d6c9cd8ac93caf4fc75",
+      "source_mtime_utc": "2026-08-09T07:39:55.9354126Z",
+      "bytes": 2778
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/toc-4-vertical.yaml",
+      "sha256": "78a049358117c8c88ab1f5bf1203e724f295d72963a0c41d2dfdad5ecc1342bd",
+      "source_mtime_utc": "2026-08-09T07:39:55.9364127Z",
+      "bytes": 2700
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/toc-4.yaml",
+      "sha256": "b68ceb99b3312629271efe315d738fef6f8c7754ac2cf4c86209bed4f97b1dab",
+      "source_mtime_utc": "2026-08-09T07:39:55.9364127Z",
+      "bytes": 2547
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/toc-5-number-panel-left.yaml",
+      "sha256": "d66a17c40221a417cc33beda745dc9d1fd76697e8600367207b93826fb64ce5f",
+      "source_mtime_utc": "2026-08-09T07:39:55.9374130Z",
+      "bytes": 4869
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/toc-5-panel-grid.yaml",
+      "sha256": "c663c1ae402f35e78a90ddfc4be212c76c171813e16ff9582b944bc06a54ae67",
+      "source_mtime_utc": "2026-08-09T07:39:55.9374130Z",
+      "bytes": 3162
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/toc-5-panel-rows.yaml",
+      "sha256": "ba5aa9a1bda563914002f7fd72c0c0ec63a6db95ed000ff55e5d30b3bf78ade4",
+      "source_mtime_utc": "2026-08-09T07:39:55.9374130Z",
+      "bytes": 3162
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/toc-5-vertical.yaml",
+      "sha256": "c8912581f843b7ec3b252716d13715ae22d6086241ba1e03fc9e1fce0b3fb75a",
+      "source_mtime_utc": "2026-08-09T07:39:55.9384129Z",
+      "bytes": 3080
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/toc-5.yaml",
+      "sha256": "079dc5f91e04c42b0bc0a8d739cfcb7458c6a20fa22b4be4e2d8c254d4ab4613",
+      "source_mtime_utc": "2026-08-09T07:39:55.9384129Z",
+      "bytes": 2909
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/toc-6-panel-rows.yaml",
+      "sha256": "0e1eaae4189ca70c121c96193bb4f5b3ed1be14fce05f5e9374c9ef30686459c",
+      "source_mtime_utc": "2026-08-09T07:39:55.9394131Z",
+      "bytes": 3546
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/toc-6-vertical.yaml",
+      "sha256": "a25f882f873aced2f5bc95aabc27d95ff118dc9627dbb358b79a8f70a21f254d",
+      "source_mtime_utc": "2026-08-09T07:39:55.9394131Z",
+      "bytes": 3460
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/toc-6.yaml",
+      "sha256": "fb9512fee9208c6a1ffcac7d16b554a5c95cb82e44ce1f5b83023e1f769af916",
+      "source_mtime_utc": "2026-08-09T07:39:55.9394131Z",
+      "bytes": 3271
+    },
+    {
+      "path": "prompt_system/renderers/html/layouts/toc-8.yaml",
+      "sha256": "f8c5bb0b3a0e14d81abd6613a1ddb041e949fcd51ecd755633ec18a2ae29f753",
+      "source_mtime_utc": "2026-08-09T07:39:55.9404126Z",
+      "bytes": 3995
+    },
+    {
+      "path": "prompt_system/renderers/html/preset-themes.yaml",
+      "sha256": "f9c91409e7c6880b836d71f1b2ae2eb5e9ce08fc01fc0384a8da8c4ae9225642",
+      "source_mtime_utc": "2026-08-12T18:00:45.0970786Z",
+      "bytes": 41481
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/advocacy-network.yaml",
+      "sha256": "207fdca3985998e813b754e5752ec2d8866ca5967e9cac8c2e27af48e6f429c1",
+      "source_mtime_utc": "2026-07-11T10:57:34.6933731Z",
+      "bytes": 2162
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/blueprint-radial.yaml",
+      "sha256": "1986bf20aea01a142c9e96a2576a1b302b930b7326bce656670fce461e20c88e",
+      "source_mtime_utc": "2026-08-06T15:40:32.7097317Z",
+      "bytes": 2203
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/boardroom-premium.yaml",
+      "sha256": "4377ed5d19588425538dc9811b541b9fb30b68db663c65e1ffd88c1eaad92e50",
+      "source_mtime_utc": "2026-07-11T10:57:34.6933731Z",
+      "bytes": 2189
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/brand-activation.yaml",
+      "sha256": "aca01762ed585ba0a25411835fb266c53516117100b0726ccc964904b5926258",
+      "source_mtime_utc": "2026-07-11T10:57:34.6933731Z",
+      "bytes": 2003
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/brand-editorial.yaml",
+      "sha256": "e024e9d06ddd9b664fc369b8c8474c171d8696ef204f8b2f43f93123884fa380",
+      "source_mtime_utc": "2026-07-11T10:57:34.6933731Z",
+      "bytes": 2839
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/brutal-grunge.yaml",
+      "sha256": "4c0e97db445ae6bf1f51b5a46d84cdfc0943b8768c9ee4e012b9874b48dc3124",
+      "source_mtime_utc": "2026-07-11T10:57:34.6948789Z",
+      "bytes": 1959
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/clean-tech-business.yaml",
+      "sha256": "70f08bab58077f2eff486c761d1b97a6093228ff495ce9b4b6a6d7d1d23d2a23",
+      "source_mtime_utc": "2026-07-11T10:57:34.6948789Z",
+      "bytes": 2053
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/clinical-report.yaml",
+      "sha256": "f9a83aff516b55abef02cd1eea793a67c852306f26338cd357cf954bccd5d26a",
+      "source_mtime_utc": "2026-07-11T10:57:34.6958933Z",
+      "bytes": 2003
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/community-fundraising.yaml",
+      "sha256": "cbdf70451e978bda04313e0edcf388d8b0a321b31e7441733c6fb9141a63c926",
+      "source_mtime_utc": "2026-07-11T10:57:34.6958933Z",
+      "bytes": 2265
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/corporate-blue.yaml",
+      "sha256": "7d0204d2dffdb5f9180a6a52a4c276bbefcceb2e50f42bff9a162d2f2c2e4b64",
+      "source_mtime_utc": "2026-07-11T10:57:34.6958933Z",
+      "bytes": 2868
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/customer-lifecycle.yaml",
+      "sha256": "fb986ad9e5b074c6fdb1f4e240876f3594edfbd600ece47e48c0a03cd397eba2",
+      "source_mtime_utc": "2026-07-11T10:57:34.6968950Z",
+      "bytes": 2220
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/dark-circuit.yaml",
+      "sha256": "6e0b007211cb2d116349f37a322fbfbe763b06db25e4fca83055706c390e3e59",
+      "source_mtime_utc": "2026-07-11T10:57:34.6968950Z",
+      "bytes": 2771
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/ecosystem-civic.yaml",
+      "sha256": "eeb772d4ff8c55664660f6136368580f4189a1af77c59c5d46fb1a34216294f6",
+      "source_mtime_utc": "2026-07-11T10:57:34.6978953Z",
+      "bytes": 2148
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/enablement-operations.yaml",
+      "sha256": "f95e733e67358e683deb39272992a8f493df32c49ed85cddb600b43d14c25746",
+      "source_mtime_utc": "2026-07-11T10:57:34.6978953Z",
+      "bytes": 2273
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/executive-analytics.yaml",
+      "sha256": "144d87aa6f978a8cc6b0276047fcfbd17a2690c068f5b36e1ec29eeaf0b223ef",
+      "source_mtime_utc": "2026-07-11T10:57:34.6978953Z",
+      "bytes": 2234
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/facilitation-learning.yaml",
+      "sha256": "713c94c2ccba45b1e927e36a56509034a114b1906d62b9cf11283121dd21a4db",
+      "source_mtime_utc": "2026-07-11T10:57:34.6978953Z",
+      "bytes": 2108
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/festive-patterned.yaml",
+      "sha256": "9c043bfd03654832fbf19410bd53e450735ed859156e651d7565826ac99a0eb6",
+      "source_mtime_utc": "2026-07-11T10:57:34.6992579Z",
+      "bytes": 2022
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/grainy-editorial.yaml",
+      "sha256": "6393e42aa20e51e2d747eab123127b8f1460a3e4721962d4764cc00304c01beb",
+      "source_mtime_utc": "2026-07-11T10:57:34.6992579Z",
+      "bytes": 2010
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/impact-report.yaml",
+      "sha256": "cb1fb34b1da358aa3c5591765481bdf163bb3ee90a2293764bd4cf1b7de5bcf2",
+      "source_mtime_utc": "2026-07-11T10:57:34.7002611Z",
+      "bytes": 1955
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/lavender-media-kit.yaml",
+      "sha256": "902f3ab3312f1e1a16de5199ae6f1ec895fc4e0995b77095d02ffa30609c6c8c",
+      "source_mtime_utc": "2026-07-11T10:57:34.7002611Z",
+      "bytes": 2033
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/learning-community.yaml",
+      "sha256": "ff781c553e0fe373efc7a8d0f46b881a94f2861a5cacc90391af3f3f6d5263eb",
+      "source_mtime_utc": "2026-07-11T10:57:34.7002611Z",
+      "bytes": 2195
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/mission-governance.yaml",
+      "sha256": "742b877f7b9be3f3d0591415215a365ad574633662eec665eb3ab31bc09e5718",
+      "source_mtime_utc": "2026-07-11T10:57:34.7012640Z",
+      "bytes": 2226
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/monochrome-editorial.yaml",
+      "sha256": "37e3a67d1cbec79264ab143f6a04ae5ab8802f060e884dfb55fb6911f1aebdb2",
+      "source_mtime_utc": "2026-08-06T15:40:32.7117331Z",
+      "bytes": 2112
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/neo-brutalist-blocks.yaml",
+      "sha256": "25b6fb0580073baffc64f2c623b1cde7f6dcda77457598713f01703cc1182b9d",
+      "source_mtime_utc": "2026-08-06T15:40:32.7127318Z",
+      "bytes": 2267
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/operating-review.yaml",
+      "sha256": "9f9f992bf25094a87bd8fef3b7447fd1bded5ce3ba1073db1d1c85d939fc6809",
+      "source_mtime_utc": "2026-07-11T10:57:34.7012640Z",
+      "bytes": 2148
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/paper-collage-vintage.yaml",
+      "sha256": "030eacba798e09c47ef752212ef5b0305af286fd59ba6ace4d168084bd44a211",
+      "source_mtime_utc": "2026-07-11T11:22:36.4445798Z",
+      "bytes": 2094
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/product-strategy-signal.yaml",
+      "sha256": "b222b69ae681e93f448691aef8e61513e68441fbb643e16135dcc917a7a42c75",
+      "source_mtime_utc": "2026-07-11T10:57:34.7022639Z",
+      "bytes": 2295
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/quiet-enso.yaml",
+      "sha256": "f69368ff3bb942dd81b3319f8a5add431d22040121e81027a77a6b4bcfa5ebeb",
+      "source_mtime_utc": "2026-08-06T15:40:32.7127318Z",
+      "bytes": 1900
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/sales-conversion.yaml",
+      "sha256": "0776dd8203a1f4ad5c8f66a1c9f9d0b05e05871893fe288976764c5d6435e9c9",
+      "source_mtime_utc": "2026-07-11T10:57:34.7022639Z",
+      "bytes": 2167
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/soft-organic-education.yaml",
+      "sha256": "0980ac00dacac7b4c9d8fe1a4b68445c54e0ef560e010aeadeba58d195bc6bd4",
+      "source_mtime_utc": "2026-07-11T10:57:34.7022639Z",
+      "bytes": 2120
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/strategy-consulting.yaml",
+      "sha256": "ec73aa42664052f4928b125b906655a0b840c9308024ab73544c5ae50191308a",
+      "source_mtime_utc": "2026-07-11T10:57:34.7034288Z",
+      "bytes": 2240
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/teal-tech.yaml",
+      "sha256": "35e77be1b91f2326a05dbf79ce5dbfbc2d3ee30de128401f22b9dbfc059fa828",
+      "source_mtime_utc": "2026-07-11T10:57:34.7034288Z",
+      "bytes": 2710
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/tech-navy.yaml",
+      "sha256": "79013a5796e691258124a8c04c805c8f68b4dee0dfab876cffcb4119d64a401b",
+      "source_mtime_utc": "2026-08-05T14:06:34.2840384Z",
+      "bytes": 2239
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/warm-editorial-portfolio.yaml",
+      "sha256": "0fa3e3667b14793bf88e9020153c2e990421610ecb731b88ec5bccadc2f234ce",
+      "source_mtime_utc": "2026-07-11T10:57:34.7049343Z",
+      "bytes": 2176
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/workshop-human.yaml",
+      "sha256": "774fd7be5192af069ae6f196a8150623ed548d7d18187882378f0b39e6a399c6",
+      "source_mtime_utc": "2026-07-11T10:57:34.7049343Z",
+      "bytes": 1987
+    },
+    {
+      "path": "prompt_system/renderers/html/themes/y2k-chrome.yaml",
+      "sha256": "178ab9dfb8c958d6920535b2a996bf0dc5bb902af4e743d50b7c06c31d53deb8",
+      "source_mtime_utc": "2026-08-06T15:40:32.7137323Z",
+      "bytes": 2056
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/before-after.yaml",
+      "sha256": "f8790653259ebe77630cd3e0569fe06444cb5fe48d75d3b684329ba7c87ecd5f",
+      "source_mtime_utc": "2026-08-09T07:39:55.8789080Z",
+      "bytes": 2024
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/cards-1-plus-2.yaml",
+      "sha256": "4eeaee2408eaae1395be02303ef4878ec5afc332bf156095602a9ff3d59dbf76",
+      "source_mtime_utc": "2026-08-09T07:39:55.8799076Z",
+      "bytes": 1979
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/cards-1-plus-3.yaml",
+      "sha256": "9d6d097e7317edf0977d6ed5ced04770bfbadc12ceee8eb7761fa06cdca30aa7",
+      "source_mtime_utc": "2026-08-09T07:39:55.8799076Z",
+      "bytes": 2271
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/cards-1-plus-4.yaml",
+      "sha256": "c3fe1970be4956a3122f7ea9bc51a3b39e53d1f1fe275eae92de2edef5469dd8",
+      "source_mtime_utc": "2026-08-09T07:39:55.8799076Z",
+      "bytes": 2563
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/cards-1-plus-5.yaml",
+      "sha256": "d84705f8bf918505105435193cf4317562e5b168b27930cce8a66037b2297ec7",
+      "source_mtime_utc": "2026-08-09T07:39:55.8809078Z",
+      "bytes": 2855
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/cards-1-plus-6.yaml",
+      "sha256": "abe59a358c4094b114b8669238d42eeaf8c9a89352b962f952637299d8225005",
+      "source_mtime_utc": "2026-08-09T07:39:55.8809078Z",
+      "bytes": 3147
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/cards-1-plus-8.yaml",
+      "sha256": "5e271a040ea59040add2b031ea106bb0e7daa1e6ed2e8a0545c272d68adf2ebd",
+      "source_mtime_utc": "2026-08-09T07:39:55.8809078Z",
+      "bytes": 3731
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/chapter-fullbleed-overlay-title.yaml",
+      "sha256": "fccde3fffd0885385c9cffc106e0556cf5c55713b22711e4b095903d7e2e6bd6",
+      "source_mtime_utc": "2026-08-09T07:39:55.8819071Z",
+      "bytes": 1614
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/chapter-number-bg-left-title-rule.yaml",
+      "sha256": "937e8c8b312552d4cbcffa118b2fdc011acb4fc6004a77358999dce2aff7d2d5",
+      "source_mtime_utc": "2026-08-09T07:39:55.8819071Z",
+      "bytes": 3030
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/chapter-opener.yaml",
+      "sha256": "e8d162873f20ded12a5c042e5809e49c0d9b2c8fc62692da0d59feaa9f760c91",
+      "source_mtime_utc": "2026-08-09T07:39:55.8829077Z",
+      "bytes": 2010
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/chapter-text-left-photo-brand.yaml",
+      "sha256": "b37980d22d2d0b60bb7b66b3734ca25933208027d8a4448a21a7508733d32e78",
+      "source_mtime_utc": "2026-08-09T07:39:55.8829077Z",
+      "bytes": 2215
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/closing-photo-overlay-contact.yaml",
+      "sha256": "0e0b2cfd0a53d890cc75ebdc9ad10d3779e3c7f1bea0ef18ab90ec6fc7f7d5dc",
+      "source_mtime_utc": "2026-08-09T07:39:55.8829077Z",
+      "bytes": 1902
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/comparison-table.yaml",
+      "sha256": "9cf0a3c73824f065f7aab04d2283f4e8d7826387e7304dce98b6c13e54d0ab21",
+      "source_mtime_utc": "2026-08-09T07:39:55.8839078Z",
+      "bytes": 2059
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/cover-center-title-edge-decor.yaml",
+      "sha256": "a8b181af78e34f2024a0b63c014499932b09fb62b043d092b4956918182d935d",
+      "source_mtime_utc": "2026-08-09T07:39:55.8839078Z",
+      "bytes": 2586
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/cover-lower-right-hero-left-rail.yaml",
+      "sha256": "60fd08f84dff563f3fb910ac2629c32f63595f4d50cfb134a9a42cf799ebdfdc",
+      "source_mtime_utc": "2026-08-09T07:39:55.8839078Z",
+      "bytes": 1977
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/cover-mid-right-column-meta-upper-left.yaml",
+      "sha256": "c657f83342d65aa343bf8c177758939bf2d5c53c85522a81b9f83864b4a9a774",
+      "source_mtime_utc": "2026-08-09T07:39:55.8849078Z",
+      "bytes": 2061
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/cover-photo-frame-reverse.yaml",
+      "sha256": "926bc29ffc29c9fbc68a9965d8dfbdd071db5287c9f691bc32f13c184c95c634",
+      "source_mtime_utc": "2026-08-09T07:39:55.8849078Z",
+      "bytes": 2837
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/cover-photo-frame.yaml",
+      "sha256": "567555a0f1f446a9f87860fc42e373375920f4dd7367235fcfc3a763b44b9204",
+      "source_mtime_utc": "2026-08-09T07:39:55.8849078Z",
+      "bytes": 2677
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/cover-photo-overlay-block.yaml",
+      "sha256": "390b8861bbae0fc8438f34de4065ea8727ed485428676069e6036493e1101344",
+      "source_mtime_utc": "2026-08-09T07:39:55.8859077Z",
+      "bytes": 1514
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/cover-top-center-hero-bottom-center-support.yaml",
+      "sha256": "dc03ef15d7dfc051ea2f69748ae9104a26ea00cca12df40111bff33f8c12275b",
+      "source_mtime_utc": "2026-08-09T07:39:55.8859077Z",
+      "bytes": 2131
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/cover-upper-center-stack-meta-lower-right.yaml",
+      "sha256": "fb4002e9357610d27136e41449ce7857bc23ebf1391891d799703fc211e2b97b",
+      "source_mtime_utc": "2026-08-09T07:39:55.8859077Z",
+      "bytes": 2103
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/cover-upper-right-hero-lower-left-support.yaml",
+      "sha256": "09b3b53a9c368c0a0c9940076c6371dc16334892208d967fe0d35b9770da5bd3",
+      "source_mtime_utc": "2026-08-09T07:39:55.8869078Z",
+      "bytes": 2103
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/cycle-hub-6.yaml",
+      "sha256": "aa9032bf49859e000433ec716fc1f870adb638d77fcff47e2e86e95dd43a04ee",
+      "source_mtime_utc": "2026-08-16T14:38:03.6198816Z",
+      "bytes": 2764
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/dashboard-overview.yaml",
+      "sha256": "75fd6bf87d525319715a093ef2add53c4ccc8ecc046de8e6ba17f3cac00f5118",
+      "source_mtime_utc": "2026-08-09T07:39:55.8879077Z",
+      "bytes": 2686
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/data-annotation.yaml",
+      "sha256": "3498f1c5995b1220891f05f341bb9a2bf4774a098891e141bb0bea1ea90212ae",
+      "source_mtime_utc": "2026-08-09T07:39:55.8879077Z",
+      "bytes": 2320
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/executive-bio.yaml",
+      "sha256": "b3f3d3781c1731f76c3fde103c1094be23fbf26fca439032b8327fc698913750",
+      "source_mtime_utc": "2026-08-09T07:39:55.8879077Z",
+      "bytes": 2222
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/flow-stages-3.yaml",
+      "sha256": "8375cc14dcea9a3c3e8125aeadb083cd1cdffab6fa115049ccddc282ff8cd608",
+      "source_mtime_utc": "2026-08-09T07:39:55.8889077Z",
+      "bytes": 2963
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/funnel-4.yaml",
+      "sha256": "7656e9d1be305a100e190fe10cfeba5046531d9ebd0013509f72d81daf69d692",
+      "source_mtime_utc": "2026-08-09T07:39:55.8889077Z",
+      "bytes": 2153
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/gantt-roadmap.yaml",
+      "sha256": "1c32782392ba14999cf55835f6127138e0c202527e8f5104489dfd9511c7c2f5",
+      "source_mtime_utc": "2026-08-09T07:39:55.8889077Z",
+      "bytes": 2598
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/heat-map.yaml",
+      "sha256": "9311b8f63cb22fc9b0782f8e51726c874ba806651677a8ded4bce8e84bb98cac",
+      "source_mtime_utc": "2026-08-09T07:39:55.8889077Z",
+      "bytes": 1910
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/hero-fullbleed-brand-footer.yaml",
+      "sha256": "93244c9578a30e427b92fc64cdd8ecd397611f921a81750cadde67effa2e3e01",
+      "source_mtime_utc": "2026-08-09T07:39:55.8899078Z",
+      "bytes": 2550
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/hero-fullbleed.yaml",
+      "sha256": "ba978b0cb7f4ccbbcc6d328acff6660fd49d496f8ec2f5066dfa9f7e2a7a9df4",
+      "source_mtime_utc": "2026-08-09T07:39:55.8899078Z",
+      "bytes": 2316
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/highlight-callout.yaml",
+      "sha256": "a43034199249dcb741c27dd593cdbbdf2ab538cb6306940acfed6bcd56f463c3",
+      "source_mtime_utc": "2026-08-09T07:39:55.8899078Z",
+      "bytes": 2338
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/icon-grid-6.yaml",
+      "sha256": "e8a52f3de40cfeed4bd63f023e7cafce23d5deaf16c50a92ef9339e059d737a7",
+      "source_mtime_utc": "2026-08-09T07:39:55.8909077Z",
+      "bytes": 2752
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/infographic-stage.yaml",
+      "sha256": "26aec7e657d5fcdeed29308cf0d2951c4c3931431ad637af051235ffefa56a5a",
+      "source_mtime_utc": "2026-08-09T09:54:54.8567373Z",
+      "bytes": 2732
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/kpi-scorecards.yaml",
+      "sha256": "c8ea59bb8de018698cf126051d3facacddc653d90dfb217bd451aa0e39020256",
+      "source_mtime_utc": "2026-08-09T07:39:55.8909077Z",
+      "bytes": 1985
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/map-region.yaml",
+      "sha256": "f9ff70843c91f93725407500f4f2cc198f8fdd26646baffbeba200b8871f226c",
+      "source_mtime_utc": "2026-08-09T07:39:55.8909077Z",
+      "bytes": 2213
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/map-spotlight.yaml",
+      "sha256": "fa79764693e54f47db6c27dd602426103c5bf30b59cb5a42aec7e8d160d48e48",
+      "source_mtime_utc": "2026-08-09T07:39:55.8919077Z",
+      "bytes": 2255
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/matrix-4quadrant.yaml",
+      "sha256": "97e2f966a504f392e1cc50d18a7dc158e311fcda145ea02d7bcb1b0c3169f1fa",
+      "source_mtime_utc": "2026-08-09T07:39:55.8919077Z",
+      "bytes": 3788
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/multi-line-chart.yaml",
+      "sha256": "f20507d2f64faa243ef811c6fd48d011e5975beb4813af5dbc30055c12a45cab",
+      "source_mtime_utc": "2026-08-09T07:39:55.8929080Z",
+      "bytes": 2302
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/org-chart.yaml",
+      "sha256": "7e50de849e11c874787e9a95fdb46ecc2656e40f071c6556c93a289a23c042e4",
+      "source_mtime_utc": "2026-08-09T07:39:55.8929080Z",
+      "bytes": 2468
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/people-3.yaml",
+      "sha256": "c5f48d001b8a7bf26d084b6f45ac2deb78b91c40d407cf39a5f9fd9ce3288617",
+      "source_mtime_utc": "2026-08-09T07:39:55.8939084Z",
+      "bytes": 1885
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/photo-left-overlay-title-right.yaml",
+      "sha256": "6c39c9f750a662b2fb147201e19eee65053158c44069d728dd0e4967ba1cd5d6",
+      "source_mtime_utc": "2026-08-09T07:39:55.8939084Z",
+      "bytes": 1910
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/pricing-3col.yaml",
+      "sha256": "7ed9ffeef97257599a1022ada561898395f1e6f866ec050929ba73cec428a763",
+      "source_mtime_utc": "2026-08-09T07:39:55.8949096Z",
+      "bytes": 1930
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/process-flow.yaml",
+      "sha256": "04e016ea9605cbf3451076e45505a8068a4517c9b4982930b308bc74ffcaed2f",
+      "source_mtime_utc": "2026-08-09T07:39:55.8949096Z",
+      "bytes": 2359
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/pyramid.yaml",
+      "sha256": "dafc9ad8cf4c1823ca977e3cfa302c21214c6bc7c5dad0937560dac2253f80d6",
+      "source_mtime_utc": "2026-08-09T07:39:55.8949096Z",
+      "bytes": 2818
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/quote-attribution-3.yaml",
+      "sha256": "b413d2b2b56bfe79677de348f08f8665638c3e89544d55087bdf1ccdc0b1864f",
+      "source_mtime_utc": "2026-08-09T07:39:55.8959078Z",
+      "bytes": 2043
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/quote-focus.yaml",
+      "sha256": "b9cdf80969a526d233e3d2220da27f087e1ca4b607909ba00449f6f13cf7044a",
+      "source_mtime_utc": "2026-08-09T07:39:55.8959078Z",
+      "bytes": 1657
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/radar-chart.yaml",
+      "sha256": "1e4cfbd6ef02c7474252917b5fbe50b4784bf34ca405129a515d76e3938bd9b1",
+      "source_mtime_utc": "2026-08-09T07:39:55.8969108Z",
+      "bytes": 1631
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/recommendation-stack.yaml",
+      "sha256": "480a213860a0630246f9f6ffa5e0fd3dddb2f96979a2fa3c1a8aa24391dae15c",
+      "source_mtime_utc": "2026-08-09T07:39:55.8969108Z",
+      "bytes": 2111
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/split-comparison.yaml",
+      "sha256": "99685f5d2700a217bf6af34edc095bbbabf5fe5a905da80e46117b7784d850b4",
+      "source_mtime_utc": "2026-08-09T07:39:55.8969108Z",
+      "bytes": 2354
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/stats-3-row.yaml",
+      "sha256": "31ef6e37b7a20250c52641ce125d4c530094d67ffd8f7500ca72900f46f3413c",
+      "source_mtime_utc": "2026-08-09T07:39:55.8979100Z",
+      "bytes": 2207
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/strategic-priorities.yaml",
+      "sha256": "92a9459b364fd23bb397db4fabb88f04d3052fcc95bf07c43381177c7b398c51",
+      "source_mtime_utc": "2026-08-09T07:39:55.8979100Z",
+      "bytes": 2106
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/swot-quadrant.yaml",
+      "sha256": "5a9893b62e8034aa56b8738cc9c0e505be3dc63fa04379466e9d59972e8025db",
+      "source_mtime_utc": "2026-08-09T07:39:55.8989097Z",
+      "bytes": 2571
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/team-grid.yaml",
+      "sha256": "c31fdedc448c41276a92630b37515b1e401c0f3544553d23d82dfcbab9f72fbe",
+      "source_mtime_utc": "2026-08-09T07:39:55.8989097Z",
+      "bytes": 2746
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/testimonial-full.yaml",
+      "sha256": "c02a8d1b05fb09f179e2a3e9ffbc33f6f011221b1a3d76a59751c68334ac940c",
+      "source_mtime_utc": "2026-08-09T07:39:55.8999088Z",
+      "bytes": 2570
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/timeline-milestones.yaml",
+      "sha256": "93abac1c7c5a642dea8f3c94a2c25ad29e24e71e4a1470987aceff7e2d161b92",
+      "source_mtime_utc": "2026-08-09T07:39:55.8999088Z",
+      "bytes": 2086
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/timeline-vertical.yaml",
+      "sha256": "330e0c64873623b2df5fb5bbfc3ec9c2bcfb1d36e47fe2520411316675609e0b",
+      "source_mtime_utc": "2026-08-09T07:39:55.9009094Z",
+      "bytes": 2602
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/title-center.yaml",
+      "sha256": "149dffde679be4d89b3d27cb13468aea48b1ed95ae2591d5b73154d53b963180",
+      "source_mtime_utc": "2026-08-11T03:45:58.8524396Z",
+      "bytes": 1400
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/toc-3-panel-left.yaml",
+      "sha256": "6ed453becf716d1fb9d311730903c9d994de212c70f7335657a5258ec1199839",
+      "source_mtime_utc": "2026-08-09T07:39:55.9029097Z",
+      "bytes": 2024
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/toc-3-panel-rows.yaml",
+      "sha256": "f7bd7ca01aafd71261a08a984f70a5aeba18012960dc05b627399e41d566ce88",
+      "source_mtime_utc": "2026-08-09T07:39:55.9029097Z",
+      "bytes": 2024
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/toc-3-vertical.yaml",
+      "sha256": "8191874d4bbf471acd15d81175c71c69d73fe1111b1095be3922741a8d7c668d",
+      "source_mtime_utc": "2026-08-09T07:39:55.9039095Z",
+      "bytes": 1980
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/toc-3.yaml",
+      "sha256": "94e3e2901f0e4c9045a69f7672b5df057eb9e2027b8c7e4dcd533f1eca0aa456",
+      "source_mtime_utc": "2026-08-09T07:39:55.9039095Z",
+      "bytes": 1845
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/toc-4-image-left.yaml",
+      "sha256": "cfd1b8a29712e3f2829cfec8de649ce0708de574539db55fa077fd24ff51f59c",
+      "source_mtime_utc": "2026-08-09T07:39:55.9039095Z",
+      "bytes": 2614
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/toc-4-panel-grid.yaml",
+      "sha256": "ab88a6c49f11b729253132cf52e5b841b6ae35fb5b64459ed3e4bd32d1254e33",
+      "source_mtime_utc": "2026-08-09T07:39:55.9049097Z",
+      "bytes": 2323
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/toc-4-panel-rows.yaml",
+      "sha256": "e269c5e1ba1575f9b21932b7e33f75c9d4cebf4e6de4cbff66a1eb4e9a2abd89",
+      "source_mtime_utc": "2026-08-09T07:39:55.9049097Z",
+      "bytes": 2323
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/toc-4-vertical.yaml",
+      "sha256": "0049c08122b79910d9d348ac448d2f64eee0dd26d048c40db5083e9a581b7ada",
+      "source_mtime_utc": "2026-08-09T07:39:55.9049097Z",
+      "bytes": 2275
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/toc-4.yaml",
+      "sha256": "e7d9193a2bf4b27a9628b58fa0459e644b10722842433f9488a28904bb33c64f",
+      "source_mtime_utc": "2026-08-09T07:39:55.9059093Z",
+      "bytes": 2122
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/toc-5-number-panel-left.yaml",
+      "sha256": "a71ad4fe0950a0a98904d15b422ababe6be6e361a2553e5001c4810ffc7835e1",
+      "source_mtime_utc": "2026-08-09T07:39:55.9059093Z",
+      "bytes": 3989
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/toc-5-panel-grid.yaml",
+      "sha256": "1738459db8b7729c48c4c8d9f01f22292024ccd3fbafb7c4fb09773353416c4e",
+      "source_mtime_utc": "2026-08-09T07:39:55.9069097Z",
+      "bytes": 2622
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/toc-5-panel-rows.yaml",
+      "sha256": "20756554f8994fc83eb4c839e4a32d9241c363c8e3ec78fb47add5bb98f6226d",
+      "source_mtime_utc": "2026-08-09T07:39:55.9069097Z",
+      "bytes": 2622
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/toc-5-vertical.yaml",
+      "sha256": "1b09fbe578be95c1a2644c4e8feb77c59fd80bc957f04c686fac0b3dda56836e",
+      "source_mtime_utc": "2026-08-09T07:39:55.9069097Z",
+      "bytes": 2570
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/toc-5.yaml",
+      "sha256": "74976108dd9a2415a218d102a855f7c1ac565a579b21ca911042d1b383dd3a03",
+      "source_mtime_utc": "2026-08-09T07:39:55.9079094Z",
+      "bytes": 2399
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/toc-6-panel-rows.yaml",
+      "sha256": "2d807026b7e795a718b953caf524bee8a9d2efa45c715ccad6413f74b29e016f",
+      "source_mtime_utc": "2026-08-09T07:39:55.9079094Z",
+      "bytes": 2921
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/toc-6-vertical.yaml",
+      "sha256": "48aef6c5f2eb95229b401766282d75ee0d9f79c57fcf4656d6523088bf9d7340",
+      "source_mtime_utc": "2026-08-09T07:39:55.9089097Z",
+      "bytes": 2865
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/toc-6.yaml",
+      "sha256": "14731a650efd2b56ee9e6995210318602139f8ca848aca791848b2625fea1a34",
+      "source_mtime_utc": "2026-08-09T07:39:55.9089097Z",
+      "bytes": 2676
+    },
+    {
+      "path": "prompt_system/renderers/image2/layouts/toc-8.yaml",
+      "sha256": "f4a0455204cd575f8c3068eacdb4e2ebe0d346fc3d51cac95722c6effba3839d",
+      "source_mtime_utc": "2026-08-09T07:39:55.9089097Z",
+      "bytes": 3230
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/advocacy-network.yaml",
+      "sha256": "f52790241b40d07c1040d4a90559167674d4e4a37f68c98a2dee7a4e3a0d7d5d",
+      "source_mtime_utc": "2026-07-11T10:57:34.6479785Z",
+      "bytes": 1796
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/blueprint-radial.yaml",
+      "sha256": "6b4ad8793015eb178f9f31c7749d5b04c0e7c2b1bced314b129ae23aefed909f",
+      "source_mtime_utc": "2026-08-06T15:40:32.6997318Z",
+      "bytes": 1830
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/boardroom-premium.yaml",
+      "sha256": "827fb8629a5ccdc91b536bf322f48fd087d5582b7bcbcc15f8dc15c9041c7b38",
+      "source_mtime_utc": "2026-07-11T10:57:34.6489790Z",
+      "bytes": 1813
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/brand-activation.yaml",
+      "sha256": "aff004e0c744ad46120ee1ee189e25194e25fed7fd4b98729f23572f5856ad26",
+      "source_mtime_utc": "2026-07-11T10:57:34.6489790Z",
+      "bytes": 1618
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/brand-editorial.yaml",
+      "sha256": "a2080883a0d9d312bfe177e3feab6893700af36882db2ec108252fa132ef0d43",
+      "source_mtime_utc": "2026-07-11T10:57:34.6499785Z",
+      "bytes": 2543
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/brutal-grunge.yaml",
+      "sha256": "bba1fa3627b5d5a4b981059d1d804decc5ea0c4323191a093906865036c4dcb1",
+      "source_mtime_utc": "2026-07-11T10:57:34.6499785Z",
+      "bytes": 1596
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/clean-tech-business.yaml",
+      "sha256": "c5bbc7cdd4e93590ea50f59e735235fe51180e48bb5d7c000ff9664d3f2ae1ab",
+      "source_mtime_utc": "2026-07-11T10:57:34.6509989Z",
+      "bytes": 1648
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/clinical-report.yaml",
+      "sha256": "0f5cb6875581084876b429e99138ea48359a9f2628a1e267f23f8a8199a35142",
+      "source_mtime_utc": "2026-07-11T10:57:34.6509989Z",
+      "bytes": 1622
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/community-fundraising.yaml",
+      "sha256": "64da9d49368cdb7bf75e810cb21f1daa94cba23e4968f51c5762a52cbb0667ea",
+      "source_mtime_utc": "2026-07-11T10:57:34.6509989Z",
+      "bytes": 1869
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/corporate-blue.yaml",
+      "sha256": "50b6721c42ef790c73f519094abba28624bc52f1e5ffc9a8d75cffad0691b5b5",
+      "source_mtime_utc": "2026-07-11T10:57:34.6519982Z",
+      "bytes": 2584
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/customer-lifecycle.yaml",
+      "sha256": "621ec75417dcbaf4752b41187f189caada78c95849c17f80f2fe65812eff8011",
+      "source_mtime_utc": "2026-07-11T10:57:34.6519982Z",
+      "bytes": 1842
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/dark-circuit.yaml",
+      "sha256": "d6c96abe1b5ee98393692ee3bc8a0e29ca628f5f646d29fbe01bc036d6b3291a",
+      "source_mtime_utc": "2026-07-11T10:57:34.6519982Z",
+      "bytes": 2492
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/ecosystem-civic.yaml",
+      "sha256": "572db61f37d9b76a9bec32523ccfcadb57cd16fd31bad9d8b528c191d5bd77b2",
+      "source_mtime_utc": "2026-07-11T10:57:34.6532125Z",
+      "bytes": 1785
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/enablement-operations.yaml",
+      "sha256": "f4cac68732b352755487bf7d22b6c2ca0b05c9e483dbf5bcc897443bfcc7ee2a",
+      "source_mtime_utc": "2026-07-11T10:57:34.6532125Z",
+      "bytes": 1877
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/executive-analytics.yaml",
+      "sha256": "e3cbab437b7925f913cafb30033a575985e5a326f02921eb5effea8cc3af6531",
+      "source_mtime_utc": "2026-07-11T10:57:34.6532125Z",
+      "bytes": 1845
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/facilitation-learning.yaml",
+      "sha256": "bc24b7c205af890442bfd346b157961dc86f890228f2a092f0e815f62fe1408e",
+      "source_mtime_utc": "2026-07-11T10:57:34.6532125Z",
+      "bytes": 1692
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/festive-patterned.yaml",
+      "sha256": "2c1a32a5e32cd821ff1dbf20d55a05cc71557061e5912f5c84c1432557836b71",
+      "source_mtime_utc": "2026-07-11T10:57:34.6547186Z",
+      "bytes": 1626
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/grainy-editorial.yaml",
+      "sha256": "548ec0a7e993408d06fd675ce673e25483cb14b24c14059e091d8e04771d33df",
+      "source_mtime_utc": "2026-07-11T10:57:34.6547186Z",
+      "bytes": 1618
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/impact-report.yaml",
+      "sha256": "35c2d3d9b49bcff0784325969fab5f10758f2a6c77a025a2dafff7735c107127",
+      "source_mtime_utc": "2026-07-11T10:57:34.6557355Z",
+      "bytes": 1586
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/lavender-media-kit.yaml",
+      "sha256": "396e11c477a964d5e99f0d9934b48f3528e82dd380cf44611046e2b3e815dcdb",
+      "source_mtime_utc": "2026-07-11T10:57:34.6557355Z",
+      "bytes": 1636
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/learning-community.yaml",
+      "sha256": "f07ed31d4ab8bb77b8e4c75694b0a8191d13006a62005556941c287baa93fd27",
+      "source_mtime_utc": "2026-07-11T10:57:34.6557355Z",
+      "bytes": 1816
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/mission-governance.yaml",
+      "sha256": "6dab22c830fe5c28147a81afd8fca01c45c623fc44d29b30cc9d5fdce1ff8e74",
+      "source_mtime_utc": "2026-07-11T10:57:34.6568745Z",
+      "bytes": 1844
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/monochrome-editorial.yaml",
+      "sha256": "1ec32a3824c31910543f125dc1027acab3ab06bc4200a6c3a71b02af45300251",
+      "source_mtime_utc": "2026-08-06T15:40:32.7017320Z",
+      "bytes": 1698
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/neo-brutalist-blocks.yaml",
+      "sha256": "44412ed06d80165eeee135ef60f3dda806789c508cf7648b54fdcd4b9184d841",
+      "source_mtime_utc": "2026-08-06T15:40:32.7027328Z",
+      "bytes": 1874
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/operating-review.yaml",
+      "sha256": "3fbc4ba4adf069460b64b3dffa3aa98a573ee72356a01570bcb771c748ec2ad5",
+      "source_mtime_utc": "2026-07-11T10:57:34.6568745Z",
+      "bytes": 1782
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/paper-collage-vintage.yaml",
+      "sha256": "b76ace33be9dda885570953fe4996fd11e19abb39e63b78db2abe6dbff86481b",
+      "source_mtime_utc": "2026-07-11T11:22:36.4358575Z",
+      "bytes": 1676
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/product-strategy-signal.yaml",
+      "sha256": "b05205f621c0e17cddc8a4ea1455cd3c8b64b39e1deb56b8b2c3aa6096b638bd",
+      "source_mtime_utc": "2026-07-11T10:57:34.6578741Z",
+      "bytes": 1887
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/quiet-enso.yaml",
+      "sha256": "471d6cbe7e7ddbfc7434be0ec4d5f479c45145283bacdfd1804234b9b789727f",
+      "source_mtime_utc": "2026-08-06T15:40:32.7027328Z",
+      "bytes": 1548
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/sales-conversion.yaml",
+      "sha256": "4bc909028dd5fb87e9577d68f62a065e6007bb0ed852308a72cc42079ac25770",
+      "source_mtime_utc": "2026-07-11T10:57:34.6578741Z",
+      "bytes": 1798
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/soft-organic-education.yaml",
+      "sha256": "86f59911c1ac73714e93b247286edda9688fd798e61e5f10ceedfc0d84913698",
+      "source_mtime_utc": "2026-07-11T10:57:34.6578741Z",
+      "bytes": 1694
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/strategy-consulting.yaml",
+      "sha256": "9ca95ac99ae913bdbf79c0f080a61cfd1c1a37dacbe3b2d9c9c608a9c2e481be",
+      "source_mtime_utc": "2026-07-11T10:57:34.6591212Z",
+      "bytes": 1851
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/teal-tech.yaml",
+      "sha256": "dfddab379205f59707574c27f377d8129eb008799f655c74c42bd9ea62282e50",
+      "source_mtime_utc": "2026-07-11T10:57:34.6591212Z",
+      "bytes": 2453
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/tech-navy.yaml",
+      "sha256": "5e9fc60f3da851f5ec4c06d6b8b4e13489ff44075082a2f0eb834edc04317899",
+      "source_mtime_utc": "2026-08-05T14:06:34.2778115Z",
+      "bytes": 1888
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/warm-editorial-portfolio.yaml",
+      "sha256": "e633036e7f21706532ea5e5214118e7dd7c989abd0cf3e4bbf8f5db4c72e12d8",
+      "source_mtime_utc": "2026-07-11T10:57:34.0000000Z",
+      "bytes": 1738
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/workshop-human.yaml",
+      "sha256": "784e84276a04e0ba7ae782e62189724193925079de2c67282412a45748f901af",
+      "source_mtime_utc": "2026-07-11T10:57:34.6602521Z",
+      "bytes": 1614
+    },
+    {
+      "path": "prompt_system/renderers/image2/themes/y2k-chrome.yaml",
+      "sha256": "487cf83b7fb32ca319976ea092c9a2151c8dbdc9b9aa7146e83a689cb36b8736",
+      "source_mtime_utc": "2026-08-06T15:40:32.7037345Z",
+      "bytes": 1728
+    },
+    {
+      "path": "prompt_system/renderers/manifest.yaml",
+      "sha256": "99f790337b82af0aa84941f26049dfd9cdfdd0f3e8ac8298a103aa32e86ccdd8",
+      "source_mtime_utc": "2026-08-11T16:53:48.1033689Z",
+      "bytes": 2826
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/before-after.yaml",
+      "sha256": "053a21ed00cac90f16fbad3e89a36b83193a60a9572224d38663880ae36c900b",
+      "source_mtime_utc": "2026-08-09T07:39:55.9424130Z",
+      "bytes": 2614
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/cards-1-plus-2.yaml",
+      "sha256": "e8f8e4aed8ec60e65e5a75a0713b72761d1d4d36956e28650d0616d8728b1799",
+      "source_mtime_utc": "2026-08-09T07:39:55.9434129Z",
+      "bytes": 2568
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/cards-1-plus-3.yaml",
+      "sha256": "f60e4d2de94673ec5a4712f4c10e5f8f61d22412e5fb3c0c967438ff1ff7a509",
+      "source_mtime_utc": "2026-08-09T07:39:55.9434129Z",
+      "bytes": 2930
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/cards-1-plus-4.yaml",
+      "sha256": "6d578977fbcf26d9f12f532bf03ca87d55a7545dbea01fadbd7b3886bca6d11f",
+      "source_mtime_utc": "2026-08-09T07:39:55.9444129Z",
+      "bytes": 3292
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/cards-1-plus-5.yaml",
+      "sha256": "5effd0fcaef9ff3b5e94d50127f1d1c201d2d63747b56344cff198c9ce6a74d9",
+      "source_mtime_utc": "2026-08-09T07:39:55.9444129Z",
+      "bytes": 3654
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/cards-1-plus-6.yaml",
+      "sha256": "c7100999d347cc27c5583c0b147188f7bbd36d18924c111d240578e77a998e33",
+      "source_mtime_utc": "2026-08-09T07:39:55.9444129Z",
+      "bytes": 4016
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/cards-1-plus-8.yaml",
+      "sha256": "b28645e704193caa857802ec8624df85fe496e2009f8f526b6993cd577dac6c8",
+      "source_mtime_utc": "2026-08-09T07:39:55.9454128Z",
+      "bytes": 4740
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/chapter-fullbleed-overlay-title.yaml",
+      "sha256": "a5c53593f89013bddcf836865a2af423f203c8f16f292066970aa21a26561008",
+      "source_mtime_utc": "2026-08-09T07:39:55.9454128Z",
+      "bytes": 2076
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/chapter-number-bg-left-title-rule.yaml",
+      "sha256": "670964bf53dc8ea9f797a29eca1d635b30484f3be2f0c22130aa63806588c9a9",
+      "source_mtime_utc": "2026-08-09T07:39:55.9454128Z",
+      "bytes": 3794
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/chapter-opener.yaml",
+      "sha256": "2d0a4d456ffe374ca5758ef3830505d19931a1dc1bc945c17f25060add31fd67",
+      "source_mtime_utc": "2026-08-09T07:39:55.9464127Z",
+      "bytes": 2609
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/chapter-text-left-photo-brand.yaml",
+      "sha256": "44d67a5fd588ab15c8dc01802a50a95213ed5c85d5821b3e78d7bf834c1bb624",
+      "source_mtime_utc": "2026-08-09T07:39:55.9464127Z",
+      "bytes": 2810
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/closing-photo-overlay-contact.yaml",
+      "sha256": "78484a27106ba8ef0a33681817901619a7678f42151f6b8f222e969d34b7b0ab",
+      "source_mtime_utc": "2026-08-09T07:39:55.9464127Z",
+      "bytes": 2432
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/comparison-table.yaml",
+      "sha256": "46f9c29a8808b4211f6126282dac5830ccda38a5b435cefc0cfd163d515019bb",
+      "source_mtime_utc": "2026-08-09T07:39:55.9474129Z",
+      "bytes": 2647
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/cover-center-title-edge-decor.yaml",
+      "sha256": "4eaef21b1eb47943b52caffa08f3a89a4e9829d5d7d8d15b3e0cdf861b43e929",
+      "source_mtime_utc": "2026-08-09T07:39:55.9474129Z",
+      "bytes": 3255
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/cover-lower-right-hero-left-rail.yaml",
+      "sha256": "eebefe94dc55083f260622b8da1d75342559b5abbe87721bacae79171640617f",
+      "source_mtime_utc": "2026-08-09T07:39:55.9474129Z",
+      "bytes": 2510
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/cover-mid-right-column-meta-upper-left.yaml",
+      "sha256": "94b5fd14912c933d701c1973bfbff18a943b320483e930ca2569487f2f644f8b",
+      "source_mtime_utc": "2026-08-09T07:39:55.9484139Z",
+      "bytes": 2600
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/cover-photo-frame-reverse.yaml",
+      "sha256": "c7aafd946d63ded9be3c35bb56267beb68fdeab868fefd1592f70c03aa7423cf",
+      "source_mtime_utc": "2026-08-09T07:39:55.9484139Z",
+      "bytes": 3567
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/cover-photo-frame.yaml",
+      "sha256": "ff7301bb19558ead0518b516e8b0200b7d78ffb7f4dc883970f4cf7190664251",
+      "source_mtime_utc": "2026-08-09T07:39:55.9484139Z",
+      "bytes": 3399
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/cover-photo-overlay-block.yaml",
+      "sha256": "a35e6853e40f4a5c30902b39044a806c92c17cdb8967b2177e5b9d7238e306cc",
+      "source_mtime_utc": "2026-08-09T07:39:55.9494128Z",
+      "bytes": 1966
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/cover-top-center-hero-bottom-center-support.yaml",
+      "sha256": "c7a13067edba5aba7e372ed901f2da646e2170a362878fdcadd64aa97b09710b",
+      "source_mtime_utc": "2026-08-09T07:39:55.9494128Z",
+      "bytes": 2675
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/cover-upper-center-stack-meta-lower-right.yaml",
+      "sha256": "94afef440e56e70c9156a358a5019748a890eac61826df7e124c761f50248f22",
+      "source_mtime_utc": "2026-08-09T07:39:55.9494128Z",
+      "bytes": 2645
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/cover-upper-right-hero-lower-left-support.yaml",
+      "sha256": "e50bae194642500e42f9e1a49ea208b20fd443ab22a43dfe881c4b5f1f7f5b5a",
+      "source_mtime_utc": "2026-08-09T07:39:55.9504128Z",
+      "bytes": 2645
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/cycle-hub-6.yaml",
+      "sha256": "17fa638197d7283e97c352332b32dffb33af7fe48dee14fb0c1cc55680a007cf",
+      "source_mtime_utc": "2026-08-16T14:38:03.6453954Z",
+      "bytes": 3556
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/dashboard-overview.yaml",
+      "sha256": "64b9746baf79ee3132af38e8e0ec52ea8fb21eacaaab30fec22187c4c1eeddd4",
+      "source_mtime_utc": "2026-08-09T07:39:55.9514129Z",
+      "bytes": 3412
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/data-annotation.yaml",
+      "sha256": "29400bbaa1f4a325a24d6d11c6f37d3ae4356c40d1358257d60c6232455173c4",
+      "source_mtime_utc": "2026-08-09T07:39:55.9514129Z",
+      "bytes": 2969
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/executive-bio.yaml",
+      "sha256": "13f5795483b2f37ccd68762bb8f215fe717eb452331e7e5ddf163d296afad141",
+      "source_mtime_utc": "2026-08-09T07:39:55.9514129Z",
+      "bytes": 2875
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/flow-stages-3.yaml",
+      "sha256": "5fe36369796524aa43c4c3fdd657bad35e651e364bd57a8e5b17d6362fa6ab7e",
+      "source_mtime_utc": "2026-08-09T07:39:55.9524128Z",
+      "bytes": 3691
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/funnel-4.yaml",
+      "sha256": "443b47ee9a2dda6d141f0c7cd395d5df0f5a1a78466a22deb8caf9ded7d6a3fc",
+      "source_mtime_utc": "2026-08-09T07:39:55.9524128Z",
+      "bytes": 2802
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/gantt-roadmap.yaml",
+      "sha256": "8d9ddd3f14c47194cb3fa84aac55787e23610a882e451983c91143500e38fa39",
+      "source_mtime_utc": "2026-08-09T07:39:55.9524128Z",
+      "bytes": 3334
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/heat-map.yaml",
+      "sha256": "59612a93cd9aebd95c2b2ce51c0d0c6acda52c9ce50daa4f1c1d28d83ff02bf9",
+      "source_mtime_utc": "2026-08-09T07:39:55.9534128Z",
+      "bytes": 2486
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/hero-fullbleed-brand-footer.yaml",
+      "sha256": "af837ca77746417240598dbbe7151dcbdd62eaddbb6e35ad37008bab41408c88",
+      "source_mtime_utc": "2026-08-09T07:39:55.9534128Z",
+      "bytes": 3217
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/hero-fullbleed.yaml",
+      "sha256": "0a567ca0c73ad06c0c0e1fe00d0163d7dab524f459a0c49315863622d190e93c",
+      "source_mtime_utc": "2026-08-09T07:39:55.9534128Z",
+      "bytes": 2970
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/highlight-callout.yaml",
+      "sha256": "f2535a8fb43dd429d907fb25f359fa6aa24129e5b3dd09ced6e14b5fad42d5f0",
+      "source_mtime_utc": "2026-08-09T07:39:55.9544130Z",
+      "bytes": 2996
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/icon-grid-6.yaml",
+      "sha256": "eb1879590f303947f2e41b17a276239006211182171c39f803b39d399d49d03f",
+      "source_mtime_utc": "2026-08-09T07:39:55.9544130Z",
+      "bytes": 3544
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/infographic-stage.yaml",
+      "sha256": "91206c3de6e64499ec163999044843ceb3d0510a550e4d441274932e53e62768",
+      "source_mtime_utc": "2026-08-09T09:54:54.8700301Z",
+      "bytes": 3331
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/kpi-scorecards.yaml",
+      "sha256": "8300bb0a04fb714061aee6a2a523a6b347b3f10ac500dfa557a78ae6c60117d7",
+      "source_mtime_utc": "2026-08-09T07:39:55.9554128Z",
+      "bytes": 2560
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/map-region.yaml",
+      "sha256": "86d5de19a2c73a395b7e5f9de039ca732bc2ff5dba6896db878ed02f5780c1bc",
+      "source_mtime_utc": "2026-08-09T07:39:55.9554128Z",
+      "bytes": 2853
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/map-spotlight.yaml",
+      "sha256": "877f23b9e548624fa36b97c0eaa30125566d6171fcd38acb2b13cb96c1e35dbf",
+      "source_mtime_utc": "2026-08-09T07:39:55.9554128Z",
+      "bytes": 2898
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/matrix-4quadrant.yaml",
+      "sha256": "a9df0c8b63ee24918b8c0dd22e114589f7ab8c0772335bc58c9137133f6f3ac0",
+      "source_mtime_utc": "2026-08-09T07:39:55.9564132Z",
+      "bytes": 4807
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/multi-line-chart.yaml",
+      "sha256": "3d264658c66ad9c9e3f7a1a4857c75fdc495ae1cef8cc9e35dee2bb53f3075f9",
+      "source_mtime_utc": "2026-08-09T07:39:55.9564132Z",
+      "bytes": 2955
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/org-chart.yaml",
+      "sha256": "f4056c302ab5cd42968cf4467022b5fecd50569eb75cc8a04711ded71195e3e2",
+      "source_mtime_utc": "2026-08-09T07:39:55.9564132Z",
+      "bytes": 3192
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/people-3.yaml",
+      "sha256": "c917282c379a48251a100b2105545c53439950bb54243d93dad84aa06a2bc6b2",
+      "source_mtime_utc": "2026-08-09T07:39:55.9574134Z",
+      "bytes": 2464
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/photo-left-overlay-title-right.yaml",
+      "sha256": "d4700ff2c8420aff21dedc6f5f216aaaf4d6921e72a550b01b9f2d02d16bfabe",
+      "source_mtime_utc": "2026-08-09T07:39:55.9574134Z",
+      "bytes": 2436
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/pricing-3col.yaml",
+      "sha256": "fde18aaf12726caacec9ac159dfdc37fbd6d41a6c353ebfb59810a4f888292d8",
+      "source_mtime_utc": "2026-08-09T07:39:55.9574134Z",
+      "bytes": 2513
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/process-flow.yaml",
+      "sha256": "7fe2c78258e22207e0ed410a0a2567b986723722eac187a0be17748a9525a8e4",
+      "source_mtime_utc": "2026-08-09T07:39:55.9584130Z",
+      "bytes": 2950
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/pyramid.yaml",
+      "sha256": "c1bbcf4cf5817894286fbe9e73d9090eb284a2aa9ef75b033dcde4d43cd5c5b4",
+      "source_mtime_utc": "2026-08-09T07:39:55.9584130Z",
+      "bytes": 3610
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/quote-attribution-3.yaml",
+      "sha256": "202fac7b75c808def742989a55392c6cb96fb15615001349200408ea922e4ab1",
+      "source_mtime_utc": "2026-08-09T07:39:55.9594130Z",
+      "bytes": 2633
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/quote-focus.yaml",
+      "sha256": "847e451bdb600b1467b6ad3a98395dee3d542e524948c55bf1546eac246dd777",
+      "source_mtime_utc": "2026-08-09T07:39:55.9594130Z",
+      "bytes": 2168
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/radar-chart.yaml",
+      "sha256": "63d1acf8a43d6956f5baf8634855dfe7393ccbd1afeedf1581eb1156d5332f4d",
+      "source_mtime_utc": "2026-08-09T07:39:55.9594130Z",
+      "bytes": 2132
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/recommendation-stack.yaml",
+      "sha256": "51eca222dbe6d44cbc8057bd5f2b5240f0f319524b668ee0aa55ff325ff13af2",
+      "source_mtime_utc": "2026-08-09T07:39:55.9604135Z",
+      "bytes": 2706
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/split-comparison.yaml",
+      "sha256": "29a71212f6e255ab301a6b960559cf9380b471712d1476e14c205597866be815",
+      "source_mtime_utc": "2026-08-09T07:39:55.9604135Z",
+      "bytes": 3019
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/stats-3-row.yaml",
+      "sha256": "50514ef946d56d5375f5f1d873c2ba4c955f6dde3cd84dfb874c1d0657c35f60",
+      "source_mtime_utc": "2026-08-09T07:39:55.9604135Z",
+      "bytes": 2848
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/strategic-priorities.yaml",
+      "sha256": "dcf890a74324bbf09ceee61de54210ced2bfcc0e1d9ce3dc6f53599d35c78def",
+      "source_mtime_utc": "2026-08-09T07:39:55.9614136Z",
+      "bytes": 2705
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/swot-quadrant.yaml",
+      "sha256": "cc3f979c774a6962026006ec92f06e89cf0b580a6aa7a7e7f0b81a6363789272",
+      "source_mtime_utc": "2026-08-09T07:39:55.9614136Z",
+      "bytes": 3299
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/team-grid.yaml",
+      "sha256": "0b8c4bfc54a3cd11cc9c4a558d36a91f527a8e33ef07a61a52418ef2a55da0d7",
+      "source_mtime_utc": "2026-08-09T07:39:55.9614136Z",
+      "bytes": 3536
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/testimonial-full.yaml",
+      "sha256": "b43fb8db376482cf33adb1ebb2d382791203cfd661b86b6da24198d380c69579",
+      "source_mtime_utc": "2026-08-09T07:39:55.9624131Z",
+      "bytes": 3292
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/timeline-milestones.yaml",
+      "sha256": "63f37f1b43ba31c033168f1a6e7904ed2300cc312f79de7edefe67e0b9d31cc3",
+      "source_mtime_utc": "2026-08-09T07:39:55.9624131Z",
+      "bytes": 2684
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/timeline-vertical.yaml",
+      "sha256": "0ab37c63330b42294335bffa9308da8327fbea2ba21a3f943f6ace04f13dec82",
+      "source_mtime_utc": "2026-08-09T07:39:55.9634134Z",
+      "bytes": 3330
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/title-center.yaml",
+      "sha256": "76160f72d8ebf90753acd61c9e34c786ee69e69105fb962d440ae713c3343e3f",
+      "source_mtime_utc": "2026-08-11T03:45:59.1205455Z",
+      "bytes": 1842
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/toc-3-panel-left.yaml",
+      "sha256": "8f4901998c16ba237ac0b4754fdfef8c0a6fa1fd3abcaff7d2ec483c2e9929a1",
+      "source_mtime_utc": "2026-08-09T07:39:55.9654128Z",
+      "bytes": 2598
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/toc-3-panel-rows.yaml",
+      "sha256": "a82a3b5407ac42ef7fc67b4b0cf54a9dac3f2ae2ba01da80ca3abd9b6f13019d",
+      "source_mtime_utc": "2026-08-09T07:39:55.9654128Z",
+      "bytes": 2598
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/toc-3-vertical.yaml",
+      "sha256": "394f5bb527daa03b51a18ab259e05f90efade66102c55ea22cadb061745116b0",
+      "source_mtime_utc": "2026-08-09T07:39:55.9654128Z",
+      "bytes": 2553
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/toc-3.yaml",
+      "sha256": "04cfd74e982804859e03f7f5644469d0079bc483ad8a947763cf9bfb83f22277",
+      "source_mtime_utc": "2026-08-09T07:39:55.9664130Z",
+      "bytes": 2409
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/toc-4-image-left.yaml",
+      "sha256": "72e18c5e73f5dc563ff0e1f7d273f33e6335efa379620e09c672d3f829897b48",
+      "source_mtime_utc": "2026-08-09T07:39:55.9664130Z",
+      "bytes": 3324
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/toc-4-panel-grid.yaml",
+      "sha256": "7bfd0210bb40f498f307a6aeb1776b0b25578ce06ff9a8d2816fe9d3ac22983f",
+      "source_mtime_utc": "2026-08-09T07:39:55.9674130Z",
+      "bytes": 2967
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/toc-4-panel-rows.yaml",
+      "sha256": "c550c7a4a03cc6f44bfe0c8c191b05ee3224c72d22b55c6129f15141c235c8dd",
+      "source_mtime_utc": "2026-08-09T07:39:55.9674130Z",
+      "bytes": 2967
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/toc-4-vertical.yaml",
+      "sha256": "89a1baa51f0701da9beaab05809a9d7208b4f3dafcdfcee6341583ffd9124ce3",
+      "source_mtime_utc": "2026-08-09T07:39:55.9674130Z",
+      "bytes": 2918
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/toc-4.yaml",
+      "sha256": "ef64672abb6fb243b7234884a5de2888217e2eed3b2921927ebd6d08bad22d6a",
+      "source_mtime_utc": "2026-08-09T07:39:55.9684130Z",
+      "bytes": 2756
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/toc-5-number-panel-left.yaml",
+      "sha256": "ca19f7406a98e0c314feb9c2e42ceea4cca8bc34a24279d0c2d5fabd87740bb1",
+      "source_mtime_utc": "2026-08-09T07:39:55.9684130Z",
+      "bytes": 4990
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/toc-5-panel-grid.yaml",
+      "sha256": "a187b3472c75717ffc01a303b46d7cf7cb7da5859e83a9062639aa743a8265b4",
+      "source_mtime_utc": "2026-08-09T07:39:55.9694127Z",
+      "bytes": 3336
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/toc-5-panel-rows.yaml",
+      "sha256": "b7a49c83c743f43599ddac03ec306c4dad7225ef651fb4b4c2989202346748b7",
+      "source_mtime_utc": "2026-08-09T07:39:55.9694127Z",
+      "bytes": 3336
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/toc-5-vertical.yaml",
+      "sha256": "786dd5fe22e728c33dc3ad22752b8b7487e2f5428049c8cc56a8d4be683c1313",
+      "source_mtime_utc": "2026-08-09T07:39:55.9694127Z",
+      "bytes": 3283
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/toc-5.yaml",
+      "sha256": "c5cf080d89bd5baf0e06c75f5256732f9b47a1e63864a8e8ec0779e2cd7fcd72",
+      "source_mtime_utc": "2026-08-09T07:39:55.9704132Z",
+      "bytes": 3103
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/toc-6-panel-rows.yaml",
+      "sha256": "b4468e4cb083806805a3be12b323899839872ae501ac521389cf9f4afee3d702",
+      "source_mtime_utc": "2026-08-09T07:39:55.9704132Z",
+      "bytes": 3705
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/toc-6-vertical.yaml",
+      "sha256": "bc9b1496966392afea2dba81fc2374b11f4b61e63ce10a4549e08397119316a5",
+      "source_mtime_utc": "2026-08-09T07:39:55.9704132Z",
+      "bytes": 3648
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/toc-6.yaml",
+      "sha256": "2060b447c9acf5fda189106906f5ff035d54136d8304ac9c5ee6cd275a18433b",
+      "source_mtime_utc": "2026-08-09T07:39:55.9714136Z",
+      "bytes": 3450
+    },
+    {
+      "path": "prompt_system/renderers/pptx/layouts/toc-8.yaml",
+      "sha256": "b179415f461cf72a72f2c142265fc4211114c327a6820edeed8ff39f466ca73b",
+      "source_mtime_utc": "2026-08-09T07:39:55.9714136Z",
+      "bytes": 4144
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/advocacy-network.yaml",
+      "sha256": "255b698ca7aedb5ec2f848b8b0e57f540f468d40a4c6914975c9d074fc3c3122",
+      "source_mtime_utc": "2026-07-12T19:41:32.6147746Z",
+      "bytes": 2344
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/blueprint-radial.yaml",
+      "sha256": "692c517235067e394cfb96ab3b3a3dea5a9b023c269d6019c60308799dc3a07a",
+      "source_mtime_utc": "2026-08-06T15:40:32.7207341Z",
+      "bytes": 2403
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/boardroom-premium.yaml",
+      "sha256": "e1e9d691bde7aabbdd9afadef36f21392df06c6995e956a15d423f89b8c54924",
+      "source_mtime_utc": "2026-07-12T19:41:32.6245038Z",
+      "bytes": 2385
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/brand-activation.yaml",
+      "sha256": "2d9fd98439865a0a7b183c8a60fb152cabe08ce11dbe1b205b1408a1faf6de88",
+      "source_mtime_utc": "2026-07-12T19:41:32.6328647Z",
+      "bytes": 2188
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/brand-editorial.yaml",
+      "sha256": "2896859ee1bf5aeffeb4be1be49c189476483839795edf627c72a783eabf0da1",
+      "source_mtime_utc": "2026-07-12T19:41:32.6339036Z",
+      "bytes": 3023
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/brutal-grunge.yaml",
+      "sha256": "27f80a6b7ccb70000c04e3cd755687e799e0f7d528359e5c2a3638ac58cead9a",
+      "source_mtime_utc": "2026-07-12T19:41:32.6446148Z",
+      "bytes": 2142
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/clean-tech-business.yaml",
+      "sha256": "e6878d0b3ed16b3a5807cd76ae0c13b5fed2dbc56328aca163029f5d064c87fe",
+      "source_mtime_utc": "2026-07-12T19:41:32.0000000Z",
+      "bytes": 2250
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/clinical-report.yaml",
+      "sha256": "669558e051cea428844e6d61f381b22384ffab13c807b199dc71d892195353c0",
+      "source_mtime_utc": "2026-07-12T19:41:32.6662824Z",
+      "bytes": 2192
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/community-fundraising.yaml",
+      "sha256": "f7eed1b2c6c54c80308c932cf5d068b1237990e25439fbd78c39511f6c3eb22e",
+      "source_mtime_utc": "2026-07-12T19:41:32.6774144Z",
+      "bytes": 2457
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/corporate-blue.yaml",
+      "sha256": "c9816af1391a8c09897d2b8c22e564efcd2cc2321e6185ed59e8bc88e5184369",
+      "source_mtime_utc": "2026-07-12T19:41:32.6875001Z",
+      "bytes": 3052
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/customer-lifecycle.yaml",
+      "sha256": "f3617cb87777785b37acb9ace562506760e3d13dcc6f443d87ce83562ad9596c",
+      "source_mtime_utc": "2026-07-12T19:41:32.6978703Z",
+      "bytes": 2406
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/dark-circuit.yaml",
+      "sha256": "155572a4ae50944d329a4233dd48b3e0c54760c9b8499b8bfa7d7946ccffb4b1",
+      "source_mtime_utc": "2026-07-12T19:41:32.7096124Z",
+      "bytes": 2969
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/ecosystem-civic.yaml",
+      "sha256": "dcbb1c907c1ed575674606e65ba0d416ec23a66ff180b5b81e831ea7b8c65f3c",
+      "source_mtime_utc": "2026-07-12T19:41:32.7195604Z",
+      "bytes": 2337
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/enablement-operations.yaml",
+      "sha256": "7040b815a904ef103ed18b11e7c81cabdbfe46d6a8a2a7ad5188fe5c4da5be47",
+      "source_mtime_utc": "2026-07-12T19:41:32.7311546Z",
+      "bytes": 2465
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/executive-analytics.yaml",
+      "sha256": "5729719af6f7dc3dc0bc5041ded6639ee7a5a67d2a89cfcf6bc8d314a723d1df",
+      "source_mtime_utc": "2026-07-12T19:41:32.7420139Z",
+      "bytes": 2434
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/facilitation-learning.yaml",
+      "sha256": "73f640c572efb69a5cee0c6dffdf39a9c16463419ca7b1f3c98b77278e71b22b",
+      "source_mtime_utc": "2026-07-12T19:41:32.7517115Z",
+      "bytes": 2306
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/festive-patterned.yaml",
+      "sha256": "f13e7853fcf8ac946bd445fe39e038c1fb68dcf7ffc0294632a8b7fef5fe6901",
+      "source_mtime_utc": "2026-07-12T19:41:32.7623672Z",
+      "bytes": 2204
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/grainy-editorial.yaml",
+      "sha256": "b01ba087de9a5a4e91e70ac7c0da7d4ad972734be9888678888e2ed0a04c6f60",
+      "source_mtime_utc": "2026-07-12T19:41:32.7704631Z",
+      "bytes": 2213
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/impact-report.yaml",
+      "sha256": "1a6e7b32b8fecd01520238eef6e59dd4a1f82655a6d7fc638a9068aeb78a3491",
+      "source_mtime_utc": "2026-07-12T19:41:32.7811504Z",
+      "bytes": 2140
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/lavender-media-kit.yaml",
+      "sha256": "b8be3523c31718318b8deb83af06d93f5975abbc7900c595a8b9ecd962c31ea2",
+      "source_mtime_utc": "2026-07-12T19:41:32.7897674Z",
+      "bytes": 2222
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/learning-community.yaml",
+      "sha256": "deacb642a94ba1928668675a354dfcd5b7261d4bc72ec4ccead1ccb3ebcc85ed",
+      "source_mtime_utc": "2026-07-12T19:41:32.8000226Z",
+      "bytes": 2384
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/mission-governance.yaml",
+      "sha256": "732b8967869b10b6ac39a39c8337e0aae7533074aa42d11ac28ac8368ddeb275",
+      "source_mtime_utc": "2026-07-12T19:41:32.8106242Z",
+      "bytes": 2424
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/monochrome-editorial.yaml",
+      "sha256": "24a087fb9b47af562643315ec47bb0560f13d127b13ec2b79c69db1a77cf90dc",
+      "source_mtime_utc": "2026-08-06T15:40:32.7217340Z",
+      "bytes": 2300
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/neo-brutalist-blocks.yaml",
+      "sha256": "27de43faf99d1882abcf627d39eb46bd8037f942b9c009692d14c267e8b5ae7a",
+      "source_mtime_utc": "2026-08-06T15:40:32.7227339Z",
+      "bytes": 2463
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/operating-review.yaml",
+      "sha256": "f0d620c4e35b7a834076dce5d2b59d54434df5717e0c714ef59307aafcd9d1f0",
+      "source_mtime_utc": "2026-07-12T19:41:32.8224754Z",
+      "bytes": 2330
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/paper-collage-vintage.yaml",
+      "sha256": "1766020c8666916b0f7a3d3277f5608931ef7ee3c51271aebe09d4a1842fba32",
+      "source_mtime_utc": "2026-07-12T19:41:32.8334790Z",
+      "bytes": 2278
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/product-strategy-signal.yaml",
+      "sha256": "3d05b3353e61b1d648c4adc788b7ab177a8f6dcc2121bc1cb03f4bc557d1d193",
+      "source_mtime_utc": "2026-07-12T19:41:32.8462838Z",
+      "bytes": 2491
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/quiet-enso.yaml",
+      "sha256": "41492bb78758a2620cc60cdf081e81b807de9fc4d2976cc8d73e68fe7c667b8a",
+      "source_mtime_utc": "2026-08-06T15:40:32.7227339Z",
+      "bytes": 2062
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/sales-conversion.yaml",
+      "sha256": "f9507daeda47ee4500c4ac1936a9111d0ad36bbd850445f469c086bba343a315",
+      "source_mtime_utc": "2026-07-12T19:41:32.8573805Z",
+      "bytes": 2358
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/soft-organic-education.yaml",
+      "sha256": "8edeabc8a04e897fd7b72eb617fa5164801da45ecd4a7e6d8083cfd52273370d",
+      "source_mtime_utc": "2026-07-12T19:41:32.8701588Z",
+      "bytes": 2329
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/strategy-consulting.yaml",
+      "sha256": "f0d4f0ae53fa0dae46a749112ad83557dd90bb5287abfc0fe0d14ee0f6225d3f",
+      "source_mtime_utc": "2026-07-12T19:41:32.8818174Z",
+      "bytes": 2443
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/teal-tech.yaml",
+      "sha256": "247e16907b69f5bcccc6aa49e60d50b83917b8343b1df721bb5a0c1fb6f1c88b",
+      "source_mtime_utc": "2026-07-12T19:41:32.8983317Z",
+      "bytes": 2893
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/tech-navy.yaml",
+      "sha256": "dec77ddca99708f6a1380f1bea30e0fe8ee3a26393350742890040f9af6240ed",
+      "source_mtime_utc": "2026-08-05T14:06:34.2899298Z",
+      "bytes": 2428
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/warm-editorial-portfolio.yaml",
+      "sha256": "308c8a7ef4bd3a0d565dc492fe9d1c83f52b4b8e0b8c5d43350a3d741519077e",
+      "source_mtime_utc": "2026-07-12T19:41:32.9203860Z",
+      "bytes": 2389
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/workshop-human.yaml",
+      "sha256": "810a9fcc5043415ec3db083403ec2bd5d49f94fb760544a3efd10f04f32c0084",
+      "source_mtime_utc": "2026-07-12T19:41:32.9352164Z",
+      "bytes": 2168
+    },
+    {
+      "path": "prompt_system/renderers/pptx/themes/y2k-chrome.yaml",
+      "sha256": "9cae3e02df309ae323c571291d369d4439548d2d0c2a7c33d0c8c9a87d1edf9f",
+      "source_mtime_utc": "2026-08-06T15:40:32.7237342Z",
+      "bytes": 2220
+    },
+    {
+      "path": "prompt_system/specs/content_pattern.taxonomy.yaml",
+      "sha256": "70e9515d7968894a93aba6ae61c0dd94a042b81ce2ff8e9dc8f823cd921059ab",
+      "source_mtime_utc": "2026-07-14T07:49:34.0000000Z",
+      "bytes": 7803
+    },
+    {
+      "path": "prompt_system/specs/examples/historical-editorial.theme.yaml",
+      "sha256": "2588dc76cee2eb8b8156a14174ac6cc4e7fde7d31a5f730f950045e6fd807b2d",
+      "source_mtime_utc": "2026-06-11T15:41:55.5475883Z",
+      "bytes": 2361
+    },
+    {
+      "path": "prompt_system/specs/examples/random-campaign-architecture-operating-review.slide.yaml",
+      "sha256": "127ea4b168577b63b1c4bf00fea9b11da7109c22df740a9eaabb2914462003f8",
+      "source_mtime_utc": "2026-06-12T18:07:00.8031065Z",
+      "bytes": 5311
+    },
+    {
+      "path": "prompt_system/specs/page_role.taxonomy.yaml",
+      "sha256": "27ec3a34c00ee4cdbc337ec6c5af17e6e1d5f27586e7180e154942769bb540a3",
+      "source_mtime_utc": "2026-06-11T15:56:17.0000000Z",
+      "bytes": 5253
+    },
+    {
+      "path": "prompt_system/specs/README.md",
+      "sha256": "b7a7201b0273ba11a0f6feba89f58b8394a59815fb7c39caa357cad157f07d90",
+      "source_mtime_utc": "2026-06-11T16:53:16.0000000Z",
+      "bytes": 2802
+    },
+    {
+      "path": "prompt_system/specs/slide.spec.template.yaml",
+      "sha256": "5ee226b64bcb4fee657f10cffb15ffc2bffa35acd7d9da537a40b06511ba445b",
+      "source_mtime_utc": "2026-06-11T16:52:37.0000000Z",
+      "bytes": 3933
+    },
+    {
+      "path": "prompt_system/specs/TAXONOMY_README.md",
+      "sha256": "11b8d34eeef8f18df14c2dc7e77727d7bf8987286ec111e39e05a388714b45d1",
+      "source_mtime_utc": "2026-06-11T15:56:17.0000000Z",
+      "bytes": 940
+    },
+    {
+      "path": "prompt_system/specs/theme.template.yaml",
+      "sha256": "ced0f7f50d07c7850ca0654a27550df4c4fe1300b71021bebd468fe136a84505",
+      "source_mtime_utc": "2026-06-11T15:40:55.0000000Z",
+      "bytes": 1516
+    },
+    {
+      "path": "prompt_system/specs/validation.checklist.template.yaml",
+      "sha256": "3e458c8116c340de29b52bda86ad04598d7976268ba518d2dae6ff233b96e232",
+      "source_mtime_utc": "2026-06-11T16:53:01.0000000Z",
+      "bytes": 2435
+    },
+    {
+      "path": "prompt_system/style_cases/cards-1-plus-2.startup-gradient.yaml",
+      "sha256": "1b2ba84985e96a6195d77e54c1367fd6d9e1a7e87ff130b6f6144efb3e91cc5f",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1603
+    },
+    {
+      "path": "prompt_system/style_cases/cards-1-plus-3.sustainability-earth.yaml",
+      "sha256": "8e2b4a615cd40fc4bb1471cb45819c6e9472757bb4a1a99cc358c123c2b9f86b",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1606
+    },
+    {
+      "path": "prompt_system/style_cases/cards-1-plus-4.brutalist-orange.yaml",
+      "sha256": "dab4716f5389f73234e631be3762e35cbe39072b92082e05bdd1ffdd3387b0d7",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1575
+    },
+    {
+      "path": "prompt_system/style_cases/cards-1-plus-5.playful-education.yaml",
+      "sha256": "ca22eb22710727a21f4c457749c9cf8da39044cc7a9dcf849112973b30d8dfe6",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1580
+    },
+    {
+      "path": "prompt_system/style_cases/cards-1-plus-6.neutral-luxury.yaml",
+      "sha256": "5f012ab50ac22f7312263a0b74849237359b995edda96f2b4aac655260a3b36c",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1582
+    },
+    {
+      "path": "prompt_system/style_cases/cards-1-plus-8.mission-control.yaml",
+      "sha256": "37b8f88912715e2a84916d25f13800a6d02c466c86666ab923954a4f354b3903",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1592
+    },
+    {
+      "path": "prompt_system/style_cases/chapter-number-bg-left-title-rule.editorial-classic.yaml",
+      "sha256": "2cbc9c574ed4d894f19048108449c78151f77150459f909c1011d670cd089ba0",
+      "source_mtime_utc": "2026-06-13T07:02:18.0000000Z",
+      "bytes": 2042
+    },
+    {
+      "path": "prompt_system/style_cases/chapter-opener.cinematic-crimson.yaml",
+      "sha256": "83c997af818681f14535207eab7f0e07c38bd75e4c796bf2a1ab805d5c15fac2",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1580
+    },
+    {
+      "path": "prompt_system/style_cases/comparison-table.mint-lab.yaml",
+      "sha256": "c7b1a143c8e4ac3cdc11e5239fae7c20b324b54f4e98075083486192736dc7a1",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1553
+    },
+    {
+      "path": "prompt_system/style_cases/cover-center-title-edge-decor.after-dark-veil.yaml",
+      "sha256": "518b138b180f609bdcec1242e5d66c92900fa8fc12a93b43b9fbd24625980a2b",
+      "source_mtime_utc": "2026-08-03T18:42:33.9890647Z",
+      "bytes": 2675
+    },
+    {
+      "path": "prompt_system/style_cases/cover-center-title-edge-decor.ai-operations-signal.yaml",
+      "sha256": "94910f2319674b067158c22582e35b778184f83286d01bea0cc4bcddd4bb8401",
+      "source_mtime_utc": "2026-07-30T04:20:35.3115696Z",
+      "bytes": 2451
+    },
+    {
+      "path": "prompt_system/style_cases/cover-center-title-edge-decor.clinical-evidence-atlas.yaml",
+      "sha256": "586f4a197b19e3e2d3f009346aebf8b67ddc328197af1e48a8561850c2944c5c",
+      "source_mtime_utc": "2026-07-27T10:07:22.8287796Z",
+      "bytes": 2409
+    },
+    {
+      "path": "prompt_system/style_cases/cover-center-title-edge-decor.folio-signal-ledger.yaml",
+      "sha256": "d2e2b1cdb269f9a0e381cd037af5a9612ddd493bb34e1046de40e8d6a5c5084b",
+      "source_mtime_utc": "2026-08-03T17:42:24.4066731Z",
+      "bytes": 2565
+    },
+    {
+      "path": "prompt_system/style_cases/cover-center-title-edge-decor.geometric-education.yaml",
+      "sha256": "cff7367f9967b8e3177b1a1b3b649ff6b798039eb5e25620f3db3429fb0b87a1",
+      "source_mtime_utc": "2026-07-10T09:50:55.0000000Z",
+      "bytes": 2001
+    },
+    {
+      "path": "prompt_system/style_cases/cover-center-title-edge-decor.moonlit-herbarium-atlas.yaml",
+      "sha256": "4abba7ecd0ead970aebd4277888a3a272e66f23ffff6a3744566e4fdd512d5f7",
+      "source_mtime_utc": "2026-07-25T20:43:53.7003273Z",
+      "bytes": 2365
+    },
+    {
+      "path": "prompt_system/style_cases/cover-center-title-edge-decor.signal-route-atlas.yaml",
+      "sha256": "10d9296602331577b4de8426665f0a97f5444b04e7b743be88611512d8e3ad6e",
+      "source_mtime_utc": "2026-07-31T17:26:19.3068300Z",
+      "bytes": 2334
+    },
+    {
+      "path": "prompt_system/style_cases/cover-photo-frame-reverse.ai-workflow-cover.yaml",
+      "sha256": "397f8b99903571780960229accf784b61a4efa343077322bd12dca1e03423266",
+      "source_mtime_utc": "2026-06-14T04:09:39.0000000Z",
+      "bytes": 2131
+    },
+    {
+      "path": "prompt_system/style_cases/cover-photo-frame.sepia-retail-case.yaml",
+      "sha256": "594c183ac6d4bd84ced2a1b899ddff119e428a0ed1217eb1f93e5caf08bb5eda",
+      "source_mtime_utc": "2026-07-10T09:50:55.0000000Z",
+      "bytes": 1825
+    },
+    {
+      "path": "prompt_system/style_cases/dashboard-overview.executive-emerald.yaml",
+      "sha256": "d11cac6bf9010c754719053534dea88f211db88b86b72aab8406e8913ac9b8e8",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1603
+    },
+    {
+      "path": "prompt_system/style_cases/flow-stages-3.industrial-yellow.yaml",
+      "sha256": "1bb284aadaabab1d1958590c7af24338be3cc889658d8829b13cc98c7e805ffa",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1559
+    },
+    {
+      "path": "prompt_system/style_cases/gantt-roadmap.cobalt-product-launch.yaml",
+      "sha256": "03bc00b6f144567dc10a0c7253cd3031c7d603135e618d90807ebddc2b90f011",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1600
+    },
+    {
+      "path": "prompt_system/style_cases/hero-fullbleed-brand-footer.dark-ai-city.yaml",
+      "sha256": "0349adce75df3986535b64fc1e3ff8f00303e71da6608db2d77f59a672a30ac0",
+      "source_mtime_utc": "2026-06-14T04:09:37.0000000Z",
+      "bytes": 1998
+    },
+    {
+      "path": "prompt_system/style_cases/hero-fullbleed.dark-city-network-report.yaml",
+      "sha256": "9b3d3cab0e85178bada9097b161250d83784163896d0b397bc63583ee9732e52",
+      "source_mtime_utc": "2026-06-14T04:09:36.0000000Z",
+      "bytes": 1653
+    },
+    {
+      "path": "prompt_system/style_cases/kpi-scorecards.fintech-neon.yaml",
+      "sha256": "cad12165ec254eda6c8b90c25a1f21a16ae7e79bb5d5fb989dadf74f8307941f",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1571
+    },
+    {
+      "path": "prompt_system/style_cases/matrix-4quadrant.sticky-note-workshop.yaml",
+      "sha256": "76dadac345f4ed3e28e80f427515c8af256361727cffda7971909cce32361e65",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1591
+    },
+    {
+      "path": "prompt_system/style_cases/process-flow.notebook-handdrawn.yaml",
+      "sha256": "f37bcb20501683619de25c8e633a9ac0afa698d70150eed198ad8c212f74f044",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1565
+    },
+    {
+      "path": "prompt_system/style_cases/quote-focus.poetic-ink.yaml",
+      "sha256": "083b0996e9b937a0c51bd72f606443875e9572c19cc96efffe8a2828aab6bebf",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1528
+    },
+    {
+      "path": "prompt_system/style_cases/recommendation-stack.consulting-burgundy.yaml",
+      "sha256": "915f1cd97d6dac270790f14c64eaa024b81868fd7634a1e1f01410bdde35b971",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1599
+    },
+    {
+      "path": "prompt_system/style_cases/split-comparison.blue-terracotta.yaml",
+      "sha256": "8d45e368247d0a1e78fc65b159444e1640e699a266a51d6d5f63c5ad33b66d5c",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1556
+    },
+    {
+      "path": "prompt_system/style_cases/strategic-priorities.field-map-green.yaml",
+      "sha256": "27c54257d04726fe4aeb52366f85b9c80c533617c2c060078516a2a86f1e7dc4",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1616
+    },
+    {
+      "path": "prompt_system/style_cases/swot-quadrant.paper-board.yaml",
+      "sha256": "8cf9e604dfefa785f53bcb3d52ad7ff401870cf46889dc897236203fca0780eb",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1535
+    },
+    {
+      "path": "prompt_system/style_cases/timeline-milestones.museum-chronology.yaml",
+      "sha256": "8defdda374f4fe473b3a2a5618e50c5c8e705b32b68ccd2ffe5c33394ad6cf77",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1594
+    },
+    {
+      "path": "prompt_system/style_cases/title-center.luxury-invitation.yaml",
+      "sha256": "c22568114f716fb485e25bbe7aed1bd505e4065c4ac134c61bcdd52e995de18a",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1564
+    },
+    {
+      "path": "prompt_system/style_cases/toc-3-panel-left.civic-pastel.yaml",
+      "sha256": "bededcba0436292fb85e45324ab837ffb0f56941e3335e233d454f4691648747",
+      "source_mtime_utc": "2026-06-14T15:45:33.0000000Z",
+      "bytes": 1618
+    },
+    {
+      "path": "prompt_system/style_cases/toc-3-panel-rows.red-editorial.yaml",
+      "sha256": "add8b74385aad8f219ff5939a6f44fefc40ce562015a2b1f48f0c89562fea40a",
+      "source_mtime_utc": "2026-06-14T16:19:29.0000000Z",
+      "bytes": 1262
+    },
+    {
+      "path": "prompt_system/style_cases/toc-4-image-left.field-note-doc.yaml",
+      "sha256": "f6695b64d7ac931cf011e7c583e360744d147d209047c52a8b8d36cae24af28e",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1588
+    },
+    {
+      "path": "prompt_system/style_cases/toc-4-panel-grid.calm-workshop.yaml",
+      "sha256": "72cd1677fc81322f2a6eb260ec0a58a50902f496ee1cd0d5bb6f4d4158641f3d",
+      "source_mtime_utc": "2026-06-14T16:19:55.0000000Z",
+      "bytes": 1235
+    },
+    {
+      "path": "prompt_system/style_cases/toc-4-panel-rows.clean-modernist.yaml",
+      "sha256": "4467afae6c1a21bd3e31d22c0b37d60f49c91670bff4b74332a5ab35a0f059f9",
+      "source_mtime_utc": "2026-06-14T16:19:34.0000000Z",
+      "bytes": 1187
+    },
+    {
+      "path": "prompt_system/style_cases/toc-5-panel-grid.sticky-board-color.yaml",
+      "sha256": "27f669f3bf2d8580d6e8f5fd8a3d74fa71ea24f197b59553b6967c2cae51590c",
+      "source_mtime_utc": "2026-06-14T16:20:01.0000000Z",
+      "bytes": 1338
+    },
+    {
+      "path": "prompt_system/style_cases/toc-5-panel-rows.rose-beige.yaml",
+      "sha256": "0090f82890d68e50bf0f89e302fd7d7cd4c0099c5f17a527ebea2c5d8b7b5cea",
+      "source_mtime_utc": "2026-06-14T16:19:44.0000000Z",
+      "bytes": 1319
+    },
+    {
+      "path": "prompt_system/style_cases/toc-6-panel-rows.light-playful-systems.yaml",
+      "sha256": "df8117d3bbcf475f945df133fc8dde341c65666dae83e3bd82b32cb54339d7cb",
+      "source_mtime_utc": "2026-06-14T16:19:49.0000000Z",
+      "bytes": 1276
+    },
+    {
+      "path": "prompt_system/style_cases/toc-6.tech-operations.yaml",
+      "sha256": "9142dfca2f93b6585bbda3b588decf22556aa053111cc334c82e299a55427545",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1504
+    },
+    {
+      "path": "prompt_system/style_cases/toc-8.dark-modular-grid.yaml",
+      "sha256": "de34c467bac46fbc9f991ac9ab68783d38b09794c6e9b89818eefb6b21b5b232",
+      "source_mtime_utc": "2026-06-13T17:26:00.0000000Z",
+      "bytes": 1489
+    },
+    {
+      "path": "prompt_system/themes/advocacy-network.yaml",
+      "sha256": "67de05e4bdf218c756e68815372a8a7a8817695d37d1af70bb602322fefca0ba",
+      "source_mtime_utc": "2026-07-09T12:26:10.0000000Z",
+      "bytes": 2283
+    },
+    {
+      "path": "prompt_system/themes/blueprint-radial.yaml",
+      "sha256": "94db8907669faad1d952ca858cd9198c85910a65bb158e61eebb3c561c3de61e",
+      "source_mtime_utc": "2026-08-06T15:39:59.5657336Z",
+      "bytes": 2111
+    },
+    {
+      "path": "prompt_system/themes/boardroom-premium.yaml",
+      "sha256": "62700b88e51e1aada57ac8d1f26854f24baa099783be2f2cd5481ec3470c7c41",
+      "source_mtime_utc": "2026-07-09T12:26:39.0000000Z",
+      "bytes": 2362
+    },
+    {
+      "path": "prompt_system/themes/brand-activation.yaml",
+      "sha256": "1b7b957cc57e57ac06172a5f4e45c54936909a8b0d01eee127b4becc750ed6ec",
+      "source_mtime_utc": "2026-07-09T12:29:12.0000000Z",
+      "bytes": 1964
+    },
+    {
+      "path": "prompt_system/themes/brand-editorial.yaml",
+      "sha256": "a37c5639b40a7ad5b43439e61420f567855d2179f6b7c4fe1baeaae8db6c6770",
+      "source_mtime_utc": "2026-07-09T12:26:10.0000000Z",
+      "bytes": 3306
+    },
+    {
+      "path": "prompt_system/themes/brutal-grunge.yaml",
+      "sha256": "15c1540e033e9285188a57656a17cf88fac7dbba15bf45e9a06fa91a7bcfa8da",
+      "source_mtime_utc": "2026-07-09T12:26:39.0000000Z",
+      "bytes": 1576
+    },
+    {
+      "path": "prompt_system/themes/clean-tech-business.yaml",
+      "sha256": "b712ca51bffbbb3825bcf5ee181a5fe87f9e348cc449f0cbae45bd8db0b15407",
+      "source_mtime_utc": "2026-07-09T12:26:10.0000000Z",
+      "bytes": 1674
+    },
+    {
+      "path": "prompt_system/themes/clinical-report.yaml",
+      "sha256": "a0c17db0ff77e88374cdaf9786c906aef98469d5cc80815be7397b3f4f5402c7",
+      "source_mtime_utc": "2026-07-09T12:26:39.0000000Z",
+      "bytes": 1754
+    },
+    {
+      "path": "prompt_system/themes/community-fundraising.yaml",
+      "sha256": "4863da81bdfc24eb6777dd1f7d0d09528907075a269171b2b39055ce96741280",
+      "source_mtime_utc": "2026-07-09T12:26:10.0000000Z",
+      "bytes": 2416
+    },
+    {
+      "path": "prompt_system/themes/corporate-blue.yaml",
+      "sha256": "849eca0330bbb2a042264c7e74cbb4aa74c10b99440c20dea22f8af25c310349",
+      "source_mtime_utc": "2026-07-09T12:26:10.0000000Z",
+      "bytes": 3283
+    },
+    {
+      "path": "prompt_system/themes/customer-lifecycle.yaml",
+      "sha256": "6478ee3c555df41d8bfcb5860a33cf9aa8765a6d8333a45143d5747caab130a8",
+      "source_mtime_utc": "2026-07-09T12:26:10.0000000Z",
+      "bytes": 2264
+    },
+    {
+      "path": "prompt_system/themes/dark-circuit.yaml",
+      "sha256": "9d52512230b1cdfea3cb4638bc6e77af98a7340694308385801d251438c073b4",
+      "source_mtime_utc": "2026-07-09T12:26:10.0000000Z",
+      "bytes": 3215
+    },
+    {
+      "path": "prompt_system/themes/ecosystem-civic.yaml",
+      "sha256": "b89f081da64a59087bd76901d849d27fde74dc65e9ce5b8c87003705156bef2e",
+      "source_mtime_utc": "2026-07-09T12:26:10.0000000Z",
+      "bytes": 2300
+    },
+    {
+      "path": "prompt_system/themes/enablement-operations.yaml",
+      "sha256": "9d3bc7e91421ff95798a7dc2cf7adc3865086ff9e3e64dd97972b2dd202d70b7",
+      "source_mtime_utc": "2026-07-09T12:26:10.0000000Z",
+      "bytes": 2271
+    },
+    {
+      "path": "prompt_system/themes/executive-analytics.yaml",
+      "sha256": "d2d517321ac16524f223c1d2878f5abfbd26b90f7829f72acb4e8e6de746f489",
+      "source_mtime_utc": "2026-07-09T12:26:10.0000000Z",
+      "bytes": 2119
+    },
+    {
+      "path": "prompt_system/themes/facilitation-learning.yaml",
+      "sha256": "3d1841040d8795782f4f951d839dd070a6b85f3f77c9d29596da13308f02eff7",
+      "source_mtime_utc": "2026-07-09T12:29:12.0000000Z",
+      "bytes": 1975
+    },
+    {
+      "path": "prompt_system/themes/festive-patterned.yaml",
+      "sha256": "d3de8d42ed52fda439fbcadb1986d84bfdf78d36f92f3bc147ab910487eee720",
+      "source_mtime_utc": "2026-07-09T12:29:30.0000000Z",
+      "bytes": 1612
+    },
+    {
+      "path": "prompt_system/themes/grainy-editorial.yaml",
+      "sha256": "e6210e72c28a66e8f9a86be350c4f8475aa1764b6d2a573b83a5eca3deaf76b7",
+      "source_mtime_utc": "2026-07-09T12:26:10.0000000Z",
+      "bytes": 1641
+    },
+    {
+      "path": "prompt_system/themes/impact-report.yaml",
+      "sha256": "bdf0f36a1dbf2b06604000cc66f4501c92136cbd3b061444368d38f705919413",
+      "source_mtime_utc": "2026-07-09T12:26:39.0000000Z",
+      "bytes": 2003
+    },
+    {
+      "path": "prompt_system/themes/lavender-media-kit.yaml",
+      "sha256": "c2082dcf707cb65f5cfe13d28de247a33f546a98b5ade11fa7ff51072b525138",
+      "source_mtime_utc": "2026-07-09T12:26:10.0000000Z",
+      "bytes": 1696
+    },
+    {
+      "path": "prompt_system/themes/learning-community.yaml",
+      "sha256": "89f70c3ce86debf326bf649210d58d703d01c4e82775a657dbe603871c33c981",
+      "source_mtime_utc": "2026-07-09T12:26:10.0000000Z",
+      "bytes": 2293
+    },
+    {
+      "path": "prompt_system/themes/mission-governance.yaml",
+      "sha256": "57c28703e3b7b1aa26a27c300c1ed2c9686b6d6295771cca8281f891511af044",
+      "source_mtime_utc": "2026-07-09T12:26:10.0000000Z",
+      "bytes": 2344
+    },
+    {
+      "path": "prompt_system/themes/monochrome-editorial.yaml",
+      "sha256": "d3487b5ae9d82f7d06e4ccca60151705f0e990fbff36c7d2b7a961d132b036bb",
+      "source_mtime_utc": "2026-08-06T15:39:59.5647335Z",
+      "bytes": 1959
+    },
+    {
+      "path": "prompt_system/themes/neo-brutalist-blocks.yaml",
+      "sha256": "3f6a3d45b2e006c45383ef42bff08d4398437f017f8a6cbce6da53b7698cf6a6",
+      "source_mtime_utc": "2026-08-06T15:39:59.5637342Z",
+      "bytes": 2117
+    },
+    {
+      "path": "prompt_system/themes/operating-review.yaml",
+      "sha256": "d17b19ae6d94ed8f8b930f3eccafe4f66443625aa7de09dfa174f64048a1ef12",
+      "source_mtime_utc": "2026-07-09T12:26:10.0000000Z",
+      "bytes": 2201
+    },
+    {
+      "path": "prompt_system/themes/paper-collage-vintage.yaml",
+      "sha256": "bf7516dee5c225031a84122473409f7eab1006cf011d02a45388ccf4e2d12271",
+      "source_mtime_utc": "2026-07-11T11:22:21.0000000Z",
+      "bytes": 1736
+    },
+    {
+      "path": "prompt_system/themes/product-strategy-signal.yaml",
+      "sha256": "1320f95d29c6d03b13719ca7645aae53509a6c0f80503e6479efbbe1db31b4f9",
+      "source_mtime_utc": "2026-07-09T12:26:10.0000000Z",
+      "bytes": 2270
+    },
+    {
+      "path": "prompt_system/themes/quiet-enso.yaml",
+      "sha256": "68d0c7f439632882a13ce3f7199c1f5d66d79ed294fbb623f2d4d3c48398667b",
+      "source_mtime_utc": "2026-08-06T15:39:59.5637342Z",
+      "bytes": 1856
+    },
+    {
+      "path": "prompt_system/themes/README.md",
+      "sha256": "222e154525373c5cf1e56efa98640a1a67dfc63f7c8f0d4b122cee7dca7bbfb3",
+      "source_mtime_utc": "2026-06-12T06:27:21.0000000Z",
+      "bytes": 8345
+    },
+    {
+      "path": "prompt_system/themes/sales-conversion.yaml",
+      "sha256": "23288605e7aa61c84feb8aac9c7c06b839658cbebcfdf3cb8a20dea28ada76f7",
+      "source_mtime_utc": "2026-07-09T12:26:39.0000000Z",
+      "bytes": 2220
+    },
+    {
+      "path": "prompt_system/themes/soft-organic-education.yaml",
+      "sha256": "533ef0afdb897bdd2e492d126b16e75ee8259cb56c2065494d1e520208d6ea78",
+      "source_mtime_utc": "2026-07-09T12:26:10.0000000Z",
+      "bytes": 1681
+    },
+    {
+      "path": "prompt_system/themes/strategy-consulting.yaml",
+      "sha256": "27c8588c65b9f709a8058a66ecbbf961f5636c4cf491c0fc727cc09adb39692e",
+      "source_mtime_utc": "2026-07-09T12:26:39.0000000Z",
+      "bytes": 2118
+    },
+    {
+      "path": "prompt_system/themes/teal-tech.yaml",
+      "sha256": "bc2f59b9a9e118a5e52d252eefc5c394237f4da1be7b06204cde2c29d6e0bfa0",
+      "source_mtime_utc": "2026-07-09T12:26:10.0000000Z",
+      "bytes": 3453
+    },
+    {
+      "path": "prompt_system/themes/tech-navy.yaml",
+      "sha256": "2748e297c0530899dea7399584e4db2cded68545ead8f8ccc05b6ce7d4a07781",
+      "source_mtime_utc": "2026-08-05T14:03:03.3685869Z",
+      "bytes": 9592
+    },
+    {
+      "path": "prompt_system/themes/warm-editorial-portfolio.yaml",
+      "sha256": "4eac37a5ab9cef4e7c1b613d9cef51158b90479bf5b620e6d5efa1cae0136bb3",
+      "source_mtime_utc": "2026-07-09T12:26:10.0000000Z",
+      "bytes": 1779
+    },
+    {
+      "path": "prompt_system/themes/workshop-human.yaml",
+      "sha256": "81b105c678a2da8049feeb578b1272d4eb0d80c9f63a50f1c442f1cebff0ea58",
+      "source_mtime_utc": "2026-07-09T12:26:10.0000000Z",
+      "bytes": 1603
+    },
+    {
+      "path": "prompt_system/themes/y2k-chrome.yaml",
+      "sha256": "c5046af04bf557304471151b5f4290cb95b3701549bae51abd6291ac5bf03bf1",
+      "source_mtime_utc": "2026-08-06T15:39:59.5647335Z",
+      "bytes": 2065
+    },
+    {
+      "path": "references/design-intelligence-schema.md",
+      "sha256": "d9c9055e4d6cc6e500c07b4c98fa5638bd487bc439e29a34b1ce4d3b8dd73db4",
+      "source_mtime_utc": "2026-08-06T15:28:53.8666827Z",
+      "bytes": 10742
+    },
+    {
+      "path": "references/html-css-ownership-contract.md",
+      "sha256": "86a8adb0c0cad3cf2cbaeabc60d038808b5b7146808441fd40dee4325c693671",
+      "source_mtime_utc": "2026-08-05T17:26:51.9165632Z",
+      "bytes": 5553
+    },
+    {
+      "path": "references/html-design-method-provenance.md",
+      "sha256": "58f0ca855b03e7cd8228da92479962325a1605c59d5a8d56eb05052c3bf7891f",
+      "source_mtime_utc": "2026-07-22T18:02:43.8521526Z",
+      "bytes": 2918
+    },
+    {
+      "path": "references/html-design-technique-library.md",
+      "sha256": "7b2845cab6400d5a9bc0e0ad25256bfebf36928ba9a5c237af0185613b98e043",
+      "source_mtime_utc": "2026-07-26T14:49:20.8029366Z",
+      "bytes": 4523
+    },
+    {
+      "path": "references/html-generation-rules.md",
+      "sha256": "e25365959d7fb1065b632717e4c99f71f65999ba6cdac9bec0e7aa97233b2a05",
+      "source_mtime_utc": "2026-08-12T16:38:50.0141204Z",
+      "bytes": 90124
+    },
+    {
+      "path": "references/html-layout-patterns.md",
+      "sha256": "91cf0c13f3e4b9c69cd3200f42148153635056571d85e85763df45c4d017b547",
+      "source_mtime_utc": "2026-08-16T14:37:54.5320153Z",
+      "bytes": 41552
+    },
+    {
+      "path": "references/html-semantic-group-qa-profile.example.json",
+      "sha256": "8b9b5cbc3e5e321ef39161b5674ca2a84418e1d71686395ce69dbc272683b9ab",
+      "source_mtime_utc": "2026-08-01T07:34:44.5861399Z",
+      "bytes": 951
+    },
+    {
+      "path": "references/image2-preview-workflow.md",
+      "sha256": "146f28f2cafad517db60eb7c9a7cbd99bdc41b5653f10181f7f778afdc1527b8",
+      "source_mtime_utc": "2026-08-01T11:47:20.0062685Z",
+      "bytes": 2098
+    },
+    {
+      "path": "references/pptx-background-master-workflow.md",
+      "sha256": "d95082601fa8d64371c666bd0fe29668939566596716009da8a5645285c1817c",
+      "source_mtime_utc": "2026-07-13T10:04:16.0000000Z",
+      "bytes": 3464
+    },
+    {
+      "path": "references/pptx-generation-rules.md",
+      "sha256": "49a86197d76838baf9e40f9f412b0b27d605ebb60caf9a8b9758d43f02264b5a",
+      "source_mtime_utc": "2026-08-09T05:54:22.3692294Z",
+      "bytes": 9642
+    },
+    {
+      "path": "references/presentation-production-contract.md",
+      "sha256": "9d3d40c434c44cd6cea82504c56504fd230a5c60ec26ca74bc9c17785ff9f1e8",
+      "source_mtime_utc": "2026-08-12T10:35:44.6219197Z",
+      "bytes": 52389
+    },
+    {
+      "path": "references/preview-qa-loop.md",
+      "sha256": "397bf976b1dd7bc820db85a1427e44e7adc6477676763ce3ab852ce3511e5632",
+      "source_mtime_utc": "2026-06-29T06:08:45.0000000Z",
+      "bytes": 1889
+    },
+    {
+      "path": "references/project-format-guide.md",
+      "sha256": "97f680454d8eb50033c26c4419aeb4e8cc82f03f7323383e2c75308478674e34",
+      "source_mtime_utc": "2026-07-26T05:28:27.1741654Z",
+      "bytes": 18105
+    },
+    {
+      "path": "references/renderer-adapter-contract.md",
+      "sha256": "92342f5e40a597aa55eb7bcc53477986221a07cc6732b061d0a11ce89fba475b",
+      "source_mtime_utc": "2026-08-09T07:39:27.3976166Z",
+      "bytes": 4663
+    },
+    {
+      "path": "references/svg-icon-generation-rules.md",
+      "sha256": "2396012099036a9fb616e89d3c70cf595ee6472b36df6f2bfc1b288a7ee778ed",
+      "source_mtime_utc": "2026-08-12T10:35:32.0573371Z",
+      "bytes": 13511
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "8c076e4e0128d9100ba1de61023a9845b08a92162d2422d61cf363e7c814747b",
+      "source_mtime_utc": "2026-08-05T16:26:58.9947999Z",
+      "bytes": 187
+    },
+    {
+      "path": "scripts/art_direction.py",
+      "sha256": "6e4f006b3800fb40ace0dcfd2b1bde1f328024cca9d21e4f3a084e603a2ddd98",
+      "source_mtime_utc": "2026-07-27T06:49:52.1440215Z",
+      "bytes": 20563
+    },
+    {
+      "path": "scripts/artifact_report_paths.py",
+      "sha256": "8e0820f0f4b3bf5f452031c4d8ef8fcdd6e315b6f9b206ad8a98f7fd0014a74b",
+      "source_mtime_utc": "2026-08-05T15:06:42.5583322Z",
+      "bytes": 438
+    },
+    {
+      "path": "scripts/build_image2_acceptance_deck.mjs",
+      "sha256": "e592a948df26f9968aa4f6dbd23d2989f5fbaaf3cf70142b20b095a58960c2ff",
+      "source_mtime_utc": "2026-07-12T19:22:48.0000000Z",
+      "bytes": 1620
+    },
+    {
+      "path": "scripts/compile_renderer_matrix.py",
+      "sha256": "cd601338e875bc21e738881e881c3f6dbcaf1c73a4dad016c894e0524cb82de4",
+      "source_mtime_utc": "2026-08-11T16:53:13.3183931Z",
+      "bytes": 7039
+    },
+    {
+      "path": "scripts/generate_renderer_adapters.py",
+      "sha256": "f8bbf5e7b98a2241b074c6912618eb437862a2f25aa08191b6e87381b90ff48b",
+      "source_mtime_utc": "2026-08-11T16:53:13.0949066Z",
+      "bytes": 19520
+    },
+    {
+      "path": "scripts/html_assembly.py",
+      "sha256": "ef67eccd3127e1067c5ce160ba8cdd86d5d1d0ca095179ac3d0ffece5aff9922",
+      "source_mtime_utc": "2026-08-09T06:07:09.8512144Z",
+      "bytes": 6529
+    },
+    {
+      "path": "scripts/html_css_ownership.py",
+      "sha256": "0315ec36593895eb52a2d9ffb756e390cdf634f3f99b8088df4c7138749aa993",
+      "source_mtime_utc": "2026-08-12T15:26:41.6933352Z",
+      "bytes": 16014
+    },
+    {
+      "path": "scripts/html_design_dialects.py",
+      "sha256": "012e09e5f29087d763d3ce5f663970de5ea52dab702f83f5459697bb778fedf1",
+      "source_mtime_utc": "2026-07-19T19:55:56.0000000Z",
+      "bytes": 2265
+    },
+    {
+      "path": "scripts/html_design_method.py",
+      "sha256": "ef38cc5a07af06578dbfc86a12c56875b96cc6abb284dc73cd32be498ae7e5cd",
+      "source_mtime_utc": "2026-08-14T07:59:33.5600675Z",
+      "bytes": 27798
+    },
+    {
+      "path": "scripts/html_edit_framework.py",
+      "sha256": "932fd8c20a79652641305f22bc4458e26b99cda99c966e293a43a64ffab93925",
+      "source_mtime_utc": "2026-08-17T08:41:40.7231415Z",
+      "bytes": 75538
+    },
+    {
+      "path": "scripts/html_font_system.py",
+      "sha256": "1962adb92b1a21fb4e44bca183d0e2a118009ddb6b0d7c2a169f31c01a6d5049",
+      "source_mtime_utc": "2026-07-12T07:41:21.0000000Z",
+      "bytes": 3235
+    },
+    {
+      "path": "scripts/html_layout_catalog.py",
+      "sha256": "b3929bc41e0bcbf3684453c5df748a53183166ec56feb431d7615edefdc9e563",
+      "source_mtime_utc": "2026-08-11T16:56:23.3784560Z",
+      "bytes": 10644
+    },
+    {
+      "path": "scripts/html_motion_runtime.py",
+      "sha256": "1d169216a536573b599b21785648286f6b2245ac03290448470998aeedf714c1",
+      "source_mtime_utc": "2026-08-17T10:09:29.2738489Z",
+      "bytes": 22212
+    },
+    {
+      "path": "scripts/html_preset_registry.py",
+      "sha256": "272ebee7af15e1a5c78f2afd6b173008faac8d561d6fafdf4bd5a64f6a74b57e",
+      "source_mtime_utc": "2026-08-09T14:15:13.1723009Z",
+      "bytes": 12266
+    },
+    {
+      "path": "scripts/html_preset_themes.py",
+      "sha256": "ab759bae846a3755335973bb22c34c3157e07800b1c6f8bd30b41e53e869f5e2",
+      "source_mtime_utc": "2026-08-16T14:40:46.0397715Z",
+      "bytes": 18317
+    },
+    {
+      "path": "scripts/html_production_renderer.py",
+      "sha256": "91d3870b3e014ac821bde9db2e91849aa37106f1a2ea3d1ba2eecfd888a146c6",
+      "source_mtime_utc": "2026-08-17T16:14:32.4925990Z",
+      "bytes": 246073
+    },
+    {
+      "path": "scripts/log_layout_preview_qa.py",
+      "sha256": "72821083056433b92b27d7ee3da92045733275a3a23670ea24bd69ded87c8fa4",
+      "source_mtime_utc": "2026-07-26T05:10:59.0715215Z",
+      "bytes": 2821
+    },
+    {
+      "path": "scripts/normalize_artifact_report_paths.py",
+      "sha256": "2e497248f71543d6cb08ce01b788b6d187060219e479f5c3f02d726d6d33822c",
+      "source_mtime_utc": "2026-08-05T15:10:38.7007414Z",
+      "bytes": 4917
+    },
+    {
+      "path": "scripts/playwright_runtime.cjs",
+      "sha256": "98b28ca8b1af8efcb582e011d02604ade3917f5f76434f55c53b58bff3a2aa4e",
+      "source_mtime_utc": "2026-08-01T07:22:12.1596947Z",
+      "bytes": 1480
+    },
+    {
+      "path": "scripts/qa_html_background_group_text.cjs",
+      "sha256": "d34671312a5c6d6c8beae8e7610dfc4db2a8e85e2c266812593743436ed84b5c",
+      "source_mtime_utc": "2026-07-31T14:34:23.7943497Z",
+      "bytes": 8967
+    },
+    {
+      "path": "scripts/qa_html_css_geometry_invariant.cjs",
+      "sha256": "15e1ce1bcfaaa2b3001518917221f27aa4a0d1a281f92c573e81888680f73e6e",
+      "source_mtime_utc": "2026-08-05T17:24:55.6641366Z",
+      "bytes": 8094
+    },
+    {
+      "path": "scripts/qa_html_design_method.py",
+      "sha256": "7bbe285af91390967832bbadf011051600c88ee0c1714ceabec4a671eb6a98bf",
+      "source_mtime_utc": "2026-08-09T06:31:20.4503773Z",
+      "bytes": 6002
+    },
+    {
+      "path": "scripts/qa_html_edit_interactions.cjs",
+      "sha256": "fcd6024aac04f61a073a8cac07e86c325a682d4962839a612a7225dc7d002930",
+      "source_mtime_utc": "2026-07-30T11:13:03.1844936Z",
+      "bytes": 67240
+    },
+    {
+      "path": "scripts/qa_html_file_binding.cjs",
+      "sha256": "b0f62969f5de8fa6a05685cd3a0f4a5514474519c592c9e845f0f4f9e2d0e194",
+      "source_mtime_utc": "2026-08-12T14:43:04.2765906Z",
+      "bytes": 6394
+    },
+    {
+      "path": "scripts/qa_html_font_background_controls.cjs",
+      "sha256": "8bf1c418cf3145f9b9f286b158894e01ab0bd649327f96825c313a8be53e669f",
+      "source_mtime_utc": "2026-08-11T06:16:38.5803128Z",
+      "bytes": 13454
+    },
+    {
+      "path": "scripts/qa_html_group_adaptive_vertical_resize.cjs",
+      "sha256": "feb594998d593136953ad74fcb9d65c5a1cc6c17780fa784a27296fb570e6b8f",
+      "source_mtime_utc": "2026-08-06T16:25:52.1123539Z",
+      "bytes": 29237
+    },
+    {
+      "path": "scripts/qa_html_group_axis_resize.cjs",
+      "sha256": "e59957d64cb0bd4c1f0df6841d5381e56fbc7e5a1447f8771b6c43ebef19b82a",
+      "source_mtime_utc": "2026-07-27T08:40:19.9630355Z",
+      "bytes": 7125
+    },
+    {
+      "path": "scripts/qa_html_group_resize_ownership.cjs",
+      "sha256": "a92d241c6a507566bc71587e76a983567123f8ee2a4f737c8fe42e7130b87385",
+      "source_mtime_utc": "2026-08-06T16:24:49.2653904Z",
+      "bytes": 9463
+    },
+    {
+      "path": "scripts/qa_html_pptx_browser_export.cjs",
+      "sha256": "41327412cdfe7badd3cf99e2c8160588d10b36f7ae24682012131669f029766a",
+      "source_mtime_utc": "2026-08-07T19:47:46.4573482Z",
+      "bytes": 17012
+    },
+    {
+      "path": "scripts/qa_html_presentation_toolbar.cjs",
+      "sha256": "b0dd699bac547cb2a9eb953dd439ef1ec725f8746636e5d650a299642a4b9878",
+      "source_mtime_utc": "2026-08-09T14:34:39.6029446Z",
+      "bytes": 7815
+    },
+    {
+      "path": "scripts/qa_html_repeat_group.cjs",
+      "sha256": "aa1079a46fb20eacd61fac7e9dd963d226be6af8511dfb71ac6d642e60824c63",
+      "source_mtime_utc": "2026-08-06T19:42:29.3428779Z",
+      "bytes": 18662
+    },
+    {
+      "path": "scripts/qa_html_save_export.cjs",
+      "sha256": "8f29d317957943814113110d4532e50b47cb6de9dab9be9b4c9ca2cf9f389dde",
+      "source_mtime_utc": "2026-08-16T17:45:03.1200947Z",
+      "bytes": 9357
+    },
+    {
+      "path": "scripts/qa_html_semantic_group_matrix.cjs",
+      "sha256": "e8ba4a8c4d4235558595f42e308f680b3ad8f512a0a7a2de2a40491875dd71d1",
+      "source_mtime_utc": "2026-08-06T16:25:20.6822986Z",
+      "bytes": 24605
+    },
+    {
+      "path": "scripts/qa_html_text_frame_semantics.cjs",
+      "sha256": "95b577a7fa7723e6045656ce7de4e1caad97adf7b29bf6e239435874bab5ab69",
+      "source_mtime_utc": "2026-07-21T10:09:43.0000000Z",
+      "bytes": 10407
+    },
+    {
+      "path": "scripts/qa_html_visual_contract.cjs",
+      "sha256": "510f7e6412d80ec768d8132c0954cc867229c7b4e880f41d2fa6929a233a7c63",
+      "source_mtime_utc": "2026-08-12T03:48:49.2740071Z",
+      "bytes": 12174
+    },
+    {
+      "path": "scripts/render_html_matrix.py",
+      "sha256": "9bd79aecd70c567e8b9f497f1279ef8d627423041cdc8a87a7dd5ccc21c15435",
+      "source_mtime_utc": "2026-08-12T06:37:05.9162270Z",
+      "bytes": 12179
+    },
+    {
+      "path": "scripts/render_randomized_html_demo.py",
+      "sha256": "e825ace23b534241ea20b69b7a47343b4563f5c87a97ebb1e50beb658798373b",
+      "source_mtime_utc": "2026-08-16T14:43:36.6849938Z",
+      "bytes": 244126
+    },
+    {
+      "path": "scripts/render_theme_demo_html.py",
+      "sha256": "136dc34d33ec5bda4c33d60fe7d8a7387f78cd07fe6cf7e9569acb056490e572",
+      "source_mtime_utc": "2026-08-09T07:22:43.8838275Z",
+      "bytes": 49292
+    },
+    {
+      "path": "scripts/render_theme_demo_pptx.mjs",
+      "sha256": "43162af5831444f8a8926fb626f5a5cf9550a8da3c58419191214fe10306d9c3",
+      "source_mtime_utc": "2026-07-12T19:15:57.0000000Z",
+      "bytes": 24994
+    },
+    {
+      "path": "scripts/sync_editor_asset.py",
+      "sha256": "4dd833f5d23fa15d9f40a7c90078f0be76cd3f8c21f67ac905dbaad37f11259c",
+      "source_mtime_utc": "2026-08-05T16:29:18.6046601Z",
+      "bytes": 1694
+    },
+    {
+      "path": "scripts/sync_embedded_editor.py",
+      "sha256": "5dc3da69a571866572ba27cd9dda1e940dab17ac4ed03c8b06fc2b9191d64355",
+      "source_mtime_utc": "2026-08-05T15:07:00.7528620Z",
+      "bytes": 12556
+    },
+    {
+      "path": "scripts/validate_randomized_html_manifest.py",
+      "sha256": "a2cdbf315e1fc8765649aa985a41f35d5c3f2f27fe02995e7775f96312005820",
+      "source_mtime_utc": "2026-08-01T07:37:04.5405773Z",
+      "bytes": 4297
+    },
+    {
+      "path": "scripts/verify_embedded_editor.py",
+      "sha256": "7fc7a9dac836bbd6cc184e82733d71fa9edbf5c5247bc381381c1d9f3f549c8c",
+      "source_mtime_utc": "2026-08-05T15:06:42.5613565Z",
+      "bytes": 2724
+    },
+    {
+      "path": "src/html-editor/edit-mode.js",
+      "sha256": "dfe2663aea4e9335aa14c82416639a1785996bdb1e45fdaa40d367a402183e8d",
+      "source_mtime_utc": "2026-08-17T14:20:11.5494273Z",
+      "bytes": 472354
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "77361a211c7c3de812262e8d81cab922be6056af0c6cb7643651908edad70a3c",
+      "source_mtime_utc": "2026-07-29T15:45:17.9677378Z",
+      "bytes": 1345
+    }
+  ]
+}

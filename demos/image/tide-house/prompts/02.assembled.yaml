@@ -1,0 +1,22 @@
+page_type_and_mood:
+  prompt: "16:9 圖片式簡報停頓頁；極簡、安靜、像退潮後的沙地，讓一句繁體中文主張成為唯一焦點。"
+visual_base_2a:
+  background: {style: "暖白紙面底，遠處極淡的霧藍水平線", texture: "柔和紙纖維與低密度細砂顆粒"}
+  typography: {heading: "繁體中文 Noto Serif TC，超大深褐主張", body: "繁體中文 Noto Sans TC，小型說明"}
+  color_system: {primary: "#2A2521", secondary: "#8E7A6A", accent: "#C3A58D", support: "#F5EEE7"}
+corner_decoration_2b:
+  rule: "只保留左側一條非常細的潮線，線端微微彎曲。"
+  top_left: {element: "02", treatment: "小型頁碼"}
+  top_right: {element: "空白", treatment: "保持安靜"}
+  bottom_left: {element: "空白", treatment: "不放裝飾"}
+  bottom_right: {element: "潮汐旅宿", treatment: "低對比小字"}
+layout_description:
+  structure: "全版暖白；主句置中偏左、佔畫面約 60% 寬，分兩行：『不是逃離，／而是把時間放回身體。』下方小字『慢旅的第一步，是重新聽見自己的速度。』。"
+content:
+  title: "不是逃離，而是把時間放回身體。"
+  subtitle: "慢旅的第一步，是重新聽見自己的速度。"
+  body: ""
+safe_zone_constraints:
+  hard_constraint: "主句字體大、繁體字正確且不被線條穿過；不加入照片、圖示、Logo、英文或多餘卡片。"
+closing_design_intent:
+  prompt: "這一頁要像一次深呼吸，讓觀眾在進入旅程前先把自己的速度放慢。"

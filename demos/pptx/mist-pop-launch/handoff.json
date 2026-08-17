@@ -1,0 +1,12 @@
+{
+  "direction_id": "mist-pop-launch-direction",
+  "source": "art-direction.yaml",
+  "theme_id": "product-strategy-signal",
+  "renderer": "pptx",
+  "renderer_entry": "@oai/artifact-tool",
+  "layout_routing": "story-and-scene-first; active core layouts selected by content relation",
+  "content_mode": "new-deck",
+  "native_editability": {"text": true, "shapes": true, "tables": true, "charts": true, "full_slide_raster": false},
+  "pilot_gate": {"slides": ["s01", "s04", "s08"], "status": "passed-by-structural-and-render-review"},
+  "notes": "Fictional Traditional Chinese demo content; no external research or customer data."
+}

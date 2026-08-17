@@ -1,0 +1,23 @@
+page_type_and_mood:
+  prompt: "16:9 圖片式簡報房型比較頁；左側是一張安靜的海景房間照片，右側是透明紙片上的三種停留方式，像旅誌採訪頁。"
+visual_base_2a:
+  background: {style: "左側窗邊房間與遠海照片，右側暖白紙面", texture: "照片細微顆粒、紙張邊緣"}
+  typography: {heading: "繁體中文 Noto Serif TC", body: "繁體中文 Noto Sans TC，房型詞為較重字重"}
+  color_system: {primary: "#2A2521", secondary: "#8E7A6A", accent: "#C3A58D", support: "#D8C6B8"}
+corner_decoration_2b:
+  rule: "照片右邊界以潮線切入三段標注；標注是紙片與細線，不是圓角卡片。"
+  top_left: {element: "07", treatment: "頁碼"}
+  top_right: {element: "停留方式", treatment: "細字"}
+  bottom_left: {element: "照片 caption：虛構場景示意", treatment: "小字"}
+  bottom_right: {element: "潮汐旅宿", treatment: "細字"}
+layout_description:
+  structure: "左側約 48% 大幅房間／海景影像；右側主標『每一種房型，都留一段只屬於自己的海』，下方三段：『潮間｜靠近水線，適合清晨醒來』、『礁邊｜面向風，適合長時間閱讀』、『遠岸｜留一段距離，適合重新整理自己』。"
+content:
+  title: "每一種房型，都留一段只屬於自己的海"
+  subtitle: "不以房間大小區分，而以停留方式區分。"
+  body: ["潮間｜靠近水線，適合清晨醒來", "礁邊｜面向風，適合長時間閱讀", "遠岸｜留一段距離，適合重新整理自己"]
+  image_subject: "虛構海岸旅宿房間，木質窗框、亞麻床單、遠方霧藍海面，無人、無品牌、無文字"
+safe_zone_constraints:
+  hard_constraint: "照片只放左側，右側所有繁體中文必須清楚；不要把任何文字生成在照片內；不放 Logo、不放真實旅館名稱。"
+closing_design_intent:
+  prompt: "以一張房間照片承擔情緒，以三個短句把差異說清楚；照片與文字平等而不互相競爭。"

@@ -1,0 +1,57 @@
+id: cover-top-center-hero-bottom-center-support
+display_name: 封面 上下置中文字・中央焦點
+media_requirement: no-image
+family: 封面類
+
+safe_area: [10, 10, 90, 90]
+
+slots:
+  - id: title
+    region: [20, 13, 60, 14]
+    weight: hero
+    alignment: center
+    note: 主標位於上方中央，橫向範圍較寬。
+
+  - id: subtitle
+    region: [31, 72, 38, 6]
+    weight: secondary
+    alignment: center
+    note: 副標位於下方中央，與主標共同框定中央區域。
+
+  - id: meta
+    region: [12, 83, 23, 5]
+    weight: tertiary
+    alignment: left
+    optional: true
+    note: 短 metadata 放在左下，脫離中央軸線。
+
+alignment_rules:
+  - "title.centerX == subtitle.centerX == 50%"
+  - "the central focal field stays between title and subtitle"
+  - "meta.left == 12% and meta remains detached from the centered stack"
+  - "all glyphs remain inside safe_area"
+
+classification_rules:
+  content_role: cover title + subtitle + optional metadata
+  title_position: top-center
+  subtitle_position: bottom-center
+  metadata_position: lower-left
+
+decoration:
+  design_zone:
+    region: [34, 30, 32, 36]
+    protected_slots: [title, subtitle, meta]
+    rule: >
+      An optional focal treatment may occupy the central zone. It must keep a clear gap
+      from the title and subtitle and must not extend into the metadata slot.
+
+content_capacity:
+  title: 1–2 short lines
+  subtitle: 1–2 short lines
+  meta: one short line
+
+visual_balance:
+  method: centered-vertical-frame-with-offset-footer
+  description: >
+    Centered text anchors above and below create a vertical frame around the middle focal
+    field, while the lower-left metadata adds a small off-axis counterpoint.

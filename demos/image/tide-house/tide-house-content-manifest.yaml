@@ -1,0 +1,21 @@
+deck_id: tide-house
+title: 潮汐旅宿｜海岸慢旅品牌概念
+language: zh-Hant-TW
+audience: 內部測試用設計評審
+purpose: 以一份虛構品牌概念示範 NESA Slide 圖片式簡報的敘事、生成與封裝流程
+page_count: 10
+aspect_ratio: 16:9
+data_policy: "所有名稱、數字與敘事均為虛構示範，不代表真實旅宿或市場資料。"
+logo_policy: no-logo
+theme_ref: warm-editorial-portfolio
+slides:
+  - {id: "01", scene_role: hero, page_role: cover, content_pattern: media-led, layout: cover-photo-frame, title: "潮汐旅宿", subtitle: "把海岸的慢，住進日常", body: "海岸慢旅品牌概念｜NESA Slide demo", primary_message: "潮汐旅宿把海岸的節奏，轉成可被住進去的一日體驗。"}
+  - {id: "02", scene_role: pause-or-close, page_role: statement, content_pattern: statement, layout: title-center, title: "不是逃離，而是把時間放回身體。", subtitle: "慢旅的第一步，是重新聽見自己的速度。", body: "", primary_message: "慢旅不是離開生活，而是重新感受生活。"}
+  - {id: "03", scene_role: index-or-map, page_role: journey-map, content_pattern: sequence, layout: timeline-milestones, title: "一座旅宿，沿著潮汐安排一天", subtitle: "四個時刻，讓抵達、停留與離開都有自己的呼吸。", body: "06:20｜迎光；10:40｜漫走；16:30｜聽潮；21:10｜留燈", primary_message: "旅宿不是把時間填滿，而是替一天留出四個被感受的節點。"}
+  - {id: "04", scene_role: relationship, page_role: pillars, content_pattern: 1-plus-3, layout: cards-1-plus-3, title: "三個體驗支柱，讓慢下來有具體形狀", subtitle: "看見、走近、留下，構成潮汐旅宿的體驗骨架。", body: "看見｜讓光線成為房間的一部分；走近｜把海岸變成可漫遊的路；留下｜把一晚變成可帶走的記憶", primary_message: "慢旅需要被設計成可感知的行為，而不是一句形容詞。"}
+  - {id: "05", scene_role: relationship, page_role: process, content_pattern: sequence, layout: process-flow, title: "旅程從抵達前就開始", subtitle: "每個接觸點都先替旅人放慢一點。", body: "出發前｜收到潮汐小卡；抵達時｜沿木棧道放下行李；入住後｜依光線選一段散步；離開前｜帶走一張今日海圖", primary_message: "品牌體驗從第一個訊息就開始，而不是入住櫃檯才開始。"}
+  - {id: "06", scene_role: evidence, page_role: rhythm, content_pattern: sequence, layout: timeline-milestones, title: "日光與潮聲，決定空間的節奏", subtitle: "房間不追求每一刻都熱鬧，而是讓感官有先後。", body: "清晨｜薄光穿過紗簾；午後｜風把影子推進室內；傍晚｜潮聲成為公共空間的背景；夜裡｜一盞低燈讓人願意留下", primary_message: "空間的差異，不在設備清單，而在感官節奏的安排。"}
+  - {id: "07", scene_role: evidence, page_role: comparison, content_pattern: comparison, layout: photo-left-overlay-title-right, title: "每一種房型，都留一段只屬於自己的海", subtitle: "不以房間大小區分，而以停留方式區分。", body: "潮間｜靠近水線，適合清晨醒來；礁邊｜面向風，適合長時間閱讀；遠岸｜留一段距離，適合重新整理自己", primary_message: "房型差異轉成三種不同的停留提案。"}
+  - {id: "08", scene_role: pause-or-close, page_role: brand-voice, content_pattern: quote-case, layout: quote-focus, title: "品牌語氣不是喧鬧，是留白。", subtitle: "讓旅人自己完成這段海岸故事。", body: "潮汐旅宿｜語氣原則", primary_message: "品牌不替旅人定義感受，只提供足夠安靜的場景。"}
+  - {id: "09", scene_role: relationship, page_role: memory-architecture, content_pattern: 1-plus-3, layout: cards-1-plus-3, title: "把一晚，延伸成三種可帶走的記憶", subtitle: "離開之後，旅宿仍以輕巧的方式留在日常。", body: "一張海圖｜回到城市仍能辨認那段路；一段聲音｜在忙碌時想起潮聲；一個習慣｜每週留一晚不排滿", primary_message: "旅宿的延伸價值，是讓慢成為旅人日後可重複的習慣。"}
+  - {id: "10", scene_role: pause-or-close, page_role: closing, content_pattern: statement, layout: closing-photo-overlay-contact, title: "潮來時，留一盞燈。", subtitle: "下一次，讓時間帶你回到海邊。", body: "潮汐旅宿｜海岸慢旅品牌概念\nNESA Slide demo · fictional case", primary_message: "以一個低聲的邀請收束，讓潮汐成為下一次回訪的理由。"}

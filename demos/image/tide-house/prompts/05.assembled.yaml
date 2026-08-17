@@ -1,0 +1,23 @@
+page_type_and_mood:
+  prompt: "16:9 圖片式簡報流程頁；把旅人從出發前到離開前的接觸點畫成一條清楚向右前進的潮線，編輯、克制、可讀。"
+visual_base_2a:
+  background: {style: "暖白紙面，四個流程節點以沙色與霧藍區分", texture: "細紙纖維與很淡的海圖線"}
+  typography: {heading: "繁體中文 Noto Serif TC", body: "繁體中文 Noto Sans TC，節點標題粗體"}
+  color_system: {primary: "#2A2521", secondary: "#8E7A6A", accent: "#C3A58D", support: "#A7B9B5"}
+corner_decoration_2b:
+  rule: "四個節點沿一條水平潮線，以獨立箭頭表示方向，不使用膠囊。"
+  top_left: {element: "05", treatment: "頁碼"}
+  top_right: {element: "旅程開始於訊息", treatment: "小標"}
+  bottom_left: {element: "空白", treatment: "不加裝飾"}
+  bottom_right: {element: "潮汐旅宿", treatment: "細字"}
+layout_description:
+  structure: "上方主標『旅程從抵達前就開始』；中段四步：『出發前｜收到潮汐小卡』→『抵達時｜沿木棧道放下行李』→『入住後｜依光線選一段散步』→『離開前｜帶走一張今日海圖』；底部小結。"
+content:
+  title: "旅程從抵達前就開始"
+  subtitle: "每個接觸點都先替旅人放慢一點。"
+  steps: ["出發前｜收到潮汐小卡", "抵達時｜沿木棧道放下行李", "入住後｜依光線選一段散步", "離開前｜帶走一張今日海圖"]
+  takeaway: "品牌體驗從第一個訊息就開始，而不是入住櫃檯才開始。"
+safe_zone_constraints:
+  hard_constraint: "流程方向必須由左至右，箭頭不可遮住文字；節點文字以繁體中文為主，不加入真實地址、電話、Logo。"
+closing_design_intent:
+  prompt: "讓人感到每一步都很輕，但每一步都在把旅人往海邊帶近。"

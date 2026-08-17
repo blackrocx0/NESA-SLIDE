@@ -1,0 +1,57 @@
+id: cover-upper-right-hero-lower-left-support
+display_name: 封面 右上主標・左下副標
+media_requirement: no-image
+family: 封面類
+
+safe_area: [10, 10, 90, 90]
+
+slots:
+  - id: title
+    region: [48, 17, 40, 22]
+    weight: hero
+    alignment: right
+    note: 主標位於右上，允許一至三行短標題。
+
+  - id: subtitle
+    region: [12, 67, 36, 7]
+    weight: secondary
+    alignment: left
+    note: 副標位於左下，與主標形成對角關係。
+
+  - id: meta
+    region: [12, 24, 26, 6]
+    weight: tertiary
+    alignment: left
+    optional: true
+    note: 短 metadata 位於左上，與副標共用左側起點。
+
+alignment_rules:
+  - "title.right == 88% and title occupies the upper-right anchor"
+  - "subtitle.left == meta.left == 12%"
+  - "meta stays above subtitle; neither block crosses into the title reading area"
+  - "all glyphs remain inside safe_area"
+
+classification_rules:
+  content_role: cover title + subtitle + optional metadata
+  title_position: upper-right
+  subtitle_position: lower-left
+  metadata_position: upper-left
+
+decoration:
+  design_zone:
+    region: [38, 14, 52, 62]
+    protected_slots: [title, subtitle, meta]
+    rule: >
+      An optional visual treatment may use this zone as a counterweight. It must not move,
+      cover, or reduce the readable area of any protected slot.
+
+content_capacity:
+  title: 1–3 short lines
+  subtitle: 1–2 short lines
+  meta: one short line
+
+visual_balance:
+  method: opposing-corner-anchors
+  description: >
+    A dominant upper-right title is countered by a smaller lower-left support block, while
+    the upper-left metadata creates a third, quieter anchor without joining the title axis.

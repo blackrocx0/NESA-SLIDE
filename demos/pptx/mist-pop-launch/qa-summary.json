@@ -1,0 +1,25 @@
+{
+  "deck_id": "mist-pop-launch",
+  "status": "passed",
+  "gates": {
+    "story_art_direction_handoff": "passed",
+    "ten_slides_rendered": true,
+    "native_text_shapes": "passed",
+    "native_table": "passed on slide 03",
+    "native_chart": "not used; data views are native editable shapes",
+    "master_layout_slide_chain": "passed",
+    "placeholder_contract": "passed",
+    "full_slide_raster_overlay": "none",
+    "slides_test": "passed; no overflow detected",
+    "artifact_tool_render": "passed; 10 of 10 slides",
+    "powerpoint_native_render": "passed; 10 of 10 slides, 0 failures",
+    "visual_qa": "passed by full-size individual renders, contact sheet review, and PowerPoint-native render review"
+  },
+  "scope_notes": [
+    "No external research was required; all numbers are explicitly fictional demo signals."
+  ],
+  "unverified": [
+    "PowerPoint application-level manual editing was not performed; editability is evidenced by package XML, native objects, placeholders, and master/layout relationships.",
+    "Font substitution may vary on machines without Noto Sans TC."
+  ]
+}

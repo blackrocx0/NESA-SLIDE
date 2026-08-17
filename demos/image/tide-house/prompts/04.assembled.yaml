@@ -1,0 +1,26 @@
+page_type_and_mood:
+  prompt: "16:9 圖片式簡報支柱頁；溫暖編輯紙面、三個並列但不制式的體驗支柱，讓『慢』成為可感知的行為。"
+visual_base_2a:
+  background: {style: "暖白底，左上有一小塊霧藍紙面，三段細潮線穿過底部", texture: "柔和紙張與自然磨砂"}
+  typography: {heading: "繁體中文 Noto Serif TC", body: "繁體中文 Noto Sans TC，支柱標題粗體"}
+  color_system: {primary: "#2A2521", secondary: "#8E7A6A", accent: "#A7B9B5", support: "#D8C6B8"}
+corner_decoration_2b:
+  rule: "三個支柱由一條低對比潮線穿過，線條只作關係提示，不包住卡片。"
+  top_left: {element: "04", treatment: "頁碼"}
+  top_right: {element: "體驗骨架", treatment: "細字"}
+  bottom_left: {element: "空白", treatment: "不加圖示"}
+  bottom_right: {element: "NESA Slide demo", treatment: "小字"}
+layout_description:
+  structure: "上方主標『三個體驗支柱，讓慢下來有具體形狀』；下方三欄以留白分隔：『看見｜讓光線成為房間的一部分』、『走近｜把海岸變成可漫遊的路』、『留下｜把一晚變成可帶走的記憶』；底部小結。"
+content:
+  title: "三個體驗支柱，讓慢下來有具體形狀"
+  subtitle: "看見、走近、留下，構成潮汐旅宿的體驗骨架。"
+  modules:
+    - {title: "看見", body: "讓光線成為房間的一部分"}
+    - {title: "走近", body: "把海岸變成可漫遊的路"}
+    - {title: "留下", body: "把一晚變成可帶走的記憶"}
+  takeaway: "慢旅需要被設計成可感知的行為，而不是一句形容詞。"
+safe_zone_constraints:
+  hard_constraint: "三個模組必須保持平行閱讀、文字不超出安全區；不做等寬圓角卡片牆、不放 icon、不放 Logo。"
+closing_design_intent:
+  prompt: "這頁是全案的骨架：清楚、有節奏，但仍像紙面上的三個可呼吸段落。"

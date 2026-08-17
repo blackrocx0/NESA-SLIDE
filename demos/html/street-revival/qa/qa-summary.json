@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact": "demos/html/street-revival/street-revival.html",
+  "manifest": "demos/html/street-revival/street-revival.manifest.json",
+  "content_mode": "new-deck",
+  "asset_policy": "pattern-only",
+  "slide_count": 10,
+  "seed": 20260819,
+  "status": "passed",
+  "gates": {
+    "story_art_direction_scene_grammar": {
+      "status": "pass",
+      "evidence": [
+        "demos/html/street-revival/source/content-manifest.json",
+        "demos/html/street-revival/source/art-direction.yaml",
+        "demos/html/street-revival/source/handoff.json"
+      ]
+    },
+    "renderer_static_validation": {
+      "status": "pass",
+      "evidence": "demos/html/street-revival/street-revival.manifest.json:editable_dom.static_validation"
+    },
+    "css_ownership": {
+      "status": "pass",
+      "evidence": "Source ownership check passed with zero CSS ownership violations."
+    },
+    "geometry_invariant": {
+      "status": "pass",
+      "evidence": "10 slides, 55 measured targets, 0 geometry issues; final HTML hash matched."
+    },
+    "visual_contract": {
+      "status": "pass",
+      "evidence": "10 slides and 0 visual-contract issues; final HTML hash matched."
+    },
+    "design_method_and_scene_rhythm": {
+      "status": "pass",
+      "evidence": "Design-method provenance and scene-rhythm check passed."
+    },
+    "toolbar_projection_round_trip": {
+      "status": "pass",
+      "evidence": "Localhost toolbar and projection round trip passed."
+    },
+    "editable_interaction_group_undo_redo": {
+      "status": "pass",
+      "evidence": "Semantic group selection, move, undo/redo, ungroup and undo-restore passed on a disposable copy."
+    },
+    "save_export_download_reopen": {
+      "status": "pass",
+      "evidence": "Localhost save marker persisted; exported HTML retained 10 slides and embedded editor, then reopened successfully."
+    },
+    "pptx_browser_export": {
+      "status": "pass",
+      "evidence": "Browser export produced a structurally valid 10-slide PPTX with 1 master and 11 layouts."
+    },
+    "contact_sheet": {
+      "status": "pass",
+      "evidence": "demos/html/street-revival/contact-sheet.png; 10 final projection captures were reviewed before only the contact sheet was retained."
+    }
+  },
+  "clean_room_generation": {
+    "status": "pass",
+    "detail": "The sanitized package regenerated this deck from its own renderer, active core, preset registry and content sources."
+  },
+  "perceptual_qa": {
+    "status": "pass",
+    "detail": "All ten projection captures were inspected at full size after motion layers were disabled; no clipping or unintended overlap remained."
+  },
+  "unverified": [
+    "Live Google Fonts network loading was intentionally blocked during browser QA; the offline fallback render passed.",
+    "The browser-exported PPTX package passed structural checks but was not reopened in the PowerPoint desktop application."
+  ]
+}

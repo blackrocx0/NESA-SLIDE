@@ -1,0 +1,269 @@
+{
+  "deck_id": "mist-pop-launch",
+  "renderer": "@oai/artifact-tool",
+  "slide_size_px": {
+    "width": 1920,
+    "height": 1080
+  },
+  "masters": [
+    {
+      "id": "f9e4ca58-537f-4a36-9927-5bf0d3fe05c6",
+      "name": "theme--product-strategy-signal"
+    }
+  ],
+  "all_masters_count": 2,
+  "custom_layouts": [
+    {
+      "id": "54035193-bebb-4f60-af4d-801a8ab9fab6",
+      "name": "mist-pop--cover-mid-right-column-meta-upper-left",
+      "parentLayoutId": "f9e4ca58-537f-4a36-9927-5bf0d3fe05c6",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": " "
+        },
+        {
+          "name": "subtitle",
+          "type": "subtitle",
+          "text": " "
+        },
+        {
+          "name": "content",
+          "type": "content",
+          "text": " "
+        }
+      ]
+    },
+    {
+      "id": "f666f52a-d44c-4470-83cf-7b0ca413e45e",
+      "name": "mist-pop--strategic-priorities",
+      "parentLayoutId": "f9e4ca58-537f-4a36-9927-5bf0d3fe05c6",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": " "
+        },
+        {
+          "name": "subtitle",
+          "type": "subtitle",
+          "text": " "
+        },
+        {
+          "name": "content",
+          "type": "content",
+          "text": " "
+        }
+      ]
+    },
+    {
+      "id": "e47ec1cc-2329-4aac-8b7b-6e64a4488ef5",
+      "name": "mist-pop--comparison-table",
+      "parentLayoutId": "f9e4ca58-537f-4a36-9927-5bf0d3fe05c6",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": " "
+        },
+        {
+          "name": "subtitle",
+          "type": "subtitle",
+          "text": " "
+        },
+        {
+          "name": "content",
+          "type": "content",
+          "text": " "
+        }
+      ]
+    },
+    {
+      "id": "0c6a9533-5e9f-4acd-bc20-9baae48e837f",
+      "name": "mist-pop--process-flow",
+      "parentLayoutId": "f9e4ca58-537f-4a36-9927-5bf0d3fe05c6",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": " "
+        },
+        {
+          "name": "subtitle",
+          "type": "subtitle",
+          "text": " "
+        },
+        {
+          "name": "content",
+          "type": "content",
+          "text": " "
+        }
+      ]
+    },
+    {
+      "id": "6027eeaa-3bd2-4784-a3f6-6d375ee532cf",
+      "name": "mist-pop--kpi-scorecards",
+      "parentLayoutId": "f9e4ca58-537f-4a36-9927-5bf0d3fe05c6",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": " "
+        },
+        {
+          "name": "subtitle",
+          "type": "subtitle",
+          "text": " "
+        },
+        {
+          "name": "content",
+          "type": "content",
+          "text": " "
+        }
+      ]
+    },
+    {
+      "id": "519015be-9c16-431e-8b71-a8bff072b59a",
+      "name": "mist-pop--matrix-4quadrant",
+      "parentLayoutId": "f9e4ca58-537f-4a36-9927-5bf0d3fe05c6",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": " "
+        },
+        {
+          "name": "subtitle",
+          "type": "subtitle",
+          "text": " "
+        },
+        {
+          "name": "content",
+          "type": "content",
+          "text": " "
+        }
+      ]
+    },
+    {
+      "id": "ad1693b5-f359-4bc1-80fc-b6394dda7f5a",
+      "name": "mist-pop--data-annotation",
+      "parentLayoutId": "f9e4ca58-537f-4a36-9927-5bf0d3fe05c6",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": " "
+        },
+        {
+          "name": "subtitle",
+          "type": "subtitle",
+          "text": " "
+        },
+        {
+          "name": "content",
+          "type": "content",
+          "text": " "
+        }
+      ]
+    },
+    {
+      "id": "de7d6428-a36c-45ad-96cd-9db7548af915",
+      "name": "mist-pop--gantt-roadmap",
+      "parentLayoutId": "f9e4ca58-537f-4a36-9927-5bf0d3fe05c6",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": " "
+        },
+        {
+          "name": "subtitle",
+          "type": "subtitle",
+          "text": " "
+        },
+        {
+          "name": "content",
+          "type": "content",
+          "text": " "
+        }
+      ]
+    },
+    {
+      "id": "509d881c-faee-4770-b241-1618d29b27f2",
+      "name": "mist-pop--highlight-callout",
+      "parentLayoutId": "f9e4ca58-537f-4a36-9927-5bf0d3fe05c6",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": " "
+        },
+        {
+          "name": "subtitle",
+          "type": "subtitle",
+          "text": " "
+        },
+        {
+          "name": "content",
+          "type": "content",
+          "text": " "
+        }
+      ]
+    },
+    {
+      "id": "40bacb4b-396e-4b2e-960a-01ea87246bc7",
+      "name": "mist-pop--title-center",
+      "parentLayoutId": "f9e4ca58-537f-4a36-9927-5bf0d3fe05c6",
+      "placeholders": [
+        {
+          "name": "title",
+          "type": "title",
+          "text": " "
+        },
+        {
+          "name": "subtitle",
+          "type": "subtitle",
+          "text": " "
+        },
+        {
+          "name": "content",
+          "type": "content",
+          "text": " "
+        }
+      ]
+    }
+  ],
+  "all_layouts_count": 13,
+  "slides": 10,
+  "native_object_policy": {
+    "text": true,
+    "shapes": true,
+    "tables": true,
+    "charts": false,
+    "images": 0,
+    "full_slide_raster": false
+  },
+  "relation_check": "slide.setLayout(layout) for all 10 slides; every layout parentLayoutId points to the theme master",
+  "placeholder_check": "title + subtitle + content placeholders on all 10 layouts",
+  "render_validation": {
+    "artifact_tool": {"slides": 10, "rendered": 10, "failures": 0},
+    "powerpoint_native": {"slides": 10, "rendered": 10, "failures": 0}
+  },
+  "source_snapshot": "prompt_system/themes/product-strategy-signal.yaml; prompt_system/layouts active core",
+  "proto_keys": [
+    "id",
+    "slides",
+    "layouts",
+    "theme",
+    "charts",
+    "images",
+    "contentReferences",
+    "fonts",
+    "tableStyles",
+    "viewProperties",
+    "textStyles",
+    "people",
+    "threads"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "deck_id": "tide-house",
+  "decision": "passed-with-scope",
+  "status": "passed-with-scope",
+  "scope": "Image2 formal bitmap demo; not native-editable content QA",
+  "passed": [
+    "Art Direction validator: approved-for-renderer, machine pass, human internal-staging-gate",
+    "10 assembled YAML files exist and each has exactly seven required top-level keys in canonical order",
+    "10 formal PNGs generated sequentially with built-in image_gen",
+    "10 PNGs individually inspected after generation",
+    "All PNGs normalized to exact 1920x1080 (16:9)",
+    "Traditional Chinese typography is visually readable on all ten inspected slides",
+    "Warm editorial coastal asset family is consistent across the deck",
+    "No Logo, watermark, external asset, credential, or real customer data shipped",
+    "PPTX contains 10 slides, one full-slide raster image per slide, and zero editable text runs",
+    "PowerPoint native rendering passed for all 10 slides with zero failures",
+    "Contact sheet generated from the final normalized PNGs"
+  ],
+  "partial": [
+    "PPTX is intentionally a non-editable image deck; it is a packaging/display case, not a native-editable PowerPoint",
+    "Image2 text rendering was visually reviewed, but semantic OCR comparison against every YAML string was not automated"
+  ],
+  "unverified": [
+    "All possible Theme/Layout combinations beyond this ten-slide case",
+    "Cross-renderer equivalence with the HTML and native-editable PPTX demo cases"
+  ],
+  "review_method": "full-resolution visual inspection after each built-in generation; PowerPoint native rendering 10/10; final package integrity tracked by the release manifest and SHA-256 ledger",
+  "final_artifacts": {
+    "manifest": "image-manifest.json",
+    "art_direction": "art-direction.yaml",
+    "content_manifest": "tide-house-content-manifest.yaml",
+    "pptx": "tide-house-image-deck.pptx",
+    "contact_sheet": "contact-sheet.png"
+  }
+}

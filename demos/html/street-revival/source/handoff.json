@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "art_direction_id": "street-revival-art-direction",
+  "status": "approved-for-renderer",
+  "formal_publish_allowed": true,
+  "story_ref": "demos/html/street-revival/source/content-manifest.json",
+  "brief": {
+    "visual_genre": "documentary-field-guide",
+    "narrative_metaphor": "把一個被繞開的街角當成一張共同編寫的生活地圖，沿著觀察、試作與回看重新接回使用與責任。",
+    "signature_move": {
+      "name": "neighborhood-index-spine",
+      "concept_link": "用一條窄邊索引把街角編號、觀察證據與下一步責任連成同一條閱讀軸。",
+      "allowed_variations": [
+        "rule",
+        "route",
+        "ledger",
+        "milestone"
+      ],
+      "minimum_presence": "至少出現在 hero、index-or-map、evidence、relationship 與 pause-or-close。"
+    },
+    "spatial_rule": {
+      "primary_anchor": "left-axis",
+      "reading_axis": "editorial-columns",
+      "crop_logic": "frame-within-frame",
+      "whitespace_logic": "左側保留街角索引，主要內容沿同一條生活路徑收合，讓留白成為共同判斷的空間。",
+      "content_alignment": "left"
+    },
+    "edge_behavior": "structural-index",
+    "typography_role": {
+      "primary_role": "index",
+      "hierarchy_method": [
+        "size",
+        "weight",
+        "position",
+        "spacing"
+      ],
+      "family_policy": "serif-sans-pair",
+      "maximum_families": 2,
+      "ai_minimum_visual_text_px": 36
+    },
+    "color_behavior": {
+      "primary_job": "documentary",
+      "accent_job": "classification",
+      "accent_area_limit": "一般頁面不超過視覺面積 12%，只用於路徑、狀態與回看節點。"
+    },
+    "forbidden_cliches": [
+      "equal-rounded-card-wall",
+      "generic-purple-orange-gradient",
+      "floating-pills",
+      "fake-dashboard",
+      "decorative-random-curves"
+    ]
+  },
+  "asset_family": {
+    "primary_family": "project-native-css-geometry",
+    "secondary_family": "typographic-index-marks",
+    "allowed_roles": [
+      "identity-motif",
+      "utility-icon"
+    ],
+    "maximum_families": 2,
+    "provenance_required": true,
+    "no_mixed_icon_families": true
+  },
+  "scene_plan": [
+    {
+      "slide_id": "01",
+      "role": "hero",
+      "visual_intensity": 5,
+      "primary_focus": "被繞開的街角其實是共同生活的入口",
+      "signature_move_variant": "rule"
+    },
+    {
+      "slide_id": "02",
+      "role": "index-or-map",
+      "visual_intensity": 2,
+      "primary_focus": "六個章節的共同閱讀路徑",
+      "signature_move_variant": "ledger"
+    },
+    {
+      "slide_id": "03",
+      "role": "relationship",
+      "visual_intensity": 4,
+      "primary_focus": "三個先做方向",
+      "signature_move_variant": "route"
+    },
+    {
+      "slide_id": "04",
+      "role": "relationship",
+      "visual_intensity": 3,
+      "primary_focus": "從被忽略到共同照顧",
+      "signature_move_variant": "split"
+    },
+    {
+      "slide_id": "05",
+      "role": "evidence",
+      "visual_intensity": 4,
+      "primary_focus": "六處觀察與三條日常路徑",
+      "signature_move_variant": "ledger"
+    },
+    {
+      "slide_id": "06",
+      "role": "relationship",
+      "visual_intensity": 5,
+      "primary_focus": "從走訪到回看的工作流程",
+      "signature_move_variant": "route"
+    },
+    {
+      "slide_id": "07",
+      "role": "evidence",
+      "visual_intensity": 4,
+      "primary_focus": "第一個試作點的優先順序",
+      "signature_move_variant": "milestone"
+    },
+    {
+      "slide_id": "08",
+      "role": "evidence",
+      "visual_intensity": 3,
+      "primary_focus": "30 天共同回看節奏",
+      "signature_move_variant": "rule"
+    },
+    {
+      "slide_id": "09",
+      "role": "pause-or-close",
+      "visual_intensity": 2,
+      "primary_focus": "街角不是空白只是還沒有被一起照顧",
+      "signature_move_variant": "ledger"
+    },
+    {
+      "slide_id": "10",
+      "role": "pause-or-close",
+      "visual_intensity": 1,
+      "primary_focus": "先把一個街角做對再讓整條路重新有人使用",
+      "signature_move_variant": "milestone"
+    }
+  ],
+  "renderers": {
+    "image2": {
+      "theme_candidates": [
+        "grainy-editorial"
+      ],
+      "layout_sequence": [
+        "cover-center-title-edge-decor",
+        "toc-6-panel-rows",
+        "strategic-priorities",
+        "before-after",
+        "heat-map",
+        "timeline-vertical",
+        "matrix-4quadrant",
+        "multi-line-chart",
+        "quote-focus",
+        "title-center"
+      ]
+    },
+    "html": {
+      "theme_candidates": [
+        "neighborhood-newsroom-proof"
+      ],
+      "layout_sequence": [
+        "cover-center-title-edge-decor",
+        "toc-6-panel-rows",
+        "strategic-priorities",
+        "before-after",
+        "heat-map",
+        "timeline-vertical",
+        "matrix-4quadrant",
+        "multi-line-chart",
+        "quote-focus",
+        "title-center"
+      ]
+    },
+    "pptx": {
+      "theme_candidates": [
+        "grainy-editorial"
+      ],
+      "layout_sequence": [
+        "cover-center-title-edge-decor",
+        "toc-6-panel-rows",
+        "strategic-priorities",
+        "before-after",
+        "heat-map",
+        "timeline-vertical",
+        "matrix-4quadrant",
+        "multi-line-chart",
+        "quote-focus",
+        "title-center"
+      ]
+    }
+  },
+  "perceptual_qa": {
+    "required_checks": [
+      "motivated-decoration",
+      "asset-family-consistency",
+      "semantic-card-boundary",
+      "signature-move-presence",
+      "scene-rhythm",
+      "visual-intensity-curve"
+    ],
+    "notes": "使用 pattern-only；無照片、Logo 或外部素材進入 renderer runtime。",
+    "final_decision": "human"
+  },
+  "compiled_at": "2026-08-17T18:45:30.460267+00:00",
+  "source": {
+    "path": "C:\\Users\\NEO\\.codex\\visualizations\\2026\\08\\17\\01a010a3-0118-73e0-82cf-e106869e5964\\nesa-slide-v0.1.0-demo.1-staging\\demos\\html\\street-revival\\source\\art-direction.yaml",
+    "sha256": "d5c77c6ff78114e87d6f76474e2528609a016455373ce3658c8d879f4a906d50",
+    "schema_path": "C:\\Users\\NEO\\.codex\\visualizations\\2026\\08\\17\\01a010a3-0118-73e0-82cf-e106869e5964\\nesa-slide-v0.1.0-demo.1-staging\\prompt_system\\art_direction\\schema.yaml",
+    "schema_sha256": "f3bf56620179115176f635719665811fe2619cfa26ba9dd7fe052bebf75d36db"
+  }
+}

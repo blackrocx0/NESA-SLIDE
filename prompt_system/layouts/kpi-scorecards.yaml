@@ -1,0 +1,38 @@
+id: kpi-scorecards
+display_name: 數據 KPI 計分卡
+media_requirement: no-image
+family: 數據類
+safe_area: [8, 8, 92, 92]
+
+slots:
+  - id: title
+    region: [8, 8, 84, 12]
+    weight: hero
+
+  - id: subtitle
+    region: [8, 20, 84, 8]
+    weight: tertiary
+    note: 補充資料範圍、時間區間或解讀角度
+
+  - id: scorecards
+    region: [8, 34, 84, 34]
+    weight: primary
+    note: 3–6 張等權 metric cards，重點是數字與變化，不是長段落說明
+
+  - id: takeaway
+    region: [8, 74, 84, 12]
+    weight: secondary
+    note: 一句總結、觀察或決策提示，選填
+
+alignment_rules:
+  - "title.centerX == safe_area.centerX"
+  - "subtitle.left == scorecard-1.left"
+  - "all scorecards share equal width and card rhythm"
+  - "numeric emphasis must align consistently across cards"
+  - "takeaway aligns to scorecards left edge unless centered summary mode is explicitly chosen"
+
+visual_balance:
+  method: metric-grid
+  description: >
+    This layout should make the audience read numbers first, labels second, explanation third.
+    Cards must feel comparable and clean, not like generic feature blocks.

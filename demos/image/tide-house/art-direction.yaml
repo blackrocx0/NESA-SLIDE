@@ -1,0 +1,107 @@
+schema_version: 1
+id: tide-house-art-direction
+status: approved-for-renderer
+story_ref: tide-house-content-manifest.yaml
+
+brief:
+  visual_genre: product-narrative
+  narrative_metaphor: "把潮汐當成旅宿的時鐘，讓每一頁像海水推進與退去一樣，有靠近、有停留，也有留白。"
+  signature_move:
+    name: tide-line-crop
+    concept_link: "以一條細而不規則的潮線切過照片或紙面，標記時間推進；不以海浪插圖裝飾，而讓裁切與留白承擔潮汐感。"
+    allowed_variations: [scale, crop, position]
+    minimum_presence: "hero、evidence、relationship、pause-or-close"
+  spatial_rule:
+    primary_anchor: left-axis
+    reading_axis: editorial-columns
+    crop_logic: one-edge
+    whitespace_logic: "讓主張與海景之間保留可呼吸的空白；密度頁用水平節奏收束，停頓頁只留一句話與一個微小潮線。"
+    content_alignment: left
+  edge_behavior: one-edge-crop
+  typography_role:
+    primary_role: narrator
+    hierarchy_method: [size, weight, position]
+    family_policy: serif-sans-pair
+    maximum_families: 2
+    ai_minimum_visual_text_px: 36
+  color_behavior:
+    primary_job: atmospheric
+    accent_job: single-emotional-focus
+    accent_area_limit: "一般頁面不超過視覺面積 10%，Hero 可例外"
+  forbidden_cliches:
+    - equal-rounded-card-wall
+    - generic-purple-orange-gradient
+    - generic-right-side-illustration-cover
+    - glow-plus-grid-plus-grain
+    - floating-pills
+
+reference_packet:
+  official_cases:
+    - title: The Paris Review
+      original_author_or_studio: The Paris Review
+      official_url: https://www.theparisreview.org/about/
+      borrowed_method: "借用文學編輯頁的留白、短標題與影像並置方法，不複製其版面。"
+    - title: Casa Wabi
+      original_author_or_studio: Fundación Casa Wabi
+      official_url: https://www.casawabi.org/about-casa-wabi/
+      borrowed_method: "借用建築與自然之間的安靜尺度感，不使用其品牌資產。"
+  cross_domain_reference:
+    type: architecture
+    title: Japanese coastal architecture field notes
+    source_url: https://www.archdaily.com/about
+    borrowed_method: "借用材質、光線與路徑被逐格觀察的方式，轉成旅宿的一日節奏。"
+  reusable_asset_sources:
+    - catalog_id: image_gen-builtin
+      source_url: https://platform.openai.com/docs/guides/images
+      license_status: generated-internal-no-external-source
+  anti_reference:
+    description: "不要變成海邊民宿廣告模板。"
+    failure_risk: "海浪、貝殼、藍色漸層與裝飾性圖示堆疊，會讓旅宿失去安靜與可信度。"
+  translation_note: "只借用編輯、建築與自然觀察的方法；所有圖像、文字與資料均為本案重新生成的虛構示範。"
+
+asset_family:
+  primary_family: photo
+  secondary_family: typography
+  allowed_roles: [primary-subject, atmospheric-crop, identity-motif]
+  maximum_families: 2
+  provenance_required: true
+  no_mixed_icon_families: true
+
+scene_grammar:
+  mode: full-deck
+  scenes:
+    - {slide_id: "01", role: hero, visual_intensity: 5, primary_focus: "潮汐旅宿的核心氣氛", signature_move_variant: "左側海岸影像以潮線裁切，右側保留大面積暖白標題區"}
+    - {slide_id: "02", role: pause-or-close, visual_intensity: 2, primary_focus: "慢旅不是逃離，而是重新感受", signature_move_variant: "只有一句主張與低對比潮線，留白成為主角"}
+    - {slide_id: "03", role: index-or-map, visual_intensity: 3, primary_focus: "一天四個潮汐時刻", signature_move_variant: "四段水平閱讀路徑由左至右推進"}
+    - {slide_id: "04", role: relationship, visual_intensity: 4, primary_focus: "三個體驗支柱如何互相支撐", signature_move_variant: "三個平行模組以不等量潮線連結，不做卡片牆"}
+    - {slide_id: "05", role: relationship, visual_intensity: 3, primary_focus: "旅程如何從抵達前開始", signature_move_variant: "流程節點沿同一潮線前進，箭頭保持細而清楚"}
+    - {slide_id: "06", role: evidence, visual_intensity: 4, primary_focus: "日光、潮聲與空間節奏", signature_move_variant: "時間軸以光影段落切換，節點下方留短句"}
+    - {slide_id: "07", role: evidence, visual_intensity: 4, primary_focus: "三種房型的不同停留方式", signature_move_variant: "左側大幅房間／海景照片，右側以透明紙片標注差異"}
+    - {slide_id: "08", role: pause-or-close, visual_intensity: 1, primary_focus: "品牌語氣是留白", signature_move_variant: "垂直潮線與大字句子形成安靜的頁面呼吸"}
+    - {slide_id: "09", role: relationship, visual_intensity: 3, primary_focus: "一晚之後可帶走的三種記憶", signature_move_variant: "三個記憶模組沿底部潮線排列，內容保持短句"}
+    - {slide_id: "10", role: pause-or-close, visual_intensity: 5, primary_focus: "邀請下一次潮來時再回來", signature_move_variant: "滿版暮色海面，左側半透明紙面承接收束句"}
+
+renderer_handoff:
+  image2:
+    theme_candidates: [warm-editorial-portfolio]
+    layout_sequence: [cover-photo-frame, title-center, timeline-milestones, cards-1-plus-3, process-flow, timeline-milestones, photo-left-overlay-title-right, quote-focus, cards-1-plus-3, closing-photo-overlay-contact]
+  html:
+    theme_candidates: [warm-editorial-portfolio]
+    layout_sequence: [cover-photo-frame, title-center, timeline-milestones, cards-1-plus-3, process-flow, timeline-milestones, photo-left-overlay-title-right, quote-focus, cards-1-plus-3, closing-photo-overlay-contact]
+  pptx:
+    theme_candidates: [warm-editorial-portfolio]
+    layout_sequence: [cover-photo-frame, title-center, timeline-milestones, cards-1-plus-3, process-flow, timeline-milestones, photo-left-overlay-title-right, quote-focus, cards-1-plus-3, closing-photo-overlay-contact]
+
+approval:
+  machine:
+    status: pass
+    checked_at: 2026-08-18
+  human:
+    status: approved
+    approved_by: internal-staging-gate
+    approved_at: 2026-08-18
+    notes: "方向僅供 v0.1.0-demo.1 內部展示；所有案例內容為虛構。"
+
+perceptual_qa:
+  required_checks: [motivated-decoration, asset-family-consistency, semantic-card-boundary, signature-move-presence, scene-rhythm, visual-intensity-curve]
+  notes: "最終逐頁檢視 PNG；圖片式簡報中的文字可讀性與細節以 Image2 輸出為準。"

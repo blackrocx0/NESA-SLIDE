@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "snapshot_ref": "source-snapshot.json",
+  "verified_at": "2026-08-17T19:06:49.9838663Z",
+  "status": "passed",
+  "checks": {
+    "allowlisted_files_checked": 668,
+    "missing_files": 0,
+    "sha256_changes": 0,
+    "mtime_changes": 0
+  },
+  "method": "Compared every original-repository allowlist path against the frozen SHA-256 and UTC mtime immediately before release finalization."
+}

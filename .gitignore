@@ -1,0 +1,7 @@
+workspace/*
+!workspace/README.md
+**/__pycache__/
+**/*.pyc
+**/.history/
+*.log
+

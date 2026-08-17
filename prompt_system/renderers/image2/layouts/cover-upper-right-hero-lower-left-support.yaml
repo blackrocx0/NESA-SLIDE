@@ -1,0 +1,39 @@
+schema_version: 1
+kind: layout_adapter
+renderer: image2
+layout_id: cover-upper-right-hero-lower-left-support
+family: cover
+support_status: baseline-from-core
+source:
+  path: prompt_system/layouts/cover-upper-right-hero-lower-left-support.yaml
+  sha256: c78647380fa2095aa8230a98d84d5cfa05bbb948b0de273501283f9fdc67b6ef
+core_refs:
+  media_requirement: prompt_system/layouts/cover-upper-right-hero-lower-left-support.yaml#media_requirement
+  slots: prompt_system/layouts/cover-upper-right-hero-lower-left-support.yaml#slots
+  safe_area: prompt_system/layouts/cover-upper-right-hero-lower-left-support.yaml#safe_area
+  alignment: prompt_system/layouts/cover-upper-right-hero-lower-left-support.yaml#alignment_rules
+  visual_balance: prompt_system/layouts/cover-upper-right-hero-lower-left-support.yaml#visual_balance
+  decoration: prompt_system/layouts/cover-upper-right-hero-lower-left-support.yaml#decoration
+projection:
+  output: layout-description-and-decoration-zones
+  coordinate_style: natural-language-relative-position
+  slot_entries:
+  - slot_id: title
+    source_ref: prompt_system/layouts/cover-upper-right-hero-lower-left-support.yaml#slots[id=title]
+    geometry_ref: prompt_system/layouts/cover-upper-right-hero-lower-left-support.yaml#slots[id=title].region
+    geometry_kind: region
+    semantic_role: title
+    projection: describe-relative-position-and-hierarchy
+  - slot_id: subtitle
+    source_ref: prompt_system/layouts/cover-upper-right-hero-lower-left-support.yaml#slots[id=subtitle]
+    geometry_ref: prompt_system/layouts/cover-upper-right-hero-lower-left-support.yaml#slots[id=subtitle].region
+    geometry_kind: region
+    semantic_role: subtitle
+    projection: describe-relative-position-and-hierarchy
+  - slot_id: meta
+    source_ref: prompt_system/layouts/cover-upper-right-hero-lower-left-support.yaml#slots[id=meta]
+    geometry_ref: prompt_system/layouts/cover-upper-right-hero-lower-left-support.yaml#slots[id=meta].region
+    geometry_kind: region
+    semantic_role: subtitle
+    projection: describe-relative-position-and-hierarchy
+  exact_coordinates_in_prompt: false

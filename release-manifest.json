@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "product": "NESA Slide",
+  "version": "0.1.0-demo.1",
+  "release_status": "internal-test-passed",
+  "audience": "internal-nontechnical-testers",
+  "created_at": "2026-08-17T19:07:03.187209+00:00",
+  "source": {
+    "snapshot_ref": "source-snapshot.json",
+    "git_head": "94bbc7232ea43fe631b845511834a1c2433bd340",
+    "git_branch": "codex/layout-design-diversity",
+    "working_tree_dirty": true,
+    "source_file_count": 668,
+    "source_aggregate_sha256": "727012efa14dbfb65ed227d283ddca109470208982ccfc02316765a5bf78bdf8",
+    "freeze_verification_ref": "source-snapshot-verification.json",
+    "freeze_verification": {
+      "schema_version": 1,
+      "snapshot_ref": "source-snapshot.json",
+      "verified_at": "2026-08-17T19:06:49.9838663Z",
+      "status": "passed",
+      "checks": {
+        "allowlisted_files_checked": 668,
+        "missing_files": 0,
+        "sha256_changes": 0,
+        "mtime_changes": 0
+      },
+      "method": "Compared every original-repository allowlist path against the frozen SHA-256 and UTC mtime immediately before release finalization."
+    }
+  },
+  "catalog": {
+    "core_themes": 36,
+    "active_layouts": 77,
+    "theme_adapters": 108,
+    "layout_adapters": 231,
+    "total_adapters": 339,
+    "retired_layouts_excluded": [
+      "toc-2",
+      "toc-2-image-left",
+      "toc-2-panel-rows",
+      "toc-2-vertical"
+    ]
+  },
+  "interfaces": {
+    "codex_workspace": true,
+    "global_skill_install": false,
+    "check_system": "CHECK_SYSTEM.cmd",
+    "open_html_demo": "OPEN_HTML_DEMO.cmd",
+    "start_html_editor": "START_HTML_EDITOR.cmd",
+    "user_output_root": "workspace/"
+  },
+  "demos": {
+    "image": {
+      "title": "潮汐旅宿｜海岸慢旅品牌概念",
+      "root": "demos/image/tide-house",
+      "artifact": "demos/image/tide-house/tide-house-image-deck.pptx",
+      "pages": 10,
+      "editable": false,
+      "qa_ref": "demos/image/tide-house/qa-summary.json",
+      "qa_status": "passed-with-scope"
+    },
+    "html": {
+      "title": "巷口再生｜城市共創工作坊成果",
+      "root": "demos/html/street-revival",
+      "artifact": "demos/html/street-revival/street-revival.html",
+      "pages": 10,
+      "editable": true,
+      "qa_ref": "demos/html/street-revival/qa/qa-summary.json",
+      "qa_status": "passed"
+    },
+    "pptx": {
+      "title": "MIST POP｜無酒精氣泡飲 90 天上市計畫",
+      "root": "demos/pptx/mist-pop-launch",
+      "artifact": "demos/pptx/mist-pop-launch/mist-pop-launch.pptx",
+      "pages": 10,
+      "editable": true,
+      "qa_ref": "demos/pptx/mist-pop-launch/qa-summary.json",
+      "qa_status": "passed"
+    }
+  },
+  "excluded_runtime_areas": [
+    ".git",
+    "node_modules",
+    "experiments",
+    "tests",
+    "research",
+    "review",
+    "tmp",
+    ".history",
+    "To_delete",
+    "migrations",
+    "deploy",
+    "runtime logs"
+  ],
+  "portable_sanitizations": [
+    {
+      "path": "prompt_system/presets/catalog.yaml",
+      "change": "removed deployment-only Gallery artifact path and URL from clinical-evidence-atlas",
+      "generation_semantics_changed": false
+    }
+  ],
+  "verification_boundary": {
+    "source_snapshot": "passed",
+    "adapter_structure": "passed",
+    "three_demo_decks": [
+      "passed-with-scope",
+      "passed",
+      "passed"
+    ],
+    "full_36x77_perceptual_matrix": "unverified",
+    "remote_deployment": "not-requested"
+  }
+}

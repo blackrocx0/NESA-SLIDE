@@ -1,0 +1,22 @@
+page_type_and_mood:
+  prompt: "16:9 圖片式簡報品牌語氣停頓頁；近乎空白、柔和紙面與一條垂直潮線，讓繁體中文句子像雜誌中的獨白。"
+visual_base_2a:
+  background: {style: "淡奶茶到暖白的紙面，遠處一小塊霧藍陰影", texture: "細紙纖維，無照片"}
+  typography: {heading: "繁體中文 Noto Serif TC，超大主句", body: "繁體中文 Noto Sans TC，小型署名"}
+  color_system: {primary: "#2A2521", secondary: "#8E7A6A", accent: "#A7B9B5", support: "#F5EEE7"}
+corner_decoration_2b:
+  rule: "一條細直潮線在主句左側，從約 26% 高度延伸至 70% 高度。"
+  top_left: {element: "08", treatment: "頁碼"}
+  top_right: {element: "品牌語氣", treatment: "小字"}
+  bottom_left: {element: "潮汐旅宿", treatment: "小字"}
+  bottom_right: {element: "空白", treatment: "不放裝飾"}
+layout_description:
+  structure: "主句置中偏左、兩行大字『品牌語氣不是喧鬧，／是留白。』下方小字『讓旅人自己完成這段海岸故事。』與『潮汐旅宿｜語氣原則』。"
+content:
+  title: "品牌語氣不是喧鬧，是留白。"
+  subtitle: "讓旅人自己完成這段海岸故事。"
+  attribution: "潮汐旅宿｜語氣原則"
+safe_zone_constraints:
+  hard_constraint: "主句必須完整、繁體字正確、不可被潮線穿過；畫面不可加入照片、Logo、icon、英文或多餘標籤。"
+closing_design_intent:
+  prompt: "讓品牌的克制本身成為視覺事件；觀眾先感到安靜，再理解主張。"

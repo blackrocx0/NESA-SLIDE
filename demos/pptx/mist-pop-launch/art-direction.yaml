@@ -1,0 +1,31 @@
+id: mist-pop-launch-direction
+deck_id: mist-pop-launch
+visual_genre: "霧感氣泡 × 策略訊號編輯風"
+narrative_metaphor: "把一場晚餐裡的微小舉杯，放大成可被驗證的上市節奏。"
+signature_move: "mist-axis：以半透明霧帶和單一訊號點把每頁的關鍵行動串成一條輕盈水平軸。"
+spatial_rule: "16:9 stage；左側承載敘事與節奏，右側或中央承載可量測證據；標題與內容留 8%–10% 安全邊界。"
+typography_role: "Noto Sans TC；主標以 50–60px bold 建立清楚語氣，正文以 18–24px regular 保持閱讀速度，數字使用 bold 放大。"
+color_behavior:
+  background: "#F4F7F8 霧白"
+  ink: "#15232E 深墨"
+  mist: "#DDEBED 淡藍霧"
+  accent: "#2E9E9A 青綠訊號"
+  action: "#F08A24 橙色動作"
+edge_behavior: "邊緣保持安靜；只允許細軸線、淡霧帶與少量訊號點靠近邊界，不放 Logo 或滿版照片。"
+asset_family: "不依賴外部圖片；以 native shape、line、chart、table 與透明色塊形成可編輯視覺。"
+forbidden_cliches:
+  - "通用紫橘漸層"
+  - "等寬圓角卡片牆"
+  - "酒瓶或酒吧庫存照片"
+  - "把品牌 Logo 當作裝飾"
+scene_grammar:
+  - {slide_id: s01, role: hero, intensity: 5, variant: "霧帶聚焦"}
+  - {slide_id: s02, role: index-or-map, intensity: 3, variant: "三段訊號軸"}
+  - {slide_id: s03, role: evidence, intensity: 3, variant: "選擇改寫"}
+  - {slide_id: s04, role: relationship, intensity: 4, variant: "四節奏連線"}
+  - {slide_id: s05, role: evidence, intensity: 3, variant: "數字留白"}
+  - {slide_id: s06, role: relationship, intensity: 4, variant: "通路矩陣"}
+  - {slide_id: s07, role: evidence, intensity: 4, variant: "訊號漏斗"}
+  - {slide_id: s08, role: relationship, intensity: 4, variant: "三段時間帶"}
+  - {slide_id: s09, role: pause-or-close, intensity: 2, variant: "單句停頓"}
+  - {slide_id: s10, role: pause-or-close, intensity: 5, variant: "下一步收束"}

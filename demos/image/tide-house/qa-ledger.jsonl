@@ -1,0 +1,10 @@
+{"slide_id":"01","png":"slides/01.png","generator":"built-in image_gen","iteration":1,"status":"pass","checks":["16:9","text-readable","safe-zone","asset-family","no-logo","visual-inspection"]}
+{"slide_id":"02","png":"slides/02.png","generator":"built-in image_gen","iteration":1,"status":"pass","checks":["16:9","text-readable","safe-zone","asset-family","no-logo","visual-inspection"]}
+{"slide_id":"03","png":"slides/03.png","generator":"built-in image_gen","iteration":1,"status":"pass","checks":["16:9","text-readable","timeline-readable","asset-family","no-logo","visual-inspection"]}
+{"slide_id":"04","png":"slides/04.png","generator":"built-in image_gen","iteration":1,"status":"pass","checks":["16:9","text-readable","three-modules","asset-family","no-logo","visual-inspection"]}
+{"slide_id":"05","png":"slides/05.png","generator":"built-in image_gen","iteration":1,"status":"pass","checks":["16:9","text-readable","flow-direction","asset-family","no-logo","visual-inspection"]}
+{"slide_id":"06","png":"slides/06.png","generator":"built-in image_gen","iteration":1,"status":"pass","checks":["16:9","text-readable","timeline-readable","asset-family","no-logo","visual-inspection"]}
+{"slide_id":"07","png":"slides/07.png","generator":"built-in image_gen","iteration":1,"status":"pass","checks":["16:9","text-readable","photo-text-separation","asset-family","no-logo","visual-inspection"]}
+{"slide_id":"08","png":"slides/08.png","generator":"built-in image_gen","iteration":1,"status":"pass","checks":["16:9","text-readable","pause-rhythm","asset-family","no-logo","visual-inspection"]}
+{"slide_id":"09","png":"slides/09.png","generator":"built-in image_gen","iteration":1,"status":"pass","checks":["16:9","text-readable","three-memory-modules","asset-family","no-logo","visual-inspection"]}
+{"slide_id":"10","png":"slides/10.png","generator":"built-in image_gen","iteration":1,"status":"pass","checks":["16:9","text-readable","closing-safe-zone","asset-family","no-logo","visual-inspection"]}

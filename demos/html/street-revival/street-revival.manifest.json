@@ -1,0 +1,1505 @@
+{
+  "skill": "render-html-slide",
+  "renderer_entrypoint": "scripts/render_randomized_html_demo.py",
+  "contract": "references/presentation-production-contract.md",
+  "editable_dom": {
+    "schema": "semantic-module-v1",
+    "static_validation": "pass",
+    "editor_source": "artifacts/html-test/edit-mode.js",
+    "editor_sha256": "dfe2663aea4e9335aa14c82416639a1785996bdb1e45fdaa40d367a402183e8d",
+    "visual_anchor_contract": {
+      "schema": "parent-edge-v1",
+      "metadata": "data-edit-anchor",
+      "supported_anchors": [
+        "bottom"
+      ]
+    }
+  },
+  "html_runtime": {
+    "editor_embedded": true,
+    "pptx_browser_runtime_embedded": true,
+    "pptx_browser_runtime_sha256": "975ed29fbc3be8cbaadc88c2a259aa54eaec4ea853593db30fa31229087b5b5c",
+    "motion_runtime_embedded": true,
+    "motion_runtime": {
+      "version": "projection-content-fade-v6",
+      "source": "scripts/html_motion_runtime.py",
+      "source_sha256": "E2E3460BD07CE5EE63F0437009CE8C558FA24BC395793461B3AB52A5C38C6DCB",
+      "scope": "presentation-only",
+      "projection_only": true,
+      "mode": "content-fade",
+      "default_enabled": true,
+      "toolbar_toggle": false,
+      "toolbar_location": "slide-settings-panel",
+      "trigger_paths": [
+        "editmodechange",
+        "player-state-observer",
+        "slidechange",
+        "explicit-toggle"
+      ],
+      "clone_scope": "incoming-current-slide-only",
+      "outgoing_page_transition": false,
+      "title_delay_ms": 0,
+      "content_delay_ms": 220,
+      "delay_ms": 220,
+      "duration_ms": 900,
+      "translate_y_px": 0,
+      "scale_from": 1.0,
+      "transition": "title-then-delayed-content-fade-in",
+      "sequence": "title-then-content",
+      "content_scope": "projection-clone .el objects split by data-motion-role or title-like class",
+      "background_behavior": "target-slide-background-static; projection-clone-foreground-only",
+      "background_scope": "not-in-motion-clone",
+      "page_change_only": true,
+      "key_navigation_unchanged": true,
+      "reduced_motion": "forced-by-default-for-visible-presentation; use ?motion=respect to honor system preference",
+      "reduced_motion_opt_in_query": "motion=respect",
+      "toggle_state_lifetime": "current-page-session"
+    }
+  },
+  "seed": 20260819,
+  "deck_revision": "03e8461336dca8ff95ae",
+  "generated_at": "2026-08-17T18:45:31.290449+00:00",
+  "topic": {
+    "id": "street-revival",
+    "title": "巷口再生"
+  },
+  "content_source": "demos/html/street-revival/source/content-manifest.json",
+  "content_mode": "new-deck",
+  "legacy_layout_content_compatibility": {
+    "enabled": false,
+    "activation": "disabled",
+    "manifest_marker": null,
+    "preset_demo_isolated": false
+  },
+  "content_intent": "full-content-plan",
+  "layout_selection": "preferred",
+  "layout_selection_contract": "preferred-layout-when-authored",
+  "content_plan": [
+    {
+      "page_index": 1,
+      "page_id": "01",
+      "intent": "cover",
+      "content_key": "cover",
+      "source_fields": [
+        "title",
+        "subtitle",
+        "speaker",
+        "org"
+      ],
+      "content_relation": "single-proposition-hero",
+      "content_item_count": null,
+      "plan_source": "explicit-content-plan"
+    },
+    {
+      "page_index": 2,
+      "page_id": "02",
+      "intent": "navigation",
+      "content_key": "toc",
+      "source_fields": [
+        "toc"
+      ],
+      "content_relation": "reading-path",
+      "content_item_count": 6,
+      "plan_source": "explicit-content-plan"
+    },
+    {
+      "page_index": 3,
+      "page_id": "03",
+      "intent": "prioritization",
+      "content_key": "prioritization",
+      "source_fields": [
+        "priorities",
+        "recommendations",
+        "matrix"
+      ],
+      "content_relation": "ranked-decision",
+      "content_item_count": 3,
+      "plan_source": "explicit-content-plan"
+    },
+    {
+      "page_index": 4,
+      "page_id": "04",
+      "intent": "comparison",
+      "content_key": "comparison",
+      "source_fields": [
+        "before",
+        "after",
+        "matrix"
+      ],
+      "content_relation": "state-change",
+      "content_item_count": 4,
+      "plan_source": "explicit-content-plan"
+    },
+    {
+      "page_index": 5,
+      "page_id": "05",
+      "intent": "evidence",
+      "content_key": "evidence",
+      "source_fields": [
+        "metrics",
+        "chart"
+      ],
+      "content_relation": "measurable-proof",
+      "content_item_count": 4,
+      "plan_source": "explicit-content-plan"
+    },
+    {
+      "page_index": 6,
+      "page_id": "06",
+      "intent": "sequence",
+      "content_key": "sequence",
+      "source_fields": [
+        "process",
+        "timeline"
+      ],
+      "content_relation": "ordered-path",
+      "content_item_count": 5,
+      "plan_source": "explicit-content-plan"
+    },
+    {
+      "page_index": 7,
+      "page_id": "07",
+      "intent": "distribution",
+      "content_key": "distribution",
+      "source_fields": [
+        "matrix"
+      ],
+      "content_relation": "position-and-cluster",
+      "content_item_count": 4,
+      "plan_source": "explicit-content-plan"
+    },
+    {
+      "page_index": 8,
+      "page_id": "08",
+      "intent": "evidence",
+      "content_key": "evidence",
+      "source_fields": [
+        "metrics",
+        "chart"
+      ],
+      "content_relation": "measurable-proof",
+      "content_item_count": 4,
+      "plan_source": "explicit-content-plan"
+    },
+    {
+      "page_index": 9,
+      "page_id": "09",
+      "intent": "statement",
+      "content_key": "statement",
+      "source_fields": [
+        "quote",
+        "attribution"
+      ],
+      "content_relation": "single-conclusion",
+      "content_item_count": null,
+      "plan_source": "explicit-content-plan"
+    },
+    {
+      "page_index": 10,
+      "page_id": "10",
+      "intent": "closing",
+      "content_key": "closing",
+      "source_fields": [
+        "closing"
+      ],
+      "content_relation": "next-action",
+      "content_item_count": 2,
+      "plan_source": "explicit-content-plan"
+    }
+  ],
+  "content_pages": [
+    {
+      "page_id": "01",
+      "intent": "cover",
+      "content_key": "cover",
+      "content_relation": "single-proposition-hero",
+      "content_item_count": null,
+      "source_fields": [
+        "title",
+        "subtitle",
+        "speaker",
+        "org"
+      ],
+      "content_sha256": "31d64416685139d5ac84859211a083a2d7213022e4f7486974eae8bea95bc970"
+    },
+    {
+      "page_id": "02",
+      "intent": "navigation",
+      "content_key": "toc",
+      "content_relation": "reading-path",
+      "content_item_count": 6,
+      "source_fields": [
+        "toc"
+      ],
+      "content_sha256": "29a8cd5c082ba3a7da85ced55286952ef1dfe9b959f071ce4c0310b38a402580"
+    },
+    {
+      "page_id": "03",
+      "intent": "prioritization",
+      "content_key": "prioritization",
+      "content_relation": "ranked-decision",
+      "content_item_count": 3,
+      "source_fields": [
+        "priorities",
+        "recommendations",
+        "matrix"
+      ],
+      "content_sha256": "023d89ca063ffdd58dfd59381f7191843de20810d16b7fd848ea6ac4840da54f"
+    },
+    {
+      "page_id": "04",
+      "intent": "comparison",
+      "content_key": "comparison",
+      "content_relation": "state-change",
+      "content_item_count": 4,
+      "source_fields": [
+        "before",
+        "after",
+        "matrix"
+      ],
+      "content_sha256": "c80d8ef69d262e9ed26a037c4aa518d37c48ad75bcba8818d59b06b3cfb955ba"
+    },
+    {
+      "page_id": "05",
+      "intent": "evidence",
+      "content_key": "evidence",
+      "content_relation": "measurable-proof",
+      "content_item_count": 4,
+      "source_fields": [
+        "metrics",
+        "chart"
+      ],
+      "content_sha256": "499cf41581aa88aad6079f3d1b89d7015da054ed83e6d57839e320646fcecf3c"
+    },
+    {
+      "page_id": "06",
+      "intent": "sequence",
+      "content_key": "sequence",
+      "content_relation": "ordered-path",
+      "content_item_count": 5,
+      "source_fields": [
+        "process",
+        "timeline"
+      ],
+      "content_sha256": "f961ecef79f2ae09c1635e8b798dcc3e8c15c85baf6c80ff1c10e2966daeaecc"
+    },
+    {
+      "page_id": "07",
+      "intent": "distribution",
+      "content_key": "distribution",
+      "content_relation": "position-and-cluster",
+      "content_item_count": 4,
+      "source_fields": [
+        "matrix"
+      ],
+      "content_sha256": "3b1862791befeec48b930a36cf6aa1b889f68d370780367193ee5180d8fc1018"
+    },
+    {
+      "page_id": "08",
+      "intent": "evidence",
+      "content_key": "evidence",
+      "content_relation": "measurable-proof",
+      "content_item_count": 4,
+      "source_fields": [
+        "metrics",
+        "chart"
+      ],
+      "content_sha256": "499cf41581aa88aad6079f3d1b89d7015da054ed83e6d57839e320646fcecf3c"
+    },
+    {
+      "page_id": "09",
+      "intent": "statement",
+      "content_key": "statement",
+      "content_relation": "single-conclusion",
+      "content_item_count": null,
+      "source_fields": [
+        "quote",
+        "attribution"
+      ],
+      "content_sha256": "279701bda3e1f78d1360042144e3bf3c9e44a4f05d03629428920d39e94819e5"
+    },
+    {
+      "page_id": "10",
+      "intent": "closing",
+      "content_key": "closing",
+      "content_relation": "next-action",
+      "content_item_count": 2,
+      "source_fields": [
+        "closing"
+      ],
+      "content_sha256": "5aae84ece4cbf8ee705e53a63e585c2a8e2453d6698e391221b8a68c3af30636"
+    }
+  ],
+  "composition_plan": [
+    {
+      "stage": "post-scaffold-selection",
+      "owner": "per-slide-composition",
+      "content_item_count": null,
+      "fit_policy": "compose-page-content-then-validate",
+      "capacity_role": "renderer-feedback-not-layout-eligibility",
+      "remediation_order": [
+        "reflow-within-scaffold",
+        "change-composition-recipe",
+        "split-page",
+        "alternate-scaffold-after-visual-failure"
+      ],
+      "content_page_id": "01",
+      "content_sha256": "31d64416685139d5ac84859211a083a2d7213022e4f7486974eae8bea95bc970",
+      "layout_scaffold_id": "cover-center-title-edge-decor",
+      "layout_role": "scaffold",
+      "composition_source": "page-content-adapter",
+      "rendered_item_count": null,
+      "content_identity_preserved": true,
+      "content_mutated": false
+    },
+    {
+      "stage": "post-scaffold-selection",
+      "owner": "per-slide-composition",
+      "content_item_count": 6,
+      "fit_policy": "compose-page-content-then-validate",
+      "capacity_role": "renderer-feedback-not-layout-eligibility",
+      "remediation_order": [
+        "reflow-within-scaffold",
+        "change-composition-recipe",
+        "split-page",
+        "alternate-scaffold-after-visual-failure"
+      ],
+      "content_page_id": "02",
+      "content_sha256": "29a8cd5c082ba3a7da85ced55286952ef1dfe9b959f071ce4c0310b38a402580",
+      "layout_scaffold_id": "toc-6-panel-rows",
+      "layout_role": "scaffold",
+      "composition_source": "page-content-adapter",
+      "rendered_item_count": 6,
+      "content_identity_preserved": true,
+      "content_mutated": false
+    },
+    {
+      "stage": "post-scaffold-selection",
+      "owner": "per-slide-composition",
+      "content_item_count": 3,
+      "fit_policy": "compose-page-content-then-validate",
+      "capacity_role": "renderer-feedback-not-layout-eligibility",
+      "remediation_order": [
+        "reflow-within-scaffold",
+        "change-composition-recipe",
+        "split-page",
+        "alternate-scaffold-after-visual-failure"
+      ],
+      "content_page_id": "03",
+      "content_sha256": "023d89ca063ffdd58dfd59381f7191843de20810d16b7fd848ea6ac4840da54f",
+      "layout_scaffold_id": "strategic-priorities",
+      "layout_role": "scaffold",
+      "composition_source": "page-content-adapter",
+      "rendered_item_count": 3,
+      "content_identity_preserved": true,
+      "content_mutated": false
+    },
+    {
+      "stage": "post-scaffold-selection",
+      "owner": "per-slide-composition",
+      "content_item_count": 4,
+      "fit_policy": "compose-page-content-then-validate",
+      "capacity_role": "renderer-feedback-not-layout-eligibility",
+      "remediation_order": [
+        "reflow-within-scaffold",
+        "change-composition-recipe",
+        "split-page",
+        "alternate-scaffold-after-visual-failure"
+      ],
+      "content_page_id": "04",
+      "content_sha256": "c80d8ef69d262e9ed26a037c4aa518d37c48ad75bcba8818d59b06b3cfb955ba",
+      "layout_scaffold_id": "before-after",
+      "layout_role": "scaffold",
+      "composition_source": "page-content-adapter",
+      "rendered_item_count": null,
+      "content_identity_preserved": true,
+      "content_mutated": false
+    },
+    {
+      "stage": "post-scaffold-selection",
+      "owner": "per-slide-composition",
+      "content_item_count": 4,
+      "fit_policy": "compose-page-content-then-validate",
+      "capacity_role": "renderer-feedback-not-layout-eligibility",
+      "remediation_order": [
+        "reflow-within-scaffold",
+        "change-composition-recipe",
+        "split-page",
+        "alternate-scaffold-after-visual-failure"
+      ],
+      "content_page_id": "05",
+      "content_sha256": "499cf41581aa88aad6079f3d1b89d7015da054ed83e6d57839e320646fcecf3c",
+      "layout_scaffold_id": "heat-map",
+      "layout_role": "scaffold",
+      "composition_source": "page-content-adapter",
+      "rendered_item_count": null,
+      "content_identity_preserved": true,
+      "content_mutated": false
+    },
+    {
+      "stage": "post-scaffold-selection",
+      "owner": "per-slide-composition",
+      "content_item_count": 5,
+      "fit_policy": "compose-page-content-then-validate",
+      "capacity_role": "renderer-feedback-not-layout-eligibility",
+      "remediation_order": [
+        "reflow-within-scaffold",
+        "change-composition-recipe",
+        "split-page",
+        "alternate-scaffold-after-visual-failure"
+      ],
+      "content_page_id": "06",
+      "content_sha256": "f961ecef79f2ae09c1635e8b798dcc3e8c15c85baf6c80ff1c10e2966daeaecc",
+      "layout_scaffold_id": "timeline-vertical",
+      "layout_role": "scaffold",
+      "composition_source": "page-content-adapter",
+      "rendered_item_count": 5,
+      "content_identity_preserved": true,
+      "content_mutated": false
+    },
+    {
+      "stage": "post-scaffold-selection",
+      "owner": "per-slide-composition",
+      "content_item_count": 4,
+      "fit_policy": "compose-page-content-then-validate",
+      "capacity_role": "renderer-feedback-not-layout-eligibility",
+      "remediation_order": [
+        "reflow-within-scaffold",
+        "change-composition-recipe",
+        "split-page",
+        "alternate-scaffold-after-visual-failure"
+      ],
+      "content_page_id": "07",
+      "content_sha256": "3b1862791befeec48b930a36cf6aa1b889f68d370780367193ee5180d8fc1018",
+      "layout_scaffold_id": "matrix-4quadrant",
+      "layout_role": "scaffold",
+      "composition_source": "page-content-adapter",
+      "rendered_item_count": null,
+      "content_identity_preserved": true,
+      "content_mutated": false
+    },
+    {
+      "stage": "post-scaffold-selection",
+      "owner": "per-slide-composition",
+      "content_item_count": 4,
+      "fit_policy": "compose-page-content-then-validate",
+      "capacity_role": "renderer-feedback-not-layout-eligibility",
+      "remediation_order": [
+        "reflow-within-scaffold",
+        "change-composition-recipe",
+        "split-page",
+        "alternate-scaffold-after-visual-failure"
+      ],
+      "content_page_id": "08",
+      "content_sha256": "499cf41581aa88aad6079f3d1b89d7015da054ed83e6d57839e320646fcecf3c",
+      "layout_scaffold_id": "multi-line-chart",
+      "layout_role": "scaffold",
+      "composition_source": "page-content-adapter",
+      "rendered_item_count": null,
+      "content_identity_preserved": true,
+      "content_mutated": false
+    },
+    {
+      "stage": "post-scaffold-selection",
+      "owner": "per-slide-composition",
+      "content_item_count": null,
+      "fit_policy": "compose-page-content-then-validate",
+      "capacity_role": "renderer-feedback-not-layout-eligibility",
+      "remediation_order": [
+        "reflow-within-scaffold",
+        "change-composition-recipe",
+        "split-page",
+        "alternate-scaffold-after-visual-failure"
+      ],
+      "content_page_id": "09",
+      "content_sha256": "279701bda3e1f78d1360042144e3bf3c9e44a4f05d03629428920d39e94819e5",
+      "layout_scaffold_id": "quote-focus",
+      "layout_role": "scaffold",
+      "composition_source": "page-content-adapter",
+      "rendered_item_count": null,
+      "content_identity_preserved": true,
+      "content_mutated": false
+    },
+    {
+      "stage": "post-scaffold-selection",
+      "owner": "per-slide-composition",
+      "content_item_count": 2,
+      "fit_policy": "compose-page-content-then-validate",
+      "capacity_role": "renderer-feedback-not-layout-eligibility",
+      "remediation_order": [
+        "reflow-within-scaffold",
+        "change-composition-recipe",
+        "split-page",
+        "alternate-scaffold-after-visual-failure"
+      ],
+      "content_page_id": "10",
+      "content_sha256": "5aae84ece4cbf8ee705e53a63e585c2a8e2453d6698e391221b8a68c3af30636",
+      "layout_scaffold_id": "title-center",
+      "layout_role": "scaffold",
+      "composition_source": "page-content-adapter",
+      "rendered_item_count": null,
+      "content_identity_preserved": true,
+      "content_mutated": false
+    }
+  ],
+  "css_ownership": {
+    "contract": "references/html-css-ownership-contract.md",
+    "static_validation": "pass",
+    "owners": [
+      "renderer-base",
+      "theme-appearance",
+      "preset-appearance"
+    ],
+    "geometry_owner": "renderer-base",
+    "appearance_can_mutate_geometry": false,
+    "post_materialize_css_correction": false
+  },
+  "theme": {
+    "id": "neighborhood-newsroom-proof",
+    "display_name": "街區新聞校樣紙",
+    "kind": "html-preset",
+    "base_theme": "brand-editorial",
+    "style_profile": "neighborhood-newsroom-proof",
+    "design_dialect": "neighborhood-newsroom-proof",
+    "composition": "冷白新聞紙、清楚欄線與紅藍校訂色把資訊來源、狀態與回應責任層次分開。",
+    "techniques": [
+      "proof-column",
+      "evidence-index",
+      "revision-color",
+      "newsroom-type",
+      "curated-palette",
+      "css-pattern",
+      "solid-text-color"
+    ],
+    "selection_profile": {
+      "best_for": [
+        "公民證據報導",
+        "來源標示與查核",
+        "社區進度更新"
+      ],
+      "avoid_for": [
+        "奢華產品發表",
+        "電影式深色氛圍"
+      ],
+      "signature_compositions": [
+        "neighborhood-newsroom-proof",
+        "newspaper-columns"
+      ]
+    }
+  },
+  "html_assembly": {
+    "id": "neighborhood-newsroom-proof-assembly",
+    "recipe": {
+      "composition": "newspaper-columns",
+      "background_pattern": "none",
+      "surface": "ink-column",
+      "depth": "editorial-flat",
+      "typography": "newsroom-serif",
+      "component_recipe": "newsroom"
+    },
+    "profiles": {
+      "composition": {
+        "axis": "editorial-columns",
+        "reading": "column-spine",
+        "balance": "type-led"
+      },
+      "background_pattern": {
+        "technique": "none",
+        "density": "none",
+        "contrast": "none",
+        "compatible_with": [
+          "light",
+          "dark",
+          "editorial"
+        ],
+        "performance": "light",
+        "readability_risk": "low",
+        "projection_safe": true,
+        "max_opacity": 0.01
+      },
+      "surface": {
+        "shape": "flat",
+        "border": "top-rule",
+        "fill": "low-opacity-paper"
+      },
+      "depth": {
+        "shadow": "none",
+        "blur": "none",
+        "glow": "none"
+      },
+      "typography": {
+        "title_axis": "column",
+        "title_wrap": "balance",
+        "subtitle_wrap": "pretty",
+        "effect": "none"
+      },
+      "component_recipe": {
+        "numbers": "editorial-scale",
+        "cards": "column-sections",
+        "charts": "ink-lines"
+      }
+    },
+    "layers": [
+      "story",
+      "theme_adapter",
+      "layout_adapter",
+      "composition",
+      "background_pattern",
+      "surface",
+      "depth",
+      "typography",
+      "component_recipe",
+      "editor_contract"
+    ],
+    "guardrails": {
+      "raster_assets": "provenance-tracked-opt-in",
+      "decorative_images": "licensed-subject-or-edge-only",
+      "ambient_design": [
+        "gradient",
+        "pattern",
+        "border",
+        "typography",
+        "svg-data-chart",
+        "licensed-archival-crop"
+      ],
+      "text_glow": "forbidden",
+      "gradient_text": "discouraged",
+      "content_area_fill_limit": 0.88,
+      "structured_body_min_visible_width_ratio_without_counterweight": 0.68,
+      "balance_measurement_excludes": [
+        "content-area",
+        "layout-only-container",
+        "transparent-slot"
+      ],
+      "minimum_safe_margin_px": 76,
+      "title_must_not_outweigh_subtitle_width": true
+    },
+    "pattern_effect_policy": {
+      "placement": "background-only",
+      "selectable": false,
+      "fallback": "static-css",
+      "required_labels": [
+        "compatible_with",
+        "performance",
+        "readability_risk",
+        "projection_safe",
+        "max_opacity"
+      ],
+      "performance_levels": [
+        "light",
+        "medium",
+        "heavy"
+      ],
+      "readability_risk_levels": [
+        "low",
+        "medium",
+        "high"
+      ]
+    }
+  },
+  "layouts": [
+    "cover-center-title-edge-decor",
+    "toc-6-panel-rows",
+    "strategic-priorities",
+    "before-after",
+    "heat-map",
+    "timeline-vertical",
+    "matrix-4quadrant",
+    "multi-line-chart",
+    "quote-focus",
+    "title-center"
+  ],
+  "layout_media": {
+    "asset_policy": "pattern-only",
+    "asset_policy_source": "prompt_system/renderers/html/layout-catalog.yaml#asset_policies",
+    "eligible_media_requirements": [
+      "no-image"
+    ],
+    "eligible_layout_count": 61,
+    "mode": "mixed",
+    "counts": {
+      "no-image": 10,
+      "with-image": 0
+    },
+    "layout_media_modes": {
+      "cover-center-title-edge-decor": "no-image",
+      "toc-6-panel-rows": "no-image",
+      "strategic-priorities": "no-image",
+      "before-after": "no-image",
+      "heat-map": "no-image",
+      "timeline-vertical": "no-image",
+      "matrix-4quadrant": "no-image",
+      "multi-line-chart": "no-image",
+      "quote-focus": "no-image",
+      "title-center": "no-image"
+    },
+    "layout_media_requirements": {
+      "cover-center-title-edge-decor": "no-image",
+      "toc-6-panel-rows": "no-image",
+      "strategic-priorities": "no-image",
+      "before-after": "no-image",
+      "heat-map": "no-image",
+      "timeline-vertical": "no-image",
+      "matrix-4quadrant": "no-image",
+      "multi-line-chart": "no-image",
+      "quote-focus": "no-image",
+      "title-center": "no-image"
+    },
+    "rendering_policy": {
+      "no-image": "semantic-native",
+      "with-image": "placeholder-fill"
+    }
+  },
+  "architecture": [
+    "cover",
+    "toc",
+    "strategy",
+    "comparison",
+    "dataviz",
+    "sequence",
+    "comparison",
+    "dataviz",
+    "statement",
+    "statement"
+  ],
+  "layout_decisions": [
+    {
+      "intent": "cover",
+      "layout_id": "cover-center-title-edge-decor",
+      "layout_role": "scaffold",
+      "signature_composition": "單一主張搭配明確視覺焦點",
+      "ordinary_grid_loss": "第一印象與主題張力",
+      "visual_intensity": "hero",
+      "source": "forced-layout",
+      "route_match": true,
+      "selection_candidates": [
+        "cover-center-title-edge-decor"
+      ],
+      "selection_basis": "forced-layout",
+      "asset_policy": "pattern-only",
+      "media_requirement": "no-image",
+      "content_plan_index": 1,
+      "content_page_id": "01",
+      "content_key": "cover",
+      "content_source_fields": [
+        "title",
+        "subtitle",
+        "speaker",
+        "org"
+      ],
+      "content_relation": "single-proposition-hero",
+      "content_item_count": null,
+      "composition_feedback": {
+        "stage": "post-scaffold-selection",
+        "owner": "per-slide-composition",
+        "content_item_count": null,
+        "fit_policy": "compose-page-content-then-validate",
+        "capacity_role": "renderer-feedback-not-layout-eligibility",
+        "remediation_order": [
+          "reflow-within-scaffold",
+          "change-composition-recipe",
+          "split-page",
+          "alternate-scaffold-after-visual-failure"
+        ]
+      },
+      "composition_variant": "centered-signal-hero",
+      "header_mode": "center-stack",
+      "surface_mode": "open-field",
+      "variant_source": "layout-variant-profile"
+    },
+    {
+      "intent": "navigation",
+      "layout_id": "toc-6-panel-rows",
+      "layout_role": "scaffold",
+      "signature_composition": "章節地圖或閱讀路徑",
+      "ordinary_grid_loss": "章節先後與全局方向",
+      "visual_intensity": "medium",
+      "source": "forced-layout",
+      "route_match": true,
+      "selection_candidates": [
+        "toc-6-panel-rows"
+      ],
+      "selection_basis": "forced-layout",
+      "asset_policy": "pattern-only",
+      "media_requirement": "no-image",
+      "content_plan_index": 2,
+      "content_page_id": "02",
+      "content_key": "toc",
+      "content_source_fields": [
+        "toc"
+      ],
+      "content_relation": "reading-path",
+      "content_item_count": 6,
+      "composition_feedback": {
+        "stage": "post-scaffold-selection",
+        "owner": "per-slide-composition",
+        "content_item_count": 6,
+        "fit_policy": "compose-page-content-then-validate",
+        "capacity_role": "renderer-feedback-not-layout-eligibility",
+        "remediation_order": [
+          "reflow-within-scaffold",
+          "change-composition-recipe",
+          "split-page",
+          "alternate-scaffold-after-visual-failure"
+        ]
+      },
+      "composition_variant": "toc-6-panel-rows-native",
+      "header_mode": "layout-defined",
+      "surface_mode": "layout-defined",
+      "variant_source": "layout-native-fallback"
+    },
+    {
+      "intent": "prioritization",
+      "layout_id": "strategic-priorities",
+      "layout_role": "scaffold",
+      "signature_composition": "具先後或權重的決策結構",
+      "ordinary_grid_loss": "優先順序與取捨依據",
+      "visual_intensity": "high",
+      "source": "forced-layout",
+      "route_match": true,
+      "selection_candidates": [
+        "strategic-priorities"
+      ],
+      "selection_basis": "forced-layout",
+      "asset_policy": "pattern-only",
+      "media_requirement": "no-image",
+      "content_plan_index": 3,
+      "content_page_id": "03",
+      "content_key": "prioritization",
+      "content_source_fields": [
+        "priorities",
+        "recommendations",
+        "matrix"
+      ],
+      "content_relation": "ranked-decision",
+      "content_item_count": 3,
+      "composition_feedback": {
+        "stage": "post-scaffold-selection",
+        "owner": "per-slide-composition",
+        "content_item_count": 3,
+        "fit_policy": "compose-page-content-then-validate",
+        "capacity_role": "renderer-feedback-not-layout-eligibility",
+        "remediation_order": [
+          "reflow-within-scaffold",
+          "change-composition-recipe",
+          "split-page",
+          "alternate-scaffold-after-visual-failure"
+        ]
+      },
+      "composition_variant": "strategic-priorities-native",
+      "header_mode": "layout-defined",
+      "surface_mode": "layout-defined",
+      "variant_source": "layout-native-fallback"
+    },
+    {
+      "intent": "comparison",
+      "layout_id": "before-after",
+      "layout_role": "scaffold",
+      "signature_composition": "共用中心軸的雙側對照",
+      "ordinary_grid_loss": "差異方向與轉換關係",
+      "visual_intensity": "high",
+      "source": "forced-layout",
+      "route_match": true,
+      "selection_candidates": [
+        "before-after"
+      ],
+      "selection_basis": "forced-layout",
+      "asset_policy": "pattern-only",
+      "media_requirement": "no-image",
+      "content_plan_index": 4,
+      "content_page_id": "04",
+      "content_key": "comparison",
+      "content_source_fields": [
+        "before",
+        "after",
+        "matrix"
+      ],
+      "content_relation": "state-change",
+      "content_item_count": 4,
+      "composition_feedback": {
+        "stage": "post-scaffold-selection",
+        "owner": "per-slide-composition",
+        "content_item_count": 4,
+        "fit_policy": "compose-page-content-then-validate",
+        "capacity_role": "renderer-feedback-not-layout-eligibility",
+        "remediation_order": [
+          "reflow-within-scaffold",
+          "change-composition-recipe",
+          "split-page",
+          "alternate-scaffold-after-visual-failure"
+        ]
+      },
+      "composition_variant": "paired-operating-states",
+      "header_mode": "embedded-dual-header",
+      "surface_mode": "split-field",
+      "variant_source": "layout-variant-profile"
+    },
+    {
+      "intent": "evidence",
+      "layout_id": "heat-map",
+      "layout_role": "scaffold",
+      "signature_composition": "一個主指標帶動輔助證據",
+      "ordinary_grid_loss": "數據主次與可驗證結論",
+      "visual_intensity": "medium",
+      "source": "forced-layout",
+      "route_match": true,
+      "selection_candidates": [
+        "heat-map"
+      ],
+      "selection_basis": "forced-layout",
+      "asset_policy": "pattern-only",
+      "media_requirement": "no-image",
+      "content_plan_index": 5,
+      "content_page_id": "05",
+      "content_key": "evidence",
+      "content_source_fields": [
+        "metrics",
+        "chart"
+      ],
+      "content_relation": "measurable-proof",
+      "content_item_count": 4,
+      "composition_feedback": {
+        "stage": "post-scaffold-selection",
+        "owner": "per-slide-composition",
+        "content_item_count": 4,
+        "fit_policy": "compose-page-content-then-validate",
+        "capacity_role": "renderer-feedback-not-layout-eligibility",
+        "remediation_order": [
+          "reflow-within-scaffold",
+          "change-composition-recipe",
+          "split-page",
+          "alternate-scaffold-after-visual-failure"
+        ]
+      },
+      "composition_variant": "heat-map-native",
+      "header_mode": "layout-defined",
+      "surface_mode": "layout-defined",
+      "variant_source": "layout-native-fallback"
+    },
+    {
+      "intent": "sequence",
+      "layout_id": "timeline-vertical",
+      "layout_role": "scaffold",
+      "signature_composition": "帶方向的步驟路徑",
+      "ordinary_grid_loss": "時間、依賴與下一步",
+      "visual_intensity": "high",
+      "source": "forced-layout",
+      "route_match": true,
+      "selection_candidates": [
+        "timeline-vertical"
+      ],
+      "selection_basis": "forced-layout",
+      "asset_policy": "pattern-only",
+      "media_requirement": "no-image",
+      "content_plan_index": 6,
+      "content_page_id": "06",
+      "content_key": "sequence",
+      "content_source_fields": [
+        "process",
+        "timeline"
+      ],
+      "content_relation": "ordered-path",
+      "content_item_count": 5,
+      "composition_feedback": {
+        "stage": "post-scaffold-selection",
+        "owner": "per-slide-composition",
+        "content_item_count": 5,
+        "fit_policy": "compose-page-content-then-validate",
+        "capacity_role": "renderer-feedback-not-layout-eligibility",
+        "remediation_order": [
+          "reflow-within-scaffold",
+          "change-composition-recipe",
+          "split-page",
+          "alternate-scaffold-after-visual-failure"
+        ]
+      },
+      "composition_variant": "timeline-vertical-native",
+      "header_mode": "layout-defined",
+      "surface_mode": "layout-defined",
+      "variant_source": "layout-native-fallback"
+    },
+    {
+      "intent": "distribution",
+      "layout_id": "matrix-4quadrant",
+      "layout_role": "scaffold",
+      "signature_composition": "空間、象限或區域分布",
+      "ordinary_grid_loss": "位置、群聚與區域差異",
+      "visual_intensity": "medium",
+      "source": "forced-layout",
+      "route_match": true,
+      "selection_candidates": [
+        "matrix-4quadrant"
+      ],
+      "selection_basis": "forced-layout",
+      "asset_policy": "pattern-only",
+      "media_requirement": "no-image",
+      "content_plan_index": 7,
+      "content_page_id": "07",
+      "content_key": "distribution",
+      "content_source_fields": [
+        "matrix"
+      ],
+      "content_relation": "position-and-cluster",
+      "content_item_count": 4,
+      "composition_feedback": {
+        "stage": "post-scaffold-selection",
+        "owner": "per-slide-composition",
+        "content_item_count": 4,
+        "fit_policy": "compose-page-content-then-validate",
+        "capacity_role": "renderer-feedback-not-layout-eligibility",
+        "remediation_order": [
+          "reflow-within-scaffold",
+          "change-composition-recipe",
+          "split-page",
+          "alternate-scaffold-after-visual-failure"
+        ]
+      },
+      "composition_variant": "decision-crosshair",
+      "header_mode": "center-axis",
+      "surface_mode": "soft-field",
+      "variant_source": "layout-variant-profile"
+    },
+    {
+      "intent": "evidence",
+      "layout_id": "multi-line-chart",
+      "layout_role": "scaffold",
+      "signature_composition": "一個主指標帶動輔助證據",
+      "ordinary_grid_loss": "數據主次與可驗證結論",
+      "visual_intensity": "medium",
+      "source": "forced-layout",
+      "route_match": true,
+      "selection_candidates": [
+        "multi-line-chart"
+      ],
+      "selection_basis": "forced-layout",
+      "asset_policy": "pattern-only",
+      "media_requirement": "no-image",
+      "content_plan_index": 8,
+      "content_page_id": "08",
+      "content_key": "evidence",
+      "content_source_fields": [
+        "metrics",
+        "chart"
+      ],
+      "content_relation": "measurable-proof",
+      "content_item_count": 4,
+      "composition_feedback": {
+        "stage": "post-scaffold-selection",
+        "owner": "per-slide-composition",
+        "content_item_count": 4,
+        "fit_policy": "compose-page-content-then-validate",
+        "capacity_role": "renderer-feedback-not-layout-eligibility",
+        "remediation_order": [
+          "reflow-within-scaffold",
+          "change-composition-recipe",
+          "split-page",
+          "alternate-scaffold-after-visual-failure"
+        ]
+      },
+      "composition_variant": "multi-line-chart-native",
+      "header_mode": "layout-defined",
+      "surface_mode": "layout-defined",
+      "variant_source": "layout-native-fallback"
+    },
+    {
+      "intent": "statement",
+      "layout_id": "quote-focus",
+      "layout_role": "scaffold",
+      "signature_composition": "單一結論形成停頓頁",
+      "ordinary_grid_loss": "語氣、停頓與記憶點",
+      "visual_intensity": "low",
+      "source": "forced-layout",
+      "route_match": true,
+      "selection_candidates": [
+        "quote-focus"
+      ],
+      "selection_basis": "forced-layout",
+      "asset_policy": "pattern-only",
+      "media_requirement": "no-image",
+      "content_plan_index": 9,
+      "content_page_id": "09",
+      "content_key": "statement",
+      "content_source_fields": [
+        "quote",
+        "attribution"
+      ],
+      "content_relation": "single-conclusion",
+      "content_item_count": null,
+      "composition_feedback": {
+        "stage": "post-scaffold-selection",
+        "owner": "per-slide-composition",
+        "content_item_count": null,
+        "fit_policy": "compose-page-content-then-validate",
+        "capacity_role": "renderer-feedback-not-layout-eligibility",
+        "remediation_order": [
+          "reflow-within-scaffold",
+          "change-composition-recipe",
+          "split-page",
+          "alternate-scaffold-after-visual-failure"
+        ]
+      },
+      "composition_variant": "quote-focus-native",
+      "header_mode": "layout-defined",
+      "surface_mode": "layout-defined",
+      "variant_source": "layout-native-fallback"
+    },
+    {
+      "intent": "closing",
+      "layout_id": "title-center",
+      "layout_role": "scaffold",
+      "signature_composition": "收斂成單一行動或結論",
+      "ordinary_grid_loss": "結尾的聚焦與行動感",
+      "visual_intensity": "hero",
+      "source": "forced-layout",
+      "route_match": true,
+      "selection_candidates": [
+        "title-center"
+      ],
+      "selection_basis": "forced-layout",
+      "asset_policy": "pattern-only",
+      "media_requirement": "no-image",
+      "content_plan_index": 10,
+      "content_page_id": "10",
+      "content_key": "closing",
+      "content_source_fields": [
+        "closing"
+      ],
+      "content_relation": "next-action",
+      "content_item_count": 2,
+      "composition_feedback": {
+        "stage": "post-scaffold-selection",
+        "owner": "per-slide-composition",
+        "content_item_count": 2,
+        "fit_policy": "compose-page-content-then-validate",
+        "capacity_role": "renderer-feedback-not-layout-eligibility",
+        "remediation_order": [
+          "reflow-within-scaffold",
+          "change-composition-recipe",
+          "split-page",
+          "alternate-scaffold-after-visual-failure"
+        ]
+      },
+      "composition_variant": "centered-decision-pause",
+      "header_mode": "center-stack",
+      "surface_mode": "open-field",
+      "variant_source": "layout-variant-profile"
+    }
+  ],
+  "design_method": {
+    "id": "html-design-method",
+    "visual_checkpoint": {
+      "default": "disabled",
+      "enable_when": [
+        "使用者明確要求探索視覺方向",
+        "尚未選定 Theme，且不同方向會明顯改變閱讀方式"
+      ],
+      "preview_count": 3,
+      "rule": "只預覽視覺方向，不先生成完整簡報，也不作為每次生成的必經步驟。"
+    },
+    "deck_review": {
+      "format": "keep-fix-quick-win",
+      "questions": [
+        {
+          "id": "repeated-skeleton",
+          "question": "連續頁是否重複同一個骨架，或只換顏色與裝飾？",
+          "machine_check": true
+        },
+        {
+          "id": "page-rhythm",
+          "question": "Hero、內容頁、資料頁與停頓頁的節奏是否有變化？",
+          "machine_check": true
+        },
+        {
+          "id": "signature-fit",
+          "question": "每頁的招牌構圖是否真的符合內容關係？",
+          "machine_check": true
+        },
+        {
+          "id": "type-capacity-fit",
+          "question": "當頁 composition 是否保留 primary items，而且在正式字體下達到 36px 並完整容納？",
+          "machine_check": true
+        },
+        {
+          "id": "unintended-collision",
+          "question": "是否存在文字重疊、文字碰撞物件、線條穿字、裁切或 overflow？",
+          "machine_check": true
+        },
+        {
+          "id": "layout-only-edit-hit",
+          "question": "Content Area 與排版 slot 是否完全不會成為編輯選取物件？",
+          "machine_check": true
+        },
+        {
+          "id": "nested-group-preservation",
+          "question": "取消外層手動群組後，內層 semantic module 是否仍保持完整？",
+          "machine_check": true
+        },
+        {
+          "id": "body-field-balance",
+          "question": "沒有 counterweight 的多模組頁是否使用至少 68% 的 Content Area 可見寬度？",
+          "machine_check": true
+        },
+        {
+          "id": "palette-jarring",
+          "question": "配色是否突兀？",
+          "machine_check": false
+        }
+      ]
+    },
+    "deferred": [
+      "presenter-workspace",
+      "object-comment-to-ai"
+    ],
+    "forbidden": [
+      "webgl",
+      "copied-third-party-code",
+      "copied-third-party-template",
+      "unlicensed-or-unattributed-third-party-assets",
+      "decorative-photo-or-illustration",
+      "decorative-svg-or-icon-pack",
+      "screenshot-as-slide-background",
+      "theme-color-swap-with-repeated-content-skeleton"
+    ]
+  },
+  "randomized_dimensions": [],
+  "candidate_pool": {},
+  "output": "demos/html/street-revival/street-revival.html",
+  "art_direction": {
+    "schema_version": 1,
+    "art_direction_id": "street-revival-art-direction",
+    "status": "approved-for-renderer",
+    "formal_publish_allowed": true,
+    "story_ref": "demos/html/street-revival/source/content-manifest.json",
+    "brief": {
+      "visual_genre": "documentary-field-guide",
+      "narrative_metaphor": "把一個被繞開的街角當成一張共同編寫的生活地圖，沿著觀察、試作與回看重新接回使用與責任。",
+      "signature_move": {
+        "name": "neighborhood-index-spine",
+        "concept_link": "用一條窄邊索引把街角編號、觀察證據與下一步責任連成同一條閱讀軸。",
+        "allowed_variations": [
+          "rule",
+          "route",
+          "ledger",
+          "milestone"
+        ],
+        "minimum_presence": "至少出現在 hero、index-or-map、evidence、relationship 與 pause-or-close。"
+      },
+      "spatial_rule": {
+        "primary_anchor": "left-axis",
+        "reading_axis": "editorial-columns",
+        "crop_logic": "frame-within-frame",
+        "whitespace_logic": "左側保留街角索引，主要內容沿同一條生活路徑收合，讓留白成為共同判斷的空間。",
+        "content_alignment": "left"
+      },
+      "edge_behavior": "structural-index",
+      "typography_role": {
+        "primary_role": "index",
+        "hierarchy_method": [
+          "size",
+          "weight",
+          "position",
+          "spacing"
+        ],
+        "family_policy": "serif-sans-pair",
+        "maximum_families": 2,
+        "ai_minimum_visual_text_px": 36
+      },
+      "color_behavior": {
+        "primary_job": "documentary",
+        "accent_job": "classification",
+        "accent_area_limit": "一般頁面不超過視覺面積 12%，只用於路徑、狀態與回看節點。"
+      },
+      "forbidden_cliches": [
+        "equal-rounded-card-wall",
+        "generic-purple-orange-gradient",
+        "floating-pills",
+        "fake-dashboard",
+        "decorative-random-curves"
+      ]
+    },
+    "asset_family": {
+      "primary_family": "project-native-css-geometry",
+      "secondary_family": "typographic-index-marks",
+      "allowed_roles": [
+        "identity-motif",
+        "utility-icon"
+      ],
+      "maximum_families": 2,
+      "provenance_required": true,
+      "no_mixed_icon_families": true
+    },
+    "scene_plan": [
+      {
+        "slide_id": "01",
+        "role": "hero",
+        "visual_intensity": 5,
+        "primary_focus": "被繞開的街角其實是共同生活的入口",
+        "signature_move_variant": "rule"
+      },
+      {
+        "slide_id": "02",
+        "role": "index-or-map",
+        "visual_intensity": 2,
+        "primary_focus": "六個章節的共同閱讀路徑",
+        "signature_move_variant": "ledger"
+      },
+      {
+        "slide_id": "03",
+        "role": "relationship",
+        "visual_intensity": 4,
+        "primary_focus": "三個先做方向",
+        "signature_move_variant": "route"
+      },
+      {
+        "slide_id": "04",
+        "role": "relationship",
+        "visual_intensity": 3,
+        "primary_focus": "從被忽略到共同照顧",
+        "signature_move_variant": "split"
+      },
+      {
+        "slide_id": "05",
+        "role": "evidence",
+        "visual_intensity": 4,
+        "primary_focus": "六處觀察與三條日常路徑",
+        "signature_move_variant": "ledger"
+      },
+      {
+        "slide_id": "06",
+        "role": "relationship",
+        "visual_intensity": 5,
+        "primary_focus": "從走訪到回看的工作流程",
+        "signature_move_variant": "route"
+      },
+      {
+        "slide_id": "07",
+        "role": "evidence",
+        "visual_intensity": 4,
+        "primary_focus": "第一個試作點的優先順序",
+        "signature_move_variant": "milestone"
+      },
+      {
+        "slide_id": "08",
+        "role": "evidence",
+        "visual_intensity": 3,
+        "primary_focus": "30 天共同回看節奏",
+        "signature_move_variant": "rule"
+      },
+      {
+        "slide_id": "09",
+        "role": "pause-or-close",
+        "visual_intensity": 2,
+        "primary_focus": "街角不是空白只是還沒有被一起照顧",
+        "signature_move_variant": "ledger"
+      },
+      {
+        "slide_id": "10",
+        "role": "pause-or-close",
+        "visual_intensity": 1,
+        "primary_focus": "先把一個街角做對再讓整條路重新有人使用",
+        "signature_move_variant": "milestone"
+      }
+    ],
+    "renderers": {
+      "image2": {
+        "theme_candidates": [
+          "grainy-editorial"
+        ],
+        "layout_sequence": [
+          "cover-center-title-edge-decor",
+          "toc-6-panel-rows",
+          "strategic-priorities",
+          "before-after",
+          "heat-map",
+          "timeline-vertical",
+          "matrix-4quadrant",
+          "multi-line-chart",
+          "quote-focus",
+          "title-center"
+        ]
+      },
+      "html": {
+        "theme_candidates": [
+          "neighborhood-newsroom-proof"
+        ],
+        "layout_sequence": [
+          "cover-center-title-edge-decor",
+          "toc-6-panel-rows",
+          "strategic-priorities",
+          "before-after",
+          "heat-map",
+          "timeline-vertical",
+          "matrix-4quadrant",
+          "multi-line-chart",
+          "quote-focus",
+          "title-center"
+        ]
+      },
+      "pptx": {
+        "theme_candidates": [
+          "grainy-editorial"
+        ],
+        "layout_sequence": [
+          "cover-center-title-edge-decor",
+          "toc-6-panel-rows",
+          "strategic-priorities",
+          "before-after",
+          "heat-map",
+          "timeline-vertical",
+          "matrix-4quadrant",
+          "multi-line-chart",
+          "quote-focus",
+          "title-center"
+        ]
+      }
+    },
+    "perceptual_qa": {
+      "required_checks": [
+        "motivated-decoration",
+        "asset-family-consistency",
+        "semantic-card-boundary",
+        "signature-move-presence",
+        "scene-rhythm",
+        "visual-intensity-curve"
+      ],
+      "notes": "使用 pattern-only；無照片、Logo 或外部素材進入 renderer runtime。",
+      "final_decision": "human"
+    },
+    "compiled_at": "2026-08-17T18:45:31.122642+00:00",
+    "source": {
+      "path": "demos/html/street-revival/source/art-direction.yaml",
+      "sha256": "d5c77c6ff78114e87d6f76474e2528609a016455373ce3658c8d879f4a906d50",
+      "schema_path": "prompt_system/art_direction/schema.yaml",
+      "schema_sha256": "f3bf56620179115176f635719665811fe2619cfa26ba9dd7fe052bebf75d36db"
+    }
+  },
+  "preset_theme": {
+    "id": "neighborhood-newsroom-proof",
+    "display_name": "街區新聞校樣紙",
+    "definition": "prompt_system/renderers/html/preset-themes.yaml#themes.neighborhood-newsroom-proof",
+    "scope": "html-theme",
+    "pure_html": true,
+    "css_owner": "preset-appearance",
+    "legacy_case_imported": false,
+    "raster_assets": [],
+    "ambient_design": [
+      "solid-base",
+      "safe-zone-raster-opt-in",
+      "shadow",
+      "typography"
+    ],
+    "visual_asset_policy": "generated-raster-background-opt-in",
+    "background_pattern": "none",
+    "registered_as_theme": true,
+    "layout_binding": "none",
+    "content_binding": "none",
+    "palette": {
+      "background": "#F5F0E5",
+      "surface": "#FFFCF4",
+      "text": "#17202A",
+      "muted": "#5F6972",
+      "accent": "#B9322B",
+      "support": "#27658A"
+    }
+  }
+}
