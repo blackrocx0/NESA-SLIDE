@@ -75,7 +75,7 @@ native object 與 QA 契約。工具只由使用入口決定；不得把其中�
 
 ## HTML 逐頁圖片背景匯出
 
-逐頁生成圖片背景是 opt-in 能力，操作規範由 `.agents/skills/html-image-background/SKILL.md`
+逐頁生成圖片背景是 opt-in 能力，操作規範由 `.agents/skills/slide-background-image/SKILL.md`
 管理。每頁背景必須先依實際 foreground occupied region 量測，再生成一張 16:9 raster；圖片只
 補足空白區，不能重畫文字、卡片、箭頭、圖表或其他可編輯前景。
 

@@ -4,7 +4,7 @@ Generate formal bitmap previews with the current built-in image generation path 
 
 ## Preconditions
 
-1. Use `$generate-presentation-yaml` to create `artifacts/generated-prompts/staging/<id>.assembled.yaml`.
+1. Use `$generate-image-slide` to create `artifacts/generated-prompts/staging/<id>.assembled.yaml`.
 2. Read the complete file, confirm all seven top-level sections exist, and record its path and SHA-256. Do not summarize only `closing_design_intent`.
 3. Confirm the requested output path and whether this is a new version or an explicitly authorized replacement.
 

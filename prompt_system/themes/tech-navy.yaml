@@ -1,6 +1,6 @@
 id: tech-navy
 display_name: 深藍青色線框風
-source: render-html-slide 實驗（toc-3-vertical 企業 AI 導入路線圖 demo）
+source: html-pattern-slide 實驗（toc-3-vertical 企業 AI 導入路線圖 demo）
 
 # ══════════════════════════════════════════════════════════════════════
 # 讀取範圍說明（避免三種輸出互相汙染）
@@ -8,7 +8,7 @@ source: render-html-slide 實驗（toc-3-vertical 企業 AI 導入路線圖 demo
 # - Image2 正式生圖由目前工作的 Codex 直接使用內建 image_gen；只讀 visual_base + decoration_vocabulary
 #   + closing_statement 這三塊，跟其他既有 theme 檔完全一樣的讀法，不讀
 #   html_spec / pptx_spec。
-# - render-html-slide skill 只讀 visual_base（取色票語意）+ html_spec，
+# - html-pattern-slide skill 只讀 visual_base（取色票語意）+ html_spec，
 #   不讀 pptx_spec，也不把 decoration_vocabulary 的文字描述直接當 CSS 寫。
 # - ppt-builder skill 只讀 visual_base（取色票語意）+ pptx_spec，
 #   不讀 html_spec。
@@ -82,7 +82,7 @@ decoration_vocabulary:
 closing_statement: >
   Maintain strict dark-navy-plus-single-cyan-accent discipline: the accent only marks lines, icon strokes, and small numerals. Decoration lives in the outer margin band while content stays quiet and disciplined.
 # ══════════════════════════════════════════════════════════════════════
-# ── html_spec：render-html-slide 專用，精確 px / hex / 真實字型名 ────────
+# ── html_spec：html-pattern-slide 專用，精確 px / hex / 真實字型名 ────────
 # 只讀 visual_base 取色票語意 + 這一段，不讀 pptx_spec。
 # ══════════════════════════════════════════════════════════════════════
 html_spec:

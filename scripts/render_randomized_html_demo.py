@@ -3255,7 +3255,7 @@ def build(
             }
 
     manifest = {
-        "skill": "render-html-slide",
+        "skill": "html-pattern-slide",
         "renderer_entrypoint": "scripts/render_randomized_html_demo.py",
         "contract": "references/presentation-production-contract.md",
         "editable_dom": {

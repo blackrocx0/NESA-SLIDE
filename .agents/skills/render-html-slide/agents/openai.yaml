@@ -1,4 +1,0 @@
-interface:
-  display_name: "Render HTML Slide"
-  short_description: "生成、編輯與驗收 1920×1080 HTML 簡報"
-  default_prompt: "Use $render-html-slide to generate and fully QA an editable HTML presentation."
