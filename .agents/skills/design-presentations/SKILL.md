@@ -106,6 +106,7 @@ Story
 - 保留語意化 DOM、獨立文字與視覺模組；不要把整頁做成背景圖。若沒有編輯器 runtime，不要宣稱具備完整拖拉編輯能力。
 - 先以 Flex／Grid 等方式計算，再在需要自由操作時物化幾何。排版容器與可編輯內容要分離。
 - 預設以字體、色彩、Pattern、漸層、噪點、陰影與基礎幾何建立環境層；照片或插圖只在它們是必要內容、使用者明確要求且已有合法來源時加入。
+- 若是新建 HTML 且使用者要求圖片背景、滿版／半版圖片構圖或 image-led HTML，先啟用 `.agents/skills/html-image-slide/SKILL.md`：先宣告 `asset_policy=image-planned`、逐頁圖片角色與 SAFE ZONE，再選 Layout；完成 handoff 後才交給 `html-pattern-slide` 產生可編輯前景。若使用者提供既有 HTML 且只要附加／替換背景，改用 `.agents/skills/slide-background-image/SKILL.md`，保留原始 Layout、內容與幾何，不重新選版。
 - HTML 不必先產生圖片式 assembled YAML。以 Art Direction、Theme、Layout 與 content manifest 直接建立 renderer handoff。
 - 用實際瀏覽器逐頁檢查字體載入、錯誤換行、overflow、clipping、碰撞、縮放、鍵盤操作與投影模式；有編輯功能時實際操作驗證。
 

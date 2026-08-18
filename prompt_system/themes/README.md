@@ -72,9 +72,9 @@ closing_statement: >
 ## 2026-07-03 新增：跨格式規格擴充試點
 
 - `tech-navy`：科技深藍，冷色調 cyan 強調色，低調有序
-  - 來自 render-html-slide 實驗（toc-3-vertical 企業 AI 導入路線圖 demo）
+  - 來自 html-pattern-slide 實驗（toc-3-vertical 企業 AI 導入路線圖 demo）
   - 這是第一個在 `visual_base` / `decoration_vocabulary` 之外，額外附上
-    `html_spec`（render-html-slide 用，精確 px/hex/字型）與 `pptx_spec`
+    `html_spec`（html-pattern-slide 用，精確 px/hex/字型）與 `pptx_spec`
     （ppt-builder 用，精確 pt/hex）的 theme 檔，示範同一份 theme 檔案
     如何讓三種輸出方式（圖片生成／HTML／PPTX）共用視覺定義又不互相汙染：
     圖片生成只讀 `visual_base`+`decoration_vocabulary`+`closing_statement`，

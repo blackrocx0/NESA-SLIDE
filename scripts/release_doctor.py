@@ -147,7 +147,7 @@ def main() -> int:
         "theme_adapters": theme_adapters, "layout_adapters": layout_adapters, "total": theme_adapters + layout_adapters,
     })
 
-    skills = ["design-presentations", "generate-presentation-yaml", "render-html-slide", "ppt-builder", "slide-outline-planner"]
+    skills = ["design-presentations", "generate-image-slide", "html-image-slide", "html-pattern-slide", "ppt-builder", "slide-background-image", "slide-outline-planner"]
     add("project-skills", all((ROOT / ".agents" / "skills" / name / "SKILL.md").is_file() for name in skills), skills)
 
     forbidden_paths = []

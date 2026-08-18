@@ -1,6 +1,6 @@
 # Assembled Prompt YAML — 格式定義
 
-這份文件定義 `generate-presentation-yaml` skill 的唯一正確輸出格式。
+這份文件定義 `generate-image-slide` skill 的唯一正確輸出格式。
 **每次執行 skill 必須先讀這份文件，不可跳過。**
 
 這份文件只提供「結構（形狀）」。它刻意不放任何填好內容的完整範例——

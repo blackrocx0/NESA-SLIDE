@@ -1,0 +1,4 @@
+interface:
+  display_name: "HTML Image Slide"
+  short_description: "從 Layout 起點建立含圖片的可編輯 HTML 簡報"
+  default_prompt: "使用 $html-image-slide 從內容與 Layout 起點建立一份含圖片、但保留可編輯前景的 HTML 簡報。"
