@@ -52,6 +52,7 @@ from html_layout_catalog import (  # noqa: E402
     load_html_layout_catalog,
     visible_html_layouts,
 )
+from html_layout_family import layout_family  # noqa: E402
 from html_motion_runtime import motion_runtime_manifest  # noqa: E402
 from html_preset_themes import (  # noqa: E402
     build_preset_appearance_css,
@@ -712,6 +713,11 @@ for _preset_id, _profile in PRESET_DEMO_PROFILES.items():
 
 COVER_LAYOUTS = [
     "cover-center-title-edge-decor",
+    "cover-lower-right-hero-left-rail",
+    "cover-mid-right-column-meta-upper-left",
+    "cover-top-center-hero-bottom-center-support",
+    "cover-upper-center-stack-meta-lower-right",
+    "cover-upper-right-hero-lower-left-support",
     "cover-photo-frame",
     "cover-photo-frame-reverse",
     "cover-photo-overlay-block",
@@ -1911,34 +1917,6 @@ def apply_story(
     }
 
 
-def layout_family(layout_id: str) -> str:
-    if layout_id.startswith(("cover-", "hero-")):
-        return "cover"
-    if layout_id.startswith("toc-"):
-        return "toc"
-    if layout_id.startswith("chapter-"):
-        return "chapter"
-    if layout_id.startswith("cards-") or layout_id == "icon-grid-6":
-        return "modules"
-    if layout_id in {"cycle-hub-6", "funnel-4", "org-chart", "pyramid"}:
-        return "diagram"
-    if layout_id == "infographic-stage":
-        return "infographic"
-    if layout_id in {"before-after", "comparison-table", "matrix-4quadrant", "pricing-3col", "split-comparison", "swot-quadrant"}:
-        return "comparison"
-    if layout_id in {"dashboard-overview", "kpi-scorecards", "stats-3-row"}:
-        return "metrics"
-    if layout_id in {"data-annotation", "heat-map", "map-region", "map-spotlight", "multi-line-chart", "radar-chart"}:
-        return "dataviz"
-    if layout_id in {"flow-stages-3", "gantt-roadmap", "process-flow", "timeline-milestones", "timeline-vertical"}:
-        return "sequence"
-    if layout_id in {"recommendation-stack", "strategic-priorities"}:
-        return "strategy"
-    if layout_id in {"highlight-callout", "quote-attribution-3", "quote-focus", "title-center"}:
-        return "statement"
-    return "other"
-
-
 def _apply_extended_story(
     story: dict[str, Any],
     layout_ids: list[str],
@@ -2175,7 +2153,9 @@ def apply_legacy_layout_content_overrides(
         "metrics": store.METRICS_CONTENT,
         "dataviz": store.DATAVIZ_CONTENT,
         "sequence": store.SEQUENCE_CONTENT,
-        "strategy": store.CONTENT_CONTENT,
+        "content": store.CONTENT_CONTENT,
+        "closing": store.CLOSING_CONTENT,
+        "media": store.MEDIA_CONTENT,
         "statement": store.STATEMENT_CONTENT,
     }
     for layout_id, content in story.get("layout_content", {}).items():
@@ -2383,7 +2363,7 @@ def compose_page_content(
     elif legacy_override:
         content = story["layout_content"][layout_id]
         composition_source = "legacy-layout-content-compatibility"
-    elif intent == "cover" and layout_id == "cover-center-title-edge-decor":
+    elif intent == "cover" and layout_id in COVER_LAYOUTS:
         content = dict(payload)
     elif intent == "cover" and layout_id in image_candidates:
         content = dict(payload)
@@ -2689,6 +2669,11 @@ def compose_page_content(
             }
     elif intent == "closing" and layout_id == "title-center":
         content = dict(payload)
+    elif intent == "closing" and layout_id == "quote-focus":
+        content = {
+            "quote": payload["headline"],
+            "attribution": payload["support"],
+        }
     elif intent == "closing" and layout_id == "closing-photo-overlay-contact":
         content = {
             "kicker": "NEXT STEP",
@@ -2790,7 +2775,7 @@ def build(
     content_mode: str | None = None,
     layout_media_mode: str | None = None,
     asset_policy: str | None = None,
-    layout_selection: str = "preferred",
+    layout_selection: str = "diverse",
     content_intent: str | None = None,
     allow_legacy_layout_content: bool = False,
 ) -> dict[str, Any]:
@@ -2836,7 +2821,7 @@ def build(
         resolved_asset_policy = "image-planned"
     if resolved_asset_policy not in ASSET_POLICIES:
         raise ValueError(f"Unknown HTML asset policy: {resolved_asset_policy}")
-    if layout_selection not in {"preferred", "dynamic"}:
+    if layout_selection not in {"preferred", "dynamic", "diverse"}:
         raise ValueError(f"Unknown HTML layout selection mode: {layout_selection}")
     if layout_selection == "dynamic" and resolved_content_mode != "new-deck":
         raise ValueError("--layout-selection=dynamic is only valid for content_mode=new-deck")
@@ -2890,7 +2875,7 @@ def build(
         forced_theme = forced_theme or direction_themes[0]
         # Art Direction still owns theme/story handoff in dynamic mode, but its
         # suggested sequence is treated as a review hint rather than a lock.
-        if layout_selection != "dynamic":
+        if layout_selection not in {"dynamic", "diverse"}:
             forced_layouts = forced_layouts or direction_layouts
 
     if layout_media_mode is not None:
@@ -3223,6 +3208,8 @@ def build(
                 "source": "prompt_system/renderers/html/layout-catalog.yaml",
                 "version": HTML_LAYOUT_CATALOG["schema_version"],
                 "asset_policy": resolved_asset_policy,
+                "diversity_policy": HTML_DESIGN_METHOD["layout_diversity_policy"],
+                "selection_mode": layout_selection,
                 "candidates": HTML_LAYOUT_CATALOG["layout_ids_by_asset_policy"][resolved_asset_policy],
                 "route_candidates": [
                     {
@@ -3295,10 +3282,18 @@ def build(
         "content_intent": content_intent or "full-content-plan",
         "layout_selection": layout_selection,
         "layout_selection_contract": (
-            "semantic-candidates-seeded-tiebreaker"
+            "semantic-candidates-seeded-diverse-no-consecutive-repeat"
+            if layout_selection == "diverse"
+            else "semantic-candidates-seeded-tiebreaker"
             if layout_selection == "dynamic"
-            else "preferred-layout-when-authored"
+            else "preferred-layout-when-authored-no-consecutive-repeat"
         ),
+        "layout_diversity": {
+            "policy": HTML_DESIGN_METHOD["layout_diversity_policy"],
+            "mode": "forced-sequence" if forced_layouts is not None else layout_selection,
+            "no_consecutive_repeat": True,
+            "selected_layouts": layout_ids,
+        },
         "content_plan": content_plan,
         "content_pages": [
             {key: value for key, value in page.items() if key != "payload"}
@@ -3467,9 +3462,12 @@ def main() -> int:
     )
     parser.add_argument(
         "--layout-selection",
-        choices=["preferred", "dynamic"],
-        default="preferred",
-        help="preferred honors authored Layout hints; dynamic samples semantic candidates with the seed",
+        choices=["preferred", "dynamic", "diverse"],
+        default="diverse",
+        help=(
+            "diverse samples least-used semantic candidates with the seed and rejects "
+            "consecutive duplicate Layouts; preferred honors authored Layout hints"
+        ),
     )
     parser.add_argument(
         "--content-intent",

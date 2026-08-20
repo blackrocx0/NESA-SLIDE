@@ -66,6 +66,18 @@ def load_html_design_method(path: Path = DEFAULT_CATALOG) -> dict[str, Any]:
     pattern_only = set(layout_catalog["layout_ids_by_asset_policy"]["pattern-only"])
     with_image = set(layout_catalog["layout_ids_by_media_requirement"]["with-image"])
 
+    diversity_policy = data.get("layout_diversity_policy") or {}
+    if diversity_policy.get("default_selection") not in {"preferred", "dynamic", "diverse"}:
+        issues.append(
+            "layout_diversity_policy.default_selection must be preferred, dynamic, or diverse"
+        )
+    if diversity_policy.get("no_consecutive_repeat") is not True:
+        issues.append("layout_diversity_policy.no_consecutive_repeat must be true")
+    if diversity_policy.get("reuse_policy") != "least-used-candidate":
+        issues.append(
+            "layout_diversity_policy.reuse_policy must be least-used-candidate"
+        )
+
     preset_policy = data.get("preset_rebuild_policy") or {}
     source_isolation = preset_policy.get("source_isolation") or {}
     if source_isolation.get("runtime_import") != "forbidden":
@@ -390,6 +402,55 @@ def _apply_layout_variants(
     return decisions
 
 
+def _validate_no_consecutive_layouts(
+    layout_ids: list[str],
+    *,
+    source: str,
+) -> None:
+    for index in range(1, len(layout_ids)):
+        if layout_ids[index] == layout_ids[index - 1]:
+            raise ValueError(
+                "Layout diversity requires no consecutive duplicate Layouts: "
+                f"source={source}, slide={index + 1}, layout={layout_ids[index]}"
+            )
+
+
+def _select_layout_candidate(
+    candidates: list[str],
+    rng: random.Random,
+    *,
+    previous_layout_id: str | None,
+    usage_counts: dict[str, int],
+    intent: str,
+    layout_selection: str,
+) -> tuple[str, str]:
+    unique_candidates = list(dict.fromkeys(candidates))
+    if not unique_candidates:
+        raise ValueError(f"No Layout candidates remain for intent={intent}")
+
+    if previous_layout_id in unique_candidates:
+        alternatives = [
+            layout_id for layout_id in unique_candidates if layout_id != previous_layout_id
+        ]
+        if not alternatives:
+            raise ValueError(
+                "Layout diversity cannot avoid a consecutive duplicate: "
+                f"intent={intent}, layout={previous_layout_id}"
+            )
+        unique_candidates = alternatives
+
+    if layout_selection == "diverse":
+        least_used = min(usage_counts.get(layout_id, 0) for layout_id in unique_candidates)
+        unique_candidates = [
+            layout_id
+            for layout_id in unique_candidates
+            if usage_counts.get(layout_id, 0) == least_used
+        ]
+        return rng.choice(unique_candidates), "semantic-candidates-seeded-diverse"
+
+    return rng.choice(unique_candidates), "semantic-candidates-seeded-tiebreaker"
+
+
 def resolve_layout_plan(
     story: dict[str, Any],
     rng: random.Random,
@@ -398,15 +459,16 @@ def resolve_layout_plan(
     content_plan: list[dict[str, Any]] | None = None,
     asset_policy: str | None = None,
     layout_catalog: dict[str, Any] | None = None,
-    layout_selection: str = "preferred",
+    layout_selection: str = "diverse",
 ) -> list[dict[str, Any]]:
     method = catalog or load_html_design_method()
     layout_policy = layout_catalog or load_html_layout_catalog()
     resolved_asset_policy = asset_policy or layout_policy["default_asset_policy"]
     if resolved_asset_policy not in ASSET_POLICIES:
         raise ValueError(f"Unknown HTML asset policy: {resolved_asset_policy}")
-    if layout_selection not in {"preferred", "dynamic"}:
+    if layout_selection not in {"preferred", "dynamic", "diverse"}:
         raise ValueError(f"Unknown HTML layout selection mode: {layout_selection}")
+    dynamic_selection = layout_selection in {"dynamic", "diverse"}
     eligible_layout_ids = set(eligible_html_layouts(layout_policy, resolved_asset_policy))
     visible_layout_ids = set(layout_policy["visible_layout_ids"])
     routing = method["content_routing"]
@@ -427,6 +489,7 @@ def resolve_layout_plan(
                 f"Forced Layouts are not eligible for asset_policy={resolved_asset_policy}: "
                 f"{requirements}"
             )
+        _validate_no_consecutive_layouts(forced_layouts, source="forced-layouts")
         decisions: list[dict[str, Any]] = []
         for index, layout_id in enumerate(forced_layouts):
             plan_entry = content_plan[min(index, len(content_plan) - 1)]
@@ -464,6 +527,8 @@ def resolve_layout_plan(
         return _apply_layout_variants(decisions, rng, method)
 
     decisions = []
+    usage_counts: dict[str, int] = {}
+    previous_layout_id: str | None = None
     for entry in content_plan:
         intent = entry["intent"]
         preferred = entry.get("preferred_layout")
@@ -484,7 +549,7 @@ def resolve_layout_plan(
             )
         if (
             intent == "navigation"
-            and layout_selection == "dynamic"
+            and dynamic_selection
             and entry.get("content_item_count") is not None
         ):
             # TOC image layouts are authored for four rows. Keep the
@@ -507,7 +572,7 @@ def resolve_layout_plan(
             if sized_candidates:
                 effective_candidates = sized_candidates
         if (
-            layout_selection == "dynamic"
+            dynamic_selection
             and resolved_asset_policy == "image-planned"
             and intent in {"cover", "navigation", "closing"}
         ):
@@ -526,7 +591,7 @@ def resolve_layout_plan(
             ]
             if image_anchor_candidates:
                 effective_candidates = image_anchor_candidates
-        if intent == "modules" and layout_selection == "dynamic":
+        if intent == "modules" and dynamic_selection:
             # People/team image Layouts need authored people data. Do not
             # turn a generic priority list into fake portrait cards.
             source_fields = set(entry.get("source_fields") or [])
@@ -538,7 +603,7 @@ def resolve_layout_plan(
             ]
             if not effective_candidates:
                 raise ValueError("Dynamic modules route has no content-compatible Layout candidates")
-        if intent == "distribution" and layout_selection == "dynamic":
+        if intent == "distribution" and dynamic_selection:
             # The catalog also exposes swot-quadrant as a visual option, but
             # the new-deck content adapter intentionally supports the matrix,
             # heat-map, and map families only. Do not sample a scaffold that
@@ -570,17 +635,24 @@ def resolve_layout_plan(
         if preferred and layout_selection == "preferred" and preferred not in effective_candidates:
             raise ValueError(f"preferred_layout {preferred} does not match intent {intent}")
         if preferred and layout_selection == "preferred":
+            if preferred == previous_layout_id:
+                raise ValueError(
+                    "Layout diversity requires no consecutive duplicate Layouts: "
+                    f"source=preferred-layout, layout={preferred}"
+                )
             selection_candidates = [preferred]
             selection_basis = "preferred-layout"
             layout_id = preferred
         else:
             selection_candidates = list(effective_candidates)
-            selection_basis = (
-                "semantic-candidates-seeded-tiebreaker"
-                if layout_selection == "dynamic"
-                else "semantic-candidates-seeded-tiebreaker"
+            layout_id, selection_basis = _select_layout_candidate(
+                selection_candidates,
+                rng,
+                previous_layout_id=previous_layout_id,
+                usage_counts=usage_counts,
+                intent=intent,
+                layout_selection=layout_selection,
             )
-            layout_id = rng.choice(selection_candidates)
         decision = {
             "intent": intent,
             "layout_id": layout_id,
@@ -607,6 +679,8 @@ def resolve_layout_plan(
             "composition_feedback": _composition_feedback(entry),
         }
         decisions.append(decision)
+        usage_counts[layout_id] = usage_counts.get(layout_id, 0) + 1
+        previous_layout_id = layout_id
     return _apply_layout_variants(decisions, rng, method)
 
 

@@ -28,6 +28,14 @@ visual_asset_policy:
   generated_background_opt_in:
     allowed_when: [user-explicitly-requests-background-material, provenance-is-recorded, readability-is-verified]
     role: edge-to-edge-layout-aware-raster-field-with-2a-2b
+    routing:
+      layout_entry_skill: html-image-slide
+      background_attachment_skill: slide-background-image
+      phase: before-layout-selection
+      downstream_renderer: html-pattern-slide
+      required_asset_policy: image-planned
+      default_layout_selection: dynamic
+      media_requirement_source: prompt_system/layouts/*.yaml#media_requirement
     forbidden_content: [text, logos, recognizable-objects, fake-foreground-ui]
     allowed_raster_content: [profile-authorized-2b-edge-corner-seam-geometry]
     foreground_html_forbidden: [css-drawn-2b, inline-svg-2b, editable-html-2b, pseudo-element-2b]
@@ -51,6 +59,13 @@ combination_policy:
     - 內容表面不能預設全部是方塊或卡片；Open、Marker、Banded、Soft Field 必須按內容關係選用。
     - Layout 選定後才建立當頁 composition；renderer 不得因 Layout 名稱或舊數量提示刪除 primary items，並須依實際數量重排與完成正式字體驗證。
     - 種子必須可重現，manifest 必須逐頁記錄實際組合結果。
+
+layout_diversity_policy:
+  default_selection: diverse
+  no_consecutive_repeat: true
+  reuse_policy: least-used-candidate
+  tie_breaker: seed
+  scope: content-plan
 
 preset_rebuild_policy:
   meaning: 重新製作是以乾淨的 Preset 視覺契約重新完成逐頁設計，不是匯入舊案例或替通用 Layout 換色。
@@ -228,7 +243,13 @@ default_deck_route:
 
 content_routing:
   cover:
-    candidates: [cover-center-title-edge-decor]
+    candidates:
+      - cover-center-title-edge-decor
+      - cover-lower-right-hero-left-rail
+      - cover-mid-right-column-meta-upper-left
+      - cover-top-center-hero-bottom-center-support
+      - cover-upper-center-stack-meta-lower-right
+      - cover-upper-right-hero-lower-left-support
     signature_composition: 單一主張搭配明確視覺焦點
     ordinary_grid_loss: 第一印象與主題張力
     visual_intensity: hero
@@ -294,7 +315,7 @@ content_routing:
     ordinary_grid_loss: 語氣、停頓與記憶點
     visual_intensity: low
   closing:
-    candidates: [title-center]
+    candidates: [title-center, quote-focus]
     signature_composition: 收斂成單一行動或結論
     ordinary_grid_loss: 結尾的聚焦與行動感
     visual_intensity: hero

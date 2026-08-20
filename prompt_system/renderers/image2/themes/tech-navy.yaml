@@ -5,7 +5,7 @@ theme_id: tech-navy
 support_status: core-native
 source:
   path: prompt_system/themes/tech-navy.yaml
-  sha256: 2748e297c0530899dea7399584e4db2cded68545ead8f8ccc05b6ce7d4a07781
+  sha256: 0a1bf34e215bd977119e2c7c274b6df6a865e6b2ac6bc7bf0e24fef8e82d114b
 core_refs:
   visual_base: prompt_system/themes/tech-navy.yaml#visual_base
   palette: prompt_system/themes/tech-navy.yaml#visual_base.color_palette

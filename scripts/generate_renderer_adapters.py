@@ -17,6 +17,8 @@ from typing import Any
 
 import yaml
 
+from html_layout_family import layout_family
+
 
 ROOT = Path(__file__).resolve().parents[1]
 PROMPT_SYSTEM = ROOT / "prompt_system"
@@ -104,28 +106,6 @@ def dump_yaml(data: dict[str, Any]) -> str:
         default_flow_style=False,
         width=100,
     )
-
-
-def layout_family(layout_id: str) -> str:
-    rules = (
-        (r"^(hero|cover)", "cover"),
-        (r"^chapter", "chapter"),
-        (r"^closing", "closing"),
-        (r"^toc", "toc"),
-        (r"^(cards|icon-grid|people|team)", "modules"),
-        (r"^(process|flow|timeline|gantt)", "sequence"),
-        (r"^infographic", "infographic"),
-        (r"^(matrix|swot|before-after|split-comparison|comparison|pricing)", "comparison"),
-        (r"^(kpi|stats|dashboard)", "metrics"),
-        (r"^(photo|executive|testimonial)", "media"),
-        (r"^(map|heat|radar|multi-line-chart|data-annotation)", "data-viz"),
-        (r"^(quote|highlight|title-center)", "statement"),
-        (r"^(pyramid|funnel|cycle|org-chart)", "diagram"),
-    )
-    for pattern, family in rules:
-        if re.search(pattern, layout_id):
-            return family
-    return "content"
 
 
 def html_decoration_component(name: str, visual: str) -> str:
