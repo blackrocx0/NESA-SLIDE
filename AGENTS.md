@@ -16,7 +16,7 @@
 ## 核心來源與邊界
 
 - `prompt_system/themes/` 與 `prompt_system/layouts/` 是共用語意來源；三種 renderer 使用各自 adapter。
-- 本測試包保留 36 個 core Theme、77 個 active Layout、339 份 adapters；四個已退役 `toc-2*` 版型不在包內。
+- 本測試包保留 36 個 core Theme、74 個 active Layout、330 份 adapters；四個已退役 `toc-2*` 版型不在包內。
 - `demos/` 只是展示與驗收證據，不能作為 new-deck 的內容、Layout sequence 或 CSS runtime source。
 - 先完成內容與 Art Direction，再檢查現有 Theme/Layout coverage；不得從範例版型反推文案。
 

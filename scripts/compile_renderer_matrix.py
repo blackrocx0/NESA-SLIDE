@@ -63,7 +63,11 @@ def theme_record(path: Path) -> dict[str, Any]:
     support = [valid_hex(item["hex"]) for item in support_items if isinstance(item, dict) and "hex" in item]
     neutral_items = palette.get("neutral") or []
     neutral = [valid_hex(item["hex"]) for item in neutral_items if isinstance(item, dict) and "hex" in item]
-    surface = support[0] if support else mix(background, primary, 0.12)
+    surface_item = palette.get("surface")
+    if isinstance(surface_item, dict) and surface_item.get("hex"):
+        surface = valid_hex(surface_item["hex"])
+    else:
+        surface = support[0] if support else mix(background, primary, 0.12)
     html_adapter = load_yaml(ROOT / "prompt_system/renderers/html/themes" / path.name)
     pptx_adapter = load_yaml(ROOT / "prompt_system/renderers/pptx/themes" / path.name)
     return {

@@ -20,7 +20,7 @@ layout 仍只負責 slot 的 `[x%, y%, w%, h%]` 與對齊規則；字級、畫�
 | 字級在範圍內取哪個值 | 內容密度決定 | 內容少取上緣、內容多取下緣（規則 2、4） |
 | 溢位處置、垂直分佈策略 | 本規則（固定） | 規則 3、4 |
 | 裝飾元素「可以出現在哪」 | 本規則（固定） | 規則 5 的位置約束 |
-| 色票、字型、質感、裝飾長什麼樣 | theme 決定 | 來自 theme 檔的 `visual_base` + `html_spec` |
+| 色票、字型、質感、裝飾長什麼樣 | theme 決定 | 來自 theme 檔的 `visual_base` + `decoration_vocabulary` |
 | slot 結構、對齊、內容角色、構圖錨點 | layout 決定 | 來自 layout YAML；含刻意不置中的構圖 |
 | 每頁實際文案與內容多寡 | content manifest／當次內容決定 | 內容層，不受本文件管 |
 
@@ -62,11 +62,54 @@ layout 仍只負責 slot 的 `[x%, y%, w%, h%]` 與對齊規則；字級、畫�
 
 內容語意 icon 與 Layout 的責任邊界見 `references/svg-icon-generation-rules.md`：icon 必須由 content manifest／semantic slot 指定，可作為可替換、可編輯的內容 layer，但不得反向決定 Layout、欄列數、slot geometry 或內容排序。
 
+### 可見文案必須有來源
+
+- 投影片上的文字不是背景 Pattern。每個可見字串必須來自當次 content manifest，或是 renderer
+  依內容結構在本簡報語言中產生的必要語意標籤；不得由 Theme、Preset、Layout 名稱或 renderer
+  metadata 推導裝飾性英文。
+- `speaker`、`org`、`kicker`、`eyebrow`、`meta`、`footer`、`attribution`、`caption` 與
+  `panel-label` 一律選填。來源缺少或值為空時，整個 DOM 物件省略，不得輸出空殼，也不得補入
+  `Lab`、`Studio`、`Concept`、`Profile`、`Demo`、`Wayfinding`、年份或其他看似設計的 filler。
+- 繁中簡報的純英文可見短語預設不允許；數字／階段代碼、量測單位、email、URL、常見技術縮寫，
+  或 content manifest 明確列入 `allowed_latin_terms` 的正式名稱除外。中英雙語簡報應明確宣告語言，
+  不得靠 renderer 猜測。
+- 正式 renderer source 先以 `scripts/html_visible_copy.py --renderer-source` 檢查寫死文字；產物再以
+  `scripts/html_visible_copy.py --html ... --story ...` 驗證實際可見文案。任一失敗都阻擋產出，
+  不能靠 QA 後處理刪字。
+
 - 每個 `prompt_system/layouts/*.yaml` 必須直接宣告 `media_requirement`：`no-image` 或 `with-image`。這是 Layout Core 的正式能力欄位；HTML catalog 只保留相容投影，不是第二份分類來源。
 - `no-image` 包含文字、表格、流程、資料結構與 HTML 原生／語意圖示；例如 `icon-grid-6` 不因為有圖示格就算圖片型。`with-image` 代表原構圖成立需要照片、插圖、地圖或人物等外部視覺素材。
 - HTML 產製必須宣告 `asset_policy`。`pattern-only` 只能選 `no-image`；`image-planned` 代表交付前會補上真實圖片，因此可選兩類 Layout。未宣告時預設 `pattern-only`。
 - `image-planned` 可以在製作中暫用單純填色佔位，但使用 `with-image` 的正式交付必須補齊真實素材；不得用 HTML、SVG 或 CSS 仿畫圖片冒充完成。
 - 需要檢查分類時可用同一 seed 與內容分別輸出兩份 HTML；manifest 必須記錄 `asset_policy`、每頁 `media_requirement`、eligible pool、rendering policy 與各類數量。
+
+### 圖片背景 HTML 的上游路由
+
+- 新建 HTML 且使用者要求逐頁圖片背景、滿版／半版圖片構圖或 image-led HTML 時，先使用 `.agents/skills/html-image-slide/SKILL.md` 完成圖片意圖、SAFE ZONE、素材 provenance 與逐頁 handoff，再進入 `html-pattern-slide`。
+- 新建 image-aware HTML 的 `asset_policy=image-planned` 必須在 Layout 選擇前宣告；`layout-selection=dynamic` 或明確的逐頁 Layout 決策也必須在 renderer 呼叫前確定。不得先以 `pattern-only` 鎖定一般版面，再用 raster 背景補救不相容的構圖。
+- 已有可編輯 HTML 且只要求附加／替換背景時，使用 `.agents/skills/slide-background-image/SKILL.md`，從 browser-measured occupancy 開始；保留來源 HTML 的 Layout、內容與幾何，不重新選版或重生前景。
+- `image-planned` 仍是混合候選池：內容關係不需要圖片的頁面可使用 `no-image`，需要照片／插圖／地圖／人物構圖的頁面才使用 `with-image`。只有「每頁都是圖片主導」才使用全頁 `with-image` 分流。
+- 這條路由只改變 Layout 決策的輸入，不改變 HTML 可編輯性；背景仍須在前景量測後逐頁生成、內嵌與驗證，不能把整頁 HTML flatten 成圖片。
+
+### 數據圖表只由 Python 資料契約產生
+
+- 趨勢圖、長條／折線組合圖、資料註解圖、熱圖、雷達圖與其他數據圖表的權威來源是
+  結構化 `ChartDataContract`；HTML renderer 與 demo 不得自行計算 plot 座標後拼接
+  `<polyline>`、`<rect>`、`<circle>`、`<polygon>` 等 chart marks。
+- 正式路徑固定為 `ChartDataContract → scripts/python_chart_renderer.py → deterministic inline SVG`。
+  SVG 只是可選取的 semantic visual-layer 投影，數值、系列、單位、domain 與註解仍以資料契約為準。
+- Python SVG 必須保留 `data-python-generated="true"`、`data-python-chart-engine="matplotlib"`、
+  `data-python-chart-family`、Matplotlib version、`data-chart-spec-sha256`、`role="img"` 與
+  `data-css-owner="renderer-base"`；不得包含 PNG／`<image>`／canvas 或把數值只留在 path 裡。
+- 圖表標題、takeaway、來源與需要獨立編輯的敘事註解優先保留為 native HTML；Python chart 本體
+  作為一個 visual layer，不把每條線誤稱為可即時編輯的資料物件。
+- 流程箭頭、循環線、matrix 軸、map outline 與 connector 是 Layout 的結構幾何，不屬於數據圖表，
+  可繼續由 renderer 使用 SVG path；它們不得承載只有圖表資料契約才知道的數值 mark。
+- build-time Python SVG 不等於 live data editor。若未來支援即時改數值，正式路徑必須是
+  `editor data table → localhost Python endpoint → SVG replacement → undo/redo/save/export`；
+  `file://` 不得假裝可以直接重跑 Python。
+- QA 必須驗證每個 production chart family 都帶 Python provenance、相同輸入輸出相同 SVG、
+  無手寫 chart SVG source、無 raster fallback、字級／overflow／accessibility 合格，並保留 data hash。
 
 ## 規則 1：固定畫布 1920×1080 + 絕對定位
 
@@ -169,7 +212,7 @@ layout 仍只負責 slot 的 `[x%, y%, w%, h%]` 與對齊規則；字級、畫�
 - 一般點擊命中正式群組的任何子物件時，一律選取該位置最外層正式群組；群組已選取後，再點成員或群組框內空白仍維持整組，
   不得以第二次點擊或其他隱性狀態進入子物件。正式群組的完整可見聯集外框（包含成員間 gap／空白）都是群組命中範圍。
 - 選取 AI 生成群組時，只顯示整組的大外框與控制點；**不顯示每個內層物件的「定位方框」**
-  （避免畫面雜亂）。只有明確按「編輯單件」後，下一次點擊才可選取該群組的直接子層。
+  （避免畫面雜亂）。持續進入下一層必須明確按「編輯單件」；按住 `Ctrl`／`Cmd` 的單次點擊則可暫時直接命中群組內物件。
 - AI 生成群組與手動群組共用同一套群組工具：群組、取消群組、編輯單件、上一層群組、
   巢狀群組、復原／重做、草稿與匯出。取消 AI 生成群組時可保留 renderer 外層容器以維持
   物化幾何，但命中與工具列必須切換成可直接選取內層；重新群組後恢復整組優先。
@@ -268,18 +311,61 @@ layout 仍只負責 slot 的 `[x%, y%, w%, h%]` 與對齊規則；字級、畫�
 
 字級綁定 1920×1080 畫布。先依 `page_type` + slot 的 `weight` 對應到「角色」，再從角色取 px。
 
+### 文字方向（text orientation）
+
+- AI 生成的可見文字預設一律使用 `horizontal-tb`；「垂直排列」只表示物件沿 y 軸堆疊，
+  不等於旋轉字形或改用直排 writing mode。
+- 只有 Layout Core 明確宣告某個文字 slot 的方向語意時，renderer-base／Layout adapter 才能
+  使用其他 writing mode 或把文字旋轉 90°。Theme、Preset、Style Case 與 design dialect
+  不得自行引入直向文字。
+- 目前 release 的 Layout Core 沒有任何直向文字 slot，因此 source、生成 HTML 與打包 Gate
+  都必須驗證 `vertical-*` writing mode 與文字 `rotate(±90deg)` 為 0。
+- 書脊、側欄、時間軸與「vertical」命名 Layout 以水平短標、欄線、Grid/Flex 與物件位置建立方向；
+  不把主要內容、metadata、聯絡資訊、章節號或比較 bridge 轉成直排。
+
+### 字重語意（font-weight）
+
+這裡的「字重／粗細」是 `font-weight`，與 `font-size`（字級大小）分開管理。字族由
+Theme／Style Case 選擇；字重由文字的語意角色決定，不得因為換了字族就把標題、
+小標與說明全部套成同一個粗細。
+
+語意 token 固定如下：
+
+| 語意 token | CSS weight | 使用方式 |
+|---|---:|---|
+| `heavy` | 900 | 核心標題、封面主標、關鍵數字與主要結論 |
+| `bold` | 700 | 模組標題、比較欄標籤、需要明確分組的短句 |
+| `normal` | 400 | 小標、一般標籤、來源與輔助資訊 |
+| `light` | 300 | 說明、內文、補充敘述；投影或對比不足時回退至 400 |
+| `medium` | 500 | 小尺寸 caption、工具性標籤或需要提高投影辨識度的文字 |
+
+`heavy`、`bold`、`normal`、`light` 是語意名稱，不是 Layout Core 的
+`weight: hero|primary|secondary|tertiary`。Renderer 必須先把 Layout／content 的語意角色
+解析成 typography token，再輸出數字型 `font-weight`；不得把兩種 `weight` 混為同一欄位。
+
+字族能力限制：
+
+- `Noto Sans TC` 與 `Noto Serif TC` 可使用 `300–900`；標題預設使用 `heavy=900`。
+- `Roboto Mono` 可使用 `300–700`，只用於編號、座標、工具列與等寬訊息；不得把它當成
+  `heavy=900` 的標題字。Mono 需要強調時最多使用 `700`，若需要真正 Heavy，改用
+  `Noto Sans TC` 或 `Noto Serif TC`。
+- 不得依賴瀏覽器 faux bold／synthetic weight 假造缺少的字重。若目標字族不具備目標字重，
+  必須依上述規則改用可用字重或改用支援該字重的字族。
+- `opacity`、較深的文字顏色或更大的字級不能冒充 `light`、`normal` 或 `heavy`；驗收要看
+  實際 computed `font-family` 與 `font-weight`。
+
 ### 角色字級表
 
 | 角色 | px 範圍 | font-weight | line-height | 用途 |
 |------|---------|-------------|-------------|------|
-| display | 120–180 | 800 | 1.05 | 封面主標、整頁金句 |
-| section | 88–120 | 700 | 1.10 | 章節大標 |
-| page-title | 52–80 | 700 | 1.15 | 內容頁標題 |
-| module-title | 36–52 | 600 | 1.20 | 模組 / 卡片標題 |
-| subtitle | 36–44 | 500 | 1.30 | 副標、framing 句 |
-| body | 36–40 | 400 | 1.35–1.50 | 內文、說明 |
-| caption | 36–40 | 500 | 1.20–1.35 | 標籤、來源、編號小字 |
-| mega-number | 160–360 | 800 | 1.00 | 裝飾用大型數字 |
+| display | 120–180 | 900 (`heavy`) | 1.05 | 封面主標、整頁金句 |
+| section | 88–120 | 800–900 (`heavy`) | 1.10 | 章節大標 |
+| page-title | 52–80 | 800–900 (`heavy`) | 1.15 | 內容頁標題 |
+| module-title | 36–52 | 700 (`bold`) | 1.20 | 模組 / 卡片標題 |
+| subtitle | 36–44 | 400 (`normal`) | 1.30 | 副標、framing 句 |
+| body | 36–40 | 300 (`light`)，必要時 400 | 1.35–1.50 | 內文、說明 |
+| caption | 36–40 | 400 (`normal`)，必要時 500 | 1.20–1.35 | 標籤、來源、編號小字 |
+| mega-number | 160–360 | 900 (`heavy`) | 1.00 | 裝飾用大型數字 |
 
 AI 生成硬下限：投影片視覺層的所有文字不得小於 36px。這個下限在 renderer 寫出 CSS／inline style 時落實，不能只靠載入後臨時放大。編輯器介面文字不屬於投影片視覺層。
 
@@ -474,7 +560,7 @@ HTML runtime 必須在字體載入與 auto-layout materialize 完成後，量測
 
 裝飾是「氣氛」，不是「訊息」。這條規則鎖住裝飾的**位置與職責**；
 裝飾的**視覺長相**（顏色、線條粗細、形狀語彙）完全由 theme 決定，
-取自 theme 檔的 `decoration_vocabulary` 與 `html_spec.decoration_notes`。
+取自 theme 檔的 `decoration_vocabulary`；Theme 不保存 renderer geometry。
 
 ### HTML 預設手法：Pattern 與陰影優先
 
@@ -751,7 +837,9 @@ Theme 的 accent 必須分成「圖形色」與「文字色」兩種用途：線
   可直接寫回時以綠色顯示「儲存進度」。畫面不另加第二顆存檔按鈕、常駐說明或檔名小字；
   綁定檔名只放在按鈕的 tooltip。
 - 點擊任一未群組 `.el` 預設選取單一物件；若它位於正式群組內，普通點擊先解析到最外層正式群組，
-  並由該群組完整外框攔截命中。只有「編輯單件」狀態可選取下一層；按住 Shift 點擊或框選可多選目前允許階層的物件。
+  並由該群組完整外框攔截命中。持續進入下一層使用「編輯單件」狀態；按住 Shift 點擊或框選可多選目前允許階層的物件。
+- 按住 `Ctrl`／`Cmd` 點擊屬於明確、暫時的群組穿透：直接選取游標下最內層可編輯物件；命中文字時，
+  同一次點擊直接進入 `contenteditable`。放開修飾鍵後，普通點擊仍選最外層正式群組；不得修改群組路徑、取消群組或建立持續的深入範圍。
 - 純文字物件與 `data-edit-layer="text|metric"` 的 pointer hit-test 必須使用文字節點逐行的
   `Range.getClientRects()`，不得沿用橫跨整列的 DOM layout box。游標落在同一水平線但已超出
   實際 glyph line box 時，必須先繼續檢查同一語意模組的下層 background layer 與其他可見物件；
@@ -930,9 +1018,9 @@ Theme 的 accent 必須分成「圖形色」與「文字色」兩種用途：線
 - 拖曳/編輯時不做規則 1–5 的即時硬性檢查或阻擋（例如拖進留白帶跳警告），先求
   「能自由調整」。目前只有同頁同角色字級不一致的 advisory 提示，且必須由使用者
   主動按「套用到同類元素」才會改動其他元素
-- 存回原始 HTML 檔案不會回寫進七段式 YAML 或 theme 檔的 `layout_overrides`，
+- 存回原始 HTML 檔案不會回寫進七段式 YAML、Theme Core 或 Layout Core，
   若之後重新用 AI 生成同一個輸出路徑，手動存檔的調整會被蓋掉；要沉澱成規則，
-  仍需人工把確認後的座標與樣式整理進 theme 檔
+  仍需人工把確認後的幾何整理進 Layout／Composition／renderer-base，外觀整理進 Theme
 - 開發伺服器的內部安全備份（`.history/`）不做自動清除或數量上限，也不暴露成使用者介面
 
 ---
@@ -952,6 +1040,14 @@ HTML 不得各自寫一套字體 URL 或以作業系統字體當主字體。Them
 - `Noto Sans TC`：黑體主標、內文與一般 UI。
 - `Noto Serif TC`：襯線主標、編輯感內容與展示數字。
 - `Roboto Mono`：編號、座標、工具列與等寬訊息；中文字形回退到 `Noto Sans TC`。
+
+三套核心字體的 Google Fonts CSS2 請求必須包含可實際使用的字重：
+
+| 字族 | 必須載入的字重 | 禁止用途 |
+|---|---|---|
+| `Noto Sans TC` | 300、400、500、600、700、800、900 | 無 |
+| `Noto Serif TC` | 300、400、500、600、700、800、900 | 無 |
+| `Roboto Mono` | 300、400、500、600、700 | 不得承擔 800／900 Heavy 標題 |
 
 每份 HTML 的 `<head>` 必須只有一組 Google Fonts CSS2 請求，用多個
 `family=` 參數合併三個 family，並同時包含：

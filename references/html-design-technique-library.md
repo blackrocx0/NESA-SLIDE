@@ -20,7 +20,7 @@
 | 技法 | 適合用途 | 限制 |
 | --- | --- | --- |
 | CSS Grid / Subgrid | 出版欄線、工程剖面、訊號軸 | 內容實際高度先量測，再將辨識好的欄位物件化 |
-| `writing-mode` | 書脊、側欄、軸線標示 | 只用於短文字，不用於長段落 |
+| 水平書脊線／側欄索引 | 書脊、側欄、軸線標示 | 文字維持 `horizontal-tb`；用 Grid、欄線與水平短標建立方向 |
 | `text-wrap: balance/pretty/stable` | 標題平衡斷行、正文可讀性、編輯時穩定換行 | `balance` 只給短標題；`stable` 給 `contenteditable` |
 | `clip-path` | 工業斜切、織帶、工程切角 | 不得裁到文字安全區；縮放後仍要可選取 |
 | `mask-image` | 紙邊、柔焦、準漸隱去 | 提供 `-webkit-mask-image`；遮罩只做視覺，不改變 DOM 邊界 |
@@ -33,7 +33,6 @@
 ## 官方參考
 
 - [MDN: CSS Grid subgrid](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Subgrid)
-- [MDN: writing-mode](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/writing-mode)
 - [MDN: text-wrap](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-wrap)
 - [MDN: clipping / clip-path](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Masking/Clipping)
 - [MDN: mask-image](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/mask-image)

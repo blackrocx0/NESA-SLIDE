@@ -54,6 +54,7 @@ from html_layout_catalog import (  # noqa: E402
 )
 from html_layout_family import layout_family  # noqa: E402
 from html_motion_runtime import motion_runtime_manifest  # noqa: E402
+from html_visible_copy import assert_visible_copy  # noqa: E402
 from html_preset_themes import (  # noqa: E402
     build_preset_appearance_css,
     load_html_preset_theme_catalog,
@@ -94,6 +95,16 @@ THEME_POOL = BASE_THEME_POOL + PRESET_THEME_POOL
 MODULE_LAYOUT_CAPACITY = {
     f"cards-1-plus-{count}": count
     for count in (2, 3, 4, 5, 6, 8)
+}
+CONTENT_PRESERVING_CARD_LAYOUT = {
+    1: "cards-1-plus-2",
+    2: "cards-1-plus-2",
+    3: "cards-1-plus-3",
+    4: "cards-1-plus-4",
+    5: "cards-1-plus-5",
+    6: "cards-1-plus-6",
+    7: "cards-1-plus-8",
+    8: "cards-1-plus-8",
 }
 
 
@@ -297,8 +308,8 @@ html[data-style-case="dark-ai-city"] .cover-center-area{left:0!important;top:0!i
 html[data-style-case="dark-ai-city"] .cover-center-title{top:228px!important;max-width:1500px!important;text-align:center!important;font:900 120px/1.05 var(--font-heading)!important;letter-spacing:.02em!important;color:#f5f7fa!important;background:none!important;background-clip:border-box!important;-webkit-background-clip:border-box!important;-webkit-text-fill-color:#f5f7fa!important;filter:none!important;mix-blend-mode:normal!important;text-shadow:none!important}
 html[data-style-case="dark-ai-city"] .cover-center-rule{display:none!important}
 html[data-style-case="dark-ai-city"] .cover-center-subtitle{top:508px!important;max-width:1320px!important;margin:0!important;text-align:center!important;font:500 36px/1.3 var(--font-body)!important;color:#9aa7b8!important}
-html[data-style-case="dark-ai-city"] .cover-center-speaker{top:616px!important;margin:0!important;text-align:center!important;font:500 26px/1.35 var(--font-body)!important;color:#f5f7fa!important}
-html[data-style-case="dark-ai-city"] .cover-center-org{position:absolute!important;left:864px!important;top:670px!important;margin:0!important;text-align:center!important;font:500 22px/1.35 var(--font-mono)!important;letter-spacing:.18em!important;color:#9aa7b8!important;writing-mode:horizontal-tb!important;translate:-50% 0!important}
+html[data-style-case="dark-ai-city"] .cover-center-speaker{top:616px!important;margin:0!important;text-align:center!important;font:500 36px/1.35 var(--font-body)!important;color:#f5f7fa!important}
+html[data-style-case="dark-ai-city"] .cover-center-org{position:absolute!important;left:864px!important;top:670px!important;margin:0!important;text-align:center!important;font:500 36px/1.35 var(--font-mono)!important;letter-spacing:.18em!important;color:#9aa7b8!important;writing-mode:horizontal-tb!important;translate:-50% 0!important}
 html[data-style-case="dark-ai-city"] .cover-logo{display:none!important}
 html[data-style-case="dark-ai-city"] [data-edit-kind="text"],html[data-style-case="dark-ai-city"] :is(h1,h2,h3,h4,p,b,em){text-shadow:none!important;filter:none!important;mix-blend-mode:normal!important}
 html[data-style-case="dark-ai-city"] .prod-title{color:#f5f7fa!important;-webkit-text-fill-color:#f5f7fa!important;mix-blend-mode:normal!important;text-shadow:none!important;filter:none!important}
@@ -326,7 +337,7 @@ html[data-style-case="dark-ai-city"] [data-layout-id="timeline-milestones"] .tim
 html[data-style-case="dark-ai-city"] [data-layout-id="org-chart"] .diagram-node-bg{background:rgba(17,29,44,.86)!important;border-color:rgba(63,208,232,.15)!important;box-shadow:0 12px 28px rgba(0,0,0,.14)!important;backdrop-filter:none}
 html[data-style-case="dark-ai-city"] [data-layout-id="org-chart"] .org-note{color:#dce5ee!important;opacity:1!important}
 html[data-style-case="dark-ai-city"] [data-layout-id="org-chart"] .org-note .diagram-node-bg{background:rgba(63,208,232,.075)!important;border:1px solid rgba(63,208,232,.20)!important;box-shadow:none!important}
-html[data-style-case="dark-ai-city"] [data-layout-id="org-chart"] .org-note>span{color:#dce5ee!important;opacity:1!important;font-size:22px!important;font-weight:600!important}
+html[data-style-case="dark-ai-city"] [data-layout-id="org-chart"] .org-note>span{color:#dce5ee!important;opacity:1!important;font-size:36px!important;font-weight:600!important}
 html[data-style-case="dark-ai-city"] [data-layout-id="highlight-callout"] .statement-chart-panel .diagram-node-bg,html[data-style-case="dark-ai-city"] [data-layout-id="highlight-callout"] .statement-callout .diagram-node-bg{background:rgba(17,29,44,.88)!important;border-color:rgba(63,208,232,.15)!important;box-shadow:0 16px 36px rgba(0,0,0,.16)!important}
 html[data-style-case="dark-ai-city"] [data-layout-id="quote-focus"] .diagram-node-bg{background:rgba(17,29,44,.82)!important;border-color:rgba(63,208,232,.12)!important;box-shadow:0 16px 40px rgba(0,0,0,.16)!important;backdrop-filter:blur(4px)}
 html[data-style-case="dark-ai-city"] :is(.module-number,.sequence-number,.metric-strip-value,.metric-panel-value){color:#b8e3ea!important;text-shadow:none!important;filter:none!important}
@@ -358,7 +369,7 @@ html[data-style-case="dark-city-network-report"] .cover-media-field,html[data-st
 html[data-style-case="dark-city-network-report"] .cover-bottom-title{left:106px!important;top:482px!important;max-width:1180px!important;font:800 112px/1 var(--font-display)!important;letter-spacing:-.05em;color:#fff;text-shadow:none}
 html[data-style-case="dark-city-network-report"] .cover-bottom-title:after{content:"";display:block;width:720px;height:4px;margin-top:32px;background:linear-gradient(90deg,#d4af7e 0 24%,#75bfe8 24% 100%)}
 html[data-style-case="dark-city-network-report"] .cover-bottom-subtitle{left:110px!important;top:800px!important;max-width:1260px!important;font:540 36px/1.42 var(--font-body)!important;letter-spacing:.04em;color:#b9d8eb}
-html[data-style-case="dark-city-network-report"] .cover-bottom-meta{left:102px!important;top:905px!important;font:750 18px/1 var(--font-mono)!important;letter-spacing:.18em;color:#e8f3ff}
+html[data-style-case="dark-city-network-report"] .cover-bottom-meta{left:102px!important;top:905px!important;font:750 36px/1 var(--font-mono)!important;letter-spacing:.18em;color:#e8f3ff}
 html[data-style-case="dark-city-network-report"] .cover-logo{left:1682px!important;top:60px!important;width:158px!important;height:100px!important}
 html[data-style-case="dark-city-network-report"] .cover-logo .diagram-node-bg{background:rgba(9,21,37,.68)!important;border-color:rgba(117,191,232,.65)!important;box-shadow:0 0 34px rgba(117,191,232,.16)!important;backdrop-filter:blur(8px)}
 html[data-style-case="dark-city-network-report"] .slide:not([data-layout-id="hero-fullbleed"]){--bg:#f1f4f6;--surface:#fff;--text:#152132;--muted:#526173;--accent:#2c7098;--support-accent:#c68f54;--surface-text:#152132;--surface-muted:#526173;--surface-accent-ink:#245d7c;background-color:#f1f4f6;background-image:radial-gradient(circle at 92% 12%,rgba(44,112,152,.10),transparent 27%),linear-gradient(rgba(44,112,152,.036) 1px,transparent 1px),linear-gradient(90deg,rgba(44,112,152,.036) 1px,transparent 1px);background-size:100% 100%,58px 58px,58px 58px;color:#152132}
@@ -414,9 +425,9 @@ html[data-style-case="clinical-evidence-atlas"] [data-layout-id="cover-center-ti
 html[data-style-case="clinical-evidence-atlas"] [data-layout-id="cover-center-title-edge-decor"] .cover-center-area{left:0!important;top:0!important;width:1728px!important;height:888px!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;text-align:left!important;padding:0 480px 0 112px!important;gap:24px!important}
 html[data-style-case="clinical-evidence-atlas"] [data-layout-id="cover-center-title-edge-decor"] .cover-center-title{max-width:1120px!important;text-align:left!important;font:800 104px/1.03 var(--font-heading)!important;letter-spacing:-.055em!important;color:#17343d!important;-webkit-text-fill-color:#17343d!important}
 html[data-style-case="clinical-evidence-atlas"] [data-layout-id="cover-center-title-edge-decor"] .cover-center-rule{width:244px!important;height:7px!important;background:linear-gradient(90deg,#0b7a75 0 72%,#d96c5f 72% 100%)!important}
-html[data-style-case="clinical-evidence-atlas"] [data-layout-id="cover-center-title-edge-decor"] .cover-center-subtitle{max-width:1100px!important;text-align:left!important;font:500 38px/1.38 var(--font-body)!important;color:#58707a!important}
+html[data-style-case="clinical-evidence-atlas"] [data-layout-id="cover-center-title-edge-decor"] .cover-center-subtitle{max-width:1100px!important;text-align:left!important;font:500 42px/1.38 var(--font-body)!important;color:#58707a!important}
 html[data-style-case="clinical-evidence-atlas"] [data-layout-id="cover-center-title-edge-decor"] .cover-center-speaker,html[data-style-case="clinical-evidence-atlas"] [data-layout-id="cover-center-title-edge-decor"] .cover-center-org{text-align:left!important;color:#0b7a75!important}
-html[data-style-case="clinical-evidence-atlas"] [data-layout-id="cover-center-title-edge-decor"] .cover-center-org{position:absolute!important;left:1540px!important;top:98px!important;width:max-content!important;height:max-content!important;max-height:700px!important;white-space:nowrap!important;writing-mode:vertical-rl!important;text-orientation:mixed!important}
+html[data-style-case="clinical-evidence-atlas"] [data-layout-id="cover-center-title-edge-decor"] .cover-center-org{position:static!important;width:max-content!important;height:auto!important;max-width:1100px!important;white-space:normal!important;writing-mode:horizontal-tb!important;translate:none!important}
 html[data-style-case="clinical-evidence-atlas"] [data-layout-id="toc-4-panel-grid"] .toc-panel-grid-card .diagram-node-bg{border-top:6px solid #0b7a75!important}
 html[data-style-case="clinical-evidence-atlas"] [data-layout-id="toc-4-panel-grid"] .toc-side-panel .diagram-node-bg{background:#17343d!important;border-color:#17343d!important}
 html[data-style-case="clinical-evidence-atlas"] [data-layout-id="toc-4-panel-grid"] .toc-side-panel :is(span,b,p,em){color:#fff!important}
@@ -501,7 +512,6 @@ html[data-style-case="moonlit-herbarium-atlas"] [data-layout-id="cards-1-plus-3"
 html[data-style-case="moonlit-herbarium-atlas"] [data-layout-id="timeline-milestones"] .timeline-milestone>b{letter-spacing:-.10em!important}
 html[data-style-case="moonlit-herbarium-atlas"] [data-layout-id="before-after"] .after .diagram-node-bg{background:#173f3a!important}
 html[data-style-case="moonlit-herbarium-atlas"] [data-layout-id="before-after"] .compare-title{left:48px!important;right:48px!important;font-size:48px!important}
-html[data-style-case="moonlit-herbarium-atlas"] [data-layout-id="before-after"] .compare-rail>em{display:none!important}
 html[data-style-case="moonlit-herbarium-atlas"] [data-layout-id="before-after"] .after :is(h2,h3,p,li,span,b,strong,em){color:#f4ebdd!important}
 html[data-style-case="moonlit-herbarium-atlas"] [data-layout-id="comparison-table"] .header.recommended{color:#fff7e8!important}
 html[data-style-case="moonlit-herbarium-atlas"] [data-layout-id="comparison-table"] .recommended:not(.header){color:#173f3a!important}
@@ -604,7 +614,7 @@ html[data-style-case="folio-signal-ledger"] [data-layout-id="cover-center-title-
 html[data-style-case="folio-signal-ledger"] [data-layout-id="cover-center-title-edge-decor"]:not([data-composition-variant="centered-signal-hero"]) :is(.cover-center-title,.cover-center-subtitle,.cover-center-speaker,.cover-center-org){text-align:left!important}
 html[data-style-case="folio-signal-ledger"] [data-layout-id="cover-center-title-edge-decor"]:not([data-composition-variant="centered-signal-hero"]) .cover-center-title{left:740px!important;max-width:1120px!important;font:900 110px/1.04 var(--font-heading)!important;color:#1F3140!important;-webkit-text-fill-color:#1F3140!important}
 html[data-style-case="folio-signal-ledger"] [data-layout-id="cover-center-title-edge-decor"] .cover-center-rule{width:260px!important;height:7px!important;background:linear-gradient(90deg,#B84B32 0 62%,#1F7B73 62% 100%)!important}
-html[data-style-case="folio-signal-ledger"] [data-layout-id="cover-center-title-edge-decor"]:not([data-composition-variant="centered-signal-hero"]) .cover-center-subtitle{width:880px!important;max-width:880px!important;font-size:40px!important;line-height:1.28!important;color:#66717A!important}
+html[data-style-case="folio-signal-ledger"] [data-layout-id="cover-center-title-edge-decor"]:not([data-composition-variant="centered-signal-hero"]) .cover-center-subtitle{width:880px!important;max-width:880px!important;font-size:42px!important;line-height:1.28!important;color:#66717A!important}
 html[data-style-case="folio-signal-ledger"] [data-layout-id="cover-center-title-edge-decor"] .cover-center-speaker{margin-top:32px!important;color:#B84B32!important;letter-spacing:.12em!important}
 html[data-style-case="folio-signal-ledger"] [data-layout-id="cover-center-title-edge-decor"] .cover-center-org{color:#1F7B73!important;letter-spacing:.08em!important}
 html[data-style-case="folio-signal-ledger"] [data-layout-id="toc-4-panel-rows"] .toc-side-panel{background:#1F3140!important;color:#FFFDF7!important}
@@ -619,7 +629,6 @@ html[data-style-case="folio-signal-ledger"] [data-layout-id="strategic-prioritie
 html[data-style-case="folio-signal-ledger"] [data-layout-id="before-after"] .before .diagram-node-bg{background:rgba(255,253,247,.58)!important;border-top-color:#66717A!important;box-shadow:none!important}
 html[data-style-case="folio-signal-ledger"] [data-layout-id="before-after"] .after .diagram-node-bg{background:rgba(255,253,247,.92)!important;border-top-color:#1F7B73!important;border-left:8px solid #1F7B73!important;box-shadow:0 12px 28px rgba(31,123,115,.08)!important}
 html[data-style-case="folio-signal-ledger"] [data-layout-id="before-after"] .compare-rail-line{background:#B84B32!important;width:3px!important}
-html[data-style-case="folio-signal-ledger"] [data-layout-id="before-after"] .compare-rail-label{color:#B84B32!important}
 html[data-style-case="folio-signal-ledger"] [data-layout-id="kpi-scorecards"] .metric-kpi-card .diagram-node-bg{background:transparent!important;border-top:7px solid #B84B32!important;border-bottom:1px solid rgba(31,49,64,.22)!important;box-shadow:none!important}
 html[data-style-case="folio-signal-ledger"] [data-layout-id="kpi-scorecards"] .metric-kpi-card.card-2 .diagram-node-bg,html[data-style-case="folio-signal-ledger"] [data-layout-id="kpi-scorecards"] .metric-kpi-card.card-4 .diagram-node-bg{border-top-color:#1F7B73!important}
 html[data-style-case="folio-signal-ledger"] [data-layout-id="kpi-scorecards"] .metric-takeaway .diagram-node-bg{background:#1F3140!important;border:0!important;border-left:8px solid #B84B32!important;box-shadow:none!important}
@@ -655,7 +664,7 @@ html[data-style-case="after-dark-veil"] .cover-logo{display:block!important;visi
 html[data-style-case="after-dark-veil"] [data-layout-id="cover-center-title-edge-decor"] .cover-center-area{left:124px!important;top:108px!important;width:1320px!important;height:680px!important;align-items:flex-start!important;justify-content:center!important;text-align:left!important;padding:0!important;gap:26px!important}
 html[data-style-case="after-dark-veil"] [data-layout-id="cover-center-title-edge-decor"] :is(.cover-center-title,.cover-center-subtitle,.cover-center-speaker,.cover-center-org){text-align:left!important}
 html[data-style-case="after-dark-veil"] [data-layout-id="cover-center-title-edge-decor"] .cover-center-title{width:1070px!important;max-width:1070px!important;height:auto!important;min-height:0!important;font:900 112px/1.04 var(--font-heading)!important;color:#F6EFE2!important;-webkit-text-fill-color:#F6EFE2!important}
-html[data-style-case="after-dark-veil"] [data-layout-id="cover-center-title-edge-decor"] .cover-center-subtitle{width:950px!important;max-width:950px!important;height:auto!important;min-height:0!important;font:500 38px/1.38 var(--font-body)!important;color:#B5B0A5!important}
+html[data-style-case="after-dark-veil"] [data-layout-id="cover-center-title-edge-decor"] .cover-center-subtitle{width:950px!important;max-width:950px!important;height:auto!important;min-height:0!important;font:500 42px/1.38 var(--font-body)!important;color:#B5B0A5!important}
 html[data-style-case="after-dark-veil"] [data-layout-id="cover-center-title-edge-decor"] :is(.cover-center-speaker,.cover-center-org){color:#C9A45C!important;letter-spacing:.10em!important}
 html[data-style-case="after-dark-veil"] [data-layout-id="cover-center-title-edge-decor"] .cover-center-org{position:static!important;writing-mode:horizontal-tb!important;translate:none!important;color:#C46B72!important}
 html[data-style-case="after-dark-veil"] [data-layout-id="cover-center-title-edge-decor"] .cover-center-rule{width:300px!important;height:6px!important;background:linear-gradient(90deg,#C9A45C 0 66%,#C46B72 66% 100%)!important}
@@ -713,11 +722,8 @@ for _preset_id, _profile in PRESET_DEMO_PROFILES.items():
 
 COVER_LAYOUTS = [
     "cover-center-title-edge-decor",
-    "cover-lower-right-hero-left-rail",
-    "cover-mid-right-column-meta-upper-left",
-    "cover-top-center-hero-bottom-center-support",
+    "cover-left-title-open-field",
     "cover-upper-center-stack-meta-lower-right",
-    "cover-upper-right-hero-lower-left-support",
     "cover-photo-frame",
     "cover-photo-frame-reverse",
     "cover-photo-overlay-block",
@@ -902,14 +908,13 @@ STORIES: list[dict[str, Any]] = [
                     "完工等於結案",
                     ["介入位置跟著工程方便走", "設備之間沒有連續保護", "維運問題在驗收後才出現"],
                 ),
-                "after": (
-                    "AFTER · 路徑系統",
-                    "先找出不能繞路的人",
-                    "使用與維運共同驗收",
-                    ["用居民必要動線決定位置", "把零散節點串成完整路徑", "通過四項門檻才進入擴張"],
-                ),
-                "bridge": "把「設備完成」改成「路徑可用」",
-            },
+            "after": (
+                "AFTER · 路徑系統",
+                "先找出不能繞路的人",
+                "使用與維運共同驗收",
+                ["用居民必要動線決定位置", "把零散節點串成完整路徑", "通過四項門檻才進入擴張"],
+            ),
+        },
             "cycle-hub-6": {
                 "title": "六步完成\n城市降溫決策循環",
                 "subtitle": "每一輪都把量測結果寫回下一輪配置",
@@ -1160,7 +1165,7 @@ def _concept_story(
     """
     process = [(name, body) for name, body in toc[:5]]
     recommendations = [
-        (name, body, ("NOW", "BUILD", "TEST", "SCALE")[index])
+        (name, body, ("立即", "建置", "測試", "擴張")[index])
         for index, (name, body) in enumerate(toc[:4])
     ]
     cycle = [(name, body.rstrip("。")[:9]) for name, body in toc[:6]]
@@ -1182,29 +1187,42 @@ def _concept_story(
         "id": story_id,
         "title": title,
         "subtitle": subtitle,
-        "speaker": speaker,
-        "org": org,
+        # Demo concepts do not invent audience metadata. External story files
+        # may explicitly restore real speaker/organisation values below.
+        "speaker": "",
+        "org": "",
         "toc": toc,
-        "priorities": priorities,
+        "priorities": [
+            (name, body, f"重點 {index:02d}", allocation)
+            for index, (name, body, _tag, allocation) in enumerate(priorities, 1)
+        ],
         "recommendations": recommendations,
         "cycle": cycle,
         "before": ("分散處理", toc[0][0], "資訊與責任停留在各自節點", before_points),
         "after": ("共同路徑", priorities[0][0], "用共同輸入與驗收條件推進", after_points),
         "matrix": matrix,
-        "metrics": metrics,
+        "metrics": [
+            (value, label, note, "")
+            for value, label, note, _delta in metrics
+        ],
         "chart": chart,
         "process": process,
-        "timeline": timeline,
+        "timeline": [
+            (f"第 {index} 階段", title, body)
+            for index, (_label, title, body) in enumerate(timeline, 1)
+        ],
         "quote": quote,
-        "attribution": attribution,
+        "attribution": "",
         "center": (closing[0].replace("\n", ""), closing[1]),
-        "chapter": (f"CHAPTER {chapter_number}", toc[3][0], toc[3][1], chapter_number),
+        "chapter": (f"第 {chapter_number} 章", toc[3][0], toc[3][1], chapter_number),
         "bio": (
-            speaker,
+            "專案團隊",
             "跨域專案團隊",
             [item[1] for item in priorities],
-            org,
+            "",
         ),
+        "visible_text_language": "zh-Hant",
+        "allowed_latin_terms": [],
         "closing": closing,
     }
 
@@ -1653,7 +1671,7 @@ DIALECT_OVERRIDES: dict[str, str] = {
 [data-theme="brand-editorial"] .cover-center-rule,[data-theme="brand-editorial"] .statement-center-rule{grid-column:1;width:260px!important;height:7px!important}
 [data-theme="brand-editorial"] .cover-center-subtitle,[data-theme="brand-editorial"] .statement-center-support{grid-column:1;font-size:36px;max-width:1120px;text-align:left;text-wrap:pretty}
 [data-theme="brand-editorial"] .cover-center-speaker{grid-column:1;margin-top:8px;text-align:left}
-[data-theme="brand-editorial"] .cover-center-org{grid-column:2;grid-row:1/6;align-self:center;justify-self:center;writing-mode:vertical-rl;text-orientation:mixed;font-size:17px;line-height:1.8}
+[data-theme="brand-editorial"] .cover-center-org{grid-column:1;grid-row:auto;align-self:start;justify-self:start;writing-mode:horizontal-tb;font-size:36px;line-height:1.35;max-width:1100px}
 [data-theme="brand-editorial"] .prod-title{font-size:76px;font-family:var(--font-display);max-width:1160px}
 [data-theme="brand-editorial"]:not([data-preset-theme]) [data-production-family="modules"] .diagram-node-bg,[data-theme="brand-editorial"]:not([data-preset-theme]) [data-production-family="toc"] .diagram-node-bg{background:transparent;border-width:2px 0 0;border-color:var(--accent);box-shadow:none}
 ''',
@@ -1683,9 +1701,9 @@ html[data-theme="dark-circuit"]{--surface-text:#F7F9FF;--surface-muted:#C5CEDD;-
 [data-theme="dark-circuit"] .statement-center-headline{width:max-content!important;max-width:1420px;font-size:118px;line-height:.96;white-space:normal;text-align:center;color:var(--text);mix-blend-mode:normal;text-shadow:none;text-wrap:balance}
 [data-theme="dark-circuit"] .cover-center-rule{width:420px!important;height:2px!important;box-shadow:none}
 [data-theme="dark-circuit"] .statement-center-rule{width:180px!important;height:8px!important;box-shadow:none}
-[data-theme="dark-circuit"] .cover-center-subtitle{text-align:right;font-size:35px;max-width:1120px}
-[data-theme="dark-circuit"] .statement-center-support{text-align:center;font-size:35px;max-width:1120px}
-[data-theme="dark-circuit"] .cover-center-org{writing-mode:vertical-rl;text-orientation:mixed;position:absolute!important;left:-90px;top:50%;translate:0 -50%;height:max-content!important}
+[data-theme="dark-circuit"] .cover-center-subtitle{text-align:right;font-size:36px;max-width:1120px}
+[data-theme="dark-circuit"] .statement-center-support{text-align:center;font-size:36px;max-width:1120px}
+[data-theme="dark-circuit"] .cover-center-org{writing-mode:horizontal-tb;position:static!important;translate:none!important;width:max-content!important;height:auto!important;max-width:1120px;text-align:right}
 [data-theme="dark-circuit"] .prod-title{font-size:70px;color:var(--text);-webkit-text-fill-color:var(--text);text-shadow:none;filter:none;mix-blend-mode:normal}
 [data-theme="dark-circuit"] .diagram-node-bg{background:linear-gradient(145deg,rgba(35,43,64,.92),rgba(20,25,42,.78))!important;backdrop-filter:blur(10px) saturate(140%)}
 ''',
@@ -1704,7 +1722,7 @@ html[data-theme="grainy-editorial"]{--surface-muted:#51423E;--muted:#51423E;--su
 [data-theme="grainy-editorial"] .cover-center-area,[data-theme="grainy-editorial"] .statement-center-area{display:grid;grid-template-columns:minmax(0,1220px) 150px;grid-template-rows:auto auto auto;column-gap:72px;align-content:center;text-align:left}
 [data-theme="grainy-editorial"] .cover-center-title,[data-theme="grainy-editorial"] .statement-center-headline{grid-column:1;font-size:132px;line-height:.92;max-width:1220px;text-align:left;text-wrap:balance}
 [data-theme="grainy-editorial"] .cover-center-rule,[data-theme="grainy-editorial"] .statement-center-rule{grid-column:1;width:100%!important;height:4px!important}
-[data-theme="grainy-editorial"] .cover-center-subtitle,[data-theme="grainy-editorial"] .statement-center-support{grid-column:2;grid-row:1/4;writing-mode:vertical-rl;text-orientation:mixed;font-size:32px;line-height:1.45;max-height:620px;max-width:none;text-align:left;text-wrap:pretty}
+[data-theme="grainy-editorial"] .cover-center-subtitle,[data-theme="grainy-editorial"] .statement-center-support{grid-column:1;grid-row:auto;writing-mode:horizontal-tb;font-size:36px;line-height:1.45;max-height:none;max-width:1120px;text-align:left;text-wrap:pretty}
 [data-theme="grainy-editorial"] .cover-center-speaker,[data-theme="grainy-editorial"] .cover-center-org{grid-column:1;text-align:left}
 [data-theme="grainy-editorial"] .prod-title{font-size:82px;line-height:.96;max-width:1260px}
 [data-theme="grainy-editorial"] .diagram-node-bg{background:color-mix(in srgb,var(--surface) 56%,transparent)!important;border-width:3px 0 0!important;box-shadow:none!important}
@@ -1765,10 +1783,10 @@ COMMON_RANDOM_CSS = r'''
 [data-composition-variant="centered-signal-hero"] .cover-center-area.explicit-center-stack>.el{position:relative!important;flex:0 0 auto!important;grid-column:auto!important;grid-row:auto!important}
 [data-composition-variant="centered-signal-hero"] .cover-center-area.explicit-center-stack :is(.cover-center-title,.cover-center-subtitle,.cover-center-speaker,.cover-center-org){text-align:center!important;writing-mode:horizontal-tb!important;text-orientation:mixed!important}
 .closing-title{top:88px!important;right:44px!important;font-size:64px!important;line-height:1.02!important}
-.closing-body{top:238px!important;font-size:22px!important;line-height:1.42!important}
+.closing-body{top:238px!important;font-size:36px!important;line-height:1.42!important}
 .closing-copy-panel ul{bottom:30px!important}
 .closing-copy-panel li{height:46px!important}
-.closing-copy-panel li b{font-size:17px!important}
+.closing-copy-panel li b{font-size:42px!important}
 '''
 
 
@@ -1786,14 +1804,14 @@ def apply_story(
     cover_id, _, strategy_id, relationship_id, evidence_id, sequence_id, statement_id, _ = layout_ids
     store.COVER_CONTENT[cover_id] = {
         "title": story["title"], "subtitle": story["subtitle"],
-        "speaker": story["speaker"], "org": story["org"],
+        "speaker": story.get("speaker") or "", "org": story.get("org") or "",
     }
 
     store.TOC_ITEMS[:] = numbered(story["toc"])
     store.TOC_CONTEXT.update({
         "title": "六個章節，從現場問題走向可驗證行動",
         "intro": story["subtitle"],
-        "footer": f"CONTENTS · {story['id'].replace('-', ' ').upper()}",
+        "footer": "",
     })
 
     if strategy_id == "recommendation-stack":
@@ -1830,7 +1848,6 @@ def apply_story(
         store.COMPARISON_CONTENT[relationship_id] = {
             "before": ("BEFORE · 現在", before[0], before[1], before[3]),
             "after": ("AFTER · 新系統", after[0], after[1], after[3]),
-            "bridge": "建立共同回路",
         }
     elif relationship_id == "matrix-4quadrant":
         store.COMPARISON_CONTENT[relationship_id] = {
@@ -2106,14 +2123,28 @@ def load_story_file(path: Path) -> dict[str, Any]:
         raise ValueError(f"Story file must contain a 'concept' object: {path}")
 
     required = {
-        "story_id", "title", "subtitle", "speaker", "org", "toc", "priorities",
-        "metrics", "timeline", "quote", "attribution", "closing", "chapter_number",
+        "story_id", "title", "subtitle", "toc", "priorities",
+        "metrics", "timeline", "quote", "closing", "chapter_number",
     }
     missing = sorted(required - set(concept))
     if missing:
         raise ValueError(f"Story file is missing concept fields: {missing}")
 
-    story = _concept_story(**{key: concept[key] for key in required})
+    story = _concept_story(
+        **{key: concept[key] for key in required},
+        speaker=str(concept.get("speaker") or ""),
+        org=str(concept.get("org") or ""),
+        attribution=str(concept.get("attribution") or ""),
+    )
+    # The helper supplies defaults for omitted optional fields, but an external
+    # content manifest is authoritative for every field it explicitly sends.
+    # Do not replace user-provided matrix/cycle/process/people data with demo
+    # fixtures merely because those fields are not in the minimum contract.
+    for key, value in concept.items():
+        if key == "story_id":
+            story["id"] = value
+        else:
+            story[key] = value
     story["layout_content"] = payload.get("layout_content", {})
     story["toc_context"] = payload.get("toc_context", {})
     page_compositions = payload.get("page_compositions", {})
@@ -2188,15 +2219,20 @@ def build_semantic_pages(
             payload = {
                 "title": story["title"],
                 "subtitle": story["subtitle"],
-                "speaker": story["speaker"],
-                "org": story["org"],
+                "speaker": "",
+                "org": "",
             }
+            for optional_key in ("speaker", "org", "kicker"):
+                optional_value = str(story.get(optional_key) or "").strip()
+                if optional_value:
+                    payload[optional_key] = optional_value
         elif intent == "navigation":
             context = story.get("toc_context") or {}
             payload = {
                 "title": context.get("title") or f"{len(story['toc'])} 個章節，串起完整閱讀路徑",
                 "intro": context.get("intro") or story["subtitle"],
-                "footer": context.get("footer") or f"CONTENTS · {story['id'].replace('-', ' ').upper()}",
+                "footer": context.get("footer") or "",
+                "index_label": context.get("index_label") or "",
                 "items": numbered(story["toc"]),
             }
         elif intent == "distribution":
@@ -2213,14 +2249,14 @@ def build_semantic_pages(
                     if isinstance(item, (list, tuple)) and item
                 ],
                 "rows": [
-                    str(item[0]) if isinstance(item, (list, tuple)) and item else f"ROW {index:02d}"
-                    for index, item in enumerate(matrix[:4], 1)
+                    str(item[0]) if isinstance(item, (list, tuple)) and item else f"第 {index:02d} 列"
+                    for index, item in enumerate(matrix, 1)
                 ],
                 "values": [
                     [1 + ((row_index * 2 + column_index) % 5) for column_index in range(4)]
-                    for row_index, _ in enumerate(matrix[:4])
+                    for row_index, _ in enumerate(matrix)
                 ],
-                "value_note": "qualitative routing signal",
+                "value_note": "",
             }
         elif intent == "modules":
             priorities = list(story.get("priorities") or [])
@@ -2240,7 +2276,7 @@ def build_semantic_pages(
                 "subtitle": story["subtitle"],
                 "items": [
                     (f"{index:02d}", title, body)
-                    for index, (title, body) in enumerate(cycle[:6], 1)
+                    for index, (title, body) in enumerate(cycle, 1)
                 ],
             }
         elif intent == "prioritization":
@@ -2275,6 +2311,7 @@ def build_semantic_pages(
                 "chart": list(story["chart"]),
                 "labels": [f"R{index}" for index in range(1, len(story["chart"][0][1]) + 1)],
                 "conclusion": first_metric[2],
+                "takeaway": story["closing"][1],
                 "footnote": "正式使用時請補上來源、期間與量測口徑。",
             }
         elif intent == "sequence":
@@ -2314,6 +2351,120 @@ def build_semantic_pages(
             "payload": payload,
         })
     return pages
+
+
+def _primary_page_items(semantic_page: dict[str, Any]) -> list[Any] | None:
+    payload = semantic_page["payload"]
+    intent = semantic_page["intent"]
+    if intent == "distribution":
+        return list(payload.get("matrix") or [])
+    if intent == "cycle":
+        return list(payload.get("items") or [])
+    if intent == "modules":
+        source = payload.get("people") or payload.get("members") or payload.get("items")
+        return list(source or [])
+    return None
+
+
+def _content_preserving_card_layout(item_count: int) -> str:
+    layout_id = CONTENT_PRESERVING_CARD_LAYOUT.get(item_count)
+    if layout_id is None:
+        raise ValueError(
+            "No single-page module composition preserves all items: "
+            f"received {item_count}; split the page or provide an explicit integration plan"
+        )
+    return layout_id
+
+
+def reconcile_layout_plan_with_content(
+    layout_plan: list[dict[str, Any]],
+    semantic_pages: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Reroute fixed-capacity scaffolds without dropping primary content."""
+
+    for semantic_page, decision in zip(semantic_pages, layout_plan):
+        primary_items = _primary_page_items(semantic_page)
+        if primary_items is None:
+            continue
+        item_count = len(primary_items)
+        if item_count == 0:
+            raise ValueError(f"Content page has no primary items: {semantic_page['page_id']}")
+
+        layout_id = decision["layout_id"]
+        reroute = False
+        if layout_id in MODULE_LAYOUT_CAPACITY:
+            reroute = MODULE_LAYOUT_CAPACITY[layout_id] != item_count
+        elif layout_id == "matrix-4quadrant":
+            reroute = item_count != 4
+        elif layout_id == "cycle-hub-6":
+            reroute = item_count != 6
+        elif layout_id in {"map-region", "map-spotlight"}:
+            reroute = item_count > 3
+        elif layout_id == "people-3":
+            reroute = item_count != 3
+        elif layout_id == "team-grid":
+            reroute = item_count > 6
+        elif layout_id == "executive-bio":
+            reroute = item_count != 1
+
+        feedback = decision.setdefault("composition_feedback", {})
+        feedback["content_item_count"] = item_count
+        if not reroute:
+            continue
+
+        resolved_layout = _content_preserving_card_layout(item_count)
+        decision.update({
+            "requested_layout_id": layout_id,
+            "layout_id": resolved_layout,
+            "source": "content-preserving-capacity-reroute",
+            "selection_basis": "content-preserving-capacity-reroute",
+            "selection_candidates": [resolved_layout],
+            "route_match": True,
+            "content_reframe": "modules",
+            "media_requirement": HTML_LAYOUT_CATALOG["media_requirement_by_layout_id"][resolved_layout],
+            "composition_variant": f"{resolved_layout}-native",
+            "header_mode": "layout-defined",
+            "surface_mode": "layout-defined",
+            "variant_source": "content-preserving-layout-native",
+        })
+        feedback.update({
+            "requested_layout_id": layout_id,
+            "resolved_layout_id": resolved_layout,
+            "remediation_applied": "alternate-capacity-compatible-scaffold",
+            "all_primary_items_required": True,
+        })
+    return layout_plan
+
+
+def _normalise_module_items(payload: dict[str, Any], intent: str) -> list[tuple[str, str, str]]:
+    if intent == "distribution":
+        source = list(payload.get("matrix") or [])
+    elif intent == "cycle":
+        source = list(payload.get("items") or [])
+    else:
+        source = list(payload.get("people") or payload.get("members") or payload.get("items") or [])
+
+    items: list[tuple[str, str, str]] = []
+    for index, item in enumerate(source, 1):
+        if isinstance(item, dict):
+            title = item.get("name") or item.get("title") or item.get("label")
+            if not title:
+                raise ValueError(f"Module item {index} is missing a source-backed title")
+            body_parts = [item.get(key) for key in ("role", "body", "note", "description", "bio")]
+            body = " · ".join(str(value) for value in body_parts if value not in (None, ""))
+            tag = item.get("tag") or item.get("value") or item.get("metric") or ""
+        else:
+            values = list(item) if isinstance(item, (list, tuple)) else [item]
+            if intent == "cycle" and len(values) >= 3:
+                tag, title, body = values[0], values[1], values[2]
+            else:
+                if not values or values[0] in (None, ""):
+                    raise ValueError(f"Module item {index} is missing a source-backed title")
+                title = values[0]
+                body = values[1] if len(values) > 1 else ""
+                tag = " · ".join(str(value) for value in values[2:] if value not in (None, ""))
+        items.append((str(title), str(body), str(tag)))
+    return items
 
 
 def compose_page_content(
@@ -2370,29 +2521,29 @@ def compose_page_content(
     elif intent == "navigation" and layout_id.startswith("toc-"):
         content = dict(payload)
     elif intent == "distribution" and layout_id == "matrix-4quadrant":
-        matrix_items = list(payload.get("matrix") or [])[:4]
-        if len(matrix_items) < 4:
-            raise ValueError(f"{layout_id} requires four matrix items")
+        matrix_items = list(payload.get("matrix") or [])
+        if len(matrix_items) != 4:
+            raise ValueError(f"{layout_id} requires exactly four matrix items; received {len(matrix_items)}")
         quadrants = []
         for index, item in enumerate(matrix_items, 1):
             if isinstance(item, dict):
-                label = item.get("label") or item.get("title") or f"QUADRANT {index:02d}"
+                label = item.get("label") or item.get("title") or f"第 {index:02d} 區"
                 body = item.get("body") or item.get("note") or item.get("description") or ""
             else:
                 values = list(item) if isinstance(item, (list, tuple)) else [item]
-                label = values[0] if values else f"QUADRANT {index:02d}"
+                label = values[0] if values else f"第 {index:02d} 區"
                 body = values[1] if len(values) > 1 else ""
             quadrants.append((label, body))
         content = {
             "title": payload.get("title") or story["title"],
-            "axes": ("LOW SIGNAL", "HIGH SIGNAL", "LOW LEVERAGE", "HIGH LEVERAGE"),
+            "axes": ("訊號較低", "訊號較高", "影響較低", "影響較高"),
             "quadrants": quadrants,
         }
     elif intent == "distribution" and layout_id == "heat-map":
         content = {
             "title": payload.get("title") or story["title"],
             "columns": payload.get("columns") or ["01", "02", "03", "04"],
-            "rows": payload.get("rows") or ["ROW 01", "ROW 02", "ROW 03", "ROW 04"],
+            "rows": payload.get("rows") or ["第 01 列", "第 02 列", "第 03 列", "第 04 列"],
             "values": payload.get("values") or [
                 [1, 2, 3, 4],
                 [2, 3, 4, 5],
@@ -2400,33 +2551,19 @@ def compose_page_content(
                 [4, 5, 1, 2],
             ],
         }
-    elif intent == "modules" and layout_id in MODULE_LAYOUT_CAPACITY:
-        capacity = MODULE_LAYOUT_CAPACITY[layout_id]
-        raw_items = payload.get("items")
-        if not isinstance(raw_items, (list, tuple)):
-            raise ValueError(
-                f"{layout_id} requires exactly {capacity} module items; "
-                "received a non-list payload"
-            )
-        if len(raw_items) != capacity:
-            raise ValueError(
-                f"{layout_id} requires exactly {capacity} module items; "
-                f"received {len(raw_items)}"
-            )
-        items = []
-        for index, item in enumerate(raw_items, 1):
-            values = list(item) if isinstance(item, (list, tuple)) else [item]
-            title = values[0] if values else f"MODULE {index:02d}"
-            body = values[1] if len(values) > 1 else ""
-            tag = values[2] if len(values) > 2 else f"MODULE {index:02d}"
-            items.append((title, body, tag))
+    elif layout_id in MODULE_LAYOUT_CAPACITY and (
+        intent == "modules" or decision.get("content_reframe") == "modules"
+    ):
+        items = _normalise_module_items(payload, intent)
+        if not items:
+            raise ValueError(f"{layout_id} requires module content")
         content = {
             "title": payload.get("title") or story["title"],
-            "subtitle": payload.get("subtitle") or story["subtitle"],
+            "subtitle": payload.get("subtitle") or story.get("subtitle") or "完整保留每一筆內容",
             "items": items,
         }
     elif intent == "cycle" and layout_id == "cycle-hub-6":
-        items = list(payload.get("items") or [])[:6]
+        items = list(payload.get("items") or [])
         if not items:
             raise ValueError(f"{layout_id} requires cycle content")
         # The hub carries one short title only; explanation belongs to the items.
@@ -2439,14 +2576,14 @@ def compose_page_content(
         if not matrix_items:
             raise ValueError(f"{layout_id} requires matrix or location content")
         rows = []
-        for index, item in enumerate(matrix_items[:3], 1):
+        for index, item in enumerate(matrix_items, 1):
             if isinstance(item, dict):
-                label = item.get("label") or item.get("title") or f"REGION {index:02d}"
+                label = item.get("label") or item.get("title") or f"第 {index:02d} 區"
                 value = item.get("value") or item.get("metric") or f"{index:02d}"
                 note = item.get("note") or item.get("body") or ""
             else:
                 values = list(item) if isinstance(item, (list, tuple)) else [item]
-                label = values[0] if values else f"REGION {index:02d}"
+                label = values[0] if values else f"第 {index:02d} 區"
                 value = values[1] if len(values) > 2 else f"{index:02d}"
                 note = values[-1] if len(values) > 1 else ""
             rows.append((label, value, note))
@@ -2454,6 +2591,10 @@ def compose_page_content(
             "title": payload.get("title") or str(rows[0][0]),
             "locations" if layout_id == "map-spotlight" else "cards": rows,
         }
+        if payload.get("map_image_src"):
+            content["map_image_src"] = payload["map_image_src"]
+        if payload.get("map_caption") or payload.get("caption"):
+            content["map_caption"] = payload.get("map_caption") or payload.get("caption")
     elif intent == "modules" and layout_id in {"executive-bio", "people-3", "team-grid"}:
         source_people = payload.get("people") or payload.get("members") or payload.get("items") or []
         if not source_people:
@@ -2461,28 +2602,30 @@ def compose_page_content(
         people = []
         for index, item in enumerate(source_people, 1):
             if isinstance(item, dict):
-                name = item.get("name") or item.get("title") or f"PERSON {index:02d}"
+                name = item.get("name") or item.get("title") or f"人物 {index:02d}"
                 role = item.get("role") or item.get("subtitle") or ""
                 bio = item.get("bio") or item.get("body") or ""
             else:
                 values = list(item) if isinstance(item, (list, tuple)) else [item]
-                name = values[0] if values else f"PERSON {index:02d}"
+                name = values[0] if values else f"人物 {index:02d}"
                 role = values[1] if len(values) > 1 else ""
                 bio = values[2] if len(values) > 2 else ""
             people.append((name, role, bio))
         title = payload.get("title") or "團隊與角色"
         if layout_id == "people-3":
-            content = {"title": title, "people": people[:3]}
+            content = {"title": title, "people": people}
         elif layout_id == "team-grid":
-            content = {"title": title, "members": [(name, role) for name, role, _ in people[:6]]}
+            content = {"title": title, "members": [(name, role) for name, role, _ in people]}
         else:
             name, role, bio = people[0]
             bio_lines = [line for line in str(bio).splitlines() if line.strip()] or [str(bio)]
             content = {
                 "name": name,
                 "role": role,
-                "bio": (bio_lines + ["", ""])[:3],
-                "meta": payload.get("meta") or "PROFILE",
+                "bio": bio_lines,
+                "meta": payload.get("meta") or "",
+                "panel_label": payload.get("panel_label") or "",
+                "photo_label": payload.get("photo_label") or "",
             }
     elif intent == "prioritization" and layout_id == "strategic-priorities":
         content = {
@@ -2507,9 +2650,8 @@ def compose_page_content(
     elif intent == "comparison" and layout_id == "before-after":
         before, after = payload["before"], payload["after"]
         content = {
-            "before": (f"BEFORE · {before[0]}", before[1], before[2], before[3]),
-            "after": (f"AFTER · {after[0]}", after[1], after[2], after[3]),
-            "bridge": payload["title"],
+            "before": (before[0], before[1], before[2], before[3]),
+            "after": (after[0], after[1], after[2], after[3]),
         }
     elif intent == "comparison" and layout_id == "split-comparison":
         before, after = payload["before"], payload["after"]
@@ -2525,6 +2667,7 @@ def compose_page_content(
             "subtitle": payload["subtitle"],
             "kpis": [(label, value, delta) for value, label, _, delta in payload["metrics"]],
             "chart": {
+                "kicker": payload.get("chart_kicker") or "",
                 "title": first_series_name,
                 "metric": payload["metrics"][0][0],
                 "bars": first_series,
@@ -2542,7 +2685,7 @@ def compose_page_content(
             "title": payload["title"],
             "subtitle": payload["subtitle"],
             "cards": payload["metrics"],
-            "takeaway": payload["conclusion"],
+            "takeaway": payload.get("takeaway"),
         }
     elif intent == "evidence" and layout_id == "stats-3-row":
         content = {
@@ -2626,9 +2769,10 @@ def compose_page_content(
             "footnote": payload["conclusion"],
         }
     elif intent == "statement" and layout_id == "quote-focus":
+        attribution = str(payload.get("attribution") or "").strip()
         content = {
             "quote": payload["quote"],
-            "attribution": f"— {payload['attribution']}",
+            "attribution": f"— {attribution}" if attribution else "",
         }
     elif intent == "statement" and layout_id == "title-center":
         content = {
@@ -2639,33 +2783,35 @@ def compose_page_content(
         quote = payload["quote"]
         attribution = payload.get("attribution") or ""
         if layout_id == "testimonial-full":
-            logo = "".join(part[:1] for part in str(attribution).split()[:2]) or "VO"
             content = {
                 "quote": quote,
                 "name": attribution,
-                "role": "TESTIMONIAL",
-                "logo": logo[:2].upper(),
+                "role": payload.get("role") or "",
+                "logo": payload.get("logo") or "",
+                "voice_label": payload.get("voice_label") or "",
             }
         elif layout_id == "photo-left-overlay-title-right":
             content = {
-                "kicker": "IMAGE-PLANNED STORY",
-                "title": attribution or "FIELD NOTE",
+                "kicker": payload.get("kicker") or "",
+                "title": attribution or story["title"],
                 "body": quote,
+                "photo_label": payload.get("photo_label") or "",
             }
         elif layout_id == "chapter-fullbleed-overlay-title":
             content = {
-                "label": "CHAPTER",
+                "label": payload.get("label") or "",
                 "title": quote,
                 "subtitle": attribution,
-                "number": "01",
+                "number": str(story.get("chapter_number") or "01"),
             }
         else:
             content = {
-                "label": "CHAPTER",
-                "title": attribution or "STORY",
+                "label": payload.get("label") or "",
+                "title": attribution or story["title"],
                 "body": quote,
-                "brand": "SLIDE FIRM",
-                "brand_note": "IMAGE-PLANNED",
+                "brand": payload.get("brand") or "",
+                "brand_note": payload.get("brand_note") or "",
+                "brand_mark": payload.get("brand_mark") or "",
             }
     elif intent == "closing" and layout_id == "title-center":
         content = dict(payload)
@@ -2676,7 +2822,7 @@ def compose_page_content(
         }
     elif intent == "closing" and layout_id == "closing-photo-overlay-contact":
         content = {
-            "kicker": "NEXT STEP",
+            "kicker": payload.get("kicker") or "",
             "title": payload["headline"],
             "body": payload["support"],
             "contact": [],
@@ -2694,7 +2840,7 @@ def compose_page_content(
             for key in (
                 "items", "priorities", "recommendations", "cards", "stats",
                 "steps", "stages", "milestones", "events", "tasks",
-                "people", "members", "locations",
+                "people", "members", "locations", "quadrants",
             )
             if isinstance(content.get(key), list)
         ),
@@ -2705,6 +2851,18 @@ def compose_page_content(
         if isinstance(scene_objects, list):
             rendered_item_count = len(scene_objects)
 
+    input_item_count = len(_primary_page_items(semantic_page) or []) or None
+    if (
+        input_item_count is not None
+        and rendered_item_count is not None
+        and input_item_count != rendered_item_count
+    ):
+        raise ValueError(
+            "Content conservation failure: "
+            f"page={semantic_page['page_id']}, input={input_item_count}, "
+            f"rendered={rendered_item_count}, layout={layout_id}"
+        )
+    mutation_ledger = list(payload.get("mutation_ledger") or [])
     feedback = dict(decision["composition_feedback"])
     feedback.update({
         "content_page_id": semantic_page["page_id"],
@@ -2712,9 +2870,11 @@ def compose_page_content(
         "layout_scaffold_id": layout_id,
         "layout_role": "scaffold",
         "composition_source": composition_source,
+        "input_item_count": input_item_count,
         "rendered_item_count": rendered_item_count,
-        "content_identity_preserved": True,
-        "content_mutated": False,
+        "content_identity_preserved": not bool(mutation_ledger),
+        "content_mutated": bool(mutation_ledger),
+        "mutation_ledger": mutation_ledger,
     })
     if layout_id == "infographic-stage":
         scene = content["scene"]
@@ -2963,6 +3123,8 @@ def build(
         layout_catalog=HTML_LAYOUT_CATALOG,
         layout_selection=layout_selection,
     )
+    if resolved_content_mode == "new-deck":
+        layout_plan = reconcile_layout_plan_with_content(layout_plan, semantic_pages)
     assert_new_deck_forced_layout_routes(
         layout_plan,
         content_mode=resolved_content_mode,
@@ -3169,6 +3331,17 @@ def build(
     validate_editable_html(document)
     validate_edit_layer_positions(document)
     validate_edit_module_structures(document)
+    if resolved_content_mode == "new-deck":
+        visible_copy_report = assert_visible_copy(
+            document,
+            language=str(story.get("visible_text_language") or "zh-Hant"),
+            allowed_latin_terms=story.get("allowed_latin_terms") or [],
+        )
+    else:
+        visible_copy_report = {
+            "status": "not-run",
+            "reason": "isolated-preset-demo-content",
+        }
     production_path = PROJECT_ROOT / "artifacts" / "html-test" / "edit-mode.js"
     production_source = production_path.read_text(encoding="utf-8")
     editor_sha256 = hashlib.sha256(production_source.encode("utf-8")).hexdigest()
@@ -3180,7 +3353,11 @@ def build(
 
     randomized_dimensions: list[str] = []
     candidate_pool: dict[str, Any] = {}
-    if not preset_demo_mode and not art_direction_handoff:
+    # Art Direction may fix the story and Theme while dynamic/diverse routing
+    # still samples the Layout sequence from seeded semantic candidates. Keep
+    # that randomization evidence in the manifest instead of suppressing the
+    # entire candidate-pool record whenever a direction handoff is present.
+    if not preset_demo_mode:
         if content_intent:
             candidate_pool["content-intent"] = {
                 "source": "explicit-user-scope",
@@ -3269,6 +3446,7 @@ def build(
         "topic": {"id": story["id"], "title": story["title"]},
         "content_source": content_source,
         "content_mode": resolved_content_mode,
+        "visible_copy": visible_copy_report,
         "legacy_layout_content_compatibility": {
             "enabled": allow_legacy_layout_content,
             "activation": "explicit-opt-in" if allow_legacy_layout_content else "disabled",

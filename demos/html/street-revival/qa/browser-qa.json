@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "artifact": "demos/html/street-revival/street-revival.html",
+  "manifest": "demos/html/street-revival/street-revival.manifest.json",
+  "browser": {
+    "slides": 10,
+    "text_nodes": 103,
+    "vertical_text_nodes": 0,
+    "right_angle_text_nodes": 0,
+    "overflow_objects": 0,
+    "console_issues": 0
+  },
+  "slides": [
+    {
+      "contentAreas": 1,
+      "layoutId": "cover-center-title-edge-decor",
+      "overflows": [],
+      "rightAngleText": [],
+      "slideIndex": 1,
+      "slideRect": {
+        "height": 546,
+        "width": 970.6666870117188,
+        "x": 270.6666564941406,
+        "y": 158
+      },
+      "textNodes": 4,
+      "verticalText": [],
+      "screenshot": "demos/html/street-revival/qa/captures/01.png"
+    },
+    {
+      "contentAreas": 1,
+      "layoutId": "toc-6-panel-rows",
+      "overflows": [],
+      "rightAngleText": [],
+      "slideIndex": 2,
+      "slideRect": {
+        "height": 546,
+        "width": 970.6666870117188,
+        "x": 270.6666564941406,
+        "y": 158
+      },
+      "textNodes": 21,
+      "verticalText": [],
+      "screenshot": "demos/html/street-revival/qa/captures/02.png"
+    },
+    {
+      "contentAreas": 1,
+      "layoutId": "strategic-priorities",
+      "overflows": [],
+      "rightAngleText": [],
+      "slideIndex": 3,
+      "slideRect": {
+        "height": 546,
+        "width": 970.6666870117188,
+        "x": 270.6666564941406,
+        "y": 158
+      },
+      "textNodes": 18,
+      "verticalText": [],
+      "screenshot": "demos/html/street-revival/qa/captures/03.png"
+    },
+    {
+      "contentAreas": 1,
+      "layoutId": "strategic-priorities",
+      "overflows": [],
+      "rightAngleText": [],
+      "slideIndex": 3,
+      "slideRect": {
+        "height": 546,
+        "width": 970.6666870117188,
+        "x": 270.6666564941406,
+        "y": 158
+      },
+      "textNodes": 18,
+      "verticalText": [],
+      "screenshot": "demos/html/street-revival/qa/captures/04.png"
+    },
+    {
+      "contentAreas": 1,
+      "layoutId": "heat-map",
+      "overflows": [],
+      "rightAngleText": [],
+      "slideIndex": 5,
+      "slideRect": {
+        "height": 546,
+        "width": 970.6666870117188,
+        "x": 270.6666564941406,
+        "y": 158
+      },
+      "textNodes": 4,
+      "verticalText": [],
+      "screenshot": "demos/html/street-revival/qa/captures/05.png"
+    },
+    {
+      "contentAreas": 1,
+      "layoutId": "timeline-vertical",
+      "overflows": [],
+      "rightAngleText": [],
+      "slideIndex": 6,
+      "slideRect": {
+        "height": 546,
+        "width": 970.6666870117188,
+        "x": 270.6666564941406,
+        "y": 158
+      },
+      "textNodes": 16,
+      "verticalText": [],
+      "screenshot": "demos/html/street-revival/qa/captures/06.png"
+    },
+    {
+      "contentAreas": 1,
+      "layoutId": "matrix-4quadrant",
+      "overflows": [],
+      "rightAngleText": [],
+      "slideIndex": 7,
+      "slideRect": {
+        "height": 546,
+        "width": 970.6666870117188,
+        "x": 270.6666564941406,
+        "y": 158
+      },
+      "textNodes": 17,
+      "verticalText": [],
+      "screenshot": "demos/html/street-revival/qa/captures/07.png"
+    },
+    {
+      "contentAreas": 1,
+      "layoutId": "multi-line-chart",
+      "overflows": [],
+      "rightAngleText": [],
+      "slideIndex": 8,
+      "slideRect": {
+        "height": 546,
+        "width": 970.6666870117188,
+        "x": 270.6666564941406,
+        "y": 158
+      },
+      "textNodes": 1,
+      "verticalText": [],
+      "screenshot": "demos/html/street-revival/qa/captures/08.png"
+    },
+    {
+      "contentAreas": 1,
+      "layoutId": "quote-focus",
+      "overflows": [],
+      "rightAngleText": [],
+      "slideIndex": 9,
+      "slideRect": {
+        "height": 546,
+        "width": 970.6666870117188,
+        "x": 270.6666564941406,
+        "y": 158
+      },
+      "textNodes": 2,
+      "verticalText": [],
+      "screenshot": "demos/html/street-revival/qa/captures/09.png"
+    },
+    {
+      "contentAreas": 1,
+      "layoutId": "title-center",
+      "overflows": [],
+      "rightAngleText": [],
+      "slideIndex": 10,
+      "slideRect": {
+        "height": 546,
+        "width": 970.6666870117188,
+        "x": 270.6666564941406,
+        "y": 158
+      },
+      "textNodes": 2,
+      "verticalText": [],
+      "screenshot": "demos/html/street-revival/qa/captures/10.png"
+    }
+  ],
+  "console": []
+}

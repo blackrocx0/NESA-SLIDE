@@ -58,6 +58,7 @@ combination_policy:
     - 同層級模組先維持相同幾何規格，再由構圖變體決定整體排列。
     - 內容表面不能預設全部是方塊或卡片；Open、Marker、Banded、Soft Field 必須按內容關係選用。
     - Layout 選定後才建立當頁 composition；renderer 不得因 Layout 名稱或舊數量提示刪除 primary items，並須依實際數量重排與完成正式字體驗證。
+    - 若 requested Layout 的固定語意幾何無法完整容納 primary items，必須記錄 requested／resolved Layout，改用容量相容的 1+N composition；不得切片後假稱內容未變。
     - 種子必須可重現，manifest 必須逐頁記錄實際組合結果。
 
 layout_diversity_policy:
@@ -162,7 +163,8 @@ composition_fit_feedback:
   remediation_order:
     - 在同一 scaffold 內改用相容的 composition recipe、header placement 或欄列結構。
     - 在單一 Content Area 內擴大既有內容區或移除不必要的 padding 與 gap。
-    - 精簡文案或拆頁；不得為符合 Layout 名稱而刪除內容項目。
+    - 改用能完整容納 primary items 的語意相容 Layout，並在 manifest 記錄 requested／resolved Layout。
+    - 無法單頁完整容納時拆頁；只有使用者授權才可摘要或整合，且必須寫入 mutation ledger。
     - 只有實際 Browser 幾何驗證仍失敗時，才改用另一個語意相容 scaffold。
     - 只有原字級高於角色下緣時才能向下收斂，而且不得低於 36px。
   post_font_validation:
@@ -181,7 +183,7 @@ content_module_contract:
       allowed: [loose-edit-object, semantic-module, independent-note, conclusion, chart, table, flow]
       selectable: false
     outer_band:
-      allowed: [background-pattern, decorative-text, audience-page-number, audience-section-code]
+      allowed: [background-pattern, source-backed-decorative-text, audience-page-number, audience-section-code]
       forbidden: [page-title, body-copy, required-chart-label, required-card-copy]
   object_tree:
     - layout-only-centering-frame
@@ -214,6 +216,23 @@ content_module_contract:
     vertical_alignment: center
     horizontal_alignment: layout-defined
 
+visible_copy_contract:
+  principle: 投影片上的每個可見字都要對觀眾有用；文字不是 Pattern、材質或填補留白的裝飾。
+  optional_slots: [speaker, org, kicker, eyebrow, meta, footer, attribution, caption, panel-label]
+  missing_optional_behavior: omit-dom
+  renderer_literal_policy: source-backed-or-deck-language-semantic-label-only
+  traditional_chinese:
+    default_language: zh-Hant
+    latin_only_copy: explicit-allowlist-required
+    automatic_allowances: [numeric-code, measurement-unit, common-technical-acronym, email, url]
+  forbidden_behaviors:
+    - 以 Lab、Studio、Concept、Profile、Demo、Wayfinding 等英文組合虛構組織或專案身分。
+    - 因 Layout 有空槽就自動補入英文 kicker、caption、footer 或 renderer metadata。
+    - content manifest 未提供時，仍輸出空白文字物件或以 fallback copy 佔位。
+  qa:
+    source_literal_gate: scripts/html_visible_copy.py --renderer-source scripts/html_production_renderer.py
+    artifact_gate: scripts/html_visible_copy.py --html <deck.html> --story <story.json>
+
 balance_gate:
   title_and_body_evaluated_together: true
   structured_body_min_visible_width_ratio_without_counterweight: 0.68
@@ -245,11 +264,7 @@ content_routing:
   cover:
     candidates:
       - cover-center-title-edge-decor
-      - cover-lower-right-hero-left-rail
-      - cover-mid-right-column-meta-upper-left
-      - cover-top-center-hero-bottom-center-support
-      - cover-upper-center-stack-meta-lower-right
-      - cover-upper-right-hero-lower-left-support
+      - cover-left-title-open-field
     signature_composition: 單一主張搭配明確視覺焦點
     ordinary_grid_loss: 第一印象與主題張力
     visual_intensity: hero
@@ -370,6 +385,10 @@ layout_variant_profiles:
   cover-center-title-edge-decor:
     composition_variants: [centered-signal-hero]
     header_modes: [center-stack]
+    surface_modes: [open-field]
+  cover-left-title-open-field:
+    composition_variants: [left-axis-open-field]
+    header_modes: [left-stack]
     surface_modes: [open-field]
   toc-5-panel-rows:
     composition_variants: [index-rail-plus-rows]

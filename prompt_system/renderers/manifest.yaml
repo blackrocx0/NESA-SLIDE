@@ -9,24 +9,24 @@ renderers:
 - pptx
 counts:
   themes: 36
-  layouts: 77
+  layouts: 74
   theme_adapters: 108
-  layout_adapters: 231
-  total_adapters: 339
+  layout_adapters: 222
+  total_adapters: 330
 coverage:
   image2:
     themes: 36
-    layouts: 77
+    layouts: 74
     mode: core-native
   html:
     themes: 36
-    layouts: 77
-    tuned_theme_overrides: 1
+    layouts: 74
+    tuned_theme_overrides: 0
     mode: baseline-complete
   pptx:
     themes: 36
-    layouts: 77
-    tuned_theme_overrides: 1
+    layouts: 74
+    tuned_theme_overrides: 0
     mode: baseline-complete
 theme_ids:
 - advocacy-network
@@ -80,14 +80,11 @@ layout_ids:
 - closing-photo-overlay-contact
 - comparison-table
 - cover-center-title-edge-decor
-- cover-lower-right-hero-left-rail
-- cover-mid-right-column-meta-upper-left
+- cover-left-title-open-field
 - cover-photo-frame-reverse
 - cover-photo-frame
 - cover-photo-overlay-block
-- cover-top-center-hero-bottom-center-support
 - cover-upper-center-stack-meta-lower-right
-- cover-upper-right-hero-lower-left-support
 - cycle-hub-6
 - dashboard-overview
 - data-annotation

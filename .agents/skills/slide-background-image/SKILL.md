@@ -1,6 +1,6 @@
 ---
 name: slide-background-image
-description: Generate, inspect, and attach one raster image background per HTML presentation slide by measuring the actual foreground occupancy, while preserving editable HTML objects and exporting the raster background into the PPTX slide layout. Use when an existing HTML deck needs per-slide backgrounds generated, added, replaced, or exported into PPTX. For new image-aware Layout selection, use html-image-slide.
+description: Generate, inspect, and attach one raster image background per HTML presentation slide by measuring actual foreground occupancy, either directly for an existing deck or as the required downstream stage of html-image-slide and HTML-sourced ppt-builder workflows. Preserve editable foreground objects and export backgrounds into PPTX slide layouts.
 ---
 
 # HTML Image Background
@@ -9,12 +9,22 @@ description: Generate, inspect, and attach one raster image background per HTML 
 
 ## Scope and contract
 
-- 只有使用者明確要求圖片背景、生成背景或填補留白時才啟用本 Skill。
+- 使用者直接要求圖片背景、生成背景、填補留白或替換背景時啟用本 Skill；上游 `html-image-slide` 的預設 `background_mode=auto`，以及 HTML 來源 `ppt-builder` 的預設 hybrid 背景路徑，也必須啟用本 Skill。這些上游 Skill 的明確呼叫已包含本機背景產製授權，不得再次把「要不要生圖」當成阻擋問題。
 - 本 Skill 以已有可編輯 HTML 為輸入；若任務是新建或重新選擇含圖片的 Layout，先使用 `html-image-slide`，不要在這裡處理內容或版型路由。
 - 每頁先量測真實 HTML 前景，再生成對應的 16:9 raster asset；不要用同一張圖硬套所有頁面。
+- 逐頁 composite QA 必須把「背景明暗」與「前景 surface／文字色」一起驗證；不能只確認背景已嵌入。
+  深色實際 surface 使用淺色 ink，淺色實際 surface 使用深色 ink；透明 surface 必須先以實際 composited 底色判讀，
+  不得用 Preset 的 accent-text 靜態推測取代對比檢查。
 - 背景不得含文字、字母、數字、Logo、假卡片、假圖表、UI、可辨識物件或模仿前景內容的形狀；只有下方 SAFE ZONE contract 明確授權的 2B 邊緣／角落／接縫幾何可例外使用。這個例外只適用於生成的 raster 背景像素；HTML 前景仍不得用 CSS、inline SVG、pseudo-element 或可編輯 HTML 重畫同一 2B。
 - 前景 DOM、`.el`、semantic module、`window.EditMode`、Undo/Redo 與 HTML 編輯能力不得被 flatten 或裁切掉。
 - 產物先留在 `artifacts/experiments/html-image-background/` 隔離目錄；`run.json` 的 `needs-review`、`source_was_modified: false` 與 `production_integration: false` 必須如實保留，除非另有正式核准流程。
+
+### Upstream orchestration contract
+
+- 接到 `html-image-slide` handoff 時，從已通過 foreground QA 的 HTML 開始；不得重新選 Story、Theme、Layout、Preset 或 Composition。
+- 接到 HTML 來源 `ppt-builder` handoff 時，若每頁已具有完整、內嵌且 QA 通過的 `data-pptx-background-image`，只驗證並沿用；若缺漏，先完成本 Skill，再把 final HTML／DOM manifest 交回 `ppt-builder`。
+- 上游必須提供來源 HTML、renderer manifest、`background_mode`、逐頁 image role／safe-zone profile 與素材 provenance。缺少必要量測輸入時才可停止並回報，不得靜默跳過背景階段。
+- 本 Skill 回傳的正式狀態是 `masks-ready`、`images-ready`、`applied` 或 `qa-pass`；只有 `qa-pass` 可讓上游完成整項圖片交付。
 
 ## Layout-aware SAFE ZONE contract
 

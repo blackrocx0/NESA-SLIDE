@@ -1,13 +1,27 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "snapshot_ref": "source-snapshot.json",
-  "verified_at": "2026-08-17T19:06:49.9838663Z",
+  "verified_at": "2026-08-25T09:00:22.984000+00:00",
   "status": "passed",
   "checks": {
-    "allowlisted_files_checked": 668,
-    "missing_files": 0,
-    "sha256_changes": 0,
-    "mtime_changes": 0
+    "allowlisted_files_checked": 677,
+    "source_hash_or_mtime_drift": 0,
+    "package_exact_hash_matches": 675,
+    "portable_sanitizations_verified": 2,
+    "unexpected_package_mismatches": 0
   },
-  "method": "Compared every original-repository allowlist path against the frozen SHA-256 and UTC mtime immediately before release finalization."
+  "portable_sanitizations": [
+    {
+      "path": "prompt_system/presets/catalog.yaml",
+      "source_sha256": "4449788a15dee788fad6e63c6f28ed06e1bf2e3a2eda0e21f78509934b99df8f",
+      "package_sha256": "7ded247e8494b347d38e5a56cc46489703e2ec3ba0ed7430d9ccb5d96de06bcb"
+    },
+    {
+      "path": "references/artifact-cleanup-workflow.md",
+      "source_sha256": "042b59938cd3f105afb5bf563cd33c95f167e93e3c5bbf14af49b2a27187dec3",
+      "package_sha256": "8fa3643f931792d0a1456b0534663a25b944c05d1a41e876bd7bbe5064b03a5d"
+    }
+  ],
+  "source_drift": [],
+  "package_mismatches": []
 }

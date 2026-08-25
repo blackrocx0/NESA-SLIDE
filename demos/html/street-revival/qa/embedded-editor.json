@@ -1,0 +1,8 @@
+{
+  "source": "src/html-editor/edit-mode.js",
+  "source_sha256": "6fa3f96385878d95c0ee67fcb0bca725703dc4217cbdbf9621665a83a7421de4",
+  "files": 1,
+  "matched": 1,
+  "issues": [],
+  "pass": true
+}

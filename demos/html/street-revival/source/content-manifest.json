@@ -6,54 +6,180 @@
     "story_id": "street-revival",
     "title": "巷口再生",
     "subtitle": "一場城市共創工作坊，如何把被忽略的街角重新變成每天會使用的公共生活",
-    "speaker": "STREET REVIVAL WORKSHOP",
-    "org": "FICTIONAL CITY · COMMUNITY CO-DESIGN",
+    "speaker": "街角再生共創工作坊",
+    "org": "城市社區共創試驗",
     "chapter_number": "01",
     "toc": [
-      ["先看見問題", "居民繞開街角，阻力卻沒被記錄。"],
-      ["把觀察變成線索", "走訪與對話分散，缺少共同證據。"],
-      ["找到共同節奏", "不同角色各走各路，彼此難協調。"],
-      ["先做一個小改變", "用可逆的試作，驗證什麼真的會被使用。"],
-      ["把責任寫清楚", "讓維護、回報與下一步不再停留在口號。"],
-      ["讓街角持續發生", "用 30 天回看決定要保留、調整或擴大什麼。"]
+      [
+        "先看見問題",
+        "居民繞開街角，阻力卻沒被記錄。"
+      ],
+      [
+        "把觀察變成線索",
+        "走訪與對話分散，缺少共同證據。"
+      ],
+      [
+        "找到共同節奏",
+        "不同角色各走各路，彼此難協調。"
+      ],
+      [
+        "先做一個小改變",
+        "用可逆的試作，驗證什麼真的會被使用。"
+      ],
+      [
+        "把責任寫清楚",
+        "讓維護、回報與下一步不再停留在口號。"
+      ],
+      [
+        "讓街角持續發生",
+        "用 30 天回看決定要保留、調整或擴大什麼。"
+      ]
     ],
     "priorities": [
-      ["可停留的邊界", "有遮蔭、有座位，街角就能短暫停留。", "FIELD", "45%"],
-      ["一起走的路徑", "把市場、學校與公車站接回日常動線。", "ROUTE", "35%"],
-      ["可回應的維護", "清潔、照明與回報進入每週共評。", "CARE", "20%"]
+      [
+        "可停留的邊界",
+        "有遮蔭、有座位，街角就能短暫停留。",
+      "現場",
+        "45%"
+      ],
+      [
+        "一起走的路徑",
+        "把市場、學校與公車站接回日常動線。",
+      "路徑",
+        "35%"
+      ],
+      [
+        "可回應的維護",
+        "清潔、照明與回報進入每週共評。",
+      "維護",
+        "20%"
+      ]
     ],
     "metrics": [
-      ["6處", "街角觀察點", "三種時段走訪紀錄", "FIELD"],
-      ["42人", "共創參與者", "居民、店家與學生", "VOICE"],
-      ["3條", "日常使用路徑", "市場、學校、轉乘", "ROUTE"],
-      ["30天", "試作回看週期", "每週一次共同檢視", "NEXT"]
+      [
+        "6處",
+        "街角觀察點",
+        "三種時段走訪紀錄",
+      "現場"
+      ],
+      [
+        "42人",
+        "共創參與者",
+        "居民、店家與學生",
+      "共創"
+      ],
+      [
+        "3條",
+        "日常使用路徑",
+        "市場、學校、轉乘",
+      "路徑"
+      ],
+      [
+        "30天",
+        "試作回看週期",
+        "每週一次共同檢視",
+      "下一步"
+      ]
     ],
     "timeline": [
-      ["W1", "走訪與記錄", "在早晨、放學與晚餐前後看見街角如何被使用。"],
-      ["W2", "共創工作坊", "把不同角色的觀察放到同一張街區路徑圖上。"],
-      ["W3", "選定試作", "用影響與可維護性排出第一個可逆改變。"],
-      ["W4", "現場試做", "在一個街角完成遮蔭、座位與資訊節點的組合。"],
-      ["W5", "共同回看", "把使用、阻礙與維護紀錄變成下一輪決策。"]
+      [
+        "W1",
+        "走訪與記錄",
+        "在早晨、放學與晚餐前後看見街角如何被使用。"
+      ],
+      [
+        "W2",
+        "共創工作坊",
+        "把不同角色的觀察放到同一張街區路徑圖上。"
+      ],
+      [
+        "W3",
+        "選定試作",
+        "用影響與可維護性排出第一個可逆改變。"
+      ],
+      [
+        "W4",
+        "現場試做",
+        "在一個街角完成遮蔭、座位與資訊節點的組合。"
+      ],
+      [
+        "W5",
+        "共同回看",
+        "把使用、阻礙與維護紀錄變成下一輪決策。"
+      ]
     ],
     "quote": "街角不是空白，\n只是還沒有被一起照顧。",
-    "attribution": "— STREET REVIVAL FIELD NOTE · 01",
-    "closing": ["先把一個街角做對，再讓整條路重新有人使用。", "下一步：選定一處可逆試作點，完成 30 天觀察、共評與調整。"]
+    "attribution": "街角再生田野筆記 · 01",
+    "closing": [
+      "先把一個街角做對，再讓整條路重新有人使用。",
+      "下一步：選定一處可逆試作點，完成 30 天觀察、共評與調整。"
+    ]
   },
   "toc_context": {
     "title": "六個章節，從看見街角到留下共同責任",
     "intro": "這不是一次美化工程，而是一條能被居民共同驗證、持續修正的生活路徑。",
-    "footer": "CONTENTS · STREET REVIVAL"
+    "footer": "內容索引 · 街角再生"
   },
   "content_plan": [
-    {"page_id": "01", "intent": "cover", "scene_role": "hero", "page_goal": "建立街角再生的核心命題"},
-    {"page_id": "02", "intent": "navigation", "scene_role": "index-or-map", "page_goal": "交代從觀察到回看的閱讀路徑"},
-    {"page_id": "03", "intent": "prioritization", "scene_role": "relationship", "page_goal": "把共創工作拆成可先做的三個方向"},
-    {"page_id": "04", "intent": "comparison", "scene_role": "relationship", "page_goal": "對照被忽略的街角與共同照顧的街角"},
-    {"page_id": "05", "intent": "evidence", "scene_role": "evidence", "page_goal": "整理六處觀察點與三條日常路徑"},
-    {"page_id": "06", "intent": "sequence", "scene_role": "relationship", "page_goal": "呈現從走訪到回看的工作流程"},
-    {"page_id": "07", "intent": "distribution", "scene_role": "evidence", "page_goal": "用優先矩陣決定第一個試作點"},
-    {"page_id": "08", "intent": "evidence", "scene_role": "evidence", "page_goal": "以 30 天節奏安排試作與共評"},
-    {"page_id": "09", "intent": "statement", "scene_role": "pause-or-close", "page_goal": "留下街角再生的共同信念"},
-    {"page_id": "10", "intent": "closing", "scene_role": "pause-or-close", "page_goal": "把下一步收斂成可執行的 30 天行動"}
+    {
+      "page_id": "01",
+      "intent": "cover",
+      "scene_role": "hero",
+      "page_goal": "建立街角再生的核心命題"
+    },
+    {
+      "page_id": "02",
+      "intent": "navigation",
+      "scene_role": "index-or-map",
+      "page_goal": "交代從觀察到回看的閱讀路徑"
+    },
+    {
+      "page_id": "03",
+      "intent": "prioritization",
+      "scene_role": "relationship",
+      "page_goal": "把共創工作拆成可先做的三個方向"
+    },
+    {
+      "page_id": "04",
+      "intent": "comparison",
+      "scene_role": "relationship",
+      "page_goal": "對照被忽略的街角與共同照顧的街角"
+    },
+    {
+      "page_id": "05",
+      "intent": "evidence",
+      "scene_role": "evidence",
+      "page_goal": "整理六處觀察點與三條日常路徑"
+    },
+    {
+      "page_id": "06",
+      "intent": "sequence",
+      "scene_role": "relationship",
+      "page_goal": "呈現從走訪到回看的工作流程"
+    },
+    {
+      "page_id": "07",
+      "intent": "distribution",
+      "scene_role": "evidence",
+      "page_goal": "用優先矩陣決定第一個試作點"
+    },
+    {
+      "page_id": "08",
+      "intent": "evidence",
+      "scene_role": "evidence",
+      "page_goal": "以 30 天節奏安排試作與共評"
+    },
+    {
+      "page_id": "09",
+      "intent": "statement",
+      "scene_role": "pause-or-close",
+      "page_goal": "留下街角再生的共同信念"
+    },
+    {
+      "page_id": "10",
+      "intent": "closing",
+      "scene_role": "pause-or-close",
+      "page_goal": "把下一步收斂成可執行的 30 天行動"
+    }
   ]
 }

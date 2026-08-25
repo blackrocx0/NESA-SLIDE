@@ -201,9 +201,9 @@
   },
   "compiled_at": "2026-08-17T18:45:30.460267+00:00",
   "source": {
-    "path": "C:\\Users\\NEO\\.codex\\visualizations\\2026\\08\\17\\01a010a3-0118-73e0-82cf-e106869e5964\\nesa-slide-v0.1.0-demo.1-staging\\demos\\html\\street-revival\\source\\art-direction.yaml",
+    "path": "demos/html/street-revival/source/art-direction.yaml",
     "sha256": "d5c77c6ff78114e87d6f76474e2528609a016455373ce3658c8d879f4a906d50",
-    "schema_path": "C:\\Users\\NEO\\.codex\\visualizations\\2026\\08\\17\\01a010a3-0118-73e0-82cf-e106869e5964\\nesa-slide-v0.1.0-demo.1-staging\\prompt_system\\art_direction\\schema.yaml",
+    "schema_path": "prompt_system/art_direction/schema.yaml",
     "schema_sha256": "f3bf56620179115176f635719665811fe2619cfa26ba9dd7fe052bebf75d36db"
   }
 }

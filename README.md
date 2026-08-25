@@ -1,4 +1,4 @@
-# NESA Slide v0.1.0-demo.1
+# NESA Slide v0.1.0-demo.2
 
 NESA Slide 是一個給 Codex Desktop 使用的可攜式簡報工作區，可以製作三種不同成品：圖片式簡報、可編輯 HTML 簡報，以及真正可編輯的 PPTX 簡報。
 
@@ -116,8 +116,8 @@ NESA Slide 是一個給 Codex Desktop 使用的可攜式簡報工作區，可以
 ## 系統包含什麼
 
 - 36 個 core Theme。
-- 77 個 active Layout。
-- Image2、HTML、PPTX 共 339 份 renderer adapters。
+- 74 個 active Layout。
+- Image2、HTML、PPTX 共 330 份 renderer adapters。
 - 專案內建的大綱、共用設計、圖片 YAML、HTML 與 PPTX Skills。
 - HTML 共用 editor、PPTX browser export runtime 與本機儲存 server。
 
@@ -145,7 +145,7 @@ nesa slide/
 
 | 項目 | 狀態 | 說明 |
 |---|---|---|
-| Core／adapter 結構 | **Passed** | 36 Themes、77 active Layouts、339 adapters；4 個退役 `toc-2*` 為零 |
+| Core／adapter 結構 | **Passed** | 36 Themes、74 active Layouts、330 adapters；4 個退役 `toc-2*` 為零 |
 | 圖片案例 | **Passed with scope** | 10 份七段式 YAML、10 張 1920×1080 PNG、逐頁視覺檢查與 PowerPoint 原生渲染 10／10；圖片式 PPTX 本來就不可拆開編輯 |
 | HTML 案例 | **Passed** | static、CSS ownership、geometry、visual contract、互動、存檔、下載重開與 browser PPTX export 均通過 |
 | PPTX 案例 | **Passed** | 10 頁、Master、10 個 Custom Layout、30 個 Placeholder、原生物件、overflow 與 PowerPoint 原生渲染 10／10 均通過 |

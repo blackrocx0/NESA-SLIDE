@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "status": "pass",
+  "contract": "visible-text-horizontal-only",
+  "checked_files": 4,
+  "checked": [
+    {
+      "path": "demos/html/street-revival/street-revival.html",
+      "sha256": "7adb4a5eaac9be61f1b7fd4d7f3d5813292e5ae1b7c19099534112243c10c81b"
+    },
+    {
+      "path": "scripts/html_production_renderer.py",
+      "sha256": "d7345f1e2084fa71e47a4d54167b96a1fc59a054d1e1adf68e0a7a48c83b9f55"
+    },
+    {
+      "path": "scripts/render_randomized_html_demo.py",
+      "sha256": "50b0fb2e95eccf86d3d9de7856c3b59a668441ab3c7b8f824cb41e415c0babae"
+    },
+    {
+      "path": "scripts/render_theme_demo_html.py",
+      "sha256": "2677bf5818857273613cb15d64c456dd67875f1707699b7a922ecdef3d9a769f"
+    }
+  ],
+  "issues": []
+}

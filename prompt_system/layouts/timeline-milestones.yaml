@@ -6,15 +6,11 @@ safe_area: [8, 10, 92, 90]
 
 slots:
   - id: title
-    region: [8, 10, 84, 10]
+    region: [8, 10, 84, 12]
     weight: hero
 
-  - id: subtitle
-    region: [8, 21, 84, 7]
-    weight: tertiary
-
   - id: milestones
-    region: [10, 40, 80, 18]
+    region: [10, 32, 80, 26]
     weight: primary
     note: 4 到 6 個里程碑沿水平時間線排列
 
@@ -25,7 +21,6 @@ slots:
 
 alignment_rules:
   - "title.centerX == safe_area.centerX"
-  - "subtitle.left == milestones.left"
   - "milestones.width should define the main horizontal reading path"
   - "milestone-notes columns should align to milestone centers"
 

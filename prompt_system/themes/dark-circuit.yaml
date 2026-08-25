@@ -14,12 +14,14 @@ visual_base:
     secondary:
       hex: "#666666"
       use: 半透明容器背景、次要元素
+    surface:
+      hex: "#232B40"
+      use: 主要資訊表面；與近黑背景分層但不搶橘色訊號
     accent:
       hex: "#FF6B35"
       use: 強調標籤、邊框、圖表重點
     support:
-      - { hex: "#89CFF0", use: 流程圖圓形、資訊卡配色 }
-      - { hex: "#66BB6A", use: 輔助圖示背景 }
+      - { hex: "#89CFF0", use: 流程線、狀態節點與少量資訊標記 }
 
   typography:
     heading:

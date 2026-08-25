@@ -1,0 +1,158 @@
+{
+  "schema_version": 2,
+  "package": "NESA Slide 0.1.0-demo.2",
+  "status": "WARN",
+  "checks": [
+    {
+      "check": "required-files",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "check": "source-freeze",
+      "status": "PASS",
+      "detail": {
+        "source_file_count": 684,
+        "aggregate": "2d49aaed8804bc711968ffa97ee62928bcb7c7b26fce9d7972aec09783377556",
+        "verification": {
+          "allowlisted_files_checked": 684,
+          "source_hash_or_mtime_drift": 0,
+          "package_copy_hash_mismatches": 0
+        }
+      }
+    },
+    {
+      "check": "core-counts",
+      "status": "PASS",
+      "detail": {
+        "themes": 36,
+        "active_layouts": 74,
+        "retired_present": [],
+        "removed_cover_present": []
+      }
+    },
+    {
+      "check": "adapter-counts",
+      "status": "PASS",
+      "detail": {
+        "theme_adapters": 108,
+        "layout_adapters": 222,
+        "total": 330
+      }
+    },
+    {
+      "check": "project-skills",
+      "status": "PASS",
+      "detail": {
+        "actual": [
+          "design-presentations",
+          "generate-image-slide",
+          "html-image-slide",
+          "html-pattern-slide",
+          "ppt-builder",
+          "slide-background-image",
+          "slide-outline-planner"
+        ],
+        "issues": []
+      }
+    },
+    {
+      "check": "forbidden-directories",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "check": "credential-files",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "check": "runtime-logs-and-caches",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "check": "portable-text-paths",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "check": "text-orientation",
+      "status": "PASS",
+      "detail": {
+        "checked_files": 645,
+        "issues": []
+      }
+    },
+    {
+      "check": "image-demo",
+      "status": "PASS",
+      "detail": {
+        "pngs": 10,
+        "structure": {
+          "slides": 10,
+          "masters": 1,
+          "layouts": 1,
+          "text_nodes": 0,
+          "slide_pictures": 10
+        },
+        "qa": "passed-with-scope"
+      }
+    },
+    {
+      "check": "pptx-demo",
+      "status": "PASS",
+      "detail": {
+        "structure": {
+          "slides": 10,
+          "masters": 2,
+          "layouts": 11,
+          "text_nodes": 174,
+          "slide_pictures": 0
+        },
+        "qa": "passed"
+      }
+    },
+    {
+      "check": "html-demo",
+      "status": "PASS",
+      "detail": {
+        "slides": 10,
+        "layouts": [
+          "cover-center-title-edge-decor",
+          "toc-6-panel-rows",
+          "strategic-priorities",
+          "before-after",
+          "heat-map",
+          "timeline-vertical",
+          "matrix-4quadrant",
+          "multi-line-chart",
+          "quote-focus",
+          "title-center"
+        ],
+        "content_mode": "new-deck",
+        "qa": "passed"
+      }
+    },
+    {
+      "check": "editor-sync",
+      "status": "PASS",
+      "detail": {
+        "sha256": "6fa3f96385878d95c0ee67fcb0bca725703dc4217cbdbf9621665a83a7421de4"
+      }
+    },
+    {
+      "check": "release-manifest",
+      "status": "WARN",
+      "detail": {
+        "version": null,
+        "status": null
+      }
+    },
+    {
+      "check": "release-hashes",
+      "status": "WARN",
+      "detail": "release-files.sha256 is missing"
+    }
+  ]
+}

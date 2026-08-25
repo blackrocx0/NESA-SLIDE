@@ -5,6 +5,14 @@
 
 座標換算永遠是：`x_px = x% × 19.2`、`y_px = y% × 10.8`、`w_px = w% × 19.2`、`h_px = h% × 10.8`。
 
+## Typography token precedence
+
+本文件後面的 HTML 片段主要示意 Layout 幾何與閱讀順序；片段中的數字型
+`font-weight` 不是另一份字重規範。實際 renderer 必須依
+`references/html-generation-rules.md` 的語意 token materialize：核心標題使用
+`heavy`、小標使用 `normal`、說明／內文使用 `light`，並依字族能力套用必要的 fallback。
+若本文件的舊片段數值與 typography token 不一致，以 `html-generation-rules.md` 為準。
+
 ## 所有族群共用的物件樹
 
 本文件後面的片段只說明視覺排列；正式 renderer 必須再套用以下物件結構，且本節優先於舊片段中
@@ -19,8 +27,25 @@
 
 renderer 可量測所有可見內容的聯集並把單一 `dx／dy` 寫到 layout-only centering frame；這個量測聯集
 不是編輯群組。初始開啟時只看得到上述獨立 `.el` 與 semantic module。取消 semantic module 後才進入
-background／text／data layers；使用者手動建立的巢狀群組仍逐層取消。文字框預設垂直置中；水平對齊
-由各 Layout 片段明確指定，沒有全域預設。
+background／text／data layers；使用者手動建立的巢狀群組仍逐層取消。文字框預設垂直置中。
+
+## 全域水平對齊繼承契約
+
+每張 production slide 必須先由主標建立 `left`、`center` 或 `right` 水平對齊模式。
+surface module 根節點、其中的 text／metric layers、獨立總結與 takeaway 全數繼承同一模式；
+不得再由 Theme／Preset 或個別 component CSS 改成另一種對齊。
+
+唯一例外是「圓形容器內的數字」的字形對齊：這類 metric 必須使用 `.circle-number-metric`，
+並保留 `data-edit-horizontal-align="center"`；但圓形容器本身仍必須與所屬 semantic module
+共享中心軸，不得停在卡片左上角。`circle-number-exception` 只描述圓內字形，不豁免父模組幾何。
+renderer 必須在 slide root 記錄 `data-page-horizontal-align`，並在一般內容寫入
+`data-edit-alignment-source="page-title"`；圓形數字則寫入 `circle-number-exception`，供 Browser QA 驗證。
+
+Layout／renderer variant 可以讓 semantic module 宣告自己的內部閱讀軸，但必須是明示契約，
+不是個別 CSS 偷改：module root 使用 `data-module-interior-align="left|center|right"`，仍以
+`page-title` 對齊整個模組；只有該 module 內的 text／metric layers 使用相同的
+`data-edit-horizontal-align` 與 `data-edit-alignment-source="module-interior"`。Browser QA 必須
+驗證所有 module-interior layers 與最近 module root 的宣告一致；沒有宣告時仍一律繼承頁面主標。
 
 對一列滿寬的 Open／Banded 模組，應使用「layout-only slot + 內層小群組」，不能讓滿寬 slot 變成
 可選取定位框。對 3 個以上同級模組、且空白側沒有 counterweight 的版面，可見內文聯集至少使用
@@ -47,6 +72,10 @@ padding、gap 與層間距；水平縮放接著讓文字框自然回流，垂直
 `cover-photo-frame`、`cover-photo-frame-reverse`、`cover-photo-overlay-block`
 
 ### A1 滿版背景 + 左下文字（hero-fullbleed、hero-fullbleed-brand-footer）
+
+`speaker`、`org` 與其他 metadata 是選填內容，不是用來補滿畫面的裝飾槽。只有當次
+content manifest 明確提供、且對觀眾有用時才輸出對應 DOM；缺少時整個物件省略，renderer
+不得自創組織名、英文 kicker、年份、版本、Concept／Lab／Studio 等填充文字。
 
 ```html
 <!-- 背景：CSS background 或 gradient，不需要 img 標籤 -->
@@ -316,7 +345,7 @@ padding、gap 與層間距；水平縮放接著讓文字框自然回流，垂直
   <div class="el num-panel" style="left:1574.4px;top:0;width:345.6px;height:1080px;
     background:{accent_color};display:flex;align-items:center;justify-content:center;">
     <span style="font-size:280px;font-weight:900;color:rgba(255,255,255,.25);
-      writing-mode:vertical-rl;user-select:none;">{chapter_number}</span>
+      writing-mode:horizontal-tb;user-select:none;">{chapter_number}</span>
   </div>
   <!-- 左上半透明遮罩 title_overlay [5,8,32,24] → left:96 top:86 w:614 h:259 -->
   <div class="el title-ov" style="left:96px;top:86.4px;width:614.4px;height:259.2px;
@@ -449,7 +478,15 @@ padding、gap 與層間距；水平縮放接著讓文字框自然回流，垂直
 
 ### E1 等寬卡片陣列（cards-1-plus-2 ～ cards-1-plus-8）
 
-cards-1-plus-3 已實作於 `deck.html`，其餘遵循相同模式，slot region 從 layout YAML 直接換算。
+cards-1-plus-3 的 HTML 內部配方只保留
+`icon-title-body`、`metric-title`、`label-rule-body`、`side-icon-body` 四支，canonical catalog 為
+`prompt_system/renderers/html/layout-variants/cards-1-plus-3.yaml`。其餘 cards-1-plus-N 遵循相同
+slot 原則，region 由 Layout YAML 直接換算。
+
+- `icon-title-body` 不宣告 module-interior 軸；卡內標題與內文直接繼承頁面主標的左／中／右對齊。
+- `metric-title` 固定閱讀順序為「資料來源 → 指標名稱 → 數字 → 背景說明」，不讓觀眾先看數字再猜它代表什麼。
+- `label-rule-body` 保持「標籤 → 分隔線 → 標題 → 內文」的左對齊證據卡。
+- `side-icon-body` 的長文段落以兩個全形空白（U+3000）開頭，只影響正文首行，不影響標題。
 
 ```html
 <div class="el card" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px;
@@ -681,8 +718,11 @@ Browser QA 必須以 glyph bounds 驗證四個 axis label 均落在各自 label 
 
 ### G2 里程碑時間軸（timeline-milestones）
 
+此 Layout 使用置中的單一標題，不設副標 slot；時間軸模組不建立包覆式 Surface，
+只保留軸線、節點、日期、里程碑標題與短註解。
+
 ```html
-<!-- milestones [10,40,80,18] → left:192 top:432 w:1536 h:194.4 -->
+<!-- milestones [10,32,80,26] → left:192 top:345.6 w:1536 h:280.8 -->
 <!-- 橫向時間線 + 菱形節點 -->
 <svg style="position:absolute;left:192px;top:432px;width:1536px;height:194.4px;"
   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 194.4">
@@ -728,6 +768,12 @@ Browser QA 必須以 glyph bounds 驗證四個 axis label 均落在各自 label 
 
 ### H1 KPI 指標卡（kpi-scorecards）
 
+這個 Layout 只顯示主標，不輸出副標；scorecard surface 也不顯示順序編號。
+每張 surface 內的 value、label、meaning 與 delta 必須沿用主標的水平對齊模式：
+主標置中時，surface 內容也在各自卡片內置中。
+下方 takeaway 為 optional；缺少時連 surface 一起省略。有內容時，去除空白後必須介於
+18–44 個字元；少於 18 個字元的卡片註解不得當作整頁總結，大於 44 個字元則應精簡或改用其他 Layout。
+
 若指標內容是短詞、狀態或原則，而不是需要大面積展示的長數字，scorecard surface 必須
 使用 content-driven block size：value／label／meaning 先形成緊密文字群，卡片高度由該群組、
 角色 content inset 與必要結構線推導。多張卡片再以可見 module union 垂直置中，不得以
@@ -740,7 +786,7 @@ Browser QA 必須以 glyph bounds 驗證四個 axis label 均落在各自 label 
   display:flex;gap:24px;align-items:stretch;">
   <div class="sc-card" style="flex:1;background:#fff;border-radius:16px;
     padding:36px 32px;box-shadow:0 12px 32px rgba(0,0,0,.07);
-    display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;">
+    display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;text-align:center;">
     <div style="font-size:{caption}px;font-weight:500;opacity:.55;">{metric_label}</div>
     <div style="font-size:{mega-number}px;font-weight:900;color:{accent};line-height:1;">
       {value}

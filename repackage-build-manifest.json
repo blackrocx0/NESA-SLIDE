@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "version": "0.1.0-demo.2",
+  "assembled_at": "2026-08-25T08:43:38.921849+00:00",
+  "source_snapshot": "source-snapshot.json",
+  "source_file_count": 677,
+  "source_aggregate_sha256": "1b805fc1d57f44593752898deaa6ae9c462e9af4af6c798e709df27db8cef9ba",
+  "shell_files": [
+    "AGENTS.md",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "CHECK_SYSTEM.cmd",
+    "OPEN_HTML_DEMO.cmd",
+    "START_HTML_EDITOR.cmd",
+    ".gitignore"
+  ],
+  "shell_fallback_scripts": [
+    "scripts/capture_html_demo.cjs",
+    "scripts/finalize_release.py",
+    "scripts/qa_html_release_smoke.cjs",
+    "scripts/release_doctor.py",
+    "scripts/start_html_editor.py"
+  ],
+  "excluded": [
+    ".git",
+    ".history",
+    ".pytest_cache",
+    "To_delete",
+    "__pycache__",
+    "deploy",
+    "experiments",
+    "history",
+    "node_modules",
+    "research",
+    "review",
+    "reviews",
+    "runtime",
+    "staging",
+    "tests",
+    "tmp",
+    "workspace"
+  ],
+  "portable_sanitizations": [
+    {
+      "path": "prompt_system/presets/catalog.yaml",
+      "change": "removed deployment-only Gallery artifact path and URL from clinical-evidence-atlas",
+      "generation_semantics_changed": false
+    },
+    {
+      "path": "references/artifact-cleanup-workflow.md",
+      "change": "replaced machine-specific absolute-path examples with portable wording",
+      "generation_semantics_changed": false
+    }
+  ],
+  "excluded_source_paths": [
+    "references/design-research",
+    "references/botanical-editorial-design-research.md",
+    "references/html-composition-assembly-research.md"
+  ],
+  "source_snapshot_refresh_at": "2026-08-25T09:00:22.986259+00:00"
+}

@@ -2,20 +2,8 @@ id: tech-navy
 display_name: 深藍青色線框風
 source: html-pattern-slide 實驗（toc-3-vertical 企業 AI 導入路線圖 demo）
 
-# ══════════════════════════════════════════════════════════════════════
-# 讀取範圍說明（避免三種輸出互相汙染）
-#
-# - Image2 正式生圖由目前工作的 Codex 直接使用內建 image_gen；只讀 visual_base + decoration_vocabulary
-#   + closing_statement 這三塊，跟其他既有 theme 檔完全一樣的讀法，不讀
-#   html_spec / pptx_spec。
-# - html-pattern-slide skill 只讀 visual_base（取色票語意）+ html_spec，
-#   不讀 pptx_spec，也不把 decoration_vocabulary 的文字描述直接當 CSS 寫。
-# - ppt-builder skill 只讀 visual_base（取色票語意）+ pptx_spec，
-#   不讀 html_spec。
-# - html_spec / pptx_spec 裡的顏色一律用 YAML 別名（*primary_hex 等）
-#   指回 visual_base.color_palette 底下用 & 定義的錨點，不重新打一次 hex，
-#   避免同一個顏色在三處各自維護出現分岐。
-# ══════════════════════════════════════════════════════════════════════
+# Theme Core 只保存跨 Renderer 共用的視覺語意。位置、寬高、字級、行高、
+# 內縮與特定 Layout 排版均由 Layout／Composition／renderer-base 擁有。
 
 # ── Layer 2A: 視覺基底（圖片生成專用，語意化描述，AI 可自行詮釋）──────────
 visual_base:
@@ -81,80 +69,3 @@ decoration_vocabulary:
 
 closing_statement: >
   Maintain strict dark-navy-plus-single-cyan-accent discipline: the accent only marks lines, icon strokes, and small numerals. Decoration lives in the outer margin band while content stays quiet and disciplined.
-# ══════════════════════════════════════════════════════════════════════
-# ── html_spec：html-pattern-slide 專用，精確 px / hex / 真實字型名 ────────
-# 只讀 visual_base 取色票語意 + 這一段，不讀 pptx_spec。
-# ══════════════════════════════════════════════════════════════════════
-html_spec:
-  font_family: "'Noto Sans TC', system-ui, sans-serif"
-  mono_font_family: "ui-monospace, 'SF Mono', Menlo, monospace"
-
-  # 對應 references/html-generation-rules.md 規則 2 的角色字級表，
-  # 這裡只挑本主題實際會用到的角色，取值落在該角色的 px 範圍內。
-  font_sizes_px:
-    page-title: 80      # 範圍 52–80，本主題取上緣，標題必須明顯大於其他文字
-    module-title: 44    # 範圍 36–52
-    body: 28            # 範圍 28–40，取下緣（等寬字時再放大）
-    caption: 22         # 範圍 22–28，取下緣
-
-  content_container:
-    note: 固定四邊內縮 96px，見 html-generation-rules.md「內容容器」規則，不因主題而變
-    margin_px: 96
-
-  css_tokens:
-    base: *base_hex
-    primary_text: *primary_hex
-    secondary_text: *secondary_hex
-    accent: *accent_hex
-    quiet_decor: *quiet_decor_hex
-
-  decoration_notes:
-    hairline-divider: "border-bottom: 1px solid {quiet_decor}，或 SVG line stroke-width 1"
-    corner-bracket: "SVG path，兩段直線組成 L 型，只能落在 margin 帶（<96px 或 >1824/984px）"
-    grid-bg: "repeating-linear-gradient 雙向疊加，透明度 .03，間距 48px；金句/封面類頁面可疊加兩道柔和 radial-gradient 色暈（非對稱位置，呼應主體構圖），透明度 .08–.16"
-    icon-badge: "72px 圓角方形，背景色 = 類別色 14% 透明度，1.5px 邊框 = 類別色 50% 透明度，內含線條 SVG icon"
-    mono-label-caption: "font-family 用 mono_font_family，letter-spacing .2em 以上"
-
-  # 特定 layout 套用本主題時，已經試出來、確認過的具體數值。
-  # 目的：同一個 layout + 同一個 theme 再次渲染時直接讀這裡，不用重新試錯。
-  # 新增時機：使用者對某個 layout 的某次渲染結果給出具體調整意見並確認滿意後。
-  layout_overrides:
-    quote-focus:
-      note: "2026-07-04 依使用者回饋定案：字級加大、共用左緣內縮、拿掉巨大引號裝飾"
-      quote_font_px: 140          # display 角色範圍 120–180，取中段
-      quote_line_height: 1.2      # 高於角色表預設的 1.05，使用者要求行距加大
-      attribution_font_px: 48     # 超出 caption 角色（22–28），實質採用接近 subtitle 上緣的量體
-      shared_left_inset_px: 240   # quote 與 attribution 共用左緣，比標準 content 96px 再多內縮 240px
-      # 由此得到的實際留白（相對 content 1728px 寬）：左 240px／右 228px，接近置中
-      vertical_distribution: 規則4策略2（整體垂直置中），quote+attribution 視為一個區塊
-      decoration: 只用背景層（grid-bg + 兩道色暈）與至多一組留白帶 corner-bracket；不使用巨大引號裝飾（side-mark），使用者認為不需要
-
-# ══════════════════════════════════════════════════════════════════════
-# ── pptx_spec：ppt-builder 專用，精確 pt / hex（不帶 #）───────────────────
-# 只讀 visual_base 取色票語意 + 這一段，不讀 html_spec。
-# px→pt 換算基準：HTML 畫布 1920px 寬 對應 PPTX 16:9 版面 960pt 寬
-# （13.333 吋 × 72pt/吋），比例 0.5，其餘角色字級比照等比例換算。
-# ══════════════════════════════════════════════════════════════════════
-pptx_spec:
-  font_family: "Noto Sans TC"
-  slide_size: { width_in: 13.333, height_in: 7.5 }
-
-  font_sizes_pt:
-    page-title: 40      # = html page-title(80px) × 0.5
-    module-title: 22    # = html module-title(44px) × 0.5
-    body: 14            # = html body(28px) × 0.5
-    caption: 11          # = html caption(22px) × 0.5
-
-  shape_fills_hex:
-    base: "0B1220"
-    primary_text: "F5F7FA"
-    secondary_text: "9AA7B8"
-    accent: "3FD0E8"
-    quiet_decor: "1B2A3D"
-
-  capability_notes:
-    - PPTX 物件模型沒有任意 SVG path，corner-bracket 只能用兩條直線連接器（straight connector）拼出 L 型，不追求跟 HTML 版一模一樣的精細度
-    - hairline-divider 用細直線連接器（weight 0.75pt）或極薄矩形色塊模擬，不用陰影
-    - grid-bg 這種全頁極淡紋理在 PPTX 難以低成本重現，允許省略或改用純色背景，不強求
-    - icon-badge 用「圓角矩形形狀 + 內嵌圖示（Icons 庫或簡單線條形狀組合）」，色彩仍對應 shape_fills_hex
-    - 一律不使用漸層光暈（radial-gradient glow）這類效果，PPTX 原生漸層選項有限，容易做得廉價，改用純色或雙色線性漸層即可

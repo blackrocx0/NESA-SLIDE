@@ -1,72 +1,61 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "status": "passed",
   "artifact": "demos/html/street-revival/street-revival.html",
+  "artifact_sha256": "7adb4a5eaac9be61f1b7fd4d7f3d5813292e5ae1b7c19099534112243c10c81b",
   "manifest": "demos/html/street-revival/street-revival.manifest.json",
+  "manifest_sha256": "0148112191cb8b6096d270777b23541d2266fdaa993b9dc9f0f1173975bc1223",
+  "contact_sheet": "demos/html/street-revival/contact-sheet.png",
+  "contact_sheet_sha256": "a4c4c20dc5a38b971add9781fcb57e45908b30b670c8b3d73f616eef78bb001a",
+  "pages": 10,
+  "seed": 20260819,
+  "theme": "neighborhood-newsroom-proof",
   "content_mode": "new-deck",
   "asset_policy": "pattern-only",
-  "slide_count": 10,
-  "seed": 20260819,
-  "status": "passed",
-  "gates": {
-    "story_art_direction_scene_grammar": {
-      "status": "pass",
-      "evidence": [
-        "demos/html/street-revival/source/content-manifest.json",
-        "demos/html/street-revival/source/art-direction.yaml",
-        "demos/html/street-revival/source/handoff.json"
-      ]
-    },
-    "renderer_static_validation": {
-      "status": "pass",
-      "evidence": "demos/html/street-revival/street-revival.manifest.json:editable_dom.static_validation"
-    },
-    "css_ownership": {
-      "status": "pass",
-      "evidence": "Source ownership check passed with zero CSS ownership violations."
-    },
-    "geometry_invariant": {
-      "status": "pass",
-      "evidence": "10 slides, 55 measured targets, 0 geometry issues; final HTML hash matched."
-    },
-    "visual_contract": {
-      "status": "pass",
-      "evidence": "10 slides and 0 visual-contract issues; final HTML hash matched."
-    },
-    "design_method_and_scene_rhythm": {
-      "status": "pass",
-      "evidence": "Design-method provenance and scene-rhythm check passed."
-    },
-    "toolbar_projection_round_trip": {
-      "status": "pass",
-      "evidence": "Localhost toolbar and projection round trip passed."
-    },
-    "editable_interaction_group_undo_redo": {
-      "status": "pass",
-      "evidence": "Semantic group selection, move, undo/redo, ungroup and undo-restore passed on a disposable copy."
-    },
-    "save_export_download_reopen": {
-      "status": "pass",
-      "evidence": "Localhost save marker persisted; exported HTML retained 10 slides and embedded editor, then reopened successfully."
-    },
-    "pptx_browser_export": {
-      "status": "pass",
-      "evidence": "Browser export produced a structurally valid 10-slide PPTX with 1 master and 11 layouts."
-    },
-    "contact_sheet": {
-      "status": "pass",
-      "evidence": "demos/html/street-revival/contact-sheet.png; 10 final projection captures were reviewed before only the contact sheet was retained."
-    }
+  "layouts": [
+    "cover-center-title-edge-decor",
+    "toc-6-panel-rows",
+    "strategic-priorities",
+    "before-after",
+    "heat-map",
+    "timeline-vertical",
+    "matrix-4quadrant",
+    "multi-line-chart",
+    "quote-focus",
+    "title-center"
+  ],
+  "checks": {
+    "renderer_static_validation": "passed",
+    "embedded_editor": "passed",
+    "manifest": "passed",
+    "visible_copy": "passed",
+    "text_orientation": "passed",
+    "css_ownership": "passed",
+    "design_method": "passed",
+    "browser_http_200": "passed",
+    "browser_console": "passed",
+    "browser_geometry": "passed",
+    "browser_computed_orientation": "passed",
+    "projection_captures": "passed",
+    "contact_sheet": "passed"
   },
-  "clean_room_generation": {
-    "status": "pass",
-    "detail": "The sanitized package regenerated this deck from its own renderer, active core, preset registry and content sources."
+  "browser": {
+    "report": "demos/html/street-revival/qa/browser-qa.json",
+    "slides": 10,
+    "text_nodes": 103,
+    "vertical_text_nodes": 0,
+    "right_angle_text_nodes": 0,
+    "overflow_objects": 0,
+    "console_issues": 0,
+    "capture_directory": "demos/html/street-revival/qa/captures"
   },
-  "perceptual_qa": {
-    "status": "pass",
-    "detail": "All ten projection captures were inspected at full size after motion layers were disabled; no clipping or unintended overlap remained."
+  "evidence": {
+    "embedded_editor": "demos/html/street-revival/qa/embedded-editor.json",
+    "visible_copy": "demos/html/street-revival/qa/visible-copy.json",
+    "text_orientation": "demos/html/street-revival/qa/text-orientation.json"
   },
-  "unverified": [
-    "Live Google Fonts network loading was intentionally blocked during browser QA; the offline fallback render passed.",
-    "The browser-exported PPTX package passed structural checks but was not reopened in the PowerPoint desktop application."
+  "not_verified": [
+    "PPTX export-download-reopen round trip for this HTML demo",
+    "full editor save and history mutation flow across all ten slides"
   ]
 }

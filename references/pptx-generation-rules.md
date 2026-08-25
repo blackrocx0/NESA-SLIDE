@@ -10,8 +10,10 @@ PPTX renderer 的主要來源依序為：
 1. 內容 manifest 的實際文字、素材、layout id 與 theme id；
 2. `prompt_system/layouts/{layout-id}.yaml` 與對應 PPTX layout adapter；
 3. `prompt_system/themes/{theme-id}.yaml` 與對應 PPTX theme adapter；
-4. 既有 `pptx_spec`，只作 renderer-specific override；
-5. HTML DOM/CSS 的實際文字、圖片來源與最終幾何，僅作校準與使用者編輯結果的輸入。
+4. 若使用 `freeform-composition`，內容 manifest 內的逐頁 Composition Plan、stage-space
+   geometry 與 constraint ledger；
+5. PPTX renderer 的正式 Composition Plan 與 native object materialization 規則；
+6. HTML DOM/CSS 的實際文字、圖片來源與最終幾何，僅作校準與使用者編輯結果的輸入。
 
 assembled YAML 是 Image2 的 downstream payload，不是 PPTX 的必要通用輸入。若任務同時有
 assembled YAML，可以讀取其中內容，但 theme/layout 身分與結構仍以 core + adapter 為準。
@@ -64,6 +66,24 @@ master/layout 關係：
 re-import 路徑不穩，且 `@oai/artifact-tool` 匯出 Custom Layout 圖片並不可靠，母片底圖、
 Placeholder 與示範內容必須由 PowerPoint 原生物件模型在同一次建檔中完成。
 
+## HTML-like Freeform Composition
+
+固定的六種 Image2 background role 只代表一套背景資產家族，不代表 PPTX 每頁只能使用六種
+固定構圖。當 deck manifest 宣告 `mode: freeform-composition` 時：
+
+- Master 管理 Theme 的色彩、字體語意與全域 chrome；
+- Custom Layout 管理該頁 Composition 的 background、safe area 投影與 named Placeholder；
+- Slide 依 Layout 放入 native text、shape、connector、image、table 或 chart；
+- Composition Plan 使用 1920×1080 stage-space，明確保存每個物件的 id、role、geometry、
+  z-order、文字樣式與可見內容聯集；
+- 內容群組先以實際文字高度收合，再在 Content Area 內計算重心與邊界留白；
+- 每個 visible text slot 必須直接 materialize 成對應 Placeholder 或有明確 provenance 的
+  native text object，不能用空 Placeholder 加另一個無關文字框冒充可編輯欄位。
+
+這條路徑保留 HTML 級的逐頁構圖自由度，但仍以 PPTX 的 Master → Custom Layout → Slide
+關係承接共用規則。不同 Composition 可以建立不同 Custom Layout；不得為了減少 Layout
+數量而把不相容的幾何塞進同一個固定版型。
+
 ## 兩條正式建檔路徑
 
 - **Codex／專案正式建檔**：使用 JavaScript ES module 與 `@oai/artifact-tool`，由專案來源建立、重建或批次驗收 PPTX。
@@ -75,9 +95,11 @@ native object 與 QA 契約。工具只由使用入口決定；不得把其中�
 
 ## HTML 逐頁圖片背景匯出
 
-逐頁生成圖片背景是 opt-in 能力，操作規範由 `.agents/skills/slide-background-image/SKILL.md`
-管理。每頁背景必須先依實際 foreground occupied region 量測，再生成一張 16:9 raster；圖片只
-補足空白區，不能重畫文字、卡片、箭頭、圖表或其他可編輯前景。
+逐頁生成圖片背景由 `.agents/skills/slide-background-image/SKILL.md` 管理。新建含圖片版型的
+HTML 先使用 `.agents/skills/html-image-slide/SKILL.md` 完成 Layout handoff，再把 foreground
+交給背景 Skill。已有可編輯 HTML 只要附加／替換背景時，直接使用背景 Skill 並保留原本 Layout
+與前景。每頁背景都必須依實際 foreground occupied region 量測，再生成或套用一張 16:9 raster。
+圖片只補足或支撐相容的視覺區域，不能重畫文字、卡片、箭頭、圖表或其他可編輯前景。
 
 HTML final artifact 必須把背景資產內嵌成 data URL（並可保留相鄰的原始圖片副本作為 provenance）。
 這是為了讓 `file://` 成品與瀏覽器匯出路徑不依賴本機 server，也讓 `edit-mode.js` 能在建立 DOM
@@ -155,5 +177,14 @@ font_pt = font_px * 0.5
 6. 確認文字、圖片、表格與基本圖形可在 PowerPoint 中個別選取。
 7. 確認六張底圖完全無文字、無假內容結構，且高對比圖形未侵入 `blank_regions`。
 8. 確認背景圖片只存在於 child layout，不存在於一般 slide 物件清單。
+
+`freeform-composition` 額外必須驗證：
+
+9. Composition Plan 的每個可見物件都有 materialized 對應，且沒有 source-only 或
+   orphaned placeholder；
+10. 逐頁的可見內容聯集位於 declared Content Area，四邊留白符合 constraint ledger，
+    內容群組的實際中心落在目標 region 內；
+11. 同一份 stage-space geometry 經 renderer 轉換後，PPTX layout JSON、OOXML 與渲染影像
+    的座標／層級仍可追溯；source hash PASS 不得單獨取代這項檢查。
 
 正式輸出不得只依 contact sheet 判定通過。

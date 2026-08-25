@@ -24,6 +24,7 @@ visual_base:
   color_palette:
     primary:   { hex: "#XXXXXX", use: 用途 }
     secondary: { hex: "#XXXXXX", use: 用途 }
+    surface:   { hex: "#XXXXXX", use: 主要資訊表面（選填） }
     accent:    { hex: "#XXXXXX", use: 用途（小面積強調） }
     support:
       - { hex: "#XXXXXX", use: 用途 }
@@ -57,10 +58,14 @@ closing_statement: >
   英文收尾原則，一段話。
 ```
 
+`surface` 是主要資訊表面的語意角色；需要卡片、圖表底或模組表面時，優先使用它。
+`support` 只描述流程線、狀態節點、圖示或少量輔助訊號，不能因為色彩對比高就自動升格成大面積 surface。
+未宣告 `surface` 的舊 Theme 才允許由 renderer 以 support 作相容 fallback。
+
 為什麼字級不寫死：具體 px/pt 由每頁組裝時依 size_hint + 角色字級範圍
-（`references/html-generation-rules.md`）+ 本頁內容量現算，theme 只管傾向。
-已確認滿意、要原樣重現的數值，記在該 theme 的 `html_spec.layout_overrides`
-（見 `tech-navy.yaml` 試點），不寫回 `visual_base`。
+（`references/html-generation-rules.md`）+ 本頁內容量現算，Theme 只管傾向。
+已確認滿意、要原樣重現的幾何數值，應提升到 Layout／Composition／renderer-base 的
+正式來源與回歸測試；不得寫回 Theme Core。
 
 ## 既有 themes
 
@@ -69,19 +74,13 @@ closing_statement: >
 - `corporate-blue`：白底深藍企業風
 - `teal-tech`：淺灰底藍綠科技風
 
-## 2026-07-03 新增：跨格式規格擴充試點
+## 2026-07-03 新增：跨格式 Theme 試點
 
 - `tech-navy`：科技深藍，冷色調 cyan 強調色，低調有序
   - 來自 html-pattern-slide 實驗（toc-3-vertical 企業 AI 導入路線圖 demo）
-  - 這是第一個在 `visual_base` / `decoration_vocabulary` 之外，額外附上
-    `html_spec`（html-pattern-slide 用，精確 px/hex/字型）與 `pptx_spec`
-    （ppt-builder 用，精確 pt/hex）的 theme 檔，示範同一份 theme 檔案
-    如何讓三種輸出方式（圖片生成／HTML／PPTX）共用視覺定義又不互相汙染：
-    圖片生成只讀 `visual_base`+`decoration_vocabulary`+`closing_statement`，
-    HTML 只加讀 `html_spec`，PPTX 只加讀 `pptx_spec`，顏色一律用 YAML
-    錨點（`&xxx_hex` / `*xxx_hex`）互相參照，不重複定義同一個色票。
-  - 若之後要幫其他既有 theme（例如 `dark-circuit`）補上 `html_spec` /
-    `pptx_spec`，可以直接參考 `tech-navy.yaml` 的段落結構。
+  - 三種輸出只共用 `visual_base`、`decoration_vocabulary` 與 `closing_statement`
+    的視覺語意；renderer-specific 幾何由各自的 Layout／Composition materialize，
+    不在 Theme Core 保存 `html_spec`、`pptx_spec` 或 `layout_overrides`。
 
 ## 2026-06-12 新增 themes（來自 Downloads 模板分析）
 

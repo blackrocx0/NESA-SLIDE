@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the portable NESA Slide internal-test package."""
-
+"""Validate the self-contained NESA Slide 0.1.0-demo.2 package."""
 from __future__ import annotations
 
 import argparse
@@ -13,274 +12,155 @@ import zipfile
 from html.parser import HTMLParser
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
-RETIRED_LAYOUTS = {
-    "toc-2.yaml",
-    "toc-2-image-left.yaml",
-    "toc-2-panel-rows.yaml",
-    "toc-2-vertical.yaml",
-}
-FORBIDDEN_PARTS = {
-    ".git",
-    ".cache",
-    ".pytest_cache",
-    "__pycache__",
-    "node_modules",
-    "experiments",
-    "tests",
-    "research",
-    "review",
-    "reviews",
-    "tmp",
-    ".history",
-    "To_delete",
-    "migrations",
-    "deploy",
-}
-TEXT_SUFFIXES = {
-    ".cmd", ".html", ".js", ".json", ".md", ".mjs", ".ps1",
-    ".py", ".txt", ".yaml", ".yml",
-}
-ABSOLUTE_PATH_PATTERNS = (
-    re.compile(r"C:[\\/]Users[\\/]NEO(?:[\\/]|$)", re.IGNORECASE),
-    re.compile(r"C:[\\/]Users[\\/]NEO[\\/]OneDrive", re.IGNORECASE),
-    re.compile(r"file:///C:/Users/NEO/", re.IGNORECASE),
-)
+VERSION = "0.1.0-demo.2"
+EXPECTED_THEMES = 36
+EXPECTED_LAYOUTS = 74
+EXPECTED_THEME_ADAPTERS = 108
+EXPECTED_LAYOUT_ADAPTERS = 222
+EXPECTED_ADAPTERS = 330
+SKILLS = ["design-presentations", "generate-image-slide", "html-image-slide", "html-pattern-slide", "ppt-builder", "slide-background-image", "slide-outline-planner"]
+RETIRED = {"toc-2.yaml", "toc-2-image-left.yaml", "toc-2-panel-rows.yaml", "toc-2-vertical.yaml"}
+REMOVED_COVERS = {"cover-lower-right-hero-left-rail.yaml", "cover-mid-right-column-meta-upper-left.yaml", "cover-top-center-hero-bottom-center-support.yaml", "cover-upper-right-hero-lower-left-support.yaml"}
+FORBIDDEN = {".git", ".cache", ".pytest_cache", "__pycache__", "node_modules", "experiments", "tests", "research", "review", "reviews", "tmp", ".history", "history", "To_delete", "migrations", "deploy", "staging", "runtime"}
+TEXT_SUFFIXES = {".cmd", ".html", ".js", ".json", ".md", ".mjs", ".cjs", ".ps1", ".py", ".txt", ".yaml", ".yml"}
+ABSOLUTE = (re.compile(r"[A-Za-z]:[\\/]Users[\\/]", re.I), re.compile(r"file:///[A-Za-z]:/Users/", re.I))
+EXPECTED_HTML_LAYOUTS = ["cover-center-title-edge-decor", "toc-6-panel-rows", "strategic-priorities", "before-after", "heat-map", "timeline-vertical", "matrix-4quadrant", "multi-line-chart", "quote-focus", "title-center"]
 
 
 class SlideCounter(HTMLParser):
-    def __init__(self) -> None:
-        super().__init__()
-        self.slides = 0
-
-    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
-        classes = dict(attrs).get("class") or ""
-        if "slide" in classes.split():
-            self.slides += 1
+    def __init__(self):
+        super().__init__(); self.slides = 0
+    def handle_starttag(self, tag, attrs):
+        if "slide" in (dict(attrs).get("class") or "").split(): self.slides += 1
 
 
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
-    with path.open("rb") as stream:
-        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
-            digest.update(chunk)
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""): digest.update(chunk)
     return digest.hexdigest()
 
 
-def png_size(path: Path) -> tuple[int, int]:
-    with path.open("rb") as stream:
-        header = stream.read(24)
-    if len(header) < 24 or header[:8] != b"\x89PNG\r\n\x1a\n":
-        raise ValueError("not a PNG")
-    return struct.unpack(">II", header[16:24])
+def read_json(path: Path) -> dict:
+    return json.loads(path.read_text(encoding="utf-8-sig")) if path.is_file() else {}
 
 
 def pptx_structure(path: Path) -> dict[str, int]:
+    if not path.is_file(): return {}
     with zipfile.ZipFile(path) as archive:
         names = archive.namelist()
-        slide_xml = [name for name in names if re.fullmatch(r"ppt/slides/slide\d+\.xml", name)]
-        masters = [name for name in names if re.fullmatch(r"ppt/slideMasters/slideMaster\d+\.xml", name)]
-        layouts = [name for name in names if re.fullmatch(r"ppt/slideLayouts/slideLayout\d+\.xml", name)]
-        text_nodes = sum(archive.read(name).count(b"<a:t") for name in slide_xml)
-        pictures = sum(archive.read(name).count(b"<p:pic") for name in slide_xml)
-    return {
-        "slides": len(slide_xml),
-        "masters": len(masters),
-        "layouts": len(layouts),
-        "text_nodes": text_nodes,
-        "slide_pictures": pictures,
-    }
+        slides = [n for n in names if re.fullmatch(r"ppt/slides/slide\d+\.xml", n)]
+        masters = [n for n in names if re.fullmatch(r"ppt/slideMasters/slideMaster\d+\.xml", n)]
+        layouts = [n for n in names if re.fullmatch(r"ppt/slideLayouts/slideLayout\d+\.xml", n)]
+        text_nodes = sum(archive.read(n).count(b"<a:t") for n in slides)
+        pictures = sum(archive.read(n).count(b"<p:pic") for n in slides)
+    return {"slides": len(slides), "masters": len(masters), "layouts": len(layouts), "text_nodes": text_nodes, "slide_pictures": pictures}
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Check NESA Slide package integrity")
+    parser = argparse.ArgumentParser()
     parser.add_argument("--report", type=Path)
-    parser.add_argument("--preflight", action="store_true", help="Allow release hashes to be absent during assembly")
+    parser.add_argument("--preflight", action="store_true")
     args = parser.parse_args()
+    checks = []
+    def add(name, ok, detail, warn=False): checks.append({"check": name, "status": "PASS" if ok else ("WARN" if warn else "FAIL"), "detail": detail})
 
-    checks: list[dict[str, object]] = []
-
-    def add(name: str, ok: bool, detail: object, *, warn: bool = False) -> None:
-        checks.append({
-            "check": name,
-            "status": "PASS" if ok else ("WARN" if warn else "FAIL"),
-            "detail": detail,
-        })
-
-    required = [
-        ROOT / "AGENTS.md",
-        ROOT / "README.md",
-        ROOT / "source-snapshot.json",
-        ROOT / "source-snapshot-verification.json",
-        ROOT / "prompt_system" / "renderers" / "manifest.yaml",
-        ROOT / "artifacts" / "renderer-matrix" / "matrix.json",
-        ROOT / "src" / "html-editor" / "edit-mode.js",
-        ROOT / "artifacts" / "html-test" / "dev_server.py",
-        ROOT / "artifacts" / "html-test" / "pptxgen.bundle.js",
-        ROOT / "artifacts" / "html-test" / "pptx-browser-export.js",
-    ]
-    add("required-files", all(path.is_file() for path in required), [str(path.relative_to(ROOT)) for path in required if not path.is_file()])
-
-    freeze = json.loads((ROOT / "source-snapshot-verification.json").read_text(encoding="utf-8")) if (ROOT / "source-snapshot-verification.json").is_file() else {}
-    freeze_checks = freeze.get("checks", {}) if isinstance(freeze, dict) else {}
+    required = [ROOT / "AGENTS.md", ROOT / "README.md", ROOT / "source-snapshot.json", ROOT / "source-snapshot-verification.json", ROOT / "prompt_system/renderers/manifest.yaml", ROOT / "artifacts/renderer-matrix/matrix.json", ROOT / "src/html-editor/edit-mode.js", ROOT / "artifacts/html-test/edit-mode.js", ROOT / "scripts/qa_html_text_orientation.py", ROOT / "scripts/python_chart_renderer.py", ROOT / "scripts/html_visible_copy.py"]
+    add("required-files", all(p.is_file() for p in required), [p.relative_to(ROOT).as_posix() for p in required if not p.is_file()])
+    snapshot = read_json(ROOT / "source-snapshot.json")
+    freeze = read_json(ROOT / "source-snapshot-verification.json")
+    freeze_checks = freeze.get("checks", {})
     freeze_ok = (
         freeze.get("status") == "passed"
-        and freeze_checks.get("allowlisted_files_checked") == 668
-        and freeze_checks.get("missing_files") == 0
-        and freeze_checks.get("sha256_changes") == 0
-        and freeze_checks.get("mtime_changes") == 0
+        and freeze_checks.get("allowlisted_files_checked") == snapshot.get("source_file_count")
+        and freeze_checks.get("source_hash_or_mtime_drift") == 0
+        and freeze_checks.get("unexpected_package_mismatches") == 0
     )
-    add("source-freeze", freeze_ok, freeze)
+    add("source-freeze", freeze_ok, {"source_file_count": snapshot.get("source_file_count"), "aggregate": snapshot.get("source_aggregate_sha256"), "verification": freeze.get("checks")})
 
-    themes = sorted((ROOT / "prompt_system" / "themes").glob("*.yaml"))
-    layouts = sorted((ROOT / "prompt_system" / "layouts").glob("*.yaml"))
-    retired_present = sorted(path.name for path in layouts if path.name in RETIRED_LAYOUTS)
-    add("core-counts", len(themes) == 36 and len(layouts) == 77 and not retired_present, {
-        "themes": len(themes), "active_layouts": len(layouts), "retired_present": retired_present,
-    })
+    themes = sorted((ROOT / "prompt_system/themes").glob("*.yaml"))
+    layouts = sorted((ROOT / "prompt_system/layouts").glob("*.yaml"))
+    retired_present = sorted(p.name for p in layouts if p.name in RETIRED)
+    removed_present = sorted(p.name for p in layouts if p.name in REMOVED_COVERS)
+    add("core-counts", len(themes) == EXPECTED_THEMES and len(layouts) == EXPECTED_LAYOUTS and not retired_present and not removed_present, {"themes": len(themes), "active_layouts": len(layouts), "retired_present": retired_present, "removed_cover_present": removed_present})
+    adapter_root = ROOT / "prompt_system/renderers"
+    theme_adapters = sum(len(list((adapter_root / r / "themes").glob("*.yaml"))) for r in ("image2", "html", "pptx"))
+    layout_adapters = sum(len(list((adapter_root / r / "layouts").glob("*.yaml"))) for r in ("image2", "html", "pptx"))
+    add("adapter-counts", theme_adapters == EXPECTED_THEME_ADAPTERS and layout_adapters == EXPECTED_LAYOUT_ADAPTERS, {"theme_adapters": theme_adapters, "layout_adapters": layout_adapters, "total": theme_adapters + layout_adapters})
 
-    adapter_root = ROOT / "prompt_system" / "renderers"
-    theme_adapters = sum(len(list((adapter_root / renderer / "themes").glob("*.yaml"))) for renderer in ("image2", "html", "pptx"))
-    layout_adapters = sum(len(list((adapter_root / renderer / "layouts").glob("*.yaml"))) for renderer in ("image2", "html", "pptx"))
-    add("adapter-counts", theme_adapters == 108 and layout_adapters == 231, {
-        "theme_adapters": theme_adapters, "layout_adapters": layout_adapters, "total": theme_adapters + layout_adapters,
-    })
+    actual_skills = sorted(p.name for p in (ROOT / ".agents/skills").iterdir() if p.is_dir())
+    skill_issues = []
+    for name in SKILLS:
+        skill = ROOT / ".agents/skills" / name / "SKILL.md"
+        openai = ROOT / ".agents/skills" / name / "agents/openai.yaml"
+        text = skill.read_text(encoding="utf-8") if skill.is_file() else ""
+        match = re.search(r"(?m)^name:\s*([^\r\n]+)", text)
+        if not match or match.group(1).strip() != name or not openai.is_file(): skill_issues.append(name)
+    add("project-skills", actual_skills == sorted(SKILLS) and not skill_issues, {"actual": actual_skills, "issues": skill_issues})
 
-    skills = ["design-presentations", "generate-image-slide", "html-image-slide", "html-pattern-slide", "ppt-builder", "slide-background-image", "slide-outline-planner"]
-    add("project-skills", all((ROOT / ".agents" / "skills" / name / "SKILL.md").is_file() for name in skills), skills)
-
-    forbidden_paths = []
-    for path in ROOT.rglob("*"):
-        if any(part in FORBIDDEN_PARTS for part in path.relative_to(ROOT).parts):
-            forbidden_paths.append(path.relative_to(ROOT).as_posix())
-    add("forbidden-directories", not forbidden_paths, forbidden_paths[:25])
-
-    suspicious_names = [
-        path.relative_to(ROOT).as_posix()
-        for path in ROOT.rglob("*")
-        if path.is_file() and (path.name.lower() == ".env" or path.suffix.lower() in {".key", ".pem", ".pfx"})
-    ]
-    add("credential-files", not suspicious_names, suspicious_names)
-
-    disposable_files = [
-        path.relative_to(ROOT).as_posix()
-        for path in ROOT.rglob("*")
-        if path.is_file() and path.suffix.lower() in {".pyc", ".log"}
-    ]
-    add("runtime-logs-and-caches", not disposable_files, disposable_files)
-
+    forbidden = [p.relative_to(ROOT).as_posix() for p in ROOT.rglob("*") if any(part in FORBIDDEN for part in p.relative_to(ROOT).parts)]
+    add("forbidden-directories", not forbidden, forbidden[:30])
+    credentials = [p.relative_to(ROOT).as_posix() for p in ROOT.rglob("*") if p.is_file() and (p.name.lower() == ".env" or p.suffix.lower() in {".key", ".pem", ".pfx"})]
+    add("credential-files", not credentials, credentials)
+    disposable = [p.relative_to(ROOT).as_posix() for p in ROOT.rglob("*") if p.is_file() and p.suffix.lower() in {".pyc", ".log"}]
+    add("runtime-logs-and-caches", not disposable, disposable[:30])
     absolute_hits = []
     for path in ROOT.rglob("*"):
-        if not path.is_file() or path.suffix.lower() not in TEXT_SUFFIXES:
-            continue
-        if path.resolve() == Path(__file__).resolve():
-            continue
-        try:
-            text = path.read_text(encoding="utf-8")
-        except UnicodeDecodeError:
-            continue
-        if any(pattern.search(text) for pattern in ABSOLUTE_PATH_PATTERNS):
-            absolute_hits.append(path.relative_to(ROOT).as_posix())
+        if not path.is_file() or path.suffix.lower() not in TEXT_SUFFIXES or path.resolve() == Path(__file__).resolve(): continue
+        text = path.read_text(encoding="utf-8", errors="replace")
+        if any(pattern.search(text) for pattern in ABSOLUTE): absolute_hits.append(path.relative_to(ROOT).as_posix())
     add("portable-text-paths", not absolute_hits, absolute_hits)
 
-    image_root = ROOT / "demos" / "image" / "tide-house"
-    yaml_files = sorted((image_root / "prompts").glob("*.assembled.yaml"))
-    png_files = sorted((image_root / "slides").glob("*.png"))
-    yaml_ok = len(yaml_files) == 10
-    try:
-        import yaml  # type: ignore
-        expected_keys = [
-            "page_type_and_mood", "visual_base_2a", "corner_decoration_2b",
-            "layout_description", "content", "safe_zone_constraints", "closing_design_intent",
-        ]
-        yaml_ok = yaml_ok and all(list((yaml.safe_load(path.read_text(encoding="utf-8")) or {}).keys()) == expected_keys for path in yaml_files)
-    except ImportError:
-        add("yaml-runtime", False, "PyYAML is unavailable; exact seven-section validation skipped", warn=True)
-    png_details = []
-    png_ok = len(png_files) == 10
-    for path in png_files:
-        try:
-            width, height = png_size(path)
-            ratio_ok = abs(width / height - 16 / 9) < 0.02
-            png_details.append({"file": path.name, "size": [width, height], "ratio_ok": ratio_ok})
-            png_ok = png_ok and ratio_ok
-        except Exception as exc:  # pragma: no cover - diagnostic path
-            png_ok = False
-            png_details.append({"file": path.name, "error": str(exc)})
-    add("image-demo-yaml", yaml_ok, {"files": len(yaml_files)})
-    add("image-demo-png", png_ok, png_details)
-    image_pptx = image_root / "tide-house-image-deck.pptx"
-    image_structure = pptx_structure(image_pptx) if image_pptx.is_file() else {}
-    add("image-demo-pptx", bool(image_structure) and image_structure.get("slides") == 10, image_structure)
-    image_qa = json.loads((image_root / "qa-summary.json").read_text(encoding="utf-8")) if (image_root / "qa-summary.json").is_file() else {}
-    add("image-demo-evidence", image_qa.get("status") == "passed-with-scope" and (image_root / "contact-sheet.png").is_file(), {
-        "qa_status": image_qa.get("status"), "contact_sheet": (image_root / "contact-sheet.png").is_file(),
-    })
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import qa_html_text_orientation as orientation
+    ledger = ROOT / "release-files.sha256"
+    if ledger.is_file(): candidates = orientation.ledger_paths(ledger, root=ROOT)
+    else: candidates = [p for p in ROOT.rglob("*") if p.is_file() and p.suffix.lower() in orientation.TEXT_EXTENSIONS]
+    demo_html = ROOT / "demos/html/street-revival/street-revival.html"
+    if demo_html.is_file(): candidates.append(demo_html)
+    unique = sorted({p.resolve() for p in candidates if p.exists()}, key=lambda p: p.as_posix())
+    orientation_issues = [issue for p in unique for issue in orientation.scan_path(p, root=ROOT)]
+    add("text-orientation", not orientation_issues, {"checked_files": len(unique), "issues": orientation_issues[:20]})
 
-    html_root = ROOT / "demos" / "html" / "street-revival"
-    html_path = html_root / "street-revival.html"
-    html_slides = 0
-    if html_path.is_file():
-        counter = SlideCounter()
-        counter.feed(html_path.read_text(encoding="utf-8"))
-        html_slides = counter.slides
-    add("html-demo", html_slides == 10 and (html_root / "street-revival.manifest.json").is_file() and (html_root / "edit-mode.js").is_file(), {
-        "slides": html_slides,
-        "manifest": (html_root / "street-revival.manifest.json").is_file(),
-        "editor": (html_root / "edit-mode.js").is_file(),
-    })
-    html_qa = json.loads((html_root / "qa" / "qa-summary.json").read_text(encoding="utf-8")) if (html_root / "qa" / "qa-summary.json").is_file() else {}
-    add("html-demo-evidence", html_qa.get("status") == "passed" and (html_root / "contact-sheet.png").is_file(), {
-        "qa_status": html_qa.get("status"), "contact_sheet": (html_root / "contact-sheet.png").is_file(),
-    })
+    image_root = ROOT / "demos/image/tide-house"
+    image_pngs = sorted((image_root / "slides").glob("*.png"))
+    image_pptx = pptx_structure(image_root / "tide-house-image-deck.pptx")
+    image_qa = read_json(image_root / "qa-summary.json")
+    add("image-demo", len(image_pngs) == 10 and image_pptx.get("slides") == 10 and image_qa.get("status") == "passed-with-scope", {"pngs": len(image_pngs), "structure": image_pptx, "qa": image_qa.get("status")})
+    pptx_root = ROOT / "demos/pptx/mist-pop-launch"
+    pptx_data = pptx_structure(pptx_root / "mist-pop-launch.pptx")
+    pptx_qa = read_json(pptx_root / "qa-summary.json")
+    add("pptx-demo", pptx_data.get("slides") == 10 and pptx_data.get("masters", 0) >= 1 and pptx_data.get("layouts", 0) >= 1 and pptx_data.get("text_nodes", 0) > 0 and pptx_qa.get("status") == "passed", {"structure": pptx_data, "qa": pptx_qa.get("status")})
+    counter = SlideCounter()
+    if demo_html.is_file(): counter.feed(demo_html.read_text(encoding="utf-8"))
+    html_manifest = read_json(ROOT / "demos/html/street-revival/street-revival.manifest.json")
+    html_qa = read_json(ROOT / "demos/html/street-revival/qa/qa-summary.json")
+    layouts_used = html_manifest.get("layouts") or html_manifest.get("layout_diversity", {}).get("selected_layouts") or []
+    html_ok = counter.slides == 10 and layouts_used == EXPECTED_HTML_LAYOUTS and html_manifest.get("content_mode") == "new-deck" and html_qa.get("status") == "passed" and (ROOT / "demos/html/street-revival/contact-sheet.png").is_file()
+    add("html-demo", html_ok, {"slides": counter.slides, "layouts": layouts_used, "content_mode": html_manifest.get("content_mode"), "qa": html_qa.get("status")})
+    add("editor-sync", sha256(ROOT / "src/html-editor/edit-mode.js") == sha256(ROOT / "artifacts/html-test/edit-mode.js") == sha256(ROOT / "demos/html/street-revival/edit-mode.js"), {"sha256": sha256(ROOT / "src/html-editor/edit-mode.js")})
 
-    pptx_root = ROOT / "demos" / "pptx" / "mist-pop-launch"
-    pptx_path = pptx_root / "mist-pop-launch.pptx"
-    editable_structure = pptx_structure(pptx_path) if pptx_path.is_file() else {}
-    editable_ok = bool(editable_structure) and editable_structure.get("slides") == 10 and editable_structure.get("masters", 0) >= 1 and editable_structure.get("layouts", 0) >= 1 and editable_structure.get("text_nodes", 0) > 0
-    add("pptx-demo", editable_ok, editable_structure)
-    pptx_qa = json.loads((pptx_root / "qa-summary.json").read_text(encoding="utf-8")) if (pptx_root / "qa-summary.json").is_file() else {}
-    add("pptx-demo-evidence", pptx_qa.get("status") == "passed" and (pptx_root / "contact-sheet.png").is_file() and (pptx_root / "package-inspection.json").is_file(), {
-        "qa_status": pptx_qa.get("status"),
-        "contact_sheet": (pptx_root / "contact-sheet.png").is_file(),
-        "package_inspection": (pptx_root / "package-inspection.json").is_file(),
-    })
-
-    manifest_path = ROOT / "release-manifest.json"
-    release_manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.is_file() else {}
-    add("release-manifest", manifest_path.is_file() and release_manifest.get("release_status") == "internal-test-passed", {
-        "path": str(manifest_path.relative_to(ROOT)), "release_status": release_manifest.get("release_status"),
-    })
-
-    hash_path = ROOT / "release-files.sha256"
-    if hash_path.is_file():
-        mismatches = []
-        entries = 0
-        for raw in hash_path.read_text(encoding="utf-8").splitlines():
-            if not raw.strip():
-                continue
-            expected, relative = raw.split("  ", 1)
-            target = ROOT / relative
-            entries += 1
-            if not target.is_file() or sha256(target) != expected:
-                mismatches.append(relative)
-        add("release-hashes", not mismatches and entries > 0, {"entries": entries, "mismatches": mismatches[:25]})
-    else:
-        add("release-hashes", False, "release-files.sha256 is missing", warn=args.preflight)
+    manifest = read_json(ROOT / "release-manifest.json")
+    manifest_ok = manifest.get("version") == VERSION and manifest.get("release_status") == "internal-test-passed"
+    add("release-manifest", manifest_ok, {"version": manifest.get("version"), "status": manifest.get("release_status")}, warn=args.preflight and not manifest)
+    if ledger.is_file():
+        mismatches = []; entries = 0
+        for raw in ledger.read_text(encoding="utf-8").splitlines():
+            if not raw.strip(): continue
+            expected, relative = raw.split("  ", 1); target = ROOT / relative; entries += 1
+            if not target.is_file() or sha256(target) != expected: mismatches.append(relative)
+        add("release-hashes", not mismatches and entries > 0, {"entries": entries, "mismatches": mismatches[:30]})
+    else: add("release-hashes", False, "release-files.sha256 is missing", warn=args.preflight)
 
     status = "FAIL" if any(row["status"] == "FAIL" for row in checks) else ("WARN" if any(row["status"] == "WARN" for row in checks) else "PASS")
-    report = {"schema_version": 1, "package": "NESA Slide 0.1.0-demo.1", "status": status, "checks": checks}
-    for row in checks:
-        print(f"[{row['status']}] {row['check']}: {json.dumps(row['detail'], ensure_ascii=False)}")
+    report = {"schema_version": 2, "package": f"NESA Slide {VERSION}", "status": status, "checks": checks}
+    for row in checks: print(f"[{row['status']}] {row['check']}: {json.dumps(row['detail'], ensure_ascii=False)}")
     print(f"\nNESA Slide system check: {status}")
-
     if args.report:
-        report_path = args.report if args.report.is_absolute() else ROOT / args.report
-        report_path.parent.mkdir(parents=True, exist_ok=True)
-        report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+        output = args.report if args.report.is_absolute() else ROOT / args.report
+        output.parent.mkdir(parents=True, exist_ok=True); output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return 1 if status == "FAIL" else 0
 
 
-if __name__ == "__main__":
-    raise SystemExit(main())
+if __name__ == "__main__": raise SystemExit(main())

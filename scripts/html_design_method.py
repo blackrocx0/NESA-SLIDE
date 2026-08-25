@@ -374,8 +374,9 @@ def _composition_feedback(entry: dict[str, Any]) -> dict[str, Any]:
         "remediation_order": [
             "reflow-within-scaffold",
             "change-composition-recipe",
+            "capacity-compatible-layout-with-requested-resolved-provenance",
             "split-page",
-            "alternate-scaffold-after-visual-failure",
+            "explicit-user-authorized-integration-with-mutation-ledger",
         ],
     }
 

@@ -31,6 +31,8 @@ slots:
 
 alignment_rules:
   - "hero-image fills left 43% of slide vertically"
+  - "hero-image is a real supplied/generated media asset; image-planned alone does not justify an empty reserved slot"
+  - "if no media provenance exists for this page, route to a no-image TOC Layout instead of leaving hero-image blank"
   - "4 chapter cards in 2×2 grid on right half"
   - "chapter-1.top aligns with chapter-2.top"
   - "chapter-3.top aligns with chapter-4.top"

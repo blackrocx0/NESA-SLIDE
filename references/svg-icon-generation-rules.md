@@ -1,9 +1,9 @@
-# SVG Icon Generation Rules（草案）
+# SVG Icon Generation Rules
 
-> Status: draft / proposal only
+> Status: active / canonical
 >
-> 本文件定義專案自有 SVG 語意圖示的解析、生成與跨 Renderer 交付規則。
-> 它目前不會自動改寫既有 Layout、Preset、HTML renderer 或 PPTX adapter；正式啟用前仍需完成一個 pilot 與 QA。
+> 本文件定義專案自有 SVG 語意圖示的按需生成、解析、驗收與跨 Renderer 交付規則。
+> 預設做法是「每份 deck 先收集全部 icon intent，再一次生成同一家族」，不是維護持續膨脹的全域 icon library。
 
 ## 1. 目的與適用範圍
 
@@ -28,13 +28,22 @@ SVG icon 在本專案中是「承載內容語意的向量圖層」，不是裝�
 
 這個邊界是「內容語意 icon」與「裝飾性 icon／圖示包」的區分依據；跨 Renderer 的投影細節見第 6 節。
 
+### 1.2 預設產製模式：每份 deck 一次生成整套
+
+- Icon 生成發生在 deck build-time，不發生在 HTML 開啟、投影、編輯、儲存或匯出時。
+- 先掃描當次 content manifest 的全部 `icon_intents`，去重後一次生成完整家族；不得一個 icon 呼叫一次，或讓同一語意在同一 deck 反覆重畫。
+- 同一批次共用 family grammar、canonical grid、stroke token、corner language、optical size、negative-space 與 detail-density 目標。
+- 輸出預設放在該 deck 的 `assets/icons/`，並以 deck-local manifest 保存 recipe、來源、hash、量測與 QA；不自動寫入全域 registry。
+- 下一份 deck 可以依新的 Theme／Art Direction 重新生成；只有使用者明確要求「升級為共用素材」時，才進行 shared asset promotion。
+- 正式 renderer 只消費已生成且有 manifest 的 SVG。若 build-time 尚無合格 icon，Layout 必須降級到無 icon 的文字配方，不能在 runtime 偷畫佔位圖形。
+
 ## 2. 外部 SVG 與專案自有 SVG 必須分流
 
 每個 icon 必須先標記 `source.kind`：
 
 | source.kind | 用途 | 是否可以生成 recipe |
 | --- | --- | --- |
-| `project-authored` | 專案自己設計的 icon | 可以；recipe 是正式來源 |
+| `project-authored` | 當次 deck 或專案自己設計的 icon | 可以；deck-local recipe 是當次正式來源，升級共用素材需另行核准 |
 | `external-licensed` | 單獨引用、經授權的外部 icon | 可以解析與正規化，但不可把整套外部圖示重製成競爭 library |
 | `generated-from-recipe` | 由專案 recipe 確定性生成 | 可以；recipe 與 generator version 是正式來源 |
 
@@ -89,6 +98,18 @@ SVG icon 在本專案中是「承載內容語意的向量圖層」，不是裝�
 因此 `role`、`icon_id`、`semantic_tags` 與 `optical_center` 需要由人指定或由 AI 產生候選後人工確認；不能把模型猜測當成正式 provenance。
 
 ## 4. 專案自有 icon 的生成 grammar
+
+### 4.0 Family-first contract
+
+同一份 deck 的 icon 必須先定義 family，再畫個別圖示。Family manifest 至少包含：
+
+- `family_id`、`deck_id`、`generation_mode: per-deck-batch` 與規範版本。
+- 全部 `icon_intents`、去重後的 icon id、語意名稱與內容來源。
+- 共用 `viewBox`、safe area、stroke、linecap／linejoin、corner language 與 primitive budget。
+- `target_optical_size`、每個 icon 的 `optical_center`、`ink_bounds` 與 density 分級。
+- 16／24／48／96px contact sheet，以及整套 family 的 perceptual QA 結果。
+
+同一套 icon 要一起生成、一起並排看、一起修正。只有單一 icon 通過安全區，不能代表 family 已完成。
 
 ### 4.1 Canonical geometry
 
@@ -222,38 +243,39 @@ HTML 投影時，icon 外層必須位於真正可選取的 semantic module 內�
 
 `svg` 是 visual layer；不可把圖示塞進 CSS pseudo-element，否則 editor 與 hit-test 無法獨立選取。
 
-## 5. Icon manifest
+## 5. Deck-local icon family manifest
 
-正式 registry 的最小資料形狀如下：
+預設不建立全域 registry。每份 deck 保存一份 family manifest；renderer 以 `registry` 只做「本 deck 的 tag／intent → icon id」解析：
 
 ```yaml
-id: content.security
-version: 1
+schema_version: deck-icon-family/v1
+family_id: alzheimer-care-line-v1
+deck_id: alzheimer-care-variants
+generation_mode: per-deck-batch
 source:
   kind: project-authored
   license: project-owned
 canvas:
   viewBox: [0, 0, 24, 24]
   safeArea: [2, 2, 22, 22]
-  opticalCenter: [12, 12]
-recipe:
-  family: shield
-  symmetry: vertical
-  complexity: simple
 style:
   mode: line
   tokenSet: svg-icon-default-v1
-layers: []
-renderers:
-  html: inline-svg
-  pptx: native-path-or-shape
-  image2: semantic-prompt-only
-qa:
-  sourceSha256: null
-  normalizedSha256: null
+registry:
+  MEMORY: memory
+  SAFETY: safety
+icons:
+  - id: memory
+    file: assets/icons/memory.svg
+    semantic_tags: [MEMORY]
+    optical_center: [12, 12]
+    optical_size: [18, 18]
+    recipe: {family: memory-loop, symmetry: vertical, complexity: simple}
+    renderers: {html: inline-svg, pptx: native-path-or-shape, image2: semantic-prompt-only}
+    qa: {source_sha256: null, normalized_sha256: null}
 ```
 
-外部 icon 的 `recipe` 預設為 `null`，並以 `source.icon_id` 與受控的 normalized SVG 作為來源；只有專案自有 icon 才能把 recipe 當成可再生成的 canonical source。
+這個 `registry` 只屬於當次 deck，不是長期 icon library。外部 icon 的 `recipe` 預設為 `null`，並以 `source.icon_id` 與受控的 normalized SVG 作為來源；專案自有 icon 則保存可再生成的 recipe。
 
 ## 6. 三個 Renderer 的投影規則
 
@@ -278,7 +300,7 @@ qa:
 
 ## 7. 驗收 Gate
 
-icon 只有在下列條件全部通過後，才能進正式 registry：
+一套 deck-local icon family 只有在下列條件全部通過後，才能被正式 renderer 消費：
 
 1. XML／AST parse 成功，沒有 script、外部資源或未鎖定字型。
 2. viewBox、safe area、visible bounds、optical center 可計算。
@@ -288,9 +310,22 @@ icon 只有在下列條件全部通過後，才能進正式 registry：
 6. PPTX native conversion、XML 檢查與 PowerPoint 原生渲染通過；否則標為 `partial`。
 7. manifest 有來源、授權、版本、hash 與 generator version；輸出可重現。
 8. 每個 icon 都能回答「它承載哪一個內容語意」，不能只有裝飾理由。
+9. 全 family 並排時，optical size、center、stroke density、detail count 與 negative space 沒有明顯離群值。
+10. Contact sheet 與 artifact manifest 指向同一批 SVG hash；重新開啟或匯出不會重新生成。
 
-## 8. 建議的第一個 pilot
+## 8. 正式呼叫與保存流程
 
-先以 standalone semantic-content pilot 建立 6 個專案自有、非品牌的內容 icon：`structure`、`theme`、`layout`、`asset`、`export`、`qa`。Pilot 預覽不會直接替換目前 `icon-grid-6` 的抽象 CSS `module-icon-shape`，也不會把 icon recipe 當成新的 Layout。
+```text
+Content Plan / page composition
+→ 收集並去重 icon_intents
+→ 讀取本規範與當次 Art Direction
+→ 一次生成完整 SVG family
+→ scripts/validate_svg_icon_family.cjs
+→ 16/24/48/96px contact sheet + perceptual QA
+→ deck-local manifest 鎖定 hash
+→ HTML / PPTX adapter 消費已鎖定輸出
+```
 
-pilot 的完成條件是：同一份 manifest 能在獨立 preview 與指定 semantic content slot 顯示 inline SVG、在 editor 中選取 visual layer、在 PPTX 轉成 native path／shape，並保留舊版 artifact 作比較；未完成 PPTX 或瀏覽器互動 QA 前，只能稱為 `audition`，不能宣稱正式交付。
+- 生成規範本身是 canonical source；每次生成的 SVG、contact sheet 與 family manifest 是該 deck 的 artifact。
+- HTML-only 任務可以在 HTML inline／editor／export Gate 通過後交付，但 PPTX native conversion 必須標為未驗證或 partial。
+- 不得因某次生成結果好看，就自動把 SVG 回流為全域資產；shared promotion 是另一個需要使用者明確授權的工作。

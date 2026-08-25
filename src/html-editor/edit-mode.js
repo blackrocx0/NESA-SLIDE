@@ -176,7 +176,7 @@
 
     groupChange: '\u7fa4\u7d44',
 
-    groupHint: '\u5df2\u9078\u53d6\u6574\u7d44\uff5c\u6309\u300c\u7de8\u8f2f\u7fa4\u7d44\u5167\u7269\u4ef6\u300d\u5f8c\uff0c\u53ef\u9ede\u9078\u7fa4\u7d44\u5167\u7269\u4ef6',
+    groupHint: '\u5df2\u9078\u53d6\u6574\u7d44\uff5c\u6309\u4f4f Ctrl\uff0fCmd \u53ef\u76f4\u63a5\u9078\u53d6\u7fa4\u7d44\u5167\u7269\u4ef6\u6216\u7de8\u8f2f\u6587\u5b57',
 
     groupAction: '\u7fa4\u7d44',
 
@@ -1925,13 +1925,24 @@
 
 
 
-  function pointerTargetForRoot(root, layer, additiveSelection) {
+  function pointerTargetForRoot(root, layer, additiveSelection, directGroupSelection) {
 
     if (!root || getComputedStyle(root).display === 'none') return null;
 
     if (root.matches && root.matches('[data-content-area]')) return null;
 
     if (root.dataset && root.dataset.editLayoutOnly === 'true') return null;
+
+    // Ctrl/Cmd is an explicit, one-click group bypass. It never mutates the
+    // formal group path or persistent drill-in scope; releasing the modifier
+    // restores ordinary whole-group hit testing.
+    if (directGroupSelection) {
+
+      if (layer && root.contains(layer)) return layer;
+
+      return root;
+
+    }
 
     const editScope = currentGroupEditScope();
 
@@ -1991,7 +2002,7 @@
 
 
 
-  function pointerTargetsAt(clientX, clientY, additiveSelection) {
+  function pointerTargetsAt(clientX, clientY, additiveSelection, directGroupSelection) {
 
     if (!Number.isFinite(clientX) || !Number.isFinite(clientY) || !document.elementsFromPoint) return [];
 
@@ -2015,13 +2026,19 @@
 
       let layer = node.closest('[data-edit-layer]');
 
-      if ((!layer || !root.contains(layer)) && isCompositeRoot(root) && !isGeneratedGroup(root)) {
+      if ((!layer || !root.contains(layer)) && isCompositeRoot(root)
+        && (directGroupSelection || !isGeneratedGroup(root))) {
 
         layer = directLayerAtPoint(root, clientX, clientY);
 
       }
 
-      const target = pointerTargetForRoot(root, layer && root.contains(layer) ? layer : null, additiveSelection);
+      const target = pointerTargetForRoot(
+        root,
+        layer && root.contains(layer) ? layer : null,
+        additiveSelection,
+        directGroupSelection
+      );
 
       if (!target || seen.has(target) || !pointerTargetContainsPoint(target, clientX, clientY)) return items;
 
@@ -2107,7 +2124,7 @@
 
 
 
-  function resolvePointerTarget(node, clientX, clientY, preferHitTest, additiveSelection) {
+  function resolvePointerTarget(node, clientX, clientY, preferHitTest, additiveSelection, directGroupSelection) {
 
     if (!node || !node.closest) return null;
 
@@ -2121,7 +2138,7 @@
 
     }
 
-    if (!currentGroupEditScope() && !additiveSelection) {
+    if (!currentGroupEditScope() && !additiveSelection && !directGroupSelection) {
 
       const lockedGroup = selectedFormalGroupTargetAtPoint(clientX, clientY);
 
@@ -2131,7 +2148,7 @@
 
     if (preferHitTest) {
 
-      const hitTargets = pointerTargetsAt(clientX, clientY, additiveSelection);
+      const hitTargets = pointerTargetsAt(clientX, clientY, additiveSelection, directGroupSelection);
 
       return hitTargets.length ? hitTargets[0] : null;
 
@@ -2147,7 +2164,15 @@
 
     const layer = root.contains(node) ? node.closest('[data-edit-layer]') : null;
 
-    return pointerTargetForRoot(root, layer && root.contains(layer) ? layer : null, additiveSelection);
+    const directLayer = (!layer || !root.contains(layer)) && directGroupSelection && isCompositeRoot(root)
+      ? directLayerAtPoint(root, clientX, clientY)
+      : null;
+    return pointerTargetForRoot(
+      root,
+      directLayer || (layer && root.contains(layer) ? layer : null),
+      additiveSelection,
+      directGroupSelection
+    );
 
   }
 
@@ -14398,7 +14423,16 @@
 
     if (e.button === 2) return;
 
-    const el = resolvePointerTarget(target, e.clientX, e.clientY, e.isTrusted, e.shiftKey);
+    const directGroupSelection = e.ctrlKey || e.metaKey;
+
+    const el = resolvePointerTarget(
+      target,
+      e.clientX,
+      e.clientY,
+      e.isTrusted,
+      e.shiftKey,
+      directGroupSelection
+    );
 
     commitPendingChanges();
 
@@ -14412,7 +14446,10 @@
 
     pointerInteractionMoved = false;
 
-    pendingTextEditEl = pointerDownWasSelected && el && isTextEditableElement(el) ? el : null;
+    pendingTextEditEl = !e.shiftKey && el && isTextEditableElement(el)
+      && (directGroupSelection || pointerDownWasSelected)
+      ? el
+      : null;
 
     if (textEditingEl && (!el || el !== textEditingEl)) endTextEdit();
 
@@ -14426,7 +14463,13 @@
 
       const editScope = currentGroupEditScope();
 
-      if (!e.shiftKey && editScope && editScope.kind === 'manual'
+      if (directGroupSelection) {
+
+        // The modifier is a temporary bypass, not an ungroup or a persistent
+        // drill-in mode. Ctrl/Cmd+Shift keeps Shift's additive-selection role.
+        selectElement(el, e.shiftKey);
+
+      } else if (!e.shiftKey && editScope && editScope.kind === 'manual'
 
         && path.indexOf(editScope.groupId) >= 0) {
 

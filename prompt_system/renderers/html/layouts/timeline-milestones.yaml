@@ -6,7 +6,7 @@ family: sequence
 support_status: baseline-from-core
 source:
   path: prompt_system/layouts/timeline-milestones.yaml
-  sha256: bf8d51c6008d368048d95b5d0e7b314fd9e7347ff1b205fc649a5776dd2369ba
+  sha256: 39d265e05375dca6d05a74f5060288944ea652b044ae540e0efa7dc41e8b68a8
 core_refs:
   media_requirement: prompt_system/layouts/timeline-milestones.yaml#media_requirement
   slots: prompt_system/layouts/timeline-milestones.yaml#slots
@@ -26,14 +26,6 @@ projection:
     geometry_ref: prompt_system/layouts/timeline-milestones.yaml#slots[id=title].region
     geometry_kind: region
     semantic_role: title
-    element: div.el
-    geometry_transform: percent-region-to-1920x1080-px
-    edit_contract: loose-edit-object
-  - slot_id: subtitle
-    source_ref: prompt_system/layouts/timeline-milestones.yaml#slots[id=subtitle]
-    geometry_ref: prompt_system/layouts/timeline-milestones.yaml#slots[id=subtitle].region
-    geometry_kind: region
-    semantic_role: subtitle
     element: div.el
     geometry_transform: percent-region-to-1920x1080-px
     edit_contract: loose-edit-object

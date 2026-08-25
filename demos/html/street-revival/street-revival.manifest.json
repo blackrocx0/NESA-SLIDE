@@ -6,7 +6,7 @@
     "schema": "semantic-module-v1",
     "static_validation": "pass",
     "editor_source": "artifacts/html-test/edit-mode.js",
-    "editor_sha256": "dfe2663aea4e9335aa14c82416639a1785996bdb1e45fdaa40d367a402183e8d",
+    "editor_sha256": "6fa3f96385878d95c0ee67fcb0bca725703dc4217cbdbf9621665a83a7421de4",
     "visual_anchor_contract": {
       "schema": "parent-edge-v1",
       "metadata": "data-edit-anchor",
@@ -57,14 +57,58 @@
     }
   },
   "seed": 20260819,
-  "deck_revision": "03e8461336dca8ff95ae",
-  "generated_at": "2026-08-17T18:45:31.290449+00:00",
+  "deck_revision": "bc6bddb3f9fd41b5efba",
+  "generated_at": "2026-08-25T08:48:00.457919+00:00",
   "topic": {
     "id": "street-revival",
     "title": "巷口再生"
   },
   "content_source": "demos/html/street-revival/source/content-manifest.json",
   "content_mode": "new-deck",
+  "visible_copy": {
+    "status": "pass",
+    "language": "zh-Hant",
+    "allowed_latin_terms": [
+      "AI",
+      "API",
+      "CSS",
+      "HTML",
+      "KPI",
+      "PPTX",
+      "QA",
+      "SRT",
+      "SVG",
+      "SWOT",
+      "URL"
+    ],
+    "visible_text_count": 157,
+    "latin_only_visible_text": [
+      "R1",
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R6",
+      "R7",
+      "W1",
+      "W2",
+      "W3",
+      "W4",
+      "W5",
+      "Q1",
+      "Q2",
+      "Q3",
+      "Q4",
+      "R1",
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R6",
+      "R7"
+    ],
+    "issues": []
+  },
   "legacy_layout_content_compatibility": {
     "enabled": false,
     "activation": "disabled",
@@ -73,7 +117,30 @@
   },
   "content_intent": "full-content-plan",
   "layout_selection": "preferred",
-  "layout_selection_contract": "preferred-layout-when-authored",
+  "layout_selection_contract": "preferred-layout-when-authored-no-consecutive-repeat",
+  "layout_diversity": {
+    "policy": {
+      "default_selection": "diverse",
+      "no_consecutive_repeat": true,
+      "reuse_policy": "least-used-candidate",
+      "tie_breaker": "seed",
+      "scope": "content-plan"
+    },
+    "mode": "forced-sequence",
+    "no_consecutive_repeat": true,
+    "selected_layouts": [
+      "cover-center-title-edge-decor",
+      "toc-6-panel-rows",
+      "strategic-priorities",
+      "before-after",
+      "heat-map",
+      "timeline-vertical",
+      "matrix-4quadrant",
+      "multi-line-chart",
+      "quote-focus",
+      "title-center"
+    ]
+  },
   "content_plan": [
     {
       "page_index": 1,
@@ -220,7 +287,7 @@
         "speaker",
         "org"
       ],
-      "content_sha256": "31d64416685139d5ac84859211a083a2d7213022e4f7486974eae8bea95bc970"
+      "content_sha256": "082c697e295dbe990dc9f04ae0b7c3caa9c3870dd9bd7466a0dfbb4cfaa91da2"
     },
     {
       "page_id": "02",
@@ -231,7 +298,7 @@
       "source_fields": [
         "toc"
       ],
-      "content_sha256": "29a8cd5c082ba3a7da85ced55286952ef1dfe9b959f071ce4c0310b38a402580"
+      "content_sha256": "4d9c3274986a47da9d4f7db5ff0b7087f263066d1f6ae93fa03f94382e8b958b"
     },
     {
       "page_id": "03",
@@ -244,7 +311,7 @@
         "recommendations",
         "matrix"
       ],
-      "content_sha256": "023d89ca063ffdd58dfd59381f7191843de20810d16b7fd848ea6ac4840da54f"
+      "content_sha256": "4dd1a7bb8f42515ac0a5ead63077a55434e966690a93ae9f3944c6ccec56724c"
     },
     {
       "page_id": "04",
@@ -269,7 +336,7 @@
         "metrics",
         "chart"
       ],
-      "content_sha256": "499cf41581aa88aad6079f3d1b89d7015da054ed83e6d57839e320646fcecf3c"
+      "content_sha256": "f3724c59cfaec2f09bda67ee46dec70f2c374c92a7acfe9f806d762dccddb622"
     },
     {
       "page_id": "06",
@@ -292,7 +359,7 @@
       "source_fields": [
         "matrix"
       ],
-      "content_sha256": "3b1862791befeec48b930a36cf6aa1b889f68d370780367193ee5180d8fc1018"
+      "content_sha256": "979344d10739fcc53503ef3f408a32fb23314cf5d2bb81ed3405728995153da7"
     },
     {
       "page_id": "08",
@@ -304,7 +371,7 @@
         "metrics",
         "chart"
       ],
-      "content_sha256": "499cf41581aa88aad6079f3d1b89d7015da054ed83e6d57839e320646fcecf3c"
+      "content_sha256": "f3724c59cfaec2f09bda67ee46dec70f2c374c92a7acfe9f806d762dccddb622"
     },
     {
       "page_id": "09",
@@ -316,7 +383,7 @@
         "quote",
         "attribution"
       ],
-      "content_sha256": "279701bda3e1f78d1360042144e3bf3c9e44a4f05d03629428920d39e94819e5"
+      "content_sha256": "78bdd50ac12c95ac8556092c7afd6ca1bc9f8be0df8ffb7643d083909608a930"
     },
     {
       "page_id": "10",
@@ -340,17 +407,20 @@
       "remediation_order": [
         "reflow-within-scaffold",
         "change-composition-recipe",
+        "capacity-compatible-layout-with-requested-resolved-provenance",
         "split-page",
-        "alternate-scaffold-after-visual-failure"
+        "explicit-user-authorized-integration-with-mutation-ledger"
       ],
       "content_page_id": "01",
-      "content_sha256": "31d64416685139d5ac84859211a083a2d7213022e4f7486974eae8bea95bc970",
+      "content_sha256": "082c697e295dbe990dc9f04ae0b7c3caa9c3870dd9bd7466a0dfbb4cfaa91da2",
       "layout_scaffold_id": "cover-center-title-edge-decor",
       "layout_role": "scaffold",
       "composition_source": "page-content-adapter",
+      "input_item_count": null,
       "rendered_item_count": null,
       "content_identity_preserved": true,
-      "content_mutated": false
+      "content_mutated": false,
+      "mutation_ledger": []
     },
     {
       "stage": "post-scaffold-selection",
@@ -361,17 +431,20 @@
       "remediation_order": [
         "reflow-within-scaffold",
         "change-composition-recipe",
+        "capacity-compatible-layout-with-requested-resolved-provenance",
         "split-page",
-        "alternate-scaffold-after-visual-failure"
+        "explicit-user-authorized-integration-with-mutation-ledger"
       ],
       "content_page_id": "02",
-      "content_sha256": "29a8cd5c082ba3a7da85ced55286952ef1dfe9b959f071ce4c0310b38a402580",
+      "content_sha256": "4d9c3274986a47da9d4f7db5ff0b7087f263066d1f6ae93fa03f94382e8b958b",
       "layout_scaffold_id": "toc-6-panel-rows",
       "layout_role": "scaffold",
       "composition_source": "page-content-adapter",
+      "input_item_count": null,
       "rendered_item_count": 6,
       "content_identity_preserved": true,
-      "content_mutated": false
+      "content_mutated": false,
+      "mutation_ledger": []
     },
     {
       "stage": "post-scaffold-selection",
@@ -382,17 +455,20 @@
       "remediation_order": [
         "reflow-within-scaffold",
         "change-composition-recipe",
+        "capacity-compatible-layout-with-requested-resolved-provenance",
         "split-page",
-        "alternate-scaffold-after-visual-failure"
+        "explicit-user-authorized-integration-with-mutation-ledger"
       ],
       "content_page_id": "03",
-      "content_sha256": "023d89ca063ffdd58dfd59381f7191843de20810d16b7fd848ea6ac4840da54f",
+      "content_sha256": "4dd1a7bb8f42515ac0a5ead63077a55434e966690a93ae9f3944c6ccec56724c",
       "layout_scaffold_id": "strategic-priorities",
       "layout_role": "scaffold",
       "composition_source": "page-content-adapter",
+      "input_item_count": null,
       "rendered_item_count": 3,
       "content_identity_preserved": true,
-      "content_mutated": false
+      "content_mutated": false,
+      "mutation_ledger": []
     },
     {
       "stage": "post-scaffold-selection",
@@ -403,17 +479,20 @@
       "remediation_order": [
         "reflow-within-scaffold",
         "change-composition-recipe",
+        "capacity-compatible-layout-with-requested-resolved-provenance",
         "split-page",
-        "alternate-scaffold-after-visual-failure"
+        "explicit-user-authorized-integration-with-mutation-ledger"
       ],
       "content_page_id": "04",
       "content_sha256": "c80d8ef69d262e9ed26a037c4aa518d37c48ad75bcba8818d59b06b3cfb955ba",
       "layout_scaffold_id": "before-after",
       "layout_role": "scaffold",
       "composition_source": "page-content-adapter",
+      "input_item_count": null,
       "rendered_item_count": null,
       "content_identity_preserved": true,
-      "content_mutated": false
+      "content_mutated": false,
+      "mutation_ledger": []
     },
     {
       "stage": "post-scaffold-selection",
@@ -424,17 +503,20 @@
       "remediation_order": [
         "reflow-within-scaffold",
         "change-composition-recipe",
+        "capacity-compatible-layout-with-requested-resolved-provenance",
         "split-page",
-        "alternate-scaffold-after-visual-failure"
+        "explicit-user-authorized-integration-with-mutation-ledger"
       ],
       "content_page_id": "05",
-      "content_sha256": "499cf41581aa88aad6079f3d1b89d7015da054ed83e6d57839e320646fcecf3c",
+      "content_sha256": "f3724c59cfaec2f09bda67ee46dec70f2c374c92a7acfe9f806d762dccddb622",
       "layout_scaffold_id": "heat-map",
       "layout_role": "scaffold",
       "composition_source": "page-content-adapter",
+      "input_item_count": null,
       "rendered_item_count": null,
       "content_identity_preserved": true,
-      "content_mutated": false
+      "content_mutated": false,
+      "mutation_ledger": []
     },
     {
       "stage": "post-scaffold-selection",
@@ -445,17 +527,20 @@
       "remediation_order": [
         "reflow-within-scaffold",
         "change-composition-recipe",
+        "capacity-compatible-layout-with-requested-resolved-provenance",
         "split-page",
-        "alternate-scaffold-after-visual-failure"
+        "explicit-user-authorized-integration-with-mutation-ledger"
       ],
       "content_page_id": "06",
       "content_sha256": "f961ecef79f2ae09c1635e8b798dcc3e8c15c85baf6c80ff1c10e2966daeaecc",
       "layout_scaffold_id": "timeline-vertical",
       "layout_role": "scaffold",
       "composition_source": "page-content-adapter",
+      "input_item_count": null,
       "rendered_item_count": 5,
       "content_identity_preserved": true,
-      "content_mutated": false
+      "content_mutated": false,
+      "mutation_ledger": []
     },
     {
       "stage": "post-scaffold-selection",
@@ -466,17 +551,20 @@
       "remediation_order": [
         "reflow-within-scaffold",
         "change-composition-recipe",
+        "capacity-compatible-layout-with-requested-resolved-provenance",
         "split-page",
-        "alternate-scaffold-after-visual-failure"
+        "explicit-user-authorized-integration-with-mutation-ledger"
       ],
       "content_page_id": "07",
-      "content_sha256": "3b1862791befeec48b930a36cf6aa1b889f68d370780367193ee5180d8fc1018",
+      "content_sha256": "979344d10739fcc53503ef3f408a32fb23314cf5d2bb81ed3405728995153da7",
       "layout_scaffold_id": "matrix-4quadrant",
       "layout_role": "scaffold",
       "composition_source": "page-content-adapter",
-      "rendered_item_count": null,
+      "input_item_count": 4,
+      "rendered_item_count": 4,
       "content_identity_preserved": true,
-      "content_mutated": false
+      "content_mutated": false,
+      "mutation_ledger": []
     },
     {
       "stage": "post-scaffold-selection",
@@ -487,17 +575,20 @@
       "remediation_order": [
         "reflow-within-scaffold",
         "change-composition-recipe",
+        "capacity-compatible-layout-with-requested-resolved-provenance",
         "split-page",
-        "alternate-scaffold-after-visual-failure"
+        "explicit-user-authorized-integration-with-mutation-ledger"
       ],
       "content_page_id": "08",
-      "content_sha256": "499cf41581aa88aad6079f3d1b89d7015da054ed83e6d57839e320646fcecf3c",
+      "content_sha256": "f3724c59cfaec2f09bda67ee46dec70f2c374c92a7acfe9f806d762dccddb622",
       "layout_scaffold_id": "multi-line-chart",
       "layout_role": "scaffold",
       "composition_source": "page-content-adapter",
+      "input_item_count": null,
       "rendered_item_count": null,
       "content_identity_preserved": true,
-      "content_mutated": false
+      "content_mutated": false,
+      "mutation_ledger": []
     },
     {
       "stage": "post-scaffold-selection",
@@ -508,17 +599,20 @@
       "remediation_order": [
         "reflow-within-scaffold",
         "change-composition-recipe",
+        "capacity-compatible-layout-with-requested-resolved-provenance",
         "split-page",
-        "alternate-scaffold-after-visual-failure"
+        "explicit-user-authorized-integration-with-mutation-ledger"
       ],
       "content_page_id": "09",
-      "content_sha256": "279701bda3e1f78d1360042144e3bf3c9e44a4f05d03629428920d39e94819e5",
+      "content_sha256": "78bdd50ac12c95ac8556092c7afd6ca1bc9f8be0df8ffb7643d083909608a930",
       "layout_scaffold_id": "quote-focus",
       "layout_role": "scaffold",
       "composition_source": "page-content-adapter",
+      "input_item_count": null,
       "rendered_item_count": null,
       "content_identity_preserved": true,
-      "content_mutated": false
+      "content_mutated": false,
+      "mutation_ledger": []
     },
     {
       "stage": "post-scaffold-selection",
@@ -529,17 +623,20 @@
       "remediation_order": [
         "reflow-within-scaffold",
         "change-composition-recipe",
+        "capacity-compatible-layout-with-requested-resolved-provenance",
         "split-page",
-        "alternate-scaffold-after-visual-failure"
+        "explicit-user-authorized-integration-with-mutation-ledger"
       ],
       "content_page_id": "10",
       "content_sha256": "5aae84ece4cbf8ee705e53a63e585c2a8e2453d6698e391221b8a68c3af30636",
       "layout_scaffold_id": "title-center",
       "layout_role": "scaffold",
       "composition_source": "page-content-adapter",
+      "input_item_count": null,
       "rendered_item_count": null,
       "content_identity_preserved": true,
-      "content_mutated": false
+      "content_mutated": false,
+      "mutation_ledger": []
     }
   ],
   "css_ownership": {
@@ -659,7 +756,7 @@
         "pattern",
         "border",
         "typography",
-        "svg-data-chart",
+        "python-generated-svg-data-chart",
         "licensed-archival-crop"
       ],
       "text_glow": "forbidden",
@@ -715,7 +812,7 @@
     "eligible_media_requirements": [
       "no-image"
     ],
-    "eligible_layout_count": 61,
+    "eligible_layout_count": 58,
     "mode": "mixed",
     "counts": {
       "no-image": 10,
@@ -753,12 +850,12 @@
   "architecture": [
     "cover",
     "toc",
-    "strategy",
+    "content",
     "comparison",
-    "dataviz",
+    "data-viz",
     "sequence",
     "comparison",
-    "dataviz",
+    "data-viz",
     "statement",
     "statement"
   ],
@@ -798,8 +895,9 @@
         "remediation_order": [
           "reflow-within-scaffold",
           "change-composition-recipe",
+          "capacity-compatible-layout-with-requested-resolved-provenance",
           "split-page",
-          "alternate-scaffold-after-visual-failure"
+          "explicit-user-authorized-integration-with-mutation-ledger"
         ]
       },
       "composition_variant": "centered-signal-hero",
@@ -839,8 +937,9 @@
         "remediation_order": [
           "reflow-within-scaffold",
           "change-composition-recipe",
+          "capacity-compatible-layout-with-requested-resolved-provenance",
           "split-page",
-          "alternate-scaffold-after-visual-failure"
+          "explicit-user-authorized-integration-with-mutation-ledger"
         ]
       },
       "composition_variant": "toc-6-panel-rows-native",
@@ -882,8 +981,9 @@
         "remediation_order": [
           "reflow-within-scaffold",
           "change-composition-recipe",
+          "capacity-compatible-layout-with-requested-resolved-provenance",
           "split-page",
-          "alternate-scaffold-after-visual-failure"
+          "explicit-user-authorized-integration-with-mutation-ledger"
         ]
       },
       "composition_variant": "strategic-priorities-native",
@@ -925,8 +1025,9 @@
         "remediation_order": [
           "reflow-within-scaffold",
           "change-composition-recipe",
+          "capacity-compatible-layout-with-requested-resolved-provenance",
           "split-page",
-          "alternate-scaffold-after-visual-failure"
+          "explicit-user-authorized-integration-with-mutation-ledger"
         ]
       },
       "composition_variant": "paired-operating-states",
@@ -967,8 +1068,9 @@
         "remediation_order": [
           "reflow-within-scaffold",
           "change-composition-recipe",
+          "capacity-compatible-layout-with-requested-resolved-provenance",
           "split-page",
-          "alternate-scaffold-after-visual-failure"
+          "explicit-user-authorized-integration-with-mutation-ledger"
         ]
       },
       "composition_variant": "heat-map-native",
@@ -1009,8 +1111,9 @@
         "remediation_order": [
           "reflow-within-scaffold",
           "change-composition-recipe",
+          "capacity-compatible-layout-with-requested-resolved-provenance",
           "split-page",
-          "alternate-scaffold-after-visual-failure"
+          "explicit-user-authorized-integration-with-mutation-ledger"
         ]
       },
       "composition_variant": "timeline-vertical-native",
@@ -1050,8 +1153,9 @@
         "remediation_order": [
           "reflow-within-scaffold",
           "change-composition-recipe",
+          "capacity-compatible-layout-with-requested-resolved-provenance",
           "split-page",
-          "alternate-scaffold-after-visual-failure"
+          "explicit-user-authorized-integration-with-mutation-ledger"
         ]
       },
       "composition_variant": "decision-crosshair",
@@ -1092,8 +1196,9 @@
         "remediation_order": [
           "reflow-within-scaffold",
           "change-composition-recipe",
+          "capacity-compatible-layout-with-requested-resolved-provenance",
           "split-page",
-          "alternate-scaffold-after-visual-failure"
+          "explicit-user-authorized-integration-with-mutation-ledger"
         ]
       },
       "composition_variant": "multi-line-chart-native",
@@ -1134,8 +1239,9 @@
         "remediation_order": [
           "reflow-within-scaffold",
           "change-composition-recipe",
+          "capacity-compatible-layout-with-requested-resolved-provenance",
           "split-page",
-          "alternate-scaffold-after-visual-failure"
+          "explicit-user-authorized-integration-with-mutation-ledger"
         ]
       },
       "composition_variant": "quote-focus-native",
@@ -1175,8 +1281,9 @@
         "remediation_order": [
           "reflow-within-scaffold",
           "change-composition-recipe",
+          "capacity-compatible-layout-with-requested-resolved-provenance",
           "split-page",
-          "alternate-scaffold-after-visual-failure"
+          "explicit-user-authorized-integration-with-mutation-ledger"
         ]
       },
       "composition_variant": "centered-decision-pause",
@@ -1262,7 +1369,13 @@
     ]
   },
   "randomized_dimensions": [],
-  "candidate_pool": {},
+  "candidate_pool": {
+    "content": {
+      "source": "demos/html/street-revival/source/content-manifest.json",
+      "mode": "fixed-external-manifest",
+      "selected": "street-revival"
+    }
+  },
   "output": "demos/html/street-revival/street-revival.html",
   "art_direction": {
     "schema_version": 1,
@@ -1465,7 +1578,7 @@
       "notes": "使用 pattern-only；無照片、Logo 或外部素材進入 renderer runtime。",
       "final_decision": "human"
     },
-    "compiled_at": "2026-08-17T18:45:31.122642+00:00",
+    "compiled_at": "2026-08-25T08:47:59.625620+00:00",
     "source": {
       "path": "demos/html/street-revival/source/art-direction.yaml",
       "sha256": "d5c77c6ff78114e87d6f76474e2528609a016455373ce3658c8d879f4a906d50",

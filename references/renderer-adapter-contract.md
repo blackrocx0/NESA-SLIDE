@@ -25,6 +25,10 @@ Theme Core + Layout Core + Content
 - `prompt_system/renderers/`：由 core 自動生成的 renderer adapter，不得手動複製 core
   色碼或座標。
 
+Theme Core 不得保存 `html_spec`、`pptx_spec`、`layout_overrides` 或其他 renderer／Layout
+幾何。Theme 只提供跨 Renderer 的色彩、字體語意、材質與裝飾語彙；精確位置、尺寸、
+字級與行高必須由 Layout、逐頁 Composition 與 renderer-base materialize。
+
 每個正式 Layout 必須直接提供 `media_requirement`、`slots`、`safe_area`、`alignment_rules` 與
 `visual_balance`。這五項是共用 Core 契約，不得由 Renderer adapter 以通用 fallback
 補值；缺少任何一項時，adapter generation 必須直接失敗。

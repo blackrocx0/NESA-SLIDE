@@ -1,6 +1,6 @@
 ---
 name: ppt-builder
-description: Build an editable PPTX from this project's Art Direction, Theme and Layout core, PPTX adapters, content manifest, and optional edited HTML or assembled YAML. Use when the user requests a PowerPoint, PPTX export, masters, custom layouts, placeholders, or native PowerPoint QA.
+description: Build an editable PPTX from this project's Art Direction, Theme and Layout core, PPTX adapters, content manifest, and optional edited HTML or assembled YAML. Generate or validate text-free raster backgrounds by default while keeping foreground content native; use for PowerPoint, PPTX export, masters, custom layouts, placeholders, or native PowerPoint QA.
 ---
 
 # PPT Builder
@@ -17,6 +17,17 @@ description: Build an editable PPTX from this project's Art Direction, Theme and
 6. `prompt_system/renderers/pptx/layouts/<layout-id>.yaml`
 7. 若有 HTML 輸入，再讀 `references/html-generation-rules.md`
 8. Presentations skill 的 `artifact_tool/API_QUICK_START.md`、`artifact_tool/api/API_DOCS.md`、`artifact_tool/api/references/master.spec.md`、`artifact_tool/api/references/layout.spec.md`
+9. HTML 來源需要逐頁 raster 背景時，讀取並執行 `.agents/skills/slide-background-image/SKILL.md`
+10. 原生 PPTX／content-manifest 路徑使用 hybrid 背景時，讀取 `references/pptx-background-master-workflow.md`
+
+## Background routing
+
+- `background_mode=auto` 是本 Skill 的預設，正式輸出目標為 `hybrid`：無字 raster 背景位於 master／child layout，文字、表格、圖表、shape、內容圖片與 Placeholder 維持 native editable。只有使用者明確要求「不要生成圖片／native-only」時才使用 `background_mode=native-only`。
+- **HTML 來源**：`background_mode=auto` 時先檢查來源 manifest 的 `asset_policy`、每頁 `media_requirement`、`data-pptx-background-image` 與內嵌 data URL。只要來源是 image-aware、存在 `with-image` Layout、或使用者要求圖片背景，而背景未達 `qa-pass`，就必須先執行 `slide-background-image`；不得直接把 placeholder、純色或未套圖 HTML 匯出成完成 PPTX。
+- **原生 content manifest／無 HTML 來源**：沒有 HTML foreground 可供量測，不得錯誤呼叫 `slide-background-image`。依 `references/pptx-background-master-workflow.md` 建立或解析六角色 Image2 background set，逐張生成與 QA，再由 PowerPoint 原生物件模型寫入 child layouts。
+- 已有通過 QA、Theme 相符且 provenance 完整的背景資產可直接沿用；不得為了「自動生圖」無條件重生相同資產。
+- `background_mode=auto` 的背景階段失敗時，輸出只能是 partial／audition；不得靜默降級為 `native-only`、純色母片、HTML 截圖或一般 slide 上的全頁圖片。
+- deck manifest 必須保存 `background_pipeline`：`mode`、來源類型、目前狀態、背景 Skill／background-set handoff hash、逐頁或逐角色 asset provenance 與 QA report。狀態至少區分 `not-started → assets-ready → layouts-applied → qa-pass`；只有 `qa-pass` 可通過正式完成 Gate。
 
 ## 實作限制
 
@@ -29,19 +40,49 @@ description: Build an editable PPTX from this project's Art Direction, Theme and
 - 有 Art Direction 時，deck manifest 必須保留 direction id、source hash、scene role、
   visual intensity、signature move variant 與素材 provenance。Layout 必須在 scene role
   之後選擇，且不得把招牌手法烘焙成不可編輯的整頁圖片。
+- PPTX 若採 `freeform-composition` 模式，content manifest 必須同時保存 1920×1080
+  stage-space 的逐頁 Composition Plan：每個可見物件的 semantic role、穩定 id、geometry、
+  z-order、text style、layer 與 placeholder policy。這是 HTML 級自由構圖的正式輸入，
+  不是 builder 內部再寫一份座標表。
+- `freeform-composition` 的定位約束由 renderer materialize：Content Area、safe area、
+  background blank region、邊界留白、可見內容聯集的水平／垂直重心、物件碰撞與文字容量
+  都必須在輸出前檢查。Theme 只提供 paint/token；Layout 只提供閱讀結構與約束；Composition
+  才提供該頁的實際幾何。
+- 每個不同的 Composition Plan 建立一個可追溯的 Custom Layout；背景與重複 chrome 放在
+  layout/master，可編輯文字以 layout Placeholder 繼承到 slide。不能建立一個空
+  Placeholder，再把真正可見文字另外畫成未關聯的普通文字框。
+- `source_hashes` 只證明來源版本，不能證明 runtime 有消費來源。QA 必須另外比對
+  source geometry／tokens 與 materialized layout／placeholder／slide XML；任一 mapping
+  缺失時只能標為 partial。
 - HTML 轉換前先產生 DOM manifest，記錄文字、geometry、computed style、transform、z-index、image source 與 semantic role。
-- 轉換採 `native` 優先、`hybrid` fallback；`flat` 只能用於 debug。
+- 前景物件採 `native` 優先；整份 PPTX 的正式預設是 `hybrid`。`native-only` 只在使用者明確要求無生成背景時使用，`flat` 只能用於 debug。
 
 ## 流程
 
-1. 驗證 Art Direction gate，以及 content manifest、Theme／Layout core、PPTX adapters 與可選 HTML／assembled YAML 的頁數和引用一致。
-2. 從 content manifest、core 與 adapters 建立 deck manifest；若有 HTML，合併使用者編輯後的文字與 stage-space geometry；若有 assembled YAML，只擷取本次需要的內容欄位。
-3. 建立 theme master、color map、背景與共用 chrome。
-4. 建立 layout family、placeholders 與固定結構，連結 parent master。
-5. 建立 slides 並以 `slide.setLayout(layout)` 指派；將內容 materialize 成可編輯物件。
-6. 匯出 PPTX 與 layout inspection JSON。
-7. render 全部投影片、執行 overflow test、逐頁視覺 QA 與 Perceptual QA。
-8. 產生 QA ledger，列出每頁 fidelity 與 raster fallback。
+1. 驗證 Art Direction gate，以及 content manifest、Theme／Layout core、PPTX adapters 與可選 HTML／assembled YAML 的頁數和引用一致；記錄 `background_mode` 與來源類型。
+2. 完成背景 Gate：`background_mode=auto` 的 HTML 來源依上節執行／驗證 `slide-background-image`，無 HTML 來源建立／驗證六角色 Image2 background set；背景狀態未達 `qa-pass` 時不得進入正式完成路徑。`background_mode=native-only` 則記錄使用者的明確要求與 skip reason，不執行 raster 背景流程。
+3. 從 content manifest、core 與 adapters 建立 deck manifest；若有 HTML，合併使用者編輯後的文字、stage-space geometry 與已內嵌背景；若有 assembled YAML，只擷取本次需要的內容欄位。
+4. 建立 theme master、color map、背景與共用 chrome。
+5. 建立 layout family、placeholders 與固定結構，連結 parent master；raster 背景只放在 master／child layout。
+6. 建立 slides 並以 `slide.setLayout(layout)` 指派；將內容 materialize 成可編輯物件。
+7. 匯出 PPTX 與 layout inspection JSON。
+8. render 全部投影片、執行 overflow test、逐頁視覺 QA、Perceptual QA 與 package/XML 背景位置檢查。
+9. 產生 QA ledger，逐頁列出 fidelity、背景來源、Custom Layout、raster fallback 與 native-editable 證據。
+
+### Freeform composition mode
+
+當使用者要求接近 HTML 的自由排版時，使用 `mode: freeform-composition`：
+
+1. 先鎖定 Content Plan、Art Direction、Theme token 與 Layout scaffold；再為每頁建立
+   Composition Plan，不把逐頁座標塞回 Theme 或 Layout core。
+2. 以 1920×1080 stage-space 物化所有文字、圖片、shape、connector 與群組；PPTX 轉換只做
+   `x/144`、`y/144`、`w/144`、`h/144` 的單一座標換算，不重新猜測 HTML 幾何。
+3. Layout 建立與 Composition Plan 同步產生 named Placeholder；所有可見文字都必須能由
+   stable slot id 找到對應的 Placeholder 或明確的 native text object。
+4. 以實際文字高度收合內容群組，再在 declared Content Area 內置中；透明定位框只能是
+   layout-only 計算資料，不能成為可選取的內容物件。
+5. 每頁執行 safe-area、邊界留白、overlap、overflow、title wrapping、重心與
+   master → layout → slide 關係檢查；任一項未通過不得宣稱母片合格。
 
 ## 輸出
 
@@ -51,3 +92,9 @@ description: Build an editable PPTX from this project's Art Direction, Theme and
 - QA：`artifacts/qa/pptx/<deck-name>.json`
 
 不得把 scratch preview 或 layout JSON 當成正式交付物。
+
+## Completion boundary
+
+- `background_mode=auto`：背景資產已生成或驗證、實際寫入 master／child layouts、一般 slide 沒有重複全頁背景圖、前景保持 native editable，並且 PowerPoint 原生渲染與 package/XML QA 通過，才算完成。
+- HTML 來源若仍停在 `image-planned`、placeholder-fill、`planned-not-materialized` 或缺少背景 data URL，只能標為 partial；不得將它描述為完成的圖片 PPTX。
+- `background_mode=native-only`：必須保存使用者明確要求與無 raster fallback 的證據；仍需完成 master、Custom Layout、Placeholder、native object 與渲染 QA。

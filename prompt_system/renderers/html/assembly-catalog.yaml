@@ -96,6 +96,9 @@ editor_contract:
   ungroup_undo_selection: restored-whole-group
   ungroup_redo_selection: all-direct-members
   ordinary_click_depth: [loose-edit-object, semantic-module, edit-layer]
+  direct_group_member_modifier: ctrl-or-cmd
+  direct_group_member_scope: transient-no-ungroup
+  direct_group_text_action: begin-text-edit-on-same-click
   text_vertical_alignment_default: center
   text_horizontal_alignment_default: layout-defined
 
@@ -524,7 +527,7 @@ recipes:
 guardrails:
   raster_assets: provenance-tracked-opt-in
   decorative_images: licensed-subject-or-edge-only
-  ambient_design: [gradient, pattern, border, typography, svg-data-chart, licensed-archival-crop]
+  ambient_design: [gradient, pattern, border, typography, python-generated-svg-data-chart, licensed-archival-crop]
   text_glow: forbidden
   gradient_text: discouraged
   content_area_fill_limit: 0.88

@@ -7,8 +7,8 @@
   },
   "counts": {
     "themes": 36,
-    "layouts": 77,
-    "combinations_per_renderer": 2772
+    "layouts": 74,
+    "combinations_per_renderer": 2664
   },
   "themes": [
     {
@@ -524,11 +524,10 @@
         "secondary": "#666666",
         "accent": "#FF6B35",
         "support": [
-          "#89CFF0",
-          "#66BB6A"
+          "#89CFF0"
         ],
         "neutral": [],
-        "surface": "#89CFF0"
+        "surface": "#232B40"
       },
       "typography": {
         "heading": {
@@ -556,7 +555,7 @@
       },
       "source": {
         "path": "prompt_system/themes/dark-circuit.yaml",
-        "sha256": "9d52512230b1cdfea3cb4638bc6e77af98a7340694308385801d251438c073b4"
+        "sha256": "22635bfed7fdf5ea090d035433ca5ea1976311c08bf3a74115eec96a62e97b91"
       },
       "support_status": {
         "html": "baseline-from-core",
@@ -1521,11 +1520,11 @@
       },
       "source": {
         "path": "prompt_system/themes/tech-navy.yaml",
-        "sha256": "2748e297c0530899dea7399584e4db2cded68545ead8f8ccc05b6ce7d4a07781"
+        "sha256": "8cdfede219e51352f6ed75b7de439a2cd89afc34fd0efc74f8bd51890433a34e"
       },
       "support_status": {
-        "html": "tuned-override",
-        "pptx": "tuned-override"
+        "html": "baseline-from-core",
+        "pptx": "baseline-from-core"
       }
     },
     {
@@ -3581,38 +3580,40 @@
       }
     },
     {
-      "id": "cover-lower-right-hero-left-rail",
-      "display_name": "封面 左側分離文字軌・右下主標",
+      "id": "cover-left-title-open-field",
+      "display_name": "封面 左軸主標開放留白",
       "family": "cover",
       "media_requirement": "no-image",
       "safe_area": [
-        10,
-        10,
-        90,
-        90
+        8,
+        22,
+        86,
+        82
       ],
       "alignment_rules": [
-        "subtitle.left == meta.left == 12%",
-        "subtitle and meta stay separated at the top and bottom of the left rail",
-        "title.right == 88% and remains independent from the left rail",
-        "all glyphs remain inside safe_area"
+        "title.left == subtitle.left == speaker.left",
+        "title, subtitle and speaker share one left reading axis",
+        "rule.left == title.left",
+        "rule sits between title and subtitle",
+        "right side remains an open low-density field",
+        "no vertical metadata is required"
       ],
       "visual_balance": {
-        "method": "split-left-rail-with-lower-right-anchor",
-        "description": "Two small left-side text blocks form a vertically split rail, while a stronger lower-right title anchors the opposite side across an open central field.\n"
+        "method": "left-title-open-field",
+        "description": "Cover layout with a left-aligned title stack, a short rule, and an open low-density field on the right. The title group owns the reading axis; the right field adds atmosphere without requiring vertical metadata.\n"
       },
       "slots": [
         {
           "id": "title",
           "region": [
+            8,
+            24,
             56,
-            66,
-            32,
-            14
+            16
           ],
           "geometry_source": "region",
           "weight": "hero",
-          "note": "主標位於右下，形成獨立的主要錨點。",
+          "note": "左軸主標，保留右側開放留白",
           "semantic_role": "title",
           "html": {
             "element": "div.el",
@@ -3626,14 +3627,14 @@
         {
           "id": "subtitle",
           "region": [
-            12,
-            17,
-            31,
+            8,
+            43,
+            62,
             8
           ],
           "geometry_source": "region",
           "weight": "secondary",
-          "note": "副標位於左上，作為左側文字軌的上端。",
+          "note": "主標下方的背景說明",
           "semantic_role": "subtitle",
           "html": {
             "element": "div.el",
@@ -3645,16 +3646,16 @@
           }
         },
         {
-          "id": "meta",
+          "id": "speaker",
           "region": [
-            12,
-            80,
-            26,
-            5
+            8,
+            51,
+            40,
+            6
           ],
           "geometry_source": "region",
           "weight": "tertiary",
-          "note": "短 metadata 位於左下，與副標共用左側起點。",
+          "note": "署名或報告單位，沿用左側閱讀軸",
           "semantic_role": "subtitle",
           "html": {
             "element": "div.el",
@@ -3667,99 +3668,8 @@
         }
       ],
       "source": {
-        "path": "prompt_system/layouts/cover-lower-right-hero-left-rail.yaml",
-        "sha256": "af22e2d7cbf5a1871329868613bab2737e9d7d7d35014c3f2f3f53279c0da5d3"
-      }
-    },
-    {
-      "id": "cover-mid-right-column-meta-upper-left",
-      "display_name": "封面 左側焦點欄・右側文字欄",
-      "family": "cover",
-      "media_requirement": "no-image",
-      "safe_area": [
-        10,
-        10,
-        90,
-        90
-      ],
-      "alignment_rules": [
-        "title and subtitle remain inside the right text column",
-        "title.left == 53%; subtitle.right == title.right == 87%",
-        "meta stays above the left focal field and never joins the title axis",
-        "all glyphs remain inside safe_area"
-      ],
-      "visual_balance": {
-        "method": "left-focal-column-right-text-column",
-        "description": "A tall left focal field balances a staggered right-side text system. The upper-left metadata provides a small bridge while remaining outside the main title column.\n"
-      },
-      "slots": [
-        {
-          "id": "title",
-          "region": [
-            53,
-            32,
-            34,
-            25
-          ],
-          "geometry_source": "region",
-          "weight": "hero",
-          "note": "主標位於右側中段，可使用一至三行。",
-          "semantic_role": "title",
-          "html": {
-            "element": "div.el",
-            "edit_contract": "loose-edit-object"
-          },
-          "pptx": {
-            "placeholder_type": "title",
-            "materialization": "native-text-or-shape"
-          }
-        },
-        {
-          "id": "subtitle",
-          "region": [
-            60,
-            67,
-            27,
-            7
-          ],
-          "geometry_source": "region",
-          "weight": "secondary",
-          "note": "副標位於右側下段，以不同寬度形成層級。",
-          "semantic_role": "subtitle",
-          "html": {
-            "element": "div.el",
-            "edit_contract": "loose-edit-object"
-          },
-          "pptx": {
-            "placeholder_type": "subtitle",
-            "materialization": "native-text-or-shape"
-          }
-        },
-        {
-          "id": "meta",
-          "region": [
-            12,
-            14,
-            22,
-            5
-          ],
-          "geometry_source": "region",
-          "weight": "tertiary",
-          "note": "短 metadata 位於左上，與右側文字欄分離。",
-          "semantic_role": "subtitle",
-          "html": {
-            "element": "div.el",
-            "edit_contract": "loose-edit-object"
-          },
-          "pptx": {
-            "placeholder_type": "subtitle",
-            "materialization": "native-text-or-shape"
-          }
-        }
-      ],
-      "source": {
-        "path": "prompt_system/layouts/cover-mid-right-column-meta-upper-left.yaml",
-        "sha256": "895fc40e09b0a377315355daea4d801f47935fa309118a1c127e9d7bf672b2fd"
+        "path": "prompt_system/layouts/cover-left-title-open-field.yaml",
+        "sha256": "5d6324b6eb42926976d3abc92ea4d6584d69bfae3bfaa09c098f63fd575f9ede"
       }
     },
     {
@@ -4149,97 +4059,6 @@
       }
     },
     {
-      "id": "cover-top-center-hero-bottom-center-support",
-      "display_name": "封面 上下置中文字・中央焦點",
-      "family": "cover",
-      "media_requirement": "no-image",
-      "safe_area": [
-        10,
-        10,
-        90,
-        90
-      ],
-      "alignment_rules": [
-        "title.centerX == subtitle.centerX == 50%",
-        "the central focal field stays between title and subtitle",
-        "meta.left == 12% and meta remains detached from the centered stack",
-        "all glyphs remain inside safe_area"
-      ],
-      "visual_balance": {
-        "method": "centered-vertical-frame-with-offset-footer",
-        "description": "Centered text anchors above and below create a vertical frame around the middle focal field, while the lower-left metadata adds a small off-axis counterpoint.\n"
-      },
-      "slots": [
-        {
-          "id": "title",
-          "region": [
-            20,
-            13,
-            60,
-            14
-          ],
-          "geometry_source": "region",
-          "weight": "hero",
-          "note": "主標位於上方中央，橫向範圍較寬。",
-          "semantic_role": "title",
-          "html": {
-            "element": "div.el",
-            "edit_contract": "loose-edit-object"
-          },
-          "pptx": {
-            "placeholder_type": "title",
-            "materialization": "native-text-or-shape"
-          }
-        },
-        {
-          "id": "subtitle",
-          "region": [
-            31,
-            72,
-            38,
-            6
-          ],
-          "geometry_source": "region",
-          "weight": "secondary",
-          "note": "副標位於下方中央，與主標共同框定中央區域。",
-          "semantic_role": "subtitle",
-          "html": {
-            "element": "div.el",
-            "edit_contract": "loose-edit-object"
-          },
-          "pptx": {
-            "placeholder_type": "subtitle",
-            "materialization": "native-text-or-shape"
-          }
-        },
-        {
-          "id": "meta",
-          "region": [
-            12,
-            83,
-            23,
-            5
-          ],
-          "geometry_source": "region",
-          "weight": "tertiary",
-          "note": "短 metadata 放在左下，脫離中央軸線。",
-          "semantic_role": "subtitle",
-          "html": {
-            "element": "div.el",
-            "edit_contract": "loose-edit-object"
-          },
-          "pptx": {
-            "placeholder_type": "subtitle",
-            "materialization": "native-text-or-shape"
-          }
-        }
-      ],
-      "source": {
-        "path": "prompt_system/layouts/cover-top-center-hero-bottom-center-support.yaml",
-        "sha256": "10c198dd03f1d72d51e4b65928c6aaee71580527583a0bc33e2f2c283a001089"
-      }
-    },
-    {
       "id": "cover-upper-center-stack-meta-lower-right",
       "display_name": "封面 上方置中堆疊・右下資訊",
       "family": "cover",
@@ -4331,97 +4150,6 @@
       }
     },
     {
-      "id": "cover-upper-right-hero-lower-left-support",
-      "display_name": "封面 右上主標・左下副標",
-      "family": "cover",
-      "media_requirement": "no-image",
-      "safe_area": [
-        10,
-        10,
-        90,
-        90
-      ],
-      "alignment_rules": [
-        "title.right == 88% and title occupies the upper-right anchor",
-        "subtitle.left == meta.left == 12%",
-        "meta stays above subtitle; neither block crosses into the title reading area",
-        "all glyphs remain inside safe_area"
-      ],
-      "visual_balance": {
-        "method": "opposing-corner-anchors",
-        "description": "A dominant upper-right title is countered by a smaller lower-left support block, while the upper-left metadata creates a third, quieter anchor without joining the title axis.\n"
-      },
-      "slots": [
-        {
-          "id": "title",
-          "region": [
-            48,
-            17,
-            40,
-            22
-          ],
-          "geometry_source": "region",
-          "weight": "hero",
-          "note": "主標位於右上，允許一至三行短標題。",
-          "semantic_role": "title",
-          "html": {
-            "element": "div.el",
-            "edit_contract": "loose-edit-object"
-          },
-          "pptx": {
-            "placeholder_type": "title",
-            "materialization": "native-text-or-shape"
-          }
-        },
-        {
-          "id": "subtitle",
-          "region": [
-            12,
-            67,
-            36,
-            7
-          ],
-          "geometry_source": "region",
-          "weight": "secondary",
-          "note": "副標位於左下，與主標形成對角關係。",
-          "semantic_role": "subtitle",
-          "html": {
-            "element": "div.el",
-            "edit_contract": "loose-edit-object"
-          },
-          "pptx": {
-            "placeholder_type": "subtitle",
-            "materialization": "native-text-or-shape"
-          }
-        },
-        {
-          "id": "meta",
-          "region": [
-            12,
-            24,
-            26,
-            6
-          ],
-          "geometry_source": "region",
-          "weight": "tertiary",
-          "note": "短 metadata 位於左上，與副標共用左側起點。",
-          "semantic_role": "subtitle",
-          "html": {
-            "element": "div.el",
-            "edit_contract": "loose-edit-object"
-          },
-          "pptx": {
-            "placeholder_type": "subtitle",
-            "materialization": "native-text-or-shape"
-          }
-        }
-      ],
-      "source": {
-        "path": "prompt_system/layouts/cover-upper-right-hero-lower-left-support.yaml",
-        "sha256": "c78647380fa2095aa8230a98d84d5cfa05bbb948b0de273501283f9fdc67b6ef"
-      }
-    },
-    {
       "id": "cycle-hub-6",
       "display_name": "圖表 環形輻射 1+6",
       "family": "diagram",
@@ -4434,26 +4162,27 @@
       ],
       "alignment_rules": [
         "hub 圓心在投影片水平 + 垂直中央（50%, 50%）",
+        "hub_title 以圓心為中心對稱，不因少一行而偏上或偏下",
         "item text 左欄右緣 ≤ 28%，右欄左緣 ≥ 72%（不與環及圖示重疊）",
         "item-1/2/3 在左欄三等分垂直排列；item-4/5/6 在右欄三等分垂直排列",
         "左欄文字右對齊（向圓心靠攏）；右欄文字左對齊（向圓心靠攏）"
       ],
       "visual_balance": {
         "method": "radial-hub-spoke",
-        "description": "A visible circle ring dominates the center zone. Six icon-bearing circles are evenly placed on the ring at 60° intervals. The hub center displays the main topic. Three text items are stacked in the left zone and three in the right zone, each aligned with its corresponding icon on the ring. Optional light connector lines link text to icons for added clarity.\n"
+        "description": "A visible circle ring dominates the center zone. Six icon-bearing circles are evenly placed on the ring at 60° intervals. The hub center carries only a short topic title on the page ground; it never becomes a filled card, so the ring stays unbroken behind it. Three text items are stacked in the left zone and three in the right zone, each aligned with its corresponding icon on the ring. Optional light connector lines link text to icons for added clarity.\n"
       },
       "slots": [
         {
           "id": "hub_title",
           "region": [
-            34,
             36,
-            32,
-            12
+            42,
+            28,
+            16
           ],
           "geometry_source": "region",
           "weight": "hero",
-          "note": "中心輪轂大標題；字級大，置中於輪心圓形內",
+          "note": "中心輪轂唯一文字；字級大，水平與垂直都置中於輪心。 只放循環本身的名字，最多兩行、每行 ≤6 個中文字； 不放說明句、不放副標，補充說明一律交給六個 item。\n",
           "semantic_role": "title",
           "html": {
             "element": "div.el",
@@ -4461,27 +4190,6 @@
           },
           "pptx": {
             "placeholder_type": "title",
-            "materialization": "native-text-or-shape"
-          }
-        },
-        {
-          "id": "hub_body",
-          "region": [
-            34,
-            51,
-            32,
-            18
-          ],
-          "geometry_source": "region",
-          "weight": "secondary",
-          "note": "中心輪轂說明文字；字級小，2–3 行，置中",
-          "semantic_role": "body",
-          "html": {
-            "element": "div.el",
-            "edit_contract": "loose-object-or-semantic-module-by-content-unit"
-          },
-          "pptx": {
-            "placeholder_type": "body",
             "materialization": "native-text-or-shape"
           }
         },
@@ -4614,7 +4322,7 @@
       ],
       "source": {
         "path": "prompt_system/layouts/cycle-hub-6.yaml",
-        "sha256": "157001c1f83896d278f38b552759936133612bee542a30995fcb706462a4471a"
+        "sha256": "3dff3c8e338db82aacb9930359d88ac3eefa6ebe24f89051ea0f60f61c04a796"
       }
     },
     {
@@ -5603,12 +5311,13 @@
       "alignment_rules": [
         "title.left == subtitle.left == speaker.left == org.left == org-logo.left",
         "title / subtitle / speaker / org / org-logo form one clean left column",
+        "optional metadata slots are omitted entirely when their source copy is absent",
         "no bottom footer row; all metadata lives in the left column",
         "left text column stays distinct from the right background visual focus"
       ],
       "visual_balance": {
         "method": "fullbleed-left-column-text",
-        "description": "Full-bleed cover with a left-dominant text column (title, subtitle, speaker, org, logo) and a right-side background visual focus. No bottom footer row. Background visuals and scrim are handled by theme / 2A / 2B.\n"
+        "description": "Full-bleed cover with a left-dominant text column (title, subtitle, and optional source-backed speaker / org / logo) and a right-side background visual focus. No bottom footer row. Background visuals and scrim are handled by theme / 2A / 2B.\n"
       },
       "slots": [
         {
@@ -5663,7 +5372,7 @@
           ],
           "geometry_source": "region",
           "weight": "tertiary",
-          "note": "演講者；接在副標下方，同左欄",
+          "note": "演講者（選填）；只有 content manifest 明確提供且觀眾需要時才顯示",
           "semantic_role": "subtitle",
           "html": {
             "element": "div.el",
@@ -5719,7 +5428,7 @@
       ],
       "source": {
         "path": "prompt_system/layouts/hero-fullbleed-brand-footer.yaml",
-        "sha256": "b8331b34038a2fa86356a436024b19fb57d7574f86867ab1c3ca700c8f952c10"
+        "sha256": "916cf18af5e9526d96bf1abe0a337d6be6e161b58e6bf46f1e3fe0e2df1b25de"
       }
     },
     {
@@ -6290,10 +5999,14 @@
       ],
       "alignment_rules": [
         "title.centerX == safe_area.centerX",
-        "subtitle.left == scorecard-1.left",
+        "scorecard content mirrors the title horizontal alignment mode; a centered title centers value, label, note, and delta inside every surface",
         "all scorecards share equal width and card rhythm",
         "numeric emphasis must align consistently across cards",
-        "takeaway aligns to scorecards left edge unless centered summary mode is explicitly chosen"
+        "takeaway is optional; omit its entire surface when absent",
+        "when present, takeaway contains 18 to 44 non-whitespace characters and aligns to the scorecards left edge unless centered summary mode is explicitly chosen",
+        "each scorecard background covers the complete scorecard module",
+        "scorecard content keeps an inner inset from the background edge",
+        "scorecard background remains behind metric and text layers"
       ],
       "visual_balance": {
         "method": "metric-grid",
@@ -6322,33 +6035,12 @@
           }
         },
         {
-          "id": "subtitle",
-          "region": [
-            8,
-            20,
-            84,
-            8
-          ],
-          "geometry_source": "region",
-          "weight": "tertiary",
-          "note": "補充資料範圍、時間區間或解讀角度",
-          "semantic_role": "subtitle",
-          "html": {
-            "element": "div.el",
-            "edit_contract": "loose-edit-object"
-          },
-          "pptx": {
-            "placeholder_type": "subtitle",
-            "materialization": "native-text-or-shape"
-          }
-        },
-        {
           "id": "scorecards",
           "region": [
             8,
-            34,
+            28,
             84,
-            34
+            40
           ],
           "geometry_source": "region",
           "weight": "primary",
@@ -6373,7 +6065,7 @@
           ],
           "geometry_source": "region",
           "weight": "secondary",
-          "note": "一句總結、觀察或決策提示，選填",
+          "note": "選填的一句總結、觀察或決策提示；內容不足時直接省略，不用短詞撐滿寬列",
           "semantic_role": "body",
           "html": {
             "element": "div.el",
@@ -6387,7 +6079,7 @@
       ],
       "source": {
         "path": "prompt_system/layouts/kpi-scorecards.yaml",
-        "sha256": "aea243130c66157bc9ab64a3d3a6aa22d4ed864e781465cd07dc55bc224f8097"
+        "sha256": "3ff0acc4b35446e22310d464fa689daf31d404aa83bc56995f1ba5d57f25eb69"
       }
     },
     {
@@ -6404,6 +6096,7 @@
       "alignment_rules": [
         "data-card-1.left == data-card-2.left == data-card-3.left",
         "data-card-1.right == data-card-2.right == data-card-3.right",
+        "data-card-1.right <= 92% of Content Area; preserve the right safe margin",
         "map.top == data-card-1.top",
         "map.bottom == data-card-3.bottom"
       ],
@@ -6520,7 +6213,7 @@
       ],
       "source": {
         "path": "prompt_system/layouts/map-region.yaml",
-        "sha256": "ad60759cf9c7284ebb83bc2737d00b72a7883c0cc4cdfc07c24c63c1715deb7c"
+        "sha256": "de8052948ab415fd8ec5e6318ef22f5f05962789535c01500c1a0b9c1b6c064b"
       }
     },
     {
@@ -7516,6 +7209,8 @@
       "alignment_rules": [
         "title.centerX == safe_area.centerX",
         "subtitle.centerX == title.centerX",
+        "each step number circle.centerX == its step node.centerX",
+        "number glyph.centerX == number circle.centerX; step title/body share the node center axis",
         "all step nodes share equal visual weight unless one step is explicitly marked as key",
         "connectors must preserve clear reading order",
         "if horizontal flow is used, all node baselines should align"
@@ -7612,7 +7307,7 @@
       ],
       "source": {
         "path": "prompt_system/layouts/process-flow.yaml",
-        "sha256": "aa4519b08a5b62f013e6db5179a4c1ddc852adb4ac067bd7fbed954932b57d0d"
+        "sha256": "508a056db210a2070b6b9aac7036be2e7ac75b0552657dc6f6417806dcc90f10"
       }
     },
     {
@@ -9075,7 +8770,6 @@
       ],
       "alignment_rules": [
         "title.centerX == safe_area.centerX",
-        "subtitle.left == milestones.left",
         "milestones.width should define the main horizontal reading path",
         "milestone-notes columns should align to milestone centers"
       ],
@@ -9090,7 +8784,7 @@
             8,
             10,
             84,
-            10
+            12
           ],
           "geometry_source": "region",
           "weight": "hero",
@@ -9106,33 +8800,12 @@
           }
         },
         {
-          "id": "subtitle",
-          "region": [
-            8,
-            21,
-            84,
-            7
-          ],
-          "geometry_source": "region",
-          "weight": "tertiary",
-          "note": "",
-          "semantic_role": "subtitle",
-          "html": {
-            "element": "div.el",
-            "edit_contract": "loose-edit-object"
-          },
-          "pptx": {
-            "placeholder_type": "subtitle",
-            "materialization": "native-text-or-shape"
-          }
-        },
-        {
           "id": "milestones",
           "region": [
             10,
-            40,
+            32,
             80,
-            18
+            26
           ],
           "geometry_source": "region",
           "weight": "primary",
@@ -9171,7 +8844,7 @@
       ],
       "source": {
         "path": "prompt_system/layouts/timeline-milestones.yaml",
-        "sha256": "bf8d51c6008d368048d95b5d0e7b314fd9e7347ff1b205fc649a5776dd2369ba"
+        "sha256": "39d265e05375dca6d05a74f5060288944ea652b044ae540e0efa7dc41e8b68a8"
       }
     },
     {
@@ -9857,6 +9530,8 @@
       ],
       "alignment_rules": [
         "hero-image fills left 43% of slide vertically",
+        "hero-image is a real supplied/generated media asset; image-planned alone does not justify an empty reserved slot",
+        "if no media provenance exists for this page, route to a no-image TOC Layout instead of leaving hero-image blank",
         "4 chapter cards in 2×2 grid on right half",
         "chapter-1.top aligns with chapter-2.top",
         "chapter-3.top aligns with chapter-4.top"
@@ -9995,7 +9670,7 @@
       ],
       "source": {
         "path": "prompt_system/layouts/toc-4-image-left.yaml",
-        "sha256": "4b187c76aa3c0180e75b79f59d9a4629d0e8418e4a917d8489590b2ce7f19c33"
+        "sha256": "1f681d9f8ec3cd85dae1799263c47c086c40acdb758163498185c66258773fe2"
       }
     },
     {

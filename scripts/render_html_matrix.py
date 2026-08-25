@@ -29,6 +29,7 @@ from html_production_renderer import (
     MEDIA_PLACEHOLDER_CSS,
     PRODUCTION_CSS,
     apply_media_placeholder_policy,
+    infer_page_horizontal_alignment,
     materialize_editable_production_markup,
     normalize_generated_css_font_sizes,
     render_production_layout,
@@ -91,16 +92,36 @@ def render_slide(
 
     production = render_production_layout(layout, page_content)
     if production is not None:
+        resolved_layout_variant = str(layout.get("resolved_layout_variant") or "").strip()
+        requested_layout_variant = str(
+            (page_content or {}).get("layout_variant_id") or ""
+        ).strip()
+        if resolved_layout_variant:
+            variant_attributes += (
+                f' data-layout-variant-id="{html.escape(resolved_layout_variant)}"'
+            )
+        if requested_layout_variant:
+            variant_attributes += (
+                f' data-requested-layout-variant-id="{html.escape(requested_layout_variant)}"'
+            )
         production = apply_media_placeholder_policy(
             production,
             layout["id"],
             media_treatment,
         )
-        production = materialize_editable_production_markup(production)
+        page_alignment = (
+            "center"
+            if 'data-layout-flow-align="center"' in production
+            else "right"
+            if 'data-layout-flow-align="end"' in production
+            else infer_page_horizontal_alignment(production)
+        )
+        production = materialize_editable_production_markup(production, page_alignment)
         return (
             f'<section class="slide{" active" if index == 0 else ""}" id="s{index + 1}" data-index="{index}" '
             f'data-page-number="{index + 1}" data-page-count="{total}" '
             f'data-layout-id="{html.escape(layout["id"])}" data-production-family="{html.escape(layout["family"])}"'
+            f' data-page-horizontal-align="{page_alignment}"'
             f' data-content-binding="{("page-composition" if page_content is not None else "layout-fixture")}"'
             f'{media_attribute}{media_treatment_attribute}{variant_attributes}>'
             f'<div class="content" data-content-area="true">{production}</div>'
@@ -110,6 +131,7 @@ def render_slide(
     elements = []
     content_area_elements = []
     centered_stack = layout.get("visual_balance", {}).get("method") == "centered-title-edge-decor"
+    page_alignment = "center" if centered_stack else "left"
     for slot in layout["slots"]:
         x, y, w, h = slot["region"]
         left, top, width, height = x * 19.2, y * 10.8, w * 19.2, h * 10.8
@@ -131,6 +153,7 @@ def render_slide(
         style = f"{position}{dimensions}font-size:{size}px;"
         markup = (
             f'<div class="{" ".join(classes)}" data-slot-id="{label}" data-role="{role}" '
+            f'data-edit-horizontal-align="{page_alignment}" data-edit-alignment-source="page-title" '
             f'{"data-edit-kind=\"text\" " if fit_text else ""}'
             f'{"data-edit-fit=\"text\" " if fit_text else ""}'
             f'style="{style}"><span class="slot-label">{label}</span>'
@@ -152,7 +175,7 @@ def render_slide(
     return (
         f'<section class="slide{" active" if index == 0 else ""}" id="s{index + 1}" data-index="{index}" '
         f'data-page-number="{index + 1}" data-page-count="{total}" '
-        f'data-layout-id="{html.escape(layout["id"])}"{media_attribute}{media_treatment_attribute}{variant_attributes}>'
+        f'data-layout-id="{html.escape(layout["id"])}" data-page-horizontal-align="{page_alignment}"{media_attribute}{media_treatment_attribute}{variant_attributes}>'
         + "".join(elements)
         + '</section>'
     )

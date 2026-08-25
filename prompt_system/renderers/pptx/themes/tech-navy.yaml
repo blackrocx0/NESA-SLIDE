@@ -2,10 +2,10 @@ schema_version: 1
 kind: theme_adapter
 renderer: pptx
 theme_id: tech-navy
-support_status: tuned-override
+support_status: baseline-from-core
 source:
   path: prompt_system/themes/tech-navy.yaml
-  sha256: 0a1bf34e215bd977119e2c7c274b6df6a865e6b2ac6bc7bf0e24fef8e82d114b
+  sha256: 8cdfede219e51352f6ed75b7de439a2cd89afc34fd0efc74f8bd51890433a34e
 core_refs:
   visual_base: prompt_system/themes/tech-navy.yaml#visual_base
   palette: prompt_system/themes/tech-navy.yaml#visual_base.color_palette
@@ -26,7 +26,7 @@ projection:
     accent: prompt_system/themes/tech-navy.yaml#visual_base.color_palette.accent.hex
     support: prompt_system/themes/tech-navy.yaml#visual_base.color_palette.support
   font_ref: prompt_system/themes/tech-navy.yaml#visual_base.typography
-  renderer_override_ref: prompt_system/themes/tech-navy.yaml#pptx_spec
+  renderer_override_ref: null
   decoration_entries:
   - name: hairline-divider
     source_ref: prompt_system/themes/tech-navy.yaml#decoration_vocabulary[name=hairline-divider]

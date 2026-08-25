@@ -40,6 +40,11 @@ Theme Lab／Style Case 可以留作 Gallery 或歷史證據，但只屬於 demo 
 | `preset-appearance` | Preset 自己的外觀 token 與 semantic surface paint | 內容、Layout、固定座標、Layout 變體、DOM 顯示／隱藏、`!important` |
 | `editor-chrome` | 編輯器與 player UI | 投影片內容幾何 |
 
+可見文字預設一律使用 `horizontal-tb`。`renderer-base`／Layout adapter 只有在 Layout Core
+明確宣告對應文字 slot 的方向語意時，才可使用其他 writing mode 或把文字旋轉 90°；
+Theme、Preset 與 design dialect 不得自行引入直向文字。目前 release 的 Layout Core
+沒有任何這類授權，因此產製與打包 Gate 應以「0 個直向文字」驗收。
+
 Theme／Preset 可以建議 `composition` 或 `surface` 語彙，但 renderer 必須在選 Layout 時先把建議
 解析成相容的 Layout／composition variant。Layout 一旦 materialize，Theme／Preset 不得再靠 CSS
 改變 composition。

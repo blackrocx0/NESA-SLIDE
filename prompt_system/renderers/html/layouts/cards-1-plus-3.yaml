@@ -64,3 +64,6 @@ projection:
   rules:
   - references/html-generation-rules.md
   - references/html-layout-patterns.md
+  variant_catalog:
+    path: prompt_system/renderers/html/layout-variants/cards-1-plus-3.yaml
+    sha256: 58e8e2289ef3889adb9844eb56df9206e4dc713eab212f43c18e188be4785a9b

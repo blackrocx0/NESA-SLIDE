@@ -191,6 +191,15 @@ def build_preset_appearance_css(
         [palette["background"], palette["text"], "#000000", "#ffffff"],
     )
     scope = f'html[data-preset-theme="{theme_id}"]'
+    surface_text = _best_ink(
+        palette["surface"],
+        [palette["text"], palette["background"], "#000000", "#ffffff"],
+    )
+    surface_muted = (
+        palette["muted"]
+        if _contrast(palette["muted"], palette["surface"]) >= 4.5
+        else _best_ink(palette["surface"], [palette["muted"], surface_text, "#000000", "#ffffff"])
+    )
     variables = {
         "--bg": palette["background"],
         "--primary": palette["text"],
@@ -200,8 +209,8 @@ def build_preset_appearance_css(
         "--surface": palette["surface"],
         "--text": palette["text"],
         "--muted": palette["muted"],
-        "--surface-text": palette["text"],
-        "--surface-muted": palette["muted"],
+        "--surface-text": surface_text,
+        "--surface-muted": surface_muted,
         "--accent-ink": _best_ink(palette["background"], [palette["accent"], palette["text"]]),
         "--surface-accent-ink": _best_ink(palette["surface"], [palette["accent"], palette["text"]]),
         "--accent-text": accent_text,
@@ -243,6 +252,8 @@ def build_preset_appearance_css(
 {scope} .diagram-node-bg{{{surface_css};{depth_css}}}
 {scope} :is(.prod-title,.cover-center-title,.cover-split-title,.statement-focus-quote,.statement-center-headline){{color:var(--text);font-family:var(--font-display);font-weight:800;letter-spacing:-.025em;text-shadow:none}}
 {scope} :is(.prod-subtitle,.cover-center-subtitle,.statement-center-support){{color:var(--muted);font-family:var(--font-body)}}
+{scope} :is(.chapter-brand-overlay,.media-overlay-title,.cover-overlay-block,.cover-overlay-accent) > .diagram-node-bg{{background:var(--surface);background-image:none;border-top:5px solid var(--accent);backdrop-filter:none}}
+{scope} :is(.chapter-brand-overlay,.media-overlay-title,.cover-overlay-block,.cover-overlay-accent) > :is(span,b,em){{color:var(--surface-text)}}
 {scope} [data-visual-surface-role="accent"]>.diagram-node-bg{{background:var(--accent);background-image:none;border-color:transparent}}
 {scope} [data-visual-surface-role="none"]>.diagram-node-bg{{background:none;border-color:transparent;box-shadow:none}}
 """.strip()

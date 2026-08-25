@@ -24,7 +24,8 @@ slots:
   - id: speaker
     region: [8, 66, 44, 5]
     weight: tertiary
-    note: "演講者；接在副標下方，同左欄"
+    optional: true
+    note: "演講者（選填）；只有 content manifest 明確提供且觀眾需要時才顯示"
 
   - id: org
     region: [8, 72, 44, 4]
@@ -46,6 +47,7 @@ slots:
 alignment_rules:
   - "title.left == subtitle.left == speaker.left == org.left == org-logo.left"
   - "title / subtitle / speaker / org / org-logo form one clean left column"
+  - "optional metadata slots are omitted entirely when their source copy is absent"
   - "no bottom footer row; all metadata lives in the left column"
   - "left text column stays distinct from the right background visual focus"
 
@@ -78,6 +80,6 @@ decoration:
 visual_balance:
   method: fullbleed-left-column-text
   description: >
-    Full-bleed cover with a left-dominant text column (title, subtitle,
-    speaker, org, logo) and a right-side background visual focus. No bottom
+    Full-bleed cover with a left-dominant text column (title, subtitle, and
+    optional source-backed speaker / org / logo) and a right-side background visual focus. No bottom
     footer row. Background visuals and scrim are handled by theme / 2A / 2B.

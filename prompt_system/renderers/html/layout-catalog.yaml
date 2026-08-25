@@ -41,11 +41,8 @@ layout_media_modes:
     - chapter-opener
     - comparison-table
     - cover-center-title-edge-decor
-    - cover-lower-right-hero-left-rail
-    - cover-mid-right-column-meta-upper-left
-    - cover-top-center-hero-bottom-center-support
+    - cover-left-title-open-field
     - cover-upper-center-stack-meta-lower-right
-    - cover-upper-right-hero-lower-left-support
     - cycle-hub-6
     - dashboard-overview
     - data-annotation
@@ -124,11 +121,8 @@ allowed_layout_ids:
   - chapter-opener
   - comparison-table
   - cover-center-title-edge-decor
-  - cover-lower-right-hero-left-rail
-  - cover-mid-right-column-meta-upper-left
-  - cover-top-center-hero-bottom-center-support
+  - cover-left-title-open-field
   - cover-upper-center-stack-meta-lower-right
-  - cover-upper-right-hero-lower-left-support
   - cycle-hub-6
   - dashboard-overview
   - data-annotation

@@ -42,5 +42,6 @@ slots:
 alignment_rules:
   - "data-card-1.left == data-card-2.left == data-card-3.left"
   - "data-card-1.right == data-card-2.right == data-card-3.right"
+  - "data-card-1.right <= 92% of Content Area; preserve the right safe margin"
   - "map.top == data-card-1.top"
   - "map.bottom == data-card-3.bottom"

@@ -6,7 +6,7 @@ family: metrics
 support_status: baseline-from-core
 source:
   path: prompt_system/layouts/kpi-scorecards.yaml
-  sha256: aea243130c66157bc9ab64a3d3a6aa22d4ed864e781465cd07dc55bc224f8097
+  sha256: 3ff0acc4b35446e22310d464fa689daf31d404aa83bc56995f1ba5d57f25eb69
 core_refs:
   media_requirement: prompt_system/layouts/kpi-scorecards.yaml#media_requirement
   slots: prompt_system/layouts/kpi-scorecards.yaml#slots
@@ -14,6 +14,7 @@ core_refs:
   alignment: prompt_system/layouts/kpi-scorecards.yaml#alignment_rules
   visual_balance: prompt_system/layouts/kpi-scorecards.yaml#visual_balance
   decoration: null
+  element_contracts: prompt_system/layouts/kpi-scorecards.yaml#element_contracts
 projection:
   output: html-layout-manifest
   component: layout-metrics
@@ -26,14 +27,6 @@ projection:
     geometry_ref: prompt_system/layouts/kpi-scorecards.yaml#slots[id=title].region
     geometry_kind: region
     semantic_role: title
-    element: div.el
-    geometry_transform: percent-region-to-1920x1080-px
-    edit_contract: loose-edit-object
-  - slot_id: subtitle
-    source_ref: prompt_system/layouts/kpi-scorecards.yaml#slots[id=subtitle]
-    geometry_ref: prompt_system/layouts/kpi-scorecards.yaml#slots[id=subtitle].region
-    geometry_kind: region
-    semantic_role: subtitle
     element: div.el
     geometry_transform: percent-region-to-1920x1080-px
     edit_contract: loose-edit-object
@@ -56,3 +49,17 @@ projection:
   rules:
   - references/html-generation-rules.md
   - references/html-layout-patterns.md
+  element_contracts:
+  - id: scorecard-module
+    cardinality: one-per-scorecard
+    edit_contract: semantic-module
+    grouping: background-value-label-note-delta
+    background_bounds: full-module
+    content_bounds: inner-inset
+    stacking: background-behind-content
+  - id: takeaway-module
+    cardinality: zero-or-one
+    edit_contract: semantic-module
+    grouping: background-summary
+    content_length: 18-to-44-non-whitespace-characters-when-present
+    absent_behavior: omit-module

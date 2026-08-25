@@ -15,6 +15,7 @@
 - `specs/`：早期或補充規格。
 - `assembly_template.txt`：prompt assembly 參考模板。
 - `renderers/`：由 core theme/layout 自動生成的 Image2、HTML、PPTX adapter；不是第二套 source of truth。
+- `renderers/html/layout-variants/`：HTML Layout adapter 的 renderer-specific composition 變體來源；只保存內容帶狀結構、選擇條件與降級路徑，不保存 Theme 外觀、單次文案或跨 renderer Layout 幾何。
 - `HANDOFF.md`：歷史 handoff 與工作備忘。
 
 ## Layer 邊界
@@ -47,6 +48,7 @@
 
 - 圖片式 preview：core + Image2 adapter 組成七段式 assembled YAML，再以其作為完整設計規格；Image2 本身會產生完整影像，因此可選 `no-image` 與 `with-image` Layout。
 - HTML renderer：Art Direction + core + HTML adapter 組成 HTML render manifest，再依 `references/html-generation-rules.md` 與 `references/html-layout-patterns.md` 產 HTML。
+- HTML 內容語意 icon 在 build-time 依 `references/svg-icon-generation-rules.md` 逐 deck 一次生成完整 family；renderer 只讀取已鎖定的 deck-local manifest，不在 runtime 生圖，也不預設維護全域 icon registry。
 - HTML 的 `pattern-only` 素材策略只能選 `media_requirement: no-image`；若交付前會補上真實圖片，必須明確使用 `image-planned`，才能選用 `with-image` Layout。
 - PRESET Gallery：先由 `presets/catalog.yaml` 決定公開名單與順序，再依每筆能力讀取 Theme Lab 案例或 reusable Preset 實作；Gallery 可展示案例，但 new-deck 產製不得把案例內容、版型序列或 CSS 帶回成品。
 - PPTX renderer：Art Direction + core + PPTX adapter 組成 master/layout/placeholder manifest，再依 `.agents/skills/ppt-builder/` 與 `references/pptx-generation-rules.md` 建立可編輯 PPTX。HTML 只可作使用者編輯結果與幾何校準來源，不可整頁截圖冒充可編輯 PPTX。

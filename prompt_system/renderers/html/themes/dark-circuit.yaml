@@ -5,7 +5,7 @@ theme_id: dark-circuit
 support_status: baseline-from-core
 source:
   path: prompt_system/themes/dark-circuit.yaml
-  sha256: 9d52512230b1cdfea3cb4638bc6e77af98a7340694308385801d251438c073b4
+  sha256: 22635bfed7fdf5ea090d035433ca5ea1976311c08bf3a74115eec96a62e97b91
 core_refs:
   visual_base: prompt_system/themes/dark-circuit.yaml#visual_base
   palette: prompt_system/themes/dark-circuit.yaml#visual_base.color_palette

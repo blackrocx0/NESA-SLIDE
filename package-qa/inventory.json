@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "version": "0.1.0-demo.2",
+  "generated_at": "2026-08-25T09:01:21.001909+00:00",
+  "inventory": {
+    "files": 755,
+    "bytes": 61459470,
+    "themes": 36,
+    "active_layouts": 74,
+    "theme_adapters": 108,
+    "layout_adapters": 222,
+    "total_adapters": 330,
+    "scripts": 55,
+    "source_snapshot_files": 677,
+    "source_aggregate_sha256": "1b805fc1d57f44593752898deaa6ae9c462e9af4af6c798e709df27db8cef9ba"
+  },
+  "forbidden_paths": [],
+  "absolute_path_hits": [],
+  "retired_layouts_present": [],
+  "removed_cover_layouts_present": [],
+  "required_dependencies": {
+    "scripts/python_chart_renderer.py": true,
+    "scripts/html_cards_1plus3_variants.py": true,
+    "scripts/html_visible_copy.py": true,
+    "scripts/qa_html_text_orientation.py": true,
+    "scripts/verify_html_production_family.py": true
+  }
+}

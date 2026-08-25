@@ -1,38 +1,28 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "product": "NESA Slide",
-  "version": "0.1.0-demo.1",
+  "version": "0.1.0-demo.2",
   "release_status": "internal-test-passed",
   "audience": "internal-nontechnical-testers",
-  "created_at": "2026-08-17T19:07:03.187209+00:00",
+  "created_at": "2026-08-25T09:13:43.045949+00:00",
   "source": {
     "snapshot_ref": "source-snapshot.json",
-    "git_head": "94bbc7232ea43fe631b845511834a1c2433bd340",
-    "git_branch": "codex/layout-design-diversity",
-    "working_tree_dirty": true,
-    "source_file_count": 668,
-    "source_aggregate_sha256": "727012efa14dbfb65ed227d283ddca109470208982ccfc02316765a5bf78bdf8",
-    "freeze_verification_ref": "source-snapshot-verification.json",
-    "freeze_verification": {
-      "schema_version": 1,
-      "snapshot_ref": "source-snapshot.json",
-      "verified_at": "2026-08-17T19:06:49.9838663Z",
-      "status": "passed",
-      "checks": {
-        "allowlisted_files_checked": 668,
-        "missing_files": 0,
-        "sha256_changes": 0,
-        "mtime_changes": 0
-      },
-      "method": "Compared every original-repository allowlist path against the frozen SHA-256 and UTC mtime immediately before release finalization."
-    }
+    "verification_ref": "source-snapshot-verification.json",
+    "git": {
+      "branch": "codex/layout-design-diversity",
+      "head": "3f68c3e6de9803acb340cf3e579328345a2176d3",
+      "working_tree_dirty": true
+    },
+    "source_file_count": 677,
+    "source_aggregate_sha256": "1b805fc1d57f44593752898deaa6ae9c462e9af4af6c798e709df27db8cef9ba",
+    "freeze_status": "passed"
   },
   "catalog": {
     "core_themes": 36,
-    "active_layouts": 77,
+    "active_layouts": 74,
     "theme_adapters": 108,
-    "layout_adapters": 231,
-    "total_adapters": 339,
+    "layout_adapters": 222,
+    "total_adapters": 330,
     "retired_layouts_excluded": [
       "toc-2",
       "toc-2-image-left",
@@ -79,6 +69,7 @@
   },
   "excluded_runtime_areas": [
     ".git",
+    "workspace",
     "node_modules",
     "experiments",
     "tests",
@@ -91,22 +82,16 @@
     "deploy",
     "runtime logs"
   ],
-  "portable_sanitizations": [
-    {
-      "path": "prompt_system/presets/catalog.yaml",
-      "change": "removed deployment-only Gallery artifact path and URL from clinical-evidence-atlas",
-      "generation_semantics_changed": false
-    }
-  ],
   "verification_boundary": {
     "source_snapshot": "passed",
     "adapter_structure": "passed",
+    "text_orientation": "passed",
     "three_demo_decks": [
       "passed-with-scope",
       "passed",
       "passed"
     ],
-    "full_36x77_perceptual_matrix": "unverified",
+    "full_36x74_perceptual_matrix": "unverified",
     "remote_deployment": "not-requested"
   }
 }

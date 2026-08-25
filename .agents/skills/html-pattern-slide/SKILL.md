@@ -191,12 +191,14 @@ AI 生成的投影片視覺文字一律不得低於 36px；塞不下時先擴大
 ### 群組
 
 - 先問「這些層是否共同表達一個資訊單位」。答案為是時才輸出 semantic module 群組，例如同一卡片的數字、小標、內文、背景與底線；標題、副標與一般內容不因位置接近而成組。
-- semantic module 使用 `.el[data-edit-structure="module"][data-edit-composite]`，第一個直接子層是 background layer；module 是唯一 editable root，內層以 `data-edit-layer` 表示，只有取消群組或進入「編輯單件」後才成為直接操作層。使用者介面只稱它為「群組」，不另設 Composite 功能。
+- semantic module 使用 `.el[data-edit-structure="module"][data-edit-composite]`，第一個直接子層是 background layer；module 是唯一 editable root，內層以 `data-edit-layer` 表示，取消群組、進入「編輯單件」或按住 `Ctrl`／`Cmd` 暫時穿透時才成為直接操作層。使用者介面只稱它為「群組」，不另設 Composite 功能。
 - 初次開啟時只有 semantic module 與使用者手動建立的群組保持群組狀態；centering frame、Content Area 與 layout-only 容器永遠不可選。
 - AI 生成群組與手動群組在一般點擊中一律視為單一物件；群組已選取後，再點成員或群組框內空白仍須維持整組，
   不得以重複點擊隱性進入子物件。
 - 正式群組的完整外框（包含成員之間的 gap／空白）都是群組命中範圍；同一位置有子物件或未群組背景時，群組優先。
-- 只有按「編輯單件」才進入下一層；巢狀群組每次只進一層，並以「上一層群組」逐層返回。
+- 「編輯單件」是持續進入下一層的正式模式；巢狀群組每次只進一層，並以「上一層群組」逐層返回。
+- 按住 `Ctrl`／`Cmd` 點擊屬於明確、暫時的深入操作：直接選取游標下的群組內物件；若命中文字，
+  同一次點擊直接進入文字編輯。放開修飾鍵後，普通點擊仍選整組；此操作不得取消群組、改寫群組路徑或建立持續的深入範圍。
 - 以 `Ctrl+G` 建立群組，以 `Ctrl+Shift+G` 取消最外層群組。
 - 允許把既有群組再次包成新群組，保留 PowerPoint 式巢狀群組。
 - semantic module 與手動群組共用取消群組、重新群組、巢狀群組、復原／重做、草稿與匯出行為；取消 semantic module 時可以保留 renderer 外殼，但必須改為直接命中內層物件。
@@ -313,6 +315,9 @@ python scripts\generate_renderer_adapters.py --check
 python scripts\art_direction.py <art-direction.yaml>
 python -m py_compile scripts\art_direction.py scripts\render_randomized_html_demo.py scripts\html_design_method.py scripts\html_css_ownership.py scripts\qa_html_design_method.py
 python scripts\html_css_ownership.py --self-test
+python scripts\html_visible_copy.py --renderer-source scripts\html_production_renderer.py
+python scripts\html_visible_copy.py --html <deck.html> --story <story.json> --report artifacts/qa/<deck>-visible-copy.json
+python scripts\qa_html_text_orientation.py --html <deck.html> --report artifacts/qa/<deck>-text-orientation.json
 python scripts\html_preset_themes.py
 python scripts\html_design_method.py
 python scripts\qa_html_design_method.py --manifest <deck.manifest.json>
@@ -334,6 +339,9 @@ node scripts\qa_html_semantic_group_matrix.cjs --url http://127.0.0.1:7392/<deck
 ```
 
 - 使用本機 HTTP server 驗收，預設 port 為 7392；不要只用 `file://` 判斷互動是否正常。
+- 目前 release 的 Layout Core 沒有直向文字 slot；source 與 artifact 的 `vertical-*` writing mode
+  或文字 `rotate(±90deg)` 任一命中都屬 blocking failure。垂直排列必須以 Grid／Flex／座標完成，
+  不得旋轉 glyph。
 - `html_css_ownership.py` 或 CSS geometry invariant 未通過時，artifact 直接視為未完成；不得靠後置 `!important` 或 semantic guard 修正後放行。
 - 上述 group QA 的 URL、report、profile、頁碼與 selectors 必須對應實際 deck；無參數啟動失敗不算 QA 結果。
 - 逐頁檢查 overflow、重疊、裁切、過小文字、空洞色塊、失衡、語意錯版與裝飾侵入。

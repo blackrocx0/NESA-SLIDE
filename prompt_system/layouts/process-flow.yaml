@@ -27,6 +27,8 @@ slots:
 alignment_rules:
   - "title.centerX == safe_area.centerX"
   - "subtitle.centerX == title.centerX"
+  - "each step number circle.centerX == its step node.centerX"
+  - "number glyph.centerX == number circle.centerX; step title/body share the node center axis"
   - "all step nodes share equal visual weight unless one step is explicitly marked as key"
   - "connectors must preserve clear reading order"
   - "if horizontal flow is used, all node baselines should align"

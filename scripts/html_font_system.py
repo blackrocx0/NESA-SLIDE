@@ -10,15 +10,15 @@ from urllib.parse import quote_plus
 
 GOOGLE_FONT_REGISTRY: dict[str, dict[str, str]] = {
     "Noto Sans TC": {
-        "weights": "400;500;600;700;800;900",
+        "weights": "300;400;500;600;700;800;900",
         "stack": '"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif',
     },
     "Noto Serif TC": {
-        "weights": "400;500;600;700;800;900",
+        "weights": "300;400;500;600;700;800;900",
         "stack": '"Noto Serif TC","PMingLiU",serif',
     },
     "Roboto Mono": {
-        "weights": "400;500;600;700",
+        "weights": "300;400;500;600;700",
         "stack": '"Roboto Mono","Noto Sans TC",ui-monospace,Consolas,monospace',
     },
 }

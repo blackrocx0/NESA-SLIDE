@@ -25,6 +25,7 @@ PROMPT_SYSTEM = ROOT / "prompt_system"
 OUTPUT_ROOT = PROMPT_SYSTEM / "renderers"
 RENDERERS = ("image2", "html", "pptx")
 MEDIA_REQUIREMENTS = ("no-image", "with-image")
+FORBIDDEN_THEME_GEOMETRY_FIELDS = ("html_spec", "pptx_spec", "layout_overrides")
 RETIRED_LAYOUT_IDS = {
     "toc-2",
     "toc-2-image-left",
@@ -45,6 +46,15 @@ def load_yaml(path: Path) -> dict[str, Any]:
     if not isinstance(data, dict):
         raise ValueError(f"Expected mapping in {path}")
     return data
+
+
+def validate_theme_core(path: Path, data: dict[str, Any]) -> None:
+    forbidden = [field for field in FORBIDDEN_THEME_GEOMETRY_FIELDS if field in data]
+    if forbidden:
+        raise ValueError(
+            f"Theme Core may not own renderer/Layout geometry in {path}: "
+            f"{', '.join(forbidden)}"
+        )
 
 
 def sha256(path: Path) -> str:
@@ -182,6 +192,7 @@ def pptx_background_role(family: str, slots: list[Any]) -> str:
 
 
 def theme_adapter(renderer: str, path: Path, data: dict[str, Any]) -> dict[str, Any]:
+    validate_theme_core(path, data)
     theme_id = str(data["id"])
     vocab = data.get("decoration_vocabulary") or []
     base = {
@@ -189,13 +200,7 @@ def theme_adapter(renderer: str, path: Path, data: dict[str, Any]) -> dict[str, 
         "kind": "theme_adapter",
         "renderer": renderer,
         "theme_id": theme_id,
-        "support_status": (
-            "core-native"
-            if renderer == "image2"
-            else "tuned-override"
-            if f"{renderer}_spec" in data
-            else "baseline-from-core"
-        ),
+        "support_status": "core-native" if renderer == "image2" else "baseline-from-core",
         "source": {
             "path": f"prompt_system/themes/{path.name}",
             "sha256": sha256(path),
@@ -250,7 +255,7 @@ def theme_adapter(renderer: str, path: Path, data: dict[str, Any]) -> dict[str, 
                 "support": ref("themes", theme_id, "visual_base.color_palette.support"),
             },
             "font_ref": ref("themes", theme_id, "visual_base.typography"),
-            "renderer_override_ref": ref("themes", theme_id, "html_spec") if "html_spec" in data else None,
+            "renderer_override_ref": None,
             "decoration_entries": decoration_rows,
             "fallback": "references/html-generation-rules.md",
         }
@@ -268,7 +273,7 @@ def theme_adapter(renderer: str, path: Path, data: dict[str, Any]) -> dict[str, 
                 "support": ref("themes", theme_id, "visual_base.color_palette.support"),
             },
             "font_ref": ref("themes", theme_id, "visual_base.typography"),
-            "renderer_override_ref": ref("themes", theme_id, "pptx_spec") if "pptx_spec" in data else None,
+            "renderer_override_ref": None,
             "decoration_entries": decoration_rows,
             "fallback": "references/pptx-generation-rules.md",
         }
@@ -363,6 +368,12 @@ def layout_adapter(renderer: str, path: Path, data: dict[str, Any]) -> dict[str,
                 "references/html-layout-patterns.md",
             ],
         }
+        variant_path = PROMPT_SYSTEM / "renderers" / "html" / "layout-variants" / path.name
+        if variant_path.exists():
+            base["projection"]["variant_catalog"] = {
+                "path": f"prompt_system/renderers/html/layout-variants/{path.name}",
+                "sha256": sha256(variant_path),
+            }
     else:
         background_role = pptx_background_role(family, slots)
         base["projection"] = {
@@ -420,13 +431,13 @@ def expected_files() -> dict[Path, str]:
             "html": {
                 "themes": len(theme_paths),
                 "layouts": len(layout_paths),
-                "tuned_theme_overrides": sum("html_spec" in load_yaml(path) for path in theme_paths),
+                "tuned_theme_overrides": 0,
                 "mode": "baseline-complete",
             },
             "pptx": {
                 "themes": len(theme_paths),
                 "layouts": len(layout_paths),
-                "tuned_theme_overrides": sum("pptx_spec" in load_yaml(path) for path in theme_paths),
+                "tuned_theme_overrides": 0,
                 "mode": "baseline-complete",
             },
         },
@@ -453,10 +464,14 @@ def main() -> int:
                 path.write_text(expected, encoding="utf-8", newline="\n")
 
     expected_paths = set(generated)
+    renderer_source_roots = {
+        OUTPUT_ROOT / "html" / "layout-variants",
+    }
     extras = sorted(
         path.relative_to(ROOT)
         for path in OUTPUT_ROOT.glob("*/*/*.yaml")
         if path not in expected_paths
+        and not any(root in path.parents for root in renderer_source_roots)
     ) if OUTPUT_ROOT.exists() else []
 
     if args.check and (stale or extras):

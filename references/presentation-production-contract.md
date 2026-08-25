@@ -184,6 +184,7 @@
   圖示包、貼圖、Image2 preview 或投影片截圖。輔助設計只使用文字、色彩、Pattern
   與基礎幾何；只有使用者明確要求的必讀內容媒體可以進入已宣告的內容 slot。
 - 內容語意 icon 是內容層的例外，不是環境裝飾：只有 content manifest／semantic slot 明確要求的 icon 才可進入投影片。Icon 可以被替換、移除與編輯，但不得反向決定 Layout、欄列數、slot geometry 或內容排序。詳細規則見 `references/svg-icon-generation-rules.md`。
+- 內容 icon 預設採 per-deck family generation：在 build-time 收集整份 deck 的 icon intents，一次生成同一家族 SVG 並鎖定 deck-local manifest；HTML 開啟、編輯、投影與匯出時不得重新生成，也不得自動擴張成全域 icon library。
 
 ### HTML 先判斷內容關係，再選 Layout
 
@@ -209,6 +210,9 @@
 - AI 生成的投影片視覺文字最小為 36px，必須直接寫入產出 CSS／inline style；使用者手動編輯可低於 36px，儲存與匯出不得把手動值升回 36px。
 - Layout 是閱讀方向、區域、錨點與視覺重心的 scaffold，不是項目數 schema。Layout 名稱或舊 recipe
   中的數量只可作相容提示；不得在選版前以項目數排除 Layout，也不得為符合名稱刪除內容。
+- requested Layout 無法完整承載 primary items 時，Composition 必須保留原始內容並改用容量相容的
+  1+N／其他語意相容 Layout，manifest 同時記錄 requested 與 resolved Layout。只有使用者明確授權
+  才可摘要、合併或改寫內容；此時 `content_mutated` 必須為 true 並附 mutation ledger。
 - 36px 是當頁 composition materialize 後的 blocking 驗證。renderer 必須依實際項目數、扣除
   padding 後的文字淨寬、正式字體行數與可用高度重算欄列與文字幾何，再做 Browser 檢查。
 - 若 36px 文字在選定 scaffold 中放不下，依序在同一 scaffold 改用相容 composition recipe 或
@@ -323,6 +327,8 @@
   一律維持該位置最外層正式群組，不得以重複點擊隱性進入子物件。浮動選取工具列直接提供
   「群組／編輯單件／上一層群組」；每按一次「編輯單件」只開放下一層，每按一次「上一層群組」只返回一層。
   「取消群組」移到物件右鍵選單，並保留 `Ctrl+Shift+G`／`Cmd+Shift+G`。
+- 按住 `Ctrl`／`Cmd` 點擊是另一個明確但暫時的深入入口：直接命中游標下最內層可編輯物件；若為文字，
+  同一次點擊進入文字編輯。放開修飾鍵後，普通點擊仍回到整組優先；不得因此取消群組、改寫群組路徑或留下持續 edit scope。
 - 編輯模式在物件上按右鍵時，必須顯示物件操作選單。右鍵命中目前多選範圍內的任一物件時，
   必須保留整個多選，不得退回單選；選單顯示「組成群組」，並沿用 `groupSelection()` 的巢狀群組、
   復原／重做與選取整組邏輯。「取消群組」沿用相同的最外層取消、巢狀群組與復原／重做邏輯。
@@ -438,6 +444,9 @@
 
 - `prompt_system/layouts/*.yaml#media_requirement` 是所有 renderer 共用的正式分類來源；HTML catalog 只能投影並驗證，不得另存一份會漂移的判斷。`no-image` 包含文字、表格、流程、資料結構與原生語意圖示；`with-image` 代表構圖需要真實外部視覺素材。
 - HTML 預設 `asset_policy=pattern-only`，只能從 `no-image` 選版。只有明確宣告 `asset_policy=image-planned`，表示交付前會補圖，才可自動或強制選用 `with-image`。
+- 新建圖片背景 HTML 時，`.agents/skills/html-image-slide/SKILL.md` 是 Layout 生成前的獨立上游入口；它先產生圖片意圖與 handoff，再由 `html-pattern-slide` 消費。不得先完成 `pattern-only` Layout 才回頭附加圖片。
+- 已有可編輯 HTML 只要附加／替換背景時，使用 `.agents/skills/slide-background-image/SKILL.md`；它從 foreground measurement 開始，保留來源 Layout、內容與幾何，不重新選版。
+- `html-image-slide` handoff 至少要保留 `asset_policy`、`layout_selection`、逐頁 `image_role`／`safe_zone_profile`、素材 provenance 與預期的 `media_requirement`；`slide-background-image` 則要保留來源 HTML 與背景 run provenance。
 - `with-image` 的壓力測試可只保留圖片區位置並用單純填色佔位；正式交付不得用 HTML、SVG 或 CSS 仿畫圖片，也不得在真實素材尚未補齊時宣稱完成。
 
 ### PPTX
